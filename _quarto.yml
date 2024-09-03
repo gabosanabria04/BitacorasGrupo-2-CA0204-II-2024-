@@ -1,0 +1,30 @@
+project: Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables
+  type: book
+  output-dir: "docs"
+
+lang: es
+
+book:
+  title: "Bitácoras Grupo #2, CA-204 (II-2024)"
+  author: "Gabriel Sanabria Alvarado, Paola Espinoza Hernández"
+  date: today
+  site-url: 
+  chapters:
+    - "index.qmd"
+bibliography: references.bib
+
+format:
+  html:
+      # Pueden usar cualquier tema de los que están aca:
+      # https://quarto.org/docs/output-formats/html-themes.html a excepción de
+      # los oscuros porque no entiende nada.
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+execute:
+  freeze: auto
+  cache: true
+
+from: markdown+tex_math_single_backslash+emoji
+link-external-newwindow: true
