@@ -37,6 +37,14 @@ editor: visual
 
 ## Revisión Bibliográfica
 
+Agencia Internacional de Energías Renovables (IRENA). (2021). Renewable Energy Statistics 2021. IRENA. https://www.irena.org/Statistics
+
+Holme, J., Pockrandt, M., Köhler, D., Noll, M., Zaytsev, Y., Attia, S., & Biurrun, I. (2023). Effects of plant invaders on native vegetation communities and ecosystem properties across Europe: A systematic review and meta-analysis. PLOS ONE, 18(8), e0299807. https://doi.org/10.1371/journal.pone.0299807
+
+United Nations. (n.d.). What is renewable energy? United Nations. https://www.un.org/en/climatechange/what-is-renewable-energy#:~:text=Renewable%20energy%20is%20energy%20derived,plentiful%20and%20all%20around%20us.
+
+
+
 ### Fichas de literatura
 
 #### La autosuficiencia conectada
