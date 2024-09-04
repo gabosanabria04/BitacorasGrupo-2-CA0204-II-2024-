@@ -27,6 +27,22 @@ editor: visual
 
 ### Fichas de literatura
 
+#### La autosuficiencia conectada
+
+-   **Título:** Energía Renovable: un nuevo principio de autosuficiencia conectada
+-   **Autor**: Juan Requejo Liberal
+-   **Año:** 2012
+-   **Nombre del tema:** El uso de energía renovable en el camino la autosuficiencia energética.
+-   **Forma de organizarlo:**
+    -   **Cronológico:** Análisis hecho en 2012, de datos en la década pasada.
+    -   **Metodológico:** Análisis descriptivo.
+    -   **Temático:** Descripción de procesos en España, con intenciones de extenderlas al mundo.
+    -   **Teoría:** El impacto de la energía renovable en la dinámica social
+-   **Resumen en una oración:** La utilización de energía renovable permite volver a la autosuficiencia, e implementar la autosuficiencia conectada.
+-   **Argumento central:** Los países deben optar por la autosuficiencia, y recurrir a fuentes energéticas externas solo para el restante.
+-   **Problemas con el argumento o tema:** La producción de energías renovables es mucho más visible que las otras, por lo que es necesario estudiar el espacio en el que se van a colocar. Además, existe un desequilibrio en la relación campo-ciudad en cuanto a la producción de energía renovable, pues es más complejo producir energía renovable en la zona urbana que en la rural; sin embargo, también se encuentran diferencias entre las zonas rurales con centrales eléctricas y las demás.
+-   **Resumen en un párrafo:** La energía renovable es una mejor opción ante el daño al medio ambiente; sin embargo, producirla es muy costoso y además, exige una detallada planificación. El sistema económico urbano-industrial creó un gran dessfase entre estos dos sectores, y llevó a un gran aumento de la población, y con ella, de la demanda de recursos. Basándose en el caso español, se expone que el uso de energía renovable representa el regreso a una sociedad consciente de las limitaciones existentes. Por ello, se propone la autosuficiencia conectada, un ciclo semiabierto en el que las regiones sean capaces de sustentar al menos la mayoría de su consumo energético, y tengan que recurrir a los recursos externos solamente para lo que no pudieron sustentar. De igual manera, se expresa que esta búsqueda de autosuficiencia puede ser aplicada a otros ámbitos.
+
 ### UVE de Gowin
 
 ## Parte de Escritura
