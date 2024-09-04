@@ -21,6 +21,11 @@ editor: visual
 #### Reformulación de la idea en modo de pregunta
 
 #### Argumentación de la pregunta
+**¿Por qué es importante la energía renovable?**
+- **Lógica:** La energía producida con fuentes no renovables implica un riego a su propia sostenibilidad, además de la enorme contaminación que genera.
+- **Ética:** La presente generación está moralmente obligada a un correcto manejo de los recursos naturales. El uso de fuentes no renovables perjudica y acelera los distintos cambios climáticos, los cuales pueden afectar gravemente a las futuras generaciones.
+- **Emocional:** El uso de energías renovables puede provocar un mejoramiento en el estilo de vida de los próximos años en comparación a las expectativas del presente. Ocasionando que futuras familias y sociedades puedan tener un mejor desarrollo colectivo e individual.
+- **Conclusión:** La importancia de las energías renovables van más allá de combatir el cambio climático y la contaminación ambiental, debido a que esto genera mejorías en el desarrollo socio-económico, además de un aumento en la salud pública internacional.
 
 #### Argumentación a través de datos
 
