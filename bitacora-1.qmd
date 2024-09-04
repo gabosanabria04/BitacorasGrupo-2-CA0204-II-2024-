@@ -1,3 +1,32 @@
- # Bitácora 1 
+---
+title: "Bitácora 1"
+author: "Paola Espinoza Hernández; Gabriel Sanabria Alvarado"
+format: html
+editor: visual
+---
 
- <Escriba aquí su bitácora>
+## Changelog
+
+## Planificación
+
+### Pregunta de Investigación
+
+#### Definición de la idea
+
+#### Conceptualización de la idea
+
+#### Identificación de tensiones
+
+#### Reformulación de la idea en modo de pregunta
+
+#### Argumentación de la pregunta
+
+#### Argumentación a través de datos
+
+## Revisión Bibliográfica
+
+### Fichas de literatura
+
+### UVE de Gowin
+
+## Parte de Escritura
