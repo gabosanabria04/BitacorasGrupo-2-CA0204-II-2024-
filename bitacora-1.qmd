@@ -113,7 +113,9 @@ Definición de la idea La idea inicial consiste en abordar la energía renovable
 
 **Argumentos** 
 
--**Lógica:** Si bien la energía renovable por sí misma no va a garantizar un futuro sostenible, sí corresponde a una buena herramienta en este proceso. Además, al utilizar energía renovable, se está dando el primer paso hacia la meta del futuro sostenible. -**Ética:** Es imperante en el contexto actual, analizar la relación entre el desarrollo económico y la energía renovable. Adicionalmente, la utilización de energía renovable puede representar el inicio de un camino hacia un futuro mejor, pues reduce las emisiones de CO2; también es necesario invertir en investigación para desarrollar maneras de crear un menor impacto ambiental. 
+-**Lógica:** Si bien la energía renovable por sí misma no va a garantizar un futuro sostenible, sí corresponde a una buena herramienta en este proceso. Además, al utilizar energía renovable, se está dando el primer paso hacia la meta del futuro sostenible. 
+
+-**Ética:** Es imperante en el contexto actual, analizar la relación entre el desarrollo económico y la energía renovable. Adicionalmente, la utilización de energía renovable puede representar el inicio de un camino hacia un futuro mejor, pues reduce las emisiones de CO2; también es necesario invertir en investigación para desarrollar maneras de crear un menor impacto ambiental. 
 
 -**Emocional:** La inversión en el desarrollo y mejoramiento de la producción de energías renovables puede solucionar muchos de los problemas derivados de esto. Existe además el concepto de autosuficiencia conectada, que puede ser de ayuda a los países en etapa de transición. 
 
@@ -214,6 +216,26 @@ Allan Cordero Gutiérrez. (2015). Análisis de viabilidad ambiental del uso de e
 -   **Resumen en un párrafo:** Dado que la causa principal del cambio climático son los gases de efecto invernadero, entre los cuales destaca el CO2, derivado principalmente de la quema de fósiles; la implementación de energías renovables es fundamental para combatir este fenómeno. Aunque se reconoce la existencia y gravedad del fenómeno, así como la importancia de reducir la emisión de gases de efecto invernadero, la inversión en reservas de combustibles fósiles sobrepasa a la inversión en energías renovables. El artículo pretende facilitar la búsqueda de estándares que faciliten la implementación de energías renovables en otros países. Específicamente, se analiza la política adoptada por Brasil y Argentina, ambos miembros de Mercosur, quien promueve la producción y utilización de enrgías renovables. Los resultados indican que Brasil se enfocan en aspectos relacionados al cambio climático como la quema de bosques o la deforestación, sobre el abastecimiento energético. Por otro lado, Argentina procura mantener el abastecimiento y el desarrollo sustentable en una misma medida de importancia. No obstante, se prioriza en ambos países la seguridad energética nacional.
 
 ### UVE de Gowin
+
+
+
+
+
+
+
+
+![V de Gowin: Energía del Futuro](Dibujo_sin_título.jpg)
+
+
+
+
+
+
+
+
+
+
+
 
 ## Parte de Escritura
 
