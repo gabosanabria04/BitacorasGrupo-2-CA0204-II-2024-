@@ -7,20 +7,25 @@ lang: es
 book:
   title: "Bitácoras Grupo #2, CA-204 (II-2024)"
   author: "Gabriel Sanabria Alvarado, Paola Espinoza Hernández"
-  date: today
-  site-url: https://github.com/gabosanabria04/BitacorasGrupo-2-CA0204-II-2024-.git
+  date: today 
+  search: true
+  repo-url: "https://github.com/gabosanabria04/BitacorasGrupo-2-CA0204-II-2024-.git"
+  site-url: "https://maikol-solis.github.io/Bitacora-Grupo-00-CA-204-II-2024/"
+  repo-actions: [edit, source]
+  downloads: [pdf]
   chapters:
     - "index.qmd"
+    - "bitacora-1.qmd"
+
 bibliography: references.bib
 
 format:
   html:
-      # Pueden usar cualquier tema de los que están aca:
-      # https://quarto.org/docs/output-formats/html-themes.html a excepción de
-      # los oscuros porque no entiende nada.
     theme: cosmo
   pdf:
     documentclass: scrreprt
+    keep-tex: true
+    latex-engine: xelatex
 
 execute:
   freeze: auto
