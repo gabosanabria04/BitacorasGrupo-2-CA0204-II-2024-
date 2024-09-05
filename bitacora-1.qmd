@@ -21,7 +21,7 @@ editor: visual
 #### Reformulación de la idea en modo de pregunta
 
 #### Argumentación de la pregunta
-**¿Por qué es importante la energía renovable?**
+**¿Qué impacto puede tener la energía renovable sobre la sociedad?**
 **Contraargumentos:**
   -**Ética:** La inversión de energía renovable podría llegar a ser costosa, por lo que podrían salir perjudicados lo grupos más vulnerables.
   -**Lógica:** Las energías renovables como lo son la energía solar y eólica pueden no estar disponible dependiendo de la zona donde estén instaladas.
