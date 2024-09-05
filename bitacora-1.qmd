@@ -9,6 +9,10 @@ editor: visual
 
 ## Changelog
 
+::: {#fig-v-de-gowin}
+![Changelog](Captura desde 2024-09-05 00-11-34.png){fig-align="center" width=80%}
+:::
+
 ## Planificación
 
 ### Pregunta de Investigación
@@ -224,7 +228,10 @@ Allan Cordero Gutiérrez. (2015). Análisis de viabilidad ambiental del uso de e
 
 
 
-![V de Gowin: Energía del Futuro](Dibujo_sin_título.jpg)
+::: {#fig-v-de-gowin}
+![V de Gowin: Energía del Futuro](Dibujo_sin_título.jpg){fig-align="center" width=80%}
+:::
+
 
 
 
