@@ -31,9 +31,9 @@ Definición de la idea La idea inicial consiste en abordar la energía renovable
 
 **Prácticamente:** Casi, por poco. 
 
-#Identificación de tensiones Las comparaciones entre países puede verse afectadas por el contexto del país, importación y exportación de energía, los recursos naturales y el tipo de energía renovable producida en cada país. 
+### Identificación de tensiones Las comparaciones entre países puede verse afectadas por el contexto del país, importación y exportación de energía, los recursos naturales y el tipo de energía renovable producida en cada país. 
 
-#Reformulación de la idea en modo de pregunta 
+### Reformulación de la idea en modo de pregunta 
 
 **¿Qué impacto puede tener la energía renovable sobre la sociedad?**
 
