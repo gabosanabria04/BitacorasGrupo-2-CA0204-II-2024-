@@ -145,6 +145,8 @@ Agencia Internacional de Energías Renovables (IRENA). (2021). *Renewable Energy
 
 Bataineh, M. J., Marcuello, C., & Sánchez-Sellero, P. (2023). Toward sustainability: the role of social entrepreneurship in creating social-economic value in renewable energy social enterprises. *REVESCO : Revista De Estudios Cooperativos, 143*. https://doi.org/10.5209/reve.85561
 
+Casamitjana, M. (2017). Energías renovables. Revista Cintex, 22(1), 7-9. https://proquest.proxyucr.elogim.com/scholarly-journals/energías-renovables/docview/2676149315/se-2
+
 Cordero Gutiérrez, A. (2015). *Análisis de viabilidad ambiental del uso de energías renovables en Costa Rica: Estudio de caso de la energía eólica, la hidroeléctrica y la geotérmica*. https://d1wqtxts1xzle7.cloudfront.net/41694115/Investigacion_p._Ecologicos2-libre.pdf
 
 Esteves, A. M., Franks, D. M., & Vanclay, F. (2012). Social impact assessment: the state of the art. *Impact Assessment and Project Appraisal, 30*(1), 34-42. https://doi.org/10.1080/14615517.2012.660356
@@ -156,6 +158,8 @@ Peake, S., & Boyle, G. (2018). *Renewable energy: Power for a sustainable future
 Pou, M. Á. C., & Simón, J. M. G. (2017). Energías renovables y desarrollo económico. Un análisis para España y las grandes economías europeas. [Renewable Energy and Economic Development. An Analysis for Spain and the Biggest European Economies] *El Trimestre Económico, 84*(3), 571-609. https://doi.org/10.20430/ete.v84i335.508
 
 Requejo Liberal, J. (2012). Energía renovable: un nuevo principio de autosuficiencia conectada. Ciudad Y Territorio Estudios Territoriales, 44(171), 113–125. https://recyt.fecyt.es/index.php/CyTET/article/view/76112
+
+Serrano, J. (2022, Apr 24). Hacia un futuro con energía limpia y renovable. Actualidad Economica, , 12. https://proquest.proxyucr.elogim.com/magazines/hacia-un-futuro-con-energía-limpia-y-renovable/docview/2653653881/se-2
 
 United Nations. (s.f.). *What is renewable energy?* https://www.un.org/en/climatechange/what-is-renewable-energy#:~:text=Renewable%20energy%20is%20energy%20derived,plentiful%20and%20all%20around%20us.
 
@@ -257,7 +261,11 @@ Para analizar los efectos que puede tener la energía renovable sobre la socieda
 
 En términos ambientales, la adopción de energías renovables puede reducir considerablemente las emisiones de gases de efecto invernadero, mejorando así la calidad del aire y disminuyendo los efectos negativos del cambio climático en la salud pública (United Nations, s.f.). Esta transformación, además de ser primordial para amortiguar los efectos negativos del cambio climático, también es pertinente para lograr un desarrollo sostenible.
 
-Analizando desde una perspectiva económica, la energía renovable tiene el potencial de producir empleos e impulsar el desarrollo en comunidades locales. Según "Energías Renovables" (2011), el crecimiento de las industrias de energía renovable puede generar millones de empleos nuevos en todo el mundo, proporcionando oportunidades de trabajo en áreas rurales y fomentando la independencia energética. Además, la implementación de fuentes de energía renovable como la solar y la eólica puede reducir la dependencia de los combustibles fósiles importados, fortaleciendo así la seguridad energética de los países (Energías Renovables, 2011).
+Con el fin de responder la pregunta plenteada, se analizarán diversos factores que inciden en la producción y utilización de energías renovables. Entre estos destaca la disponibilidad de recursos naturales, puesto que la eficiencia de la producción depende en gran medida de su ubicación geográfica, las condiciones climáticas y los recursos naturales presentes en la región (Casamitjana, 2017). Por ello, se considerará además la inversión destinada a la investigación y el desarrollo de nuevas tecnologías que permitan reducir las brechas entre países.
+
+Analizando desde una perspectiva económica, la energía renovable, aunque en un inicio puede poner en riego el abastecimiento energético, debido a la dificultad de esta transición, aunado además al costo elevado de la inversión inicial (Casola y Freier, 2018); también tiene el potencial de producir empleos e impulsar el desarrollo en comunidades locales. Según "Energías Renovables" (2011), el crecimiento de las industrias de energía renovable puede generar millones de empleos nuevos en todo el mundo, proporcionando oportunidades de trabajo en áreas rurales y fomentando la independencia energética. Además, la implementación de fuentes de energía renovable como la solar y la eólica puede reducir la dependencia de los combustibles fósiles importados, fortaleciendo así la seguridad energética de los países (Energías Renovables, 2011).
+
+Si bien las energías renovables no garantizan por sí mismas un futuro sostenible, es importante tomar en cuenta que las generaciones actuales deben gestionar los recursos de manera eficiente, no solo para mejorar su propio futuro, sino el futuro de las generaciones siguientes; pues de no realizarse, el cambio climático seguirá acelerándose cada vez más(Serrano, 2022). Así, la adopción de energías renovables puede mejorar la calidad de vida, con un etorno menos contaminado que puede traducirse en una mejor salud púlica y desarrollo económico.
 
 Para detallar el problema de una forma clara, es importante señalar cómo estas ventajas de la energía renovable pueden ser utilizadas para descabezar las barreras presentes, como lo son los costos iniciales de inversión y las limitaciones tecnológicas en algunas regiones. Este enfásis ayuda que la pregunta escogida se contextualice dentro del marco de desarrollo sostenible y transición energética que se requiere para enfrentar los desafíos globales actuales.
 
