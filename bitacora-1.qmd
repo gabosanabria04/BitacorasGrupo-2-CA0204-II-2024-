@@ -44,34 +44,34 @@ Las comparaciones entre países puede verse afectadas por el contexto del país,
 
 **Pregunta: ¿Cuáles factores afectan la producción de energía renovable?**
 **Contrargumentos** 
--**Lógica:** 
--**Ética:** 
--**Emocional:** 
+-**Lógica:** Hay un gran número de factores que afectan dicha producción, algunos difíciles de conseguir. No es posible contabilizar cada uno de estos factores, pues algunos, como la estacionalidad son variables.
+-**Ética:** La distribución de las plantas generadoras de energía genera una brecha entre la capacidad de producción energética entre diversas poblaciones de una misma región.
+-**Emocional:** La desinformación de los habitantes de una nación puede desincentivar la transición hacia las energías renovables, pues no habrán incentivos por parte de esta población a la inversión en investigación y desarrollo de mecanismos para generar energía renovable.
 **Argumentos**
--**Lógica:** 
--**Ética:** 
--**Emocional:** 
--**Conclusión:** 
+-**Lógica:** Si bien existen muchos factores que inciden en el nivel de producción de la energía, se pueden incluir varios de estos factores, en particular los que resulten más relevantes, como la temperatura promedio anual, cantidad de lluvia, irradiación solar, incidencia de desastres naturales, velocidad del viento, disponibilidd de biomasa, y potencial hídrico y geotérmico.
+-**Ética:** Es posible recolectar datos que muestren la concentración de estas plantas,  ajustar las mediciones con respecto a alguna otra variable, como la población o el nivel de industrialización.
+-**Emocional:** Los programas de conscientización son una parte importante en la transición a las energías renovables; por lo tanto, esta puede ser tomada en cuenta para el análisis, así como la inversión en investigación y desarrollo.
+-**Conclusión:** En la comparación entre países, se deben incorporar diversos factores que impacten a la producción de energía. Dichos factores incluyen los recursos naturales, el avance tecnológico, las políticas, las condiciones ambientales, la consciencia de la población y la tasa de industrialización.
 **Pregunta: ¿Cómo puedo comparar los países en materia de enegías renovables?**
 **Contrargumentos** 
--**Lógica:** 
--**Ética:** 
--**Emocional:** 
+-**Lógica:** Para comparar los países, se deben tomar en cuenta las diferencias entre países, más allá de los montos nominales.
+-**Ética:** No todos los países cuentan con la misma capacidad de inversión, ni el mismo nivel de vida. Comparar países sin incluir estos factores no resultaría en una buena comparación.
+-**Emocional:** Las energías renovables suelen pasar desapercibidas ante los habitantes de las naciones, pues estos no se mantienen informados sobre el nivel de autosuficiencia energética que posee su país, ni la cantidad de energía exportada en lugar de utilizarse en el mismo.
 **Argumentos**
--**Lógica:** 
--**Ética:** 
--**Emocional:** 
--**Conclusión:** 
+-**Lógica:** Se pueden incorporar diversas variables al análisis con el fin de hacer una comparación más justa, incluyendo el GDP, del cual se podrá sacar el porcentaje destinado a inversión en investigación para la producción de energía renovable.
+-**Ética:** Es posible incorporar variables sociales, que muestren la calidad de vida de las personas, y realizar un análisis sobre el impacto que la transición a la energía renovable representa en la vida de los habitantes.
+-**Emocional:** Los datos sobre exportación e importación de energía son muy relevantes, espacialmente cuando se habla de autosuficiencia. Del mismo modo, la conscientización de la población es un factor que debe ser considerado en el análisis.
+-**Conclusión:** Para comparar países en términos de energías renovables, es importante evaluar varios aspectos clave. Se debe considerar la energía generada y la consumida; la capacidad instalada, así como la producción anual. Además, se deben analizar las inversiones realizadas, los costos de instalación y mantenimiento, y las políticas gubernamentales que fomenten el uso de energías renovables.
 **Pregunta: ¿Puede la utilización de energías renovables garantizar un futuro sostenible?**
 **Contrargumentos** 
--**Lógica:** 
--**Ética:** 
--**Emocional:** 
+-**Lógica:** Se necesitan más herramientas, especialmente a nivel global, para lograr un futuro sostenible, pues la energía renovable por sí misma, no es capaz de garantizar un futuro sostenible.
+-**Ética:** El futuro sostenible no debería considerar únicamente las energías renovables, sino velar por un mundo mejor, con menores emisiones de gases de efecto invernadero, y un mayor desarrollo económico.
+-**Emocional:** La energía renovable no es capaz de solucionar el problema; además, pone en peligro el abastecimiento energético de los países en transición.
 **Argumentos**
--**Lógica:** 
--**Ética:** 
--**Emocional:** 
--**Conclusión:** 
+-**Lógica:** Si bien la energía renovable por sí misma no va a garantizar un futuro sostenible, sí corresponde a una buena herramienta en este proceso. Además, al utilizar energía renovable, se está dando el primer paso hacia la meta del futuro sostenible.
+-**Ética:** Es imperante en el contexto actual, analizar la relación entre el desarrollo económico y la energía renovable. Adicionalmente, la utilización de energía renovable puede representar el inicio de un camino hacia un futuro mejor, pues reduce las emisiones de CO2; también es necesario invertir en investigación para desarrollar maneras de crear un menor impacto ambiental.
+-**Emocional:** La inversión en el desarrollo y mejoramiento de la producción de energías renovables puede solucionar muchos de los problemas derivados de esto. Existe además el concepto de autosuficiencia conectada, que puede ser de ayuda a los países en etapa de transición.
+-**Conclusión:** La utilización de energías renovables es fundamental para un futuro sostenible al reducir emisiones de gases de efecto invernadero, diversificar la matriz energética y fomentar el desarrollo económico. Sin embargo, no garantiza la sostenibilidad por sí misma; puesto que algunas tecnologías poseen un impacto ambiental, y se necesita de políticas y regulaciones adecuadas. Así, las energías renovables son vitales para un futuro sostenible, pero deben unirse a otros esfuerzos. 
 
 #### Argumentación a través de datos
 
