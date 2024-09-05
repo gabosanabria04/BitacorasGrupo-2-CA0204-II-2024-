@@ -229,7 +229,7 @@ Allan Cordero Gutiérrez. (2015). Análisis de viabilidad ambiental del uso de e
 
 
 ::: {#fig-v-de-gowin}
-![V de Gowin: Energía del Futuro](Dibujo_sin_título.jpg){fig-align="center" width=80%}
+![V de Gowin: Energía del Futuro](Dibujo sin título.jpg){fig-align="center" width=100%}
 :::
 
 
