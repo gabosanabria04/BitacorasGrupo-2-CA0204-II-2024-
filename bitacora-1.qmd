@@ -13,6 +13,9 @@ editor: visual
 ![Changelog](Captura desde 2024-09-05 00-11-34.png){fig-align="center" width=80%}
 :::
 
+::: {#fig-v-de-gowin}
+![Git summary](git summary.png){fig-align="center" width=80%}
+:::
 ## Planificación
 
 ### Pregunta de Investigación
