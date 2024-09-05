@@ -90,6 +90,21 @@ Impacto de las energías renovables en la reducción de emisiones de CO₂ a niv
 Puede ser un reto en los países de desarrollo en el momento de la transición energética, debido a la inversión inicial alta y la necesidad de implementación de políticas adecuadas.
 * **Resumen:** El estudio estudia cómo la instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. Da uso a técnicas de regresión para valorar las relaciones lineales y no lineales entre las energías renovables y las emisiones de CO₂. El artículo recalca la importancia del cambio a energías limpias para minimizar las emisiones de carbono, pero reconoce que los países en desarrollo enfrentan desafíos significativos en términos de inversión y políticas. Finalmente, aporta recomendaciones para que los países implementen estrategias de transición energética de acuerdo con sus contextos únicos.
 
+### La energía renovable como estrategia para combatir el cambio climático en Brasil y Argentina
+* **Título:** El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil 
+* **Autores:** Laura Casola y Alexander Freier
+* **Año:** 2018
+* **Nombre del tema:** Estrategias para la implementación de las energías renovables
+* **Forma de organizarlo:**
++ **Cronológico:** Se analizan los sucesos importantes desde 1992 hasta el 2016.
++ **Metodológico:** Análisis descriptivo
++ **Temático:** Análisis de los mecanismos de implementación de energías renovables.
++ **Teoría:** Desarrollo sostenible por medio de la utilización de energías renovables
+* **Resumen en una oración:** El desarrollo sustentable es clave para combatir el cambio climático.
+* **Argumento central:** Para combatir el cambio climático, es necesario realizar cambios en las estructuras y la distribución de la energía, así como en la forma de producirla.
+* **Problemas con el argumento o tema:** El desarrollo sustentable es un proceso demorado, y puede poner en riesgo el abastecimiento energético del país; por tanto, los países, aunque no por ello menos comprometidos con el desarrollo sostenible, tienden a prioriar el abastecimiento de energía.
+* **Resumen en un párrafo:** Dado que la causa principal del cambio climático son los gases de efecto invernadero, entre los cuales destaca el CO2, derivado principalmente de la quema de fósiles; la implementación de energías renovables es fundamental para combatir este fenómeno. Aunque se reconoce la existencia y gravedad del fenómeno, así como la importancia de reducir la emisión de gases de efecto invernadero, la inversión en reservas de combustibles fósiles sobrepasa a la inversión en energías renovables. El artículo pretende facilitar la búsqueda de estándares que faciliten la implementación de energías renovables en otros países. Específicamente, se analiza la política adoptada por Brasil y Argentina, ambos miembros de Mercosur, quien promueve la producción y utilización de enrgías renovables. Los resultados indican que Brasil se enfocan en aspectos relacionados al cambio climático como la quema de bosques o la deforestación, sobre el abastecimiento energético. Por otro lado, Argentina procura mantener el abastecimiento y el desarrollo sustentable en una misma medida de importancia. No obstante, se prioriza en ambos países la seguridad energética nacional.
+
 ### UVE de Gowin
 
 ## Parte de Escritura
