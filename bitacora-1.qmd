@@ -9,13 +9,15 @@ editor: visual
 
 ## Changelog
 
-::: {#fig-v-de-gowin}
-![Changelog](Captura%20desde%202024-09-05%2000-11-34.png){fig-align="center" width="80%"}
-:::
+<!-- ::: {#fig-v-de-gowin} -->
 
-::: {#fig-v-de-gowin}
-![Git summary](git%20summary.png){fig-align="center" width="80%"}
-:::
+![Changelog](capturagitlog.png){fig-align="center" width="80%"} <!-- ::: -->
+
+<!-- <div> -->
+
+![Git summary](git-summary.png){fig-align="center" width="80%"}
+
+<!-- </div> -->
 
 ## Planificación
 
@@ -23,9 +25,12 @@ editor: visual
 
 ¿Qué impacto puede tener la energía renovable sobre la sociedad?
 
-Definición de la idea La idea inicial consiste en abordar la energía renovable, su producción, utilización, el intercambio que se da entre países; así como el impacto que la utilización de energías renovables puede tener sobre la sociedad como conjunto. Este tema resulta interesante, especialmente bajo el contexto actual, puesto que es usual pensar en las energías renovables para combatir el cambio climático; sin embargo, no es tan común escuchar del impacto social que esta produce, ejemplo de ello es el cambio en los paisajes que señala Requejo en el 2012, la posibilidad de alterar el abastecimiento energético que señalan Casola y Freier en el 2018, o los efectos económicos que plantean Caraballo y García en el 2017. Este trabajo pretende abordar no solo la parte de la energía como tal, sino su impacto en los países que la produce y utilizan. De esta manera, la idea se resume en: Considerar la producción de energías renovales en diversos países, y el impacto que esto tiene sobre ellos.
+### Definición de la idea
 
-### Conceptualización de la idea Según la RAE, las definiciones de las palabras utilizadas en la idea son:
+La idea inicial consiste en abordar la energía renovable, su producción, utilización, el intercambio que se da entre países; así como el impacto que la utilización de energías renovables puede tener sobre la sociedad como conjunto. Este tema resulta interesante, especialmente bajo el contexto actual, puesto que es usual pensar en las energías renovables para combatir el cambio climático; sin embargo, no es tan común escuchar del impacto social que esta produce, ejemplo de ello es el cambio en los paisajes que señala Requejo en el 2012, la posibilidad de alterar el abastecimiento energético que señalan Casola y Freier en el 2018, o los efectos económicos que plantean Caraballo y García en el 2017. Este trabajo pretende abordar no solo la parte de la energía como tal, sino su impacto en los países que la produce y utilizan. De esta manera, la idea se resume en: Considerar la producción de energías renovales en diversos países, y el impacto que esto tiene sobre ellos.
+
+### Conceptualización de la idea 
+Según la RAE, las definiciones de las palabras utilizadas en la idea son:
 
 **Considerar:** Pensar, meditar, reflexionar algo con atención y cuidado.
 
@@ -35,7 +40,8 @@ Definición de la idea La idea inicial consiste en abordar la energía renovable
 
 **Prácticamente:** Casi, por poco.
 
-### Identificación de tensiones Las comparaciones entre países puede verse afectadas por el contexto del país, importación y exportación de energía, los recursos naturales y el tipo de energía renovable producida en cada país.
+### Identificación de tensiones 
+Las comparaciones entre países puede verse afectadas por el contexto del país, importación y exportación de energía, los recursos naturales y el tipo de energía renovable producida en cada país.
 
 ### Reformulación de la idea en modo de pregunta
 
@@ -53,81 +59,81 @@ Definición de la idea La idea inicial consiste en abordar la energía renovable
 
 **Contraargumentos**
 
--**Ética:** La inversión de energía renovable podría llegar a ser costosa, por lo que podrían salir perjudicados lo grupos más vulnerables.
+\-**Ética:** La inversión de energía renovable podría llegar a ser costosa, por lo que podrían salir perjudicados lo grupos más vulnerables.
 
--**Lógica:** Las energías renovables como lo son la energía solar y eólica pueden no estar disponible dependiendo de la zona donde estén instaladas.
+\-**Lógica:** Las energías renovables como lo son la energía solar y eólica pueden no estar disponible dependiendo de la zona donde estén instaladas.
 
--**Emocional:** La implementación de energías renovables podrían ser perjudiciales en tema de pérdida de empleo en compañías de electricidad tradicionales.
+\-**Emocional:** La implementación de energías renovables podrían ser perjudiciales en tema de pérdida de empleo en compañías de electricidad tradicionales.
 
 **Argumentos**
 
--**Lógica:**La energía producida con fuentes no renovables implica un riego a su propia sostenibilidad, además de la enorme contaminación que genera.
+\-**Lógica:**La energía producida con fuentes no renovables implica un riego a su propia sostenibilidad, además de la enorme contaminación que genera.
 
--**Ética:** A pesar de que la inversión de la instalación de energías renovables podría ser costosa, a largo plazo, las pérdidas que genería el hecho de no realizar la instalación son mayores en temas de salud ambiental y pública. La presente generación está moralmente obligada a un correcto manejo de los recursos naturales. El uso de fuentes no renovables perjudica y acelera los distintos cambios climáticos, los cuales pueden afectar gravemente a las futuras generaciones.
+\-**Ética:** A pesar de que la inversión de la instalación de energías renovables podría ser costosa, a largo plazo, las pérdidas que genería el hecho de no realizar la instalación son mayores en temas de salud ambiental y pública. La presente generación está moralmente obligada a un correcto manejo de los recursos naturales. El uso de fuentes no renovables perjudica y acelera los distintos cambios climáticos, los cuales pueden afectar gravemente a las futuras generaciones.
 
--**Emocional:** El uso de energías renovables puede provocar un mejoramiento en el estilo de vida de los próximos años en comparación a las expectativas del presente. Ocasionando que futuras familias y sociedades puedan tener un mejor desarrollo colectivo e individual.
+\-**Emocional:** El uso de energías renovables puede provocar un mejoramiento en el estilo de vida de los próximos años en comparación a las expectativas del presente. Ocasionando que futuras familias y sociedades puedan tener un mejor desarrollo colectivo e individual.
 
--**Conclusión:** La importancia de las energías renovables van más allá de combatir el cambio climático y la contaminación ambiental, debido a que esto genera mejorías en el desarrollo socio-económico, además de un aumento en la salud pública internacional.
+\-**Conclusión:** La importancia de las energías renovables van más allá de combatir el cambio climático y la contaminación ambiental, debido a que esto genera mejorías en el desarrollo socio-económico, además de un aumento en la salud pública internacional.
 
 **Pregunta: ¿Cuáles factores afectan la producción de energía renovable?**
 
 **Contrargumentos**
 
--**Lógica:** Hay un gran número de factores que afectan dicha producción, algunos difíciles de conseguir. No es posible contabilizar cada uno de estos factores, pues algunos, como la estacionalidad son variables.
+\-**Lógica:** Hay un gran número de factores que afectan dicha producción, algunos difíciles de conseguir. No es posible contabilizar cada uno de estos factores, pues algunos, como la estacionalidad son variables.
 
--**Ética:** La distribución de las plantas generadoras de energía genera una brecha entre la capacidad de producción energética entre diversas poblaciones de una misma región.
+\-**Ética:** La distribución de las plantas generadoras de energía genera una brecha entre la capacidad de producción energética entre diversas poblaciones de una misma región.
 
--**Emocional:** La desinformación de los habitantes de una nación puede desincentivar la transición hacia las energías renovables, pues no habrán incentivos por parte de esta población a la inversión en investigación y desarrollo de mecanismos para generar energía renovable.
+\-**Emocional:** La desinformación de los habitantes de una nación puede desincentivar la transición hacia las energías renovables, pues no habrán incentivos por parte de esta población a la inversión en investigación y desarrollo de mecanismos para generar energía renovable.
 
 **Argumentos**
 
--**Lógica:** Si bien existen muchos factores que inciden en el nivel de producción de la energía, se pueden incluir varios de estos factores, en particular los que resulten más relevantes, como la temperatura promedio anual, cantidad de lluvia, irradiación solar, incidencia de desastres naturales, velocidad del viento, disponibilidd de biomasa, y potencial hídrico y geotérmico.
+\-**Lógica:** Si bien existen muchos factores que inciden en el nivel de producción de la energía, se pueden incluir varios de estos factores, en particular los que resulten más relevantes, como la temperatura promedio anual, cantidad de lluvia, irradiación solar, incidencia de desastres naturales, velocidad del viento, disponibilidd de biomasa, y potencial hídrico y geotérmico.
 
--**Ética:** Es posible recolectar datos que muestren la concentración de estas plantas, ajustar las mediciones con respecto a alguna otra variable, como la población o el nivel de industrialización.
+\-**Ética:** Es posible recolectar datos que muestren la concentración de estas plantas, ajustar las mediciones con respecto a alguna otra variable, como la población o el nivel de industrialización.
 
--**Emocional:** Los programas de conscientización son una parte importante en la transición a las energías renovables; por lo tanto, esta puede ser tomada en cuenta para el análisis, así como la inversión en investigación y desarrollo.
+\-**Emocional:** Los programas de conscientización son una parte importante en la transición a las energías renovables; por lo tanto, esta puede ser tomada en cuenta para el análisis, así como la inversión en investigación y desarrollo.
 
--**Conclusión:** En la comparación entre países, se deben incorporar diversos factores que impacten a la producción de energía. Dichos factores incluyen los recursos naturales, el avance tecnológico, las políticas, las condiciones ambientales, la consciencia de la población y la tasa de industrialización.
+\-**Conclusión:** En la comparación entre países, se deben incorporar diversos factores que impacten a la producción de energía. Dichos factores incluyen los recursos naturales, el avance tecnológico, las políticas, las condiciones ambientales, la consciencia de la población y la tasa de industrialización.
 
 **Pregunta: ¿Cómo puedo comparar los países en materia de enegías renovables?**
 
 **Contrargumentos**
 
--**Lógica:** Para comparar los países, se deben tomar en cuenta las diferencias entre países, más allá de los montos nominales.
+\-**Lógica:** Para comparar los países, se deben tomar en cuenta las diferencias entre países, más allá de los montos nominales.
 
--**Ética:** No todos los países cuentan con la misma capacidad de inversión, ni el mismo nivel de vida. Comparar países sin incluir estos factores no resultaría en una buena comparación.
+\-**Ética:** No todos los países cuentan con la misma capacidad de inversión, ni el mismo nivel de vida. Comparar países sin incluir estos factores no resultaría en una buena comparación.
 
--**Emocional:** Las energías renovables suelen pasar desapercibidas ante los habitantes de las naciones, pues estos no se mantienen informados sobre el nivel de autosuficiencia energética que posee su país, ni la cantidad de energía exportada en lugar de utilizarse en el mismo.
+\-**Emocional:** Las energías renovables suelen pasar desapercibidas ante los habitantes de las naciones, pues estos no se mantienen informados sobre el nivel de autosuficiencia energética que posee su país, ni la cantidad de energía exportada en lugar de utilizarse en el mismo.
 
 **Argumentos**
 
--**Lógica:** Se pueden incorporar diversas variables al análisis con el fin de hacer una comparación más justa, incluyendo el GDP, del cual se podrá sacar el porcentaje destinado a inversión en investigación para la producción de energía renovable.
+\-**Lógica:** Se pueden incorporar diversas variables al análisis con el fin de hacer una comparación más justa, incluyendo el GDP, del cual se podrá sacar el porcentaje destinado a inversión en investigación para la producción de energía renovable.
 
--**Ética:** Es posible incorporar variables sociales, que muestren la calidad de vida de las personas, y realizar un análisis sobre el impacto que la transición a la energía renovable representa en la vida de los habitantes.
+\-**Ética:** Es posible incorporar variables sociales, que muestren la calidad de vida de las personas, y realizar un análisis sobre el impacto que la transición a la energía renovable representa en la vida de los habitantes.
 
--**Emocional:** Los datos sobre exportación e importación de energía son muy relevantes, espacialmente cuando se habla de autosuficiencia. Del mismo modo, la conscientización de la población es un factor que debe ser considerado en el análisis.
+\-**Emocional:** Los datos sobre exportación e importación de energía son muy relevantes, espacialmente cuando se habla de autosuficiencia. Del mismo modo, la conscientización de la población es un factor que debe ser considerado en el análisis.
 
--**Conclusión:** Para comparar países en términos de energías renovables, es importante evaluar varios aspectos clave. Se debe considerar la energía generada y la consumida; la capacidad instalada, así como la producción anual. Además, se deben analizar las inversiones realizadas, los costos de instalación y mantenimiento, y las políticas gubernamentales que fomenten el uso de energías renovables.
+\-**Conclusión:** Para comparar países en términos de energías renovables, es importante evaluar varios aspectos clave. Se debe considerar la energía generada y la consumida; la capacidad instalada, así como la producción anual. Además, se deben analizar las inversiones realizadas, los costos de instalación y mantenimiento, y las políticas gubernamentales que fomenten el uso de energías renovables.
 
 **Pregunta: ¿Puede la utilización de energías renovables garantizar un futuro sostenible?**
 
 **Contrargumentos**
 
--**Lógica:** Se necesitan más herramientas, especialmente a nivel global, para lograr un futuro sostenible, pues la energía renovable por sí misma, no es capaz de garantizar un futuro sostenible.
+\-**Lógica:** Se necesitan más herramientas, especialmente a nivel global, para lograr un futuro sostenible, pues la energía renovable por sí misma, no es capaz de garantizar un futuro sostenible.
 
--**Ética:** El futuro sostenible no debería considerar únicamente las energías renovables, sino velar por un mundo mejor, con menores emisiones de gases de efecto invernadero, y un mayor desarrollo económico.
+\-**Ética:** El futuro sostenible no debería considerar únicamente las energías renovables, sino velar por un mundo mejor, con menores emisiones de gases de efecto invernadero, y un mayor desarrollo económico.
 
--**Emocional:** La energía renovable no es capaz de solucionar el problema; además, pone en peligro el abastecimiento energético de los países en transición.
+\-**Emocional:** La energía renovable no es capaz de solucionar el problema; además, pone en peligro el abastecimiento energético de los países en transición.
 
 **Argumentos**
 
--**Lógica:** Si bien la energía renovable por sí misma no va a garantizar un futuro sostenible, sí corresponde a una buena herramienta en este proceso. Además, al utilizar energía renovable, se está dando el primer paso hacia la meta del futuro sostenible.
+\-**Lógica:** Si bien la energía renovable por sí misma no va a garantizar un futuro sostenible, sí corresponde a una buena herramienta en este proceso. Además, al utilizar energía renovable, se está dando el primer paso hacia la meta del futuro sostenible.
 
--**Ética:** Es imperante en el contexto actual, analizar la relación entre el desarrollo económico y la energía renovable. Adicionalmente, la utilización de energía renovable puede representar el inicio de un camino hacia un futuro mejor, pues reduce las emisiones de CO2; también es necesario invertir en investigación para desarrollar maneras de crear un menor impacto ambiental.
+\-**Ética:** Es imperante en el contexto actual, analizar la relación entre el desarrollo económico y la energía renovable. Adicionalmente, la utilización de energía renovable puede representar el inicio de un camino hacia un futuro mejor, pues reduce las emisiones de CO2; también es necesario invertir en investigación para desarrollar maneras de crear un menor impacto ambiental.
 
--**Emocional:** La inversión en el desarrollo y mejoramiento de la producción de energías renovables puede solucionar muchos de los problemas derivados de esto. Existe además el concepto de autosuficiencia conectada, que puede ser de ayuda a los países en etapa de transición.
+\-**Emocional:** La inversión en el desarrollo y mejoramiento de la producción de energías renovables puede solucionar muchos de los problemas derivados de esto. Existe además el concepto de autosuficiencia conectada, que puede ser de ayuda a los países en etapa de transición.
 
--**Conclusión:** La utilización de energías renovables es fundamental para un futuro sostenible al reducir emisiones de gases de efecto invernadero, diversificar la matriz energética y fomentar el desarrollo económico. Sin embargo, no garantiza la sostenibilidad por sí misma; puesto que algunas tecnologías poseen un impacto ambiental, y se necesita de políticas y regulaciones adecuadas. Así, las energías renovables son vitales para un futuro sostenible, pero deben unirse a otros esfuerzos.
+\-**Conclusión:** La utilización de energías renovables es fundamental para un futuro sostenible al reducir emisiones de gases de efecto invernadero, diversificar la matriz energética y fomentar el desarrollo económico. Sin embargo, no garantiza la sostenibilidad por sí misma; puesto que algunas tecnologías poseen un impacto ambiental, y se necesita de políticas y regulaciones adecuadas. Así, las energías renovables son vitales para un futuro sostenible, pero deben unirse a otros esfuerzos.
 
 #### Argumentación a través de datos
 
@@ -151,7 +157,7 @@ Bataineh, M. J., Marcuello, C., & Sánchez-Sellero, P. (2023). Toward sustainabi
 
 Casamitjana, M. (2017). Energías renovables. Revista Cintex, 22(1), 7-9. https://proquest.proxyucr.elogim.com/scholarly-journals/energías-renovables/docview/2676149315/se-2
 
-Cordero Gutiérrez, A. (2015). *Análisis de viabilidad ambiental del uso de energías renovables en Costa Rica: Estudio de caso de la energía eólica, la hidroeléctrica y la geotérmica*. https://d1wqtxts1xzle7.cloudfront.net/41694115/Investigacion_p._Ecologicos2-libre.pdf
+Cordero Gutiérrez, A. (2015). *Análisis de viabilidad ambiental del uso de energías renovables en Costa Rica: Estudio de caso de la energía eólica, la hidroeléctrica y la geotérmica*. https://d1wqtxts1xzle7.cloudfront.net/41694115/Investigacion_p.\_Ecologicos2-libre.pdf
 
 Esteves, A. M., Franks, D. M., & Vanclay, F. (2012). Social impact assessment: the state of the art. *Impact Assessment and Project Appraisal, 30*(1), 34-42. https://doi.org/10.1080/14615517.2012.660356
 
@@ -159,13 +165,13 @@ Holme, J., Pockrandt, M., Köhler, D., Noll, M., Zaytsev, Y., Attia, S., & Biurr
 
 Peake, S., & Boyle, G. (2018). *Renewable energy: Power for a sustainable future (4th ed.)*. Oxford University Press.
 
-Pou, M. Á. C., & Simón, J. M. G. (2017). Energías renovables y desarrollo económico. Un análisis para España y las grandes economías europeas. [Renewable Energy and Economic Development. An Analysis for Spain and the Biggest European Economies] *El Trimestre Económico, 84*(3), 571-609. https://doi.org/10.20430/ete.v84i335.508
+Pou, M. Á. C., & Simón, J. M. G. (2017). Energías renovables y desarrollo económico. Un análisis para España y las grandes economías europeas. \[Renewable Energy and Economic Development. An Analysis for Spain and the Biggest European Economies\] *El Trimestre Económico, 84*(3), 571-609. https://doi.org/10.20430/ete.v84i335.508
 
 Requejo Liberal, J. (2012). Energía renovable: un nuevo principio de autosuficiencia conectada. Ciudad Y Territorio Estudios Territoriales, 44(171), 113–125. https://recyt.fecyt.es/index.php/CyTET/article/view/76112
 
 Serrano, J. (2022, Apr 24). Hacia un futuro con energía limpia y renovable. Actualidad Economica, , 12. https://proquest.proxyucr.elogim.com/magazines/hacia-un-futuro-con-energía-limpia-y-renovable/docview/2653653881/se-2
 
-United Nations. (s.f.). *What is renewable energy?* https://www.un.org/en/climatechange/what-is-renewable-energy#:~:text=Renewable%20energy%20is%20energy%20derived,plentiful%20and%20all%20around%20us.
+United Nations. (s.f.). *What is renewable energy?* https://www.un.org/en/climatechange/what-is-renewable-energy#:\~:text=Renewable%20energy%20is%20energy%20derived,plentiful%20and%20all%20around%20us.
 
 Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renovables y no renovables*. Aplicaciones.
 
@@ -233,9 +239,11 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 
 ### UVE de Gowin
 
-::: {#fig-v-de-gowin}
-![V de Gowin: Energía del Futuro](Dibujo%20sin%20título.jpg){fig-align="center" width="100%"}
-:::
+<div>
+
+![V de Gowin: Energía del Futuro](Dibujo-sin-título.jpg){fig-align="center" width="100%"}
+
+</div>
 
 ## Parte de Escritura
 
