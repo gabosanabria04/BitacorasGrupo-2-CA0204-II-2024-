@@ -2,6 +2,13 @@
 title: "Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables"
 author: "Paola Espinoza Hernández; Gabriel Sanabria Alvarado"
 format: pdf
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: united
+    highlight: tango
+output_dir: "docs"
 editor: visual
 ---
 
@@ -29,7 +36,8 @@ editor: visual
 
 La idea inicial consiste en abordar la energía renovable, su producción, utilización, el intercambio que se da entre países; así como el impacto que la utilización de energías renovables puede tener sobre la sociedad como conjunto. Este tema resulta interesante, especialmente bajo el contexto actual, puesto que es usual pensar en las energías renovables para combatir el cambio climático; sin embargo, no es tan común escuchar del impacto social que esta produce, ejemplo de ello es el cambio en los paisajes que señala Requejo en el 2012, la posibilidad de alterar el abastecimiento energético que señalan Casola y Freier en el 2018, o los efectos económicos que plantean Caraballo y García en el 2017. Este trabajo pretende abordar no solo la parte de la energía como tal, sino su impacto en los países que la produce y utilizan. De esta manera, la idea se resume en: Considerar la producción de energías renovales en diversos países, y el impacto que esto tiene sobre ellos.
 
-### Conceptualización de la idea 
+### Conceptualización de la idea
+
 Según la RAE, las definiciones de las palabras utilizadas en la idea son:
 
 **Considerar:** Pensar, meditar, reflexionar algo con atención y cuidado.
@@ -40,7 +48,8 @@ Según la RAE, las definiciones de las palabras utilizadas en la idea son:
 
 **Prácticamente:** Casi, por poco.
 
-### Identificación de tensiones 
+### Identificación de tensiones
+
 Las comparaciones entre países puede verse afectadas por el contexto del país, importación y exportación de energía, los recursos naturales y el tipo de energía renovable producida en cada país.
 
 ### Reformulación de la idea en modo de pregunta
