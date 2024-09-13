@@ -1,13 +1,7 @@
 ---
 title: "Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables"
 author: "Paola Espinoza Hernández; Gabriel Sanabria Alvarado"
-format: pdf
-output:
-  html_document:
-    toc: true
-    toc_float: true
-    theme: united
-    highlight: tango
+format: html
 output_dir: "docs"
 editor: visual
 ---
