@@ -1,0 +1,20 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Introducción}{3}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables}{4}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Bitácora 1}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Changelog}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Planificación}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Pregunta de Investigación}{6}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Conceptualización de la idea Según la RAE, las definiciones de las palabras utilizadas en la idea son:}{6}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Identificación de tensiones Las comparaciones entre países puede verse afectadas por el contexto del país, importación y exportación de energía, los recursos naturales y el tipo de energía renovable producida en cada país.}{6}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Reformulación de la idea en modo de pregunta}{6}{subsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.4.1}Argumentación de la pregunta}{7}{subsubsection.2.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.2.4.2}Argumentación a través de datos}{10}{subsubsection.2.2.4.2}%
+\contentsline {section}{\numberline {2.3}Revisión Bibliográfica}{11}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Fichas de literatura}{12}{subsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}La autosuficiencia conectada}{12}{subsubsection.2.3.1.1}%
+\contentsline {subsection}{\numberline {2.3.2}El cambio climático y la energía renovable}{13}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}La energía renovable como estrategia para combatir el cambio climático en Brasil y Argentina}{14}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}UVE de Gowin}{15}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Parte de Escritura}{15}{section.2.4}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
