@@ -304,6 +304,28 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Problemas con el argumento o tema:** Los hogares en pobreza energética aumentan a medida que los precios aumentan. Además, si bien las zonas rurales presentan mayor consumo energético, la industrialización aumenta la dependencia de los hogares a la electricidad.
 -   **Resumen en un párrafo:** La pobreza energética, que se refiere a los hogares incapaces de pagar servicios eléctricos que satisfagan sus necesidades o que destinan una cantidad excesiva a este gasto, es causada por factores como bajos ingresos, pobre acceso a la energía, ineficiencia energética o precios altos. Las consecuencias de esta pobreza abarcan tanto riesgos para la salud física como para la salud mental, además de afectar el futuro de los niños. En España, la pobreza energética va en aumento, lo que resalta la necesidad de soluciones efectivas. Por ello, el desarrollo de energías renovables es crucial, ya que disminuirá el precio promedio de la electricidad al reducir los precios mayoristas, así como los costes de inversión y el desarrollo tecnológico. Por lo tanto, la energía renovable representa un factor importante en la sostenibilidad social y económica, pues el coste marginal nulo de los recursos utilizados se refleja en un menor coste energético y, en consecuencia, en una mayor accesibilidad para la población.
 
+##¿Qué es la energía renovable?
+- **Título:** “¿Qué es la energía renovable?”
+- **Autor:** Las Naciones Unidas.
+- **Año:** 2020.
+- **Nombre del tema:** ¿Qué son las energías renovables?
+- **Formas de organizarlo:**
+- **Cronológico:** El presente documento fue originado en el 2020.
+- **Metodológico:** El autor no recalca algún método en específico para resolver el tema, no obstante, el enfoque del texto se basa en la descripción y comparación de las distintas fuentes de energías renovables.
+- **Temático:** Análisis descriptivo-comparativo.
+- **Teoría:** Transición energética de un desarrollo sostenible.
+- **Resumen en una oración:** Las energías renovables son fuentes naturales como el sol y el viento que se reponen rápidamente y juegan un papel crucial en la lucha contra el cambio climático.
+
+- **Argumento central:** Las energías renovables representan una alternativa esencial a los combustibles fósiles, reduciendo las emisiones de gases de efecto invernadero y creando empleos, siendo una herramienta clave para mitigar la crisis climática.
+
+- **Problemas con el argumento o el tema:** A pesar de su abundancia, algunas fuentes de energía renovable dependen de factores climáticos y geográficos, y su infraestructura puede tener impactos ecológicos, como en el caso de la energía hidroeléctrica o la bioenergía.
+
+- **Resumen en un párrafo:**
+Las energías renovables se obtienen de fuentes naturales que se restablece rápidamente. A diferencia de los combustibles fósiles, que liberan grandes cantidades de dióxido de carbono y otros gases de efecto invernadero, las energías renovables son más limpias. No obstante, las fuentes tienen distintas dificultades, tales como la ubicación geográfica de las fuentes de energía e impactos ecológicos de algunas tecnologías, como la hidroeléctrica. Aun así, las energías renovables son más baratas y crean más empleos que los combustibles fósiles, lo que las convierte en una pieza clave para combatir el cambio climático y mejorar la sostenibilidad global.
+
+
+
+
 ### UVE de Gowin
 
 <div>
