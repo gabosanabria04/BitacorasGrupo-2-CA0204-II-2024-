@@ -180,7 +180,7 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 
 ### Fichas de literatura
 
-#### La autosuficiencia conectada
+## La autosuficiencia conectada
 
 -   **Título:** Energía Renovable: un nuevo principio de autosuficiencia conectada
 -   **Autor**: Juan Requejo Liberal
@@ -196,7 +196,7 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Problemas con el argumento o tema:** La producción de energías renovables es mucho más visible que las otras, por lo que es necesario estudiar el espacio en el que se van a colocar. Además, existe un desequilibrio en la relación campo-ciudad en cuanto a la producción de energía renovable, pues es más complejo producir energía renovable en la zona urbana que en la rural; sin embargo, también se encuentran diferencias entre las zonas rurales con centrales eléctricas y las demás.
 -   **Resumen en un párrafo:** La energía renovable es una mejor opción ante el daño al medio ambiente; sin embargo, producirla es muy costoso y además, exige una detallada planificación. El sistema económico urbano-industrial creó un gran dessfase entre estos dos sectores, y llevó a un gran aumento de la población, y con ella, de la demanda de recursos. Basándose en el caso español, se expone que el uso de energía renovable representa el regreso a una sociedad consciente de las limitaciones existentes. Por ello, se propone la autosuficiencia conectada, un ciclo semiabierto en el que las regiones sean capaces de sustentar al menos la mayoría de su consumo energético, y tengan que recurrir a los recursos externos solamente para lo que no pudieron sustentar. De igual manera, se expresa que esta búsqueda de autosuficiencia puede ser aplicada a otros ámbitos.
 
-### El cambio climático y la energía renovable
+## El cambio climático y la energía renovable
 
 -   **Título:** Renewable Energy as a Solution to Climate Change: Insights from a Comprehensive Study Across Nations.
 
@@ -224,7 +224,7 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 
 -   **Resumen:** El estudio estudia cómo la instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. Da uso a técnicas de regresión para valorar las relaciones lineales y no lineales entre las energías renovables y las emisiones de CO₂. El artículo recalca la importancia del cambio a energías limpias para minimizar las emisiones de carbono, pero reconoce que los países en desarrollo enfrentan desafíos significativos en términos de inversión y políticas. Finalmente, aporta recomendaciones para que los países implementen estrategias de transición energética de acuerdo con sus contextos únicos.
 
-### La energía renovable como estrategia para combatir el cambio climático en Brasil y Argentina
+## La energía renovable como estrategia para combatir el cambio climático en Brasil y Argentina
 
 -   **Título:** El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil
 -   **Autores:** Laura Casola y Alexander Freier
@@ -240,7 +240,7 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Problemas con el argumento o tema:** El desarrollo sustentable es un proceso demorado, y puede poner en riesgo el abastecimiento energético del país; por tanto, los países, aunque no por ello menos comprometidos con el desarrollo sostenible, tienden a prioriar el abastecimiento de energía.
 -   **Resumen en un párrafo:** Dado que la causa principal del cambio climático son los gases de efecto invernadero, entre los cuales destaca el CO2, derivado principalmente de la quema de fósiles; la implementación de energías renovables es fundamental para combatir este fenómeno. Aunque se reconoce la existencia y gravedad del fenómeno, así como la importancia de reducir la emisión de gases de efecto invernadero, la inversión en reservas de combustibles fósiles sobrepasa a la inversión en energías renovables. El artículo pretende facilitar la búsqueda de estándares que faciliten la implementación de energías renovables en otros países. Específicamente, se analiza la política adoptada por Brasil y Argentina, ambos miembros de Mercosur, quien promueve la producción y utilización de enrgías renovables. Los resultados indican que Brasil se enfocan en aspectos relacionados al cambio climático como la quema de bosques o la deforestación, sobre el abastecimiento energético. Por otro lado, Argentina procura mantener el abastecimiento y el desarrollo sustentable en una misma medida de importancia. No obstante, se prioriza en ambos países la seguridad energética nacional.
 
-### Energía eólica como sustituto de la energía producida por combustibles fósiles
+## Energía eólica como sustituto de la energía producida por combustibles fósiles
 
 -   **Título:** Wind energy technology and current status: a review
 -   **Autores:** Thomas Ackermann y Lennart Söder
@@ -256,7 +256,7 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Problemas con el argumento o tema:** La disponibilidad de viento varía en cada región. El poder que se pueda generar depende de la velocidad del viento, que dista mucho de ser fija. Por último, la aceptación por parte del público, depende en gran medida de el impacto que producir la energía eólica tenga sobre el medioambiente. A poesar de ser una energía amigable con el medioambiente, puede generar contaminación sonora, o emisiones indirectas, es decir, energía no renovable utilizada para la producción o distribución de maquinaria para generar energías renovables.
 -   **Resumen en un párrafo:** En la última década del siglo XX, hubo un gran desarrollo de tecnología enfocada en la producción de energía eólica. Tanto es así que estudios del potencial de la energía eólica sugieren que esta podría competir con la generada por combustibles fósiles debido a su abundancia. Además, el costo de producir turbinas se ha reducido varias veces durante dicha década. El ruido ocasionado por las turbinas puede reducirse modificando algunos parámetros, como la velocidad a la que giran las turbinas o bien los materiales. Las emisiones indirectas se reducirán a medida que las energías renovables expandan su alcance, ya que esto causará una disminución en el uso de energías no renovables, especialmente para la fabricación o el transporte de maquinaria destinada a la producción de energías renovables. El crecimiento del mercado internacional impulsará el desarrollo de nuevas tecnologías, lo que reducirá aún más los costos de fabricación y llevará a la energía eólica a competir con la de combustibles fósiles.
 
-### Energía eólica: viabilidad en Costa Rica
+## Energía eólica: viabilidad en Costa Rica
 
 -   **Título:** Análisis de Viabilidad Ambiental del Uso de Energías Renovables en Costa Rica: Estudio de Caso de la Energía Eólica, la Hidroeléctrica y la Geotérmica
 -   **Autor:** Allan Cordero Gutiérrez
@@ -272,7 +272,7 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Problemas con el argumento o tema:** A pesar de sus logros en la producción de energías renovables, hay rezagos en la utilización de los hidrocarburos importados. A nivel mundial, existe todavía una gran dependencia a fuentes energéticas no renovables, lo que dificulta el camino hacia la eliminación de emisiones, así como a la compensación de las emitidas por los demás países. En cuanto a la viabilidad de las energías renovables, la energía hidráulica, geotérmica y eólica puede tener impactos negativos en el medioambiente.
 -   **Resumen en un párrafo:** Con el objetivo de reducir el uso de combustibles fósiles y alcanzar la soberanía energética, Costa Rica inició su proceso hacia un modelo de desarrollo autosostenible. La energía hidráulica causa deforestación y obstaculiza el camino de los peces, lo que la descarta como una solución viable a largo plazo. La energía eólica, a pesar de la posibilidad de afectar la calidad de vida de las aves y modificar, aunque muy levemente, la fuerza o dirección del viento, destaca como una opción viable en Costa Rica. Esta energía permite la eliminación de emisiones de gases de efecto invernadero y contribuye a la independencia energética. Por ello, determinar la ubicación de los parques eólicos se ha vuelto una prioridad para las autoridades a cargo.
 
-### Producción e inversión en energías renovables, 2021
+## Producción e inversión en energías renovables, 2021
 
 -   **Título:** Renewable Energy Statistics
 -   **Autor:** IRENA
@@ -288,7 +288,7 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Problemas con el argumento o tema:** La inversión está disminuyendo, lo que puede dificultar el desarrollo de nuevas tecnologías que permitan seguir esta tendencia.
 -   **Resumen en un párrafo:** La producción de energía renovable creció de 2018 a 2019, destacando especialmente la energía solar y eólica. Sin embargo, el crecimiento de la energía solar fue menor en comparación con el año anterior. Asia lidera el incremento en la producción, consolidándose como el continente que más energía renovable genera a nivel mundial. Este aumento en la producción también ha elevado la proporción de energía total correspondiente a fuentes renovables. No obstante, la inversión pública en todas las energías renovables ha experimentado una disminución.
 
-### Impacto social de las energías renovables
+## Impacto social de las energías renovables
 
 -   **Título:** El impacto de las energías renovables en los hogares
 -   **Autor:** Abay Analistas Económicos y Sociales
@@ -369,6 +369,22 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Problemas con el argumento o el tema:** El documento destaca la viabilidad de la transición de energía global a fuentes renovables como el hidrógeno verde, no obstante, el documento no toma en cuenta temas como la viabilidad económica a corto plazo de la instalación de dichas energías. Su implementación lleva a cabo grandes gastos monetarios difíciles de financiar bajo el contexto global actual.
 
 -   **Resumen de un párrafo:** El documento habla sobre la relevancia del papel de la electrificación en el futuro tecnológico, encabezado por avances como la inteligencia artificial, robótica y computación. Íñigo Segura, director de ZGR, afirma que el reto principal es la maximización del uso de la electricidad mientras se minimiza la dependencia de combustibles fósiles. Las tecnologías como el hidrógeno verde y la fusión nuclear se direccionan como soluciones clave para alcanzar la neutralidad de carbono, aunque aún enfrentan desafíos en cuanto a costos y escalabilidad. También se plantea la necesidad de algunas mejoras en la ciberseguridad en las redes eléctricas por su creciente conectividad y complejidad. La planificación a largo plazo es vital, ya que imprevistos globales pueden desestabilizar la transición energética y la disponibilidad de materias primas estratégicas.
+
+## Energías renovables y desarrollo económico: Un análisis para España y las grandes economías europeas
+
+- **Título:** Energías renovables y desarrollo económico: Un análisis para España y las grandes economías europeas
+- **Autores:** María Ángeles Caraballo Pou, Juana María García Simón.
+- **Año:** 2017.
+- **Nombre del tema:** Relación entre energías renovables y desarrollo económico en Europa.
+- **Forma de organizarlo:**
+- **Cronológico:** Crea un análisis el período 1980-2010.
+- **Metodológico:** Técnicas de cointegración.
+- **Temático:** Economía de desarrollo y energía.
+- **Teoría:** Sostenibilidad y crecimiento económico.
+- **Resumen en una oración:** El artículo estudia cómo el uso de energías renovables afecta el crecimiento y desarrollo económico.
+- **Argumento central:** Examina si la sustitución de energías no renovables puede sostener el desarrollo económico y si este, a su vez, puede fomentar energías renovables.
+- **Problemas con el argumento:** Falta de consenso en la literatura sobre cómo el consumo de energías afecta el crecimiento económico debido a diferencias en las variables estudiadas y métodos.
+- **Resumen en un párrafo:** Este trabajo estudia los distintos impactos de las energías renovables sobre el desarrollo económico en España y otras economías europeas como Alemania, Francia, Italia y Reino Unido. A través de técnicas de cointegración, los autores estudian la relación entre el crecimiento económico, el uso de energías renovables y no renovables, y la sostenibilidad, comparando los resultados entre los países. Se destaca que el aumento del uso de energías renovables no necesariamente ralentiza el crecimiento económico y puede contribuir a la sostenibilidad a largo plazo. 
 
 ### UVE de Gowin
 
