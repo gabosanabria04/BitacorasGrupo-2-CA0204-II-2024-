@@ -1,12 +1,12 @@
 ---
-title: "Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables"
+title: "Bitácora 1"
 author: "Paola Espinoza Hernández; Gabriel Sanabria Alvarado"
 format: html
 output_dir: "docs"
 editor: visual
 ---
 
-# Bitácora 1
+# Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables {.unnumbered}
 
 ## Changelog
 
@@ -256,7 +256,6 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Problemas con el argumento o tema:** La disponibilidad de viento varía en cada región. El poder que se pueda generar depende de la velocidad del viento, que dista mucho de ser fija. Por último, la aceptación por parte del público, depende en gran medida de el impacto que producir la energía eólica tenga sobre el medioambiente. A poesar de ser una energía amigable con el medioambiente, puede generar contaminación sonora, o emisiones indirectas, es decir, energía no renovable utilizada para la producción o distribución de maquinaria para generar energías renovables.
 -   **Resumen en un párrafo:** En la última década del siglo XX, hubo un gran desarrollo de tecnología enfocada en la producción de energía eólica. Tanto es así que estudios del potencial de la energía eólica sugieren que esta podría competir con la generada por combustibles fósiles debido a su abundancia. Además, el costo de producir turbinas se ha reducido varias veces durante dicha década. El ruido ocasionado por las turbinas puede reducirse modificando algunos parámetros, como la velocidad a la que giran las turbinas o bien los materiales. Las emisiones indirectas se reducirán a medida que las energías renovables expandan su alcance, ya que esto causará una disminución en el uso de energías no renovables, especialmente para la fabricación o el transporte de maquinaria destinada a la producción de energías renovables. El crecimiento del mercado internacional impulsará el desarrollo de nuevas tecnologías, lo que reducirá aún más los costos de fabricación y llevará a la energía eólica a competir con la de combustibles fósiles.
 
-
 ### Energía eólica: viabilidad en Costa Rica
 
 -   **Título:** Análisis de Viabilidad Ambiental del Uso de Energías Renovables en Costa Rica: Estudio de Caso de la Energía Eólica, la Hidroeléctrica y la Geotérmica
@@ -273,8 +272,6 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Problemas con el argumento o tema:** A pesar de sus logros en la producción de energías renovables, hay rezagos en la utilización de los hidrocarburos importados. A nivel mundial, existe todavía una gran dependencia a fuentes energéticas no renovables, lo que dificulta el camino hacia la eliminación de emisiones, así como a la compensación de las emitidas por los demás países. En cuanto a la viabilidad de las energías renovables, la energía hidráulica, geotérmica y eólica puede tener impactos negativos en el medioambiente.
 -   **Resumen en un párrafo:** Con el objetivo de reducir el uso de combustibles fósiles y alcanzar la soberanía energética, Costa Rica inició su proceso hacia un modelo de desarrollo autosostenible. La energía hidráulica causa deforestación y obstaculiza el camino de los peces, lo que la descarta como una solución viable a largo plazo. La energía eólica, a pesar de la posibilidad de afectar la calidad de vida de las aves y modificar, aunque muy levemente, la fuerza o dirección del viento, destaca como una opción viable en Costa Rica. Esta energía permite la eliminación de emisiones de gases de efecto invernadero y contribuye a la independencia energética. Por ello, determinar la ubicación de los parques eólicos se ha vuelto una prioridad para las autoridades a cargo.
 
-
-
 ### Producción e inversión en energías renovables, 2021
 
 -   **Título:** Renewable Energy Statistics
@@ -290,8 +287,6 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Argumento central:** La producción de energías renovables va en aumento, aumentando así la proporción de energías renovables sobre el total de energías.
 -   **Problemas con el argumento o tema:** La inversión está disminuyendo, lo que puede dificultar el desarrollo de nuevas tecnologías que permitan seguir esta tendencia.
 -   **Resumen en un párrafo:** La producción de energía renovable creció de 2018 a 2019, destacando especialmente la energía solar y eólica. Sin embargo, el crecimiento de la energía solar fue menor en comparación con el año anterior. Asia lidera el incremento en la producción, consolidándose como el continente que más energía renovable genera a nivel mundial. Este aumento en la producción también ha elevado la proporción de energía total correspondiente a fuentes renovables. No obstante, la inversión pública en todas las energías renovables ha experimentado una disminución.
-
-
 
 ### Impacto social de las energías renovables
 
