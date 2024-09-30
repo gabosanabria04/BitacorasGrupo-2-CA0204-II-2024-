@@ -321,9 +321,50 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 - **Problemas con el argumento o el tema:** A pesar de su abundancia, algunas fuentes de energía renovable dependen de factores climáticos y geográficos, y su infraestructura puede tener impactos ecológicos, como en el caso de la energía hidroeléctrica o la bioenergía.
 
 - **Resumen en un párrafo:**
-Las energías renovables se obtienen de fuentes naturales que se restablece rápidamente. A diferencia de los combustibles fósiles, que liberan grandes cantidades de dióxido de carbono y otros gases de efecto invernadero, las energías renovables son más limpias. No obstante, las fuentes tienen distintas dificultades, tales como la ubicación geográfica de las fuentes de energía e impactos ecológicos de algunas tecnologías, como la hidroeléctrica. Aun así, las energías renovables son más baratas y crean más empleos que los combustibles fósiles, lo que las convierte en una pieza clave para combatir el cambio climático y mejorar la sostenibilidad global.
+Las energías renovables se obtienen de fuentes naturales que se restablece rápidamente. A diferencia de los combustibles fósiles, que liberan grandes cantidades de dióxido de carbono y otros gases de efecto invernadero, las energías renovables son más limpias. No obstante, las fuentes tienen distintas dificultades, tales como la ubicación geográfica de las fuentes de energía e impactos ecológicos de algunas tecnologías, como la hidroeléctrica. Aun así, las energías renovables son más baratas y crean más empleos que los combustibles fósiles, lo que las convierte en una pieza clave para combatir el cambio climático y mejorar la sostenibilidad internacional.
+
+## Fuentes de energía, renovables y no renovables. Aplicaciones.
+- **Título:** “Fuentes de energía, renovables y no renovables. Aplicaciones.”
+- **Autores:** Vega de Kuyper, J.C. & Ramírez Morales, S.
+- **Año:** 2014.
+- **Nombre del tema:** Aplicaciones de la Energía renovable.
+
+- **Formas de organizarlo:**
+- **Cronológico:** El texto se centra en la evolución de las distintas fuentes de energía y su contexto en Latinoamérica, enfatizando en el desarrollo de energías renovables en las últimas décadas. La preocupación por la sostenibilidad y el cambio climático ha impulsado el interés por las energías renovables desde la década de 1970 .
+- **Metodológico:** Análisis descriptivo a base de fundamentos técnicos y matemáticos sobre generación de energía y eficiencia energética, empleando herramientas de termodinámica, electroquímica, y diseño de sistemas energéticos.
+- **Temático:** Energías renovables y no renovables, eficiencia energética, contexto latinoamericano en el uso y desarrollo de fuentes energéticas.
+- **Teoría:** Transición energética hacia un desarrollo sostenible y la mitigación de los efectos del cambio climático.
+
+- **Resumen de un párrafo:** Este documento realiza una comparación entre energías renovables y no renovables, explicando sus características, aplicaciones y efectos.
 
 
+- **Argumentos central:** Resalta la vitalidad de las energías renovables frente a las no renovables, examinando su impacto en el medio ambiente, su sostenibilidad y sus aplicaciones, mientras que las energías no renovables, aunque más utilizadas, son finitas y dañinas para el medio ambiente
+
+- **Problemas con el argumento o el tema:** La dependencia geográfica y climática de las energías renovables puede limitar su instauración, mientras que la infraestructura para energías no renovables sigue siendo predominante, a pesar de sus efectos negativos en el medio ambiente.
+
+- **Resumen en un párrafo:** El documento se basa en mostrar una visión integral sobre las fuentes de energía renovables y no renovables, explorando su relevancia y aplicaciones en América Latina, especialmente en países como México, Argentina, Chile y Colombia. Con un enfoque pedagógico, los autores proporcionan un equilibrio entre teoría y práctica, explicando los principios de generación y almacenamiento de energía, además de introducir el concepto de eficiencia energética como una herramienta clave para el futuro. Se presentan ejemplos actualizados de proyectos de energías renovables en la región, incluyendo energías como la solar o la geotérmica, así como un análisis de las barreras y oportunidades para su implementación.
+
+
+## Hacia un futuro con energía limpia y renovable
+- **Título:** “Hacia un futuro con energía limpia y renovable”
+- **Autores:** Serrano, Javier.
+- **Año:** 2022.
+- **Nombre del tema:** Actualidad Económica; Madrid.
+
+- **Formas de organizarlo:** 
+- **Cronológico:** El documento fue elaborado en Madrid, España, en el año 2022.
+- **Metodológico:** La compañía ZGR utilizó distintos enfoques y tecnologías para resolver problemas de transición energética y la electrificación, tales como Electrizadores para la producción de hidrógeno verde, ciberseguridad para la protección de redes inteligentes, redes inteligentes con algoritmos predictivos e inteligencia artificial, fusión nuclear como tecnología futura clave para la generación de energía limpia y autoconsumo energético y comunidades energéticas como soluciones para la eficiencia energética.
+- **Temático:** El documento podría tener una temática dirigida a la transición energética y la electrificación sostenible.
+- **Teoría:** Transformación tecnológica y transición energética global.
+
+- **Resumen de una oración:** el documento aborda temas como la transición energética global hacia fuentes como el hidrógeno verde y la electrificación, la cuales son muchos más sostenibles, mencionando la importancia del papel de la ciberseguridad y la planificación de este proceso.
+
+- **Tema central:** electrificación mediante energías emergentes.
+
+- **Problemas con el argumento o el tema:** El documento destaca la viabilidad de la transición de energía global a fuentes renovables como el hidrógeno verde, no obstante, el documento no toma en cuenta temas como la viabilidad económica a corto plazo de la instalación de dichas energías. Su implementación lleva a cabo grandes gastos monetarios difíciles de financiar bajo el contexto global actual.
+
+- **Resumen de un párrafo:**
+El documento habla sobre la relevancia del papel de la electrificación en el futuro tecnológico, encabezado por avances como la inteligencia artificial, robótica y computación. Íñigo Segura, director de ZGR, afirma que el reto principal es la maximización del uso de la electricidad mientras se minimiza la dependencia de combustibles fósiles. Las tecnologías como el hidrógeno verde y la fusión nuclear se direccionan como soluciones clave para alcanzar la neutralidad de carbono, aunque aún enfrentan desafíos en cuanto a costos y escalabilidad. También se plantea la necesidad de algunas mejoras en la ciberseguridad en las redes eléctricas por su creciente conectividad y complejidad. La planificación a largo plazo es vital, ya que imprevistos globales pueden desestabilizar la transición energética y la disponibilidad de materias primas estratégicas.
 
 
 ### UVE de Gowin
