@@ -2,6 +2,7 @@
 title: "Bitacora 2"
 author: "Paola Espinoza Hernández, Gabriel Sanabria Alvarado"
 format: html
+output_dir: "docs"
 editor: visual
 ---
 
