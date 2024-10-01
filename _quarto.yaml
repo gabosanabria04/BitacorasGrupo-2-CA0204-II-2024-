@@ -16,6 +16,7 @@ book:
   chapters:
     - "index.qmd"
     - "bitacora-1.qmd"
+    - "Bitacora-2.qmd"
 
 bibliography: references.bib
 
