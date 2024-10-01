@@ -1,5 +1,5 @@
 ---
-title: "Bitacora-2.qmd"
+title: "Bitacora 2"
 author: "Paola Espinoza Hernández, Gabriel Sanabria Alvarado"
 format: html
 editor: visual
