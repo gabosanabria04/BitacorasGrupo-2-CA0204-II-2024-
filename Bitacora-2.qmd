@@ -6,23 +6,17 @@ output_dir: "docs"
 editor: visual
 ---
 
-## Bitácora 2
+# Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables {.unnumbered}
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
-## Running Code
+## Parte de planificación
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+### Ordenamiento de la literatura
 
-```{r}
-1 + 1
-```
+| Organización | | | Literatura | | |
+|--------------|-----------------|-----------------|--------|------|--------|
+| Tipo         | Tema general    | Tema específico | Título | Año  | Autor(es) |
+| Metodológico | Energía renovable | El uso de energía renovable en el camino la autosuficiencia energética. | Energía Renovable: un nuevo principio de autosuficiencia conectada | 2012 | Juan Requejo Liberal |
+| Metodológico | Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Energía renovable como alternativa para la reducción de las emisiones de CO2 Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Renewable Energy as a Solution to Climate Change: Insights from a Comprehensive Study Across Nations. | 2023 | Keshani Attanayake, Isuru Wickramage, Udul Samarasinghe, Yasangi Ranmini, Sandali Ehalapitiya, Ruwan Jayathilaka y Shanta Yapa |
+| Metodológico |Estrategias para la implementación de las energías renovables | El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil | La energía renovable como estrategia para combatir el cambio climático en Brasil y Argentina | 2018 | Laura Casola y Alexander Freier |
 
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
