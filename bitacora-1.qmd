@@ -8,7 +8,7 @@ editor: visual
 
 # Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables {.unnumbered}
 
-## Changelog
+## Comandos de Git
 
 <!-- ::: {#fig-v-de-gowin} -->
 
@@ -26,11 +26,11 @@ editor: visual
 
 ¿Qué impacto puede tener la energía renovable sobre la sociedad?
 
-### Definición de la idea
+#### Definición de la idea
 
 La idea inicial consiste en abordar la energía renovable, su producción, utilización, el intercambio que se da entre países; así como el impacto que la utilización de energías renovables puede tener sobre la sociedad como conjunto. Este tema resulta interesante, especialmente bajo el contexto actual, puesto que es usual pensar en las energías renovables para combatir el cambio climático; sin embargo, no es tan común escuchar del impacto social que esta produce, ejemplo de ello es el cambio en los paisajes que señala Requejo en el 2012, la posibilidad de alterar el abastecimiento energético que señalan Casola y Freier en el 2018, o los efectos económicos que plantean Caraballo y García en el 2017. Este trabajo pretende abordar no solo la parte de la energía como tal, sino su impacto en los países que la produce y utilizan. De esta manera, la idea se resume en: Considerar la producción de energías renovales en diversos países, y el impacto que esto tiene sobre ellos.
 
-### Conceptualización de la idea
+#### Conceptualización de la idea
 
 Según la RAE, las definiciones de las palabras utilizadas en la idea son:
 
@@ -42,11 +42,11 @@ Según la RAE, las definiciones de las palabras utilizadas en la idea son:
 
 **Prácticamente:** Casi, por poco.
 
-### Identificación de tensiones
+#### Identificación de tensiones
 
 Las comparaciones entre países puede verse afectadas por el contexto del país, importación y exportación de energía, los recursos naturales y el tipo de energía renovable producida en cada país.
 
-### Reformulación de la idea en modo de pregunta
+#### Reformulación de la idea en modo de pregunta
 
 **¿Qué impacto puede tener la energía renovable sobre la sociedad?**
 
@@ -304,7 +304,7 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 -   **Problemas con el argumento o tema:** Los hogares en pobreza energética aumentan a medida que los precios aumentan. Además, si bien las zonas rurales presentan mayor consumo energético, la industrialización aumenta la dependencia de los hogares a la electricidad.
 -   **Resumen en un párrafo:** La pobreza energética, que se refiere a los hogares incapaces de pagar servicios eléctricos que satisfagan sus necesidades o que destinan una cantidad excesiva a este gasto, es causada por factores como bajos ingresos, pobre acceso a la energía, ineficiencia energética o precios altos. Las consecuencias de esta pobreza abarcan tanto riesgos para la salud física como para la salud mental, además de afectar el futuro de los niños. En España, la pobreza energética va en aumento, lo que resalta la necesidad de soluciones efectivas. Por ello, el desarrollo de energías renovables es crucial, ya que disminuirá el precio promedio de la electricidad al reducir los precios mayoristas, así como los costes de inversión y el desarrollo tecnológico. Por lo tanto, la energía renovable representa un factor importante en la sostenibilidad social y económica, pues el coste marginal nulo de los recursos utilizados se refleja en un menor coste energético y, en consecuencia, en una mayor accesibilidad para la población.
 
-##  ¿Qué es la energía renovable? 
+## ¿Qué es la energía renovable?
 
 \- **Título:** “¿Qué es la energía renovable?” - **Autor:** Las Naciones Unidas. - **Año:** 2020. - **Nombre del tema:** ¿Qué son las energías renovables? - **Formas de organizarlo:** - **Cronológico:** El presente documento fue originado en el 2020. - **Metodológico:** El autor no recalca algún método en específico para resolver el tema, no obstante, el enfoque del texto se basa en la descripción y comparación de las distintas fuentes de energías renovables. - **Temático:** Análisis descriptivo-comparativo. - **Teoría:** Transición energética de un desarrollo sostenible. - **Resumen en una oración:** Las energías renovables son fuentes naturales como el sol y el viento que se reponen rápidamente y juegan un papel crucial en la lucha contra el cambio climático.
 
@@ -372,19 +372,19 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 
 ## Energías renovables y desarrollo económico: Un análisis para España y las grandes economías europeas
 
-- **Título:** Energías renovables y desarrollo económico: Un análisis para España y las grandes economías europeas
-- **Autores:** María Ángeles Caraballo Pou, Juana María García Simón.
-- **Año:** 2017.
-- **Nombre del tema:** Relación entre energías renovables y desarrollo económico en Europa.
-- **Forma de organizarlo:**
-- **Cronológico:** Crea un análisis el período 1980-2010.
-- **Metodológico:** Técnicas de cointegración.
-- **Temático:** Economía de desarrollo y energía.
-- **Teoría:** Sostenibilidad y crecimiento económico.
-- **Resumen en una oración:** El artículo estudia cómo el uso de energías renovables afecta el crecimiento y desarrollo económico.
-- **Argumento central:** Examina si la sustitución de energías no renovables puede sostener el desarrollo económico y si este, a su vez, puede fomentar energías renovables.
-- **Problemas con el argumento:** Falta de consenso en la literatura sobre cómo el consumo de energías afecta el crecimiento económico debido a diferencias en las variables estudiadas y métodos.
-- **Resumen en un párrafo:** Este trabajo estudia los distintos impactos de las energías renovables sobre el desarrollo económico en España y otras economías europeas como Alemania, Francia, Italia y Reino Unido. A través de técnicas de cointegración, los autores estudian la relación entre el crecimiento económico, el uso de energías renovables y no renovables, y la sostenibilidad, comparando los resultados entre los países. Se destaca que el aumento del uso de energías renovables no necesariamente ralentiza el crecimiento económico y puede contribuir a la sostenibilidad a largo plazo. 
+-   **Título:** Energías renovables y desarrollo económico: Un análisis para España y las grandes economías europeas
+-   **Autores:** María Ángeles Caraballo Pou, Juana María García Simón.
+-   **Año:** 2017.
+-   **Nombre del tema:** Relación entre energías renovables y desarrollo económico en Europa.
+-   **Forma de organizarlo:**
+-   **Cronológico:** Crea un análisis el período 1980-2010.
+-   **Metodológico:** Técnicas de cointegración.
+-   **Temático:** Economía de desarrollo y energía.
+-   **Teoría:** Sostenibilidad y crecimiento económico.
+-   **Resumen en una oración:** El artículo estudia cómo el uso de energías renovables afecta el crecimiento y desarrollo económico.
+-   **Argumento central:** Examina si la sustitución de energías no renovables puede sostener el desarrollo económico y si este, a su vez, puede fomentar energías renovables.
+-   **Problemas con el argumento:** Falta de consenso en la literatura sobre cómo el consumo de energías afecta el crecimiento económico debido a diferencias en las variables estudiadas y métodos.
+-   **Resumen en un párrafo:** Este trabajo estudia los distintos impactos de las energías renovables sobre el desarrollo económico en España y otras economías europeas como Alemania, Francia, Italia y Reino Unido. A través de técnicas de cointegración, los autores estudian la relación entre el crecimiento económico, el uso de energías renovables y no renovables, y la sostenibilidad, comparando los resultados entre los países. Se destaca que el aumento del uso de energías renovables no necesariamente ralentiza el crecimiento económico y puede contribuir a la sostenibilidad a largo plazo.
 
 ### UVE de Gowin
 
