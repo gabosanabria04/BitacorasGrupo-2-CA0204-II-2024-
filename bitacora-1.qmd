@@ -306,7 +306,15 @@ Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renova
 
 #### ¿Qué es la energía renovable?
 
-\- **Título:** “¿Qué es la energía renovable?” - **Autor:** Las Naciones Unidas. - **Año:** 2020. - **Nombre del tema:** ¿Qué son las energías renovables? - **Formas de organizarlo:** - **Cronológico:** El presente documento fue originado en el 2020. - **Metodológico:** El autor no recalca algún método en específico para resolver el tema, no obstante, el enfoque del texto se basa en la descripción y comparación de las distintas fuentes de energías renovables. - **Temático:** Análisis descriptivo-comparativo. - **Teoría:** Transición energética de un desarrollo sostenible. - **Resumen en una oración:** Las energías renovables son fuentes naturales como el sol y el viento que se reponen rápidamente y juegan un papel crucial en la lucha contra el cambio climático.
+\- **Título:** “¿Qué es la energía renovable?” 
+- **Autor:** Las Naciones Unidas.
+- **Año:** 2020.
+- **Nombre del tema:** ¿Qué son las energías renovables? 
+- **Formas de organizarlo:**
+- **Cronológico:** El presente documento fue originado en el 2020.
+- **Metodológico:** El autor no recalca algún método en específico para resolver el tema, no obstante, el enfoque del texto se basa en la descripción y comparación de las distintas fuentes de energías renovables.
+- **Temático:** Análisis descriptivo-comparativo. - **Teoría:** Transición energética de un desarrollo sostenible.
+- **Resumen en una oración:** Las energías renovables son fuentes naturales como el sol y el viento que se reponen rápidamente y juegan un papel crucial en la lucha contra el cambio climático.
 
 -   **Argumento central:** Las energías renovables representan una alternativa esencial a los combustibles fósiles, reduciendo las emisiones de gases de efecto invernadero y creando empleos, siendo una herramienta clave para mitigar la crisis climática.
 
