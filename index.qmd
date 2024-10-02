@@ -1,6 +1,5 @@
 # Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables {.unnumbered}
 
 ## Introducción
-El presente trabajo busca realizar un análisis de una base de datos con el fin de decifrar las tendencia globales en energía renovable y examinar el progreso de diversos indicadores a través de los años
-
+El presente trabajo busca realizar un análisis de una base de datos con el fin de detectar el impacto que tiene la energía renovable en la sociedad. Particularmente, el impacto que la producción e implementación de la energía renovable tiene en varios indicadores de bienestar seleccionados. 
 ### 
