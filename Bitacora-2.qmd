@@ -198,3 +198,46 @@ for(i in 1:24){
 }
 dim(annual)
 ```
+
+Con esta base de datos anualizada, la relación entre la producción de energías renovables y las emisiones de CO2 resultan mucho más claras.
+
+```{r}
+ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
+  geom_smooth(method = "lm") +
+   labs(
+    title = "Energy Production and CO2 Emissions",
+    x = "Renewable energy production",
+    y = "CO2 Emissions"
+  ) +
+  theme_cowplot()
+```
+
+Con la base de datos anualizada, es posible determinar cierta volatilidad en los precios de la electricidad. En particular, en los últimos años se ve un aumento en los precios de la electricidad, exceptuando el 2022, que tuvo una disminución bastante significativa.
+
+```{r}
+ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
+  geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , color="purple", lwd = 1.25) +
+  labs(
+    title = "International Electricity Prices",
+    x = "Year",
+    y = "Electricity Price"
+  ) +
+  theme_clean()
+```
+
+Separándolo por países, los gráficos muestran que en los últimos años, la tendencia es la subida de precios, sin ser demasiado volátil. Además, los países analizados, exceptuando Canadá y Japón, presentan el aumento en los precios de los últimos años.
+
+```{r}
+ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
+  geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , size=1, color="violet", linetype="dotdash" ) +
+  geom_point(color = "purple") +
+  facet_wrap(~Country) +
+  labs(
+    title = "Electricity Prices per Country",
+    x = "Year",
+    y = "Electricity Price"
+  ) +
+  theme_clean()
+```
+
+Así, se observan algunas tendencias en los datos, las cuales resultarán de utilidad para responder la pregunta de investigación al relacionar las variables observadas con los indicadores de bienestar social, entre los que se incluyen los precios de la electricidad.
