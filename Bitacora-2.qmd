@@ -167,3 +167,34 @@ ggplot(df, aes(x = Production..GWh., y = CO2.Emissions)) +
 ```
 
 Sin embargo, la disminución de las emisiones de CO2 dado por el aumento en la producción de energías renovables, es poco visible; esto puede ser causado por la variedad de datos con los que se realiza el gráfico.
+
+Con el fin de facilitar la realización de gráficos a partir de los datos brindados, se agruparon los datos para algunas de las variables de forma anual.
+
+```{r setup, warning=FALSE}
+grouped_years <- df %>% 
+  group_by(Year) %>% 
+  nest() 
+grouped_years <- grouped_years[order(grouped_years$Year),]
+
+anuual <- data.frame()
+
+y <- c(grouped_years$Year)
+variables <- as.list(colnames(df))
+annual <- data.frame()
+for(i in 1:24){
+  a <- grouped_years$data[[i]] %>% 
+    group_by(Country) %>% 
+    nest() %>% 
+    mutate(avg_electricity_price = map(.x = data, .f = ~mean(.x$Electricity.Prices))) %>% 
+    mutate(avg_production = map(.x = data, .f = ~mean(.x$Production..GWh.))) %>% 
+    mutate(avg_investment = map(.x = data, .f = ~mean(.x$Investments..USD.))) %>% 
+    mutate(avg_gdp = map(.x = data, .f = ~mean(.x$GDP))) %>% 
+    mutate(avg_population = map(.x = data, .f = ~mean(.x$Population))) %>% 
+    mutate(avg_CO2_emissions = map(.x = data, .f = ~mean(.x$CO2.Emissions))) %>% 
+    select(Country, avg_electricity_price, avg_production, avg_investment, avg_CO2_emissions, avg_population, avg_gdp) %>% 
+    unnest(avg_electricity_price, avg_production, avg_investment, avg_CO2_emissions, avg_population, avg_gdp) %>% 
+    mutate(Year = y[i])
+  annual <- rbind(annual, a)
+}
+dim(annual)
+```
