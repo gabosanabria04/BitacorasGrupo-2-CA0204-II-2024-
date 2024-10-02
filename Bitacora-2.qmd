@@ -267,3 +267,7 @@ summary(most_important)
 ```
 
 ## Propuesta Metodológica
+
+ Para realizar el análisis de datos, se utilizará la regresión lineal, el promedio, funciones para ordenar datos, la función `filter()` para filtrar los datos según los requerimientos, diferentes gráficos para mejor visualización de datos, algoritmos para anualizar los datos.
+  En los gráficos, se procura utilizar gráficos que puedan relacionar las variables entre ellas, así como utilizar el mismo tipo de gráfico para varias variables, con el fin de hacerlos fácilmente comparables. De igual manera, se realizarán diversos tipos de gráfico para encontrar el tipo de gráfico que mejor se ajuste a los datos.
+  En cuanto a la anualización de datos, se busca juntar los datos por el tipo de energía. Así, quedará solo una fila con cada tipo de energía en los países, por año; esto con el fin de poder diferenciar los datos entre ellos, minimizar la cantidad de datos analizados, y facilitar la realización de gráficos.
