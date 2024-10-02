@@ -16,10 +16,17 @@ editor: visual
 | Organización | | | Literatura | | |
 |--------------|-----------------|-----------------|--------|------|--------|
 | Tipo         | Tema general    | Tema específico | Título | Año  | Autor(es) |
-| Metodológico | Energía renovable | El uso de energía renovable en el camino la autosuficiencia energética. | Energía Renovable: un nuevo principio de autosuficiencia conectada | 2012 | Juan Requejo Liberal |
-| Metodológico | Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Energía renovable como alternativa para la reducción de las emisiones de CO2 Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Renewable Energy as a Solution to Climate Change: Insights from a Comprehensive Study Across Nations. | 2023 | Keshani Attanayake, Isuru Wickramage, Udul Samarasinghe, Yasangi Ranmini, Sandali Ehalapitiya, Ruwan Jayathilaka y Shanta Yapa |
-| Metodológico |Estrategias para la implementación de las energías renovables | El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil | La energía renovable como estrategia para combatir el cambio climático en Brasil y Argentina | 2018 | Laura Casola y Alexander Freier |
-
+| descriptivo | Energía renovable | El uso de energía renovable en el camino la autosuficiencia energética. | Energía Renovable: un nuevo principio de autosuficiencia conectada | 2012 | Juan Requejo Liberal |
+| Análitico | Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Energía renovable como alternativa para la reducción de las emisiones de CO2 Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Renewable Energy as a Solution to Climate Change: Insights from a Comprehensive Study Across Nations. | 2023 | Keshani Attanayake, Isuru Wickramage, Udul Samarasinghe, Yasangi Ranmini, Sandali Ehalapitiya, Ruwan Jayathilaka y Shanta Yapa |
+| Análisis descriptivo |Estrategias para la implementación de las energías renovables | El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil | La energía renovable como estrategia para combatir el cambio climático en Brasil y Argentina | 2018 | Laura Casola y Alexander Freier |
+| Descriptivo | Estado actual de la energía eólica | Descripción de avances tecnológicos en la última década del siglo 20 | Wind energy technology and current status: a review | 2000 | Thomas Ackermann y Lennart Söder |
+| Exploratorio | Viabilidad de las energías renovables en Costa Rica | Análisis de ventajas y desventajas de los tres tipos de energía renovable producida en Costa Rica. | Análisis de Viabilidad Ambiental del Uso de Energías Renovables en Costa Rica: Estudio de Caso de la Energía Eólica, la Hidroeléctrica y la Geotérmica | 2015 | Allan Cordero Gutiérrez |
+| Metodológico | Árboles de decisión | CCC | Título 3 | 2002 | Autor 3 |
+| Metodológico | Regresión logística | AAA | Título 1 | 2000 | Autor 1 |
+| Metodológico | SVM | BBB | Título 2 | 2001 | Autor 2 |
+| Metodológico | Árboles de decisión | CCC | Título 3 | 2002 | Autor 3 |
+| Metodológico | SVM | BBB | Título 2 | 2001 | Autor 2 |
+| Metodológico | Árboles de decisión | CCC | Título 3 | 2002 | Autor 3 |
 ## Enlaces de Literatura
 
 La energía renovable es una mejor opción ante el daño al medio ambiente; sin embargo, producirla es muy costoso y además, exige una detallada planificación. El sistema económico urbano-industrial creó un gran dessfase entre estos dos sectores, y llevó a un gran aumento de la población, y con ella, de la demanda de recursos. Basándose en el caso español, se expone que el uso de energía renovable representa el regreso a una sociedad consciente de las limitaciones existentes. Por ello, se propone la autosuficiencia conectada, un ciclo semiabierto en el que las regiones sean capaces de sustentar al menos la mayoría de su consumo energético, y tengan que recurrir a los recursos externos solamente para lo que no pudieron sustentar. De igual manera, se expresa que esta búsqueda de autosuficiencia puede ser aplicada a otros ámbitos.
