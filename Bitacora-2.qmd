@@ -260,3 +260,10 @@ A continuación, se puede visualizar el tipo de valor que corresponde a cada una
 ```{r}
 kable(head(most_important[, 1:23], 10), "simple")
 ```
+
+Complementariamente, se muestran las funciones más comunes de cada variable seleccionada:
+```{r}
+summary(most_important)
+```
+
+## Propuesta Metodológica
