@@ -385,3 +385,10 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
   theme_clean()
 ```
 
+## Fichas de Resultados
+### Datos anualizados {.unnumbered}
+- **Nombre del hallazgo:** Gráficos con datos anualizados
+- **Resumen en una oración:** Los datos anualizados permiten realizar gráficos más entendibles y fácilmente interpretables
+- **Principal característica:** Unir diversos datos en una misma categoría reduce la cantidad de datos, y facilita la graficación.
+- **Problemas o posibles desafíos:** La forma de anualizar los datos para esta bitácora es poco eficiente, además, no se incluyeron variables categóricas más allá del país y el año. 
+- **Resumen en un párrafo:** La base de datos original posee varios datos de un mismo país y tipo de energía para un mismo año, lo que dificulta la graficación. Anualizar los datos utilizando el promedio de estos datos, permite una mejor graficación. Estos gráficos permiten relacionar las diversas variables, puesto que los datos siguen un mismo patrón. Sin embargo, este proceso debe hacerse para todas las variables seleccionadas. POr lo tanto, se pretende realizar la anualización de los datos, juntando las observaciones según los tipos de energía de cada país para cada año.
