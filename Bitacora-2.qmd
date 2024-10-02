@@ -294,3 +294,94 @@ for(i in 1:24){
 ```
 
 Se presentan los resultados, obtenidos con la base de datos anualizada, a continuación.
+
+```{r}
+ggplot(annual, aes(x = Year, y = avg_electricity_price)) +
+  geom_line() +
+  facet_wrap(~Country) +
+  labs(
+    title = "Annual Electricity Prices",
+    subtitle = "By country",
+    x = "Year",
+    y = "Electricity Price"
+  )+
+  theme_cowplot()
+
+ggplot(annual, aes(x = Year, y = avg_production)) +
+  geom_line() +
+  facet_wrap(~Country) +
+  labs(
+    title = "Annual Renewable Energy Production",
+    subtitle = "By country",
+    x = "Year",
+    y = "Production"
+  )+
+  theme_cowplot()
+
+ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
+  geom_line()+
+  facet_wrap(~Country) +
+  labs(
+    title = "Energy Production and Electricity Prices",
+    subtitle = "By country",
+    x = "Renewable Energy Production",
+    y = "Electricity Price"
+  ) +
+  theme_cowplot()
+
+
+
+ggplot(annual, aes(x = Year, y = avg_CO2_emissions)) +
+  geom_smooth() +
+  facet_wrap(~Country) +
+  labs(
+    title = "Annual CO2 Emissions",
+    subtitle = "By country",
+    x = "Year",
+    y = "CO2 Emissions"
+  ) +
+  theme_cowplot()
+
+
+ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Energy Production and CO2 emissions",
+    x = "Renewable Energy Production",
+    y = "CO2 Emissions"
+  ) +
+  theme_cowplot()
+
+ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Energy Production and CO2 emissions",
+    subtitle = "By country",
+    x = "Renewable Energy Production",
+    y = "CO2 Emissions"
+  ) +
+  facet_wrap(~Country)+
+  theme_cowplot()
+
+
+
+ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
+  geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , size=1, color="purple", linetype="dotdash" , lwd = 1.25) +
+  labs(
+    title = "International Electricity Prices",
+    x = "Year",
+    y = "Electricity Price"
+  ) +
+  theme_clean()
+ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
+  geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , size=1, color="violet", linetype="dotdash" ) +
+  geom_point(color = "purple") +
+  facet_wrap(~Country) +
+  labs(
+    title = "Electricity Prices per Country",
+    x = "Year",
+    y = "Electricity Price"
+  ) +
+  theme_clean()
+```
+
