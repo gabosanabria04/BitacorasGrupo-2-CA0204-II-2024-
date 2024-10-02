@@ -241,3 +241,17 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 ```
 
 Así, se observan algunas tendencias en los datos, las cuales resultarán de utilidad para responder la pregunta de investigación al relacionar las variables observadas con los indicadores de bienestar social, entre los que se incluyen los precios de la electricidad.
+
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+| # **Variable**               | # **Importancia**
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+| *Precios de la electricidad* | La electricidad es un aspecto fundamental para determinar la calidad de vida de las personas, pues permiten realizar varias actividades cotidianas, como cocinar o mantener el calor                                                                                            |       |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+| *Producción*                 | Permite visualizar la evolución de los indicadores de bienestar con respecto a los cambios en producción energética; de modo que se pueda concluir el impacto que tiene la energía renovable en la sociedad                                                                     |       |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+| *Estabilidad Política*       | El contexto político de los países está estrechamente relacionado con la calidad de vida de los habitantes; se pretende relacionar dicha estabilidad con la producción de energías renovables                                                                                   |       |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+| *Conciencia pública*         | La aceptación pública es un factor importante en la cantidad de inversión destinada a la producción o desarrollo de energías renovables. La aceptación pública depende de la información disponible al público general, como los *programas educativos* y su *nivel educativo*. |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+
+: Tabla de variables relevantes
