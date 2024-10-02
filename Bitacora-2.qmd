@@ -95,3 +95,34 @@ most_important <- select(df, c("Country", "Year", "Production..GWh.", "GDP", "R.
 most_important <- most_important[order(most_important$Year),]
 colnames(most_important)
 ```
+
+Para iniciar a relacionar las variables, es importante entender el contexto general de los países, incluyendo la proporción de la energía generada por cada país, corresponde a cada tipo de energía; esto se representa en el siguiente gráfico:
+
+```{r}
+ggplot(df, aes(x = Country, fill = Energy.Type)) +
+  geom_bar(position = "fill") +
+  scale_fill_brewer(type = "seq", palette = 4)  +
+  labs(
+    title = "Types of Energy",
+    sutitle = "Country's Proportions",
+    x = "Country",
+    y = "",
+    fill = "Energy Type"
+  ) +
+  cowplot::theme_cowplot()
+```
+
+La conciencia pública consiste en tener información suficiente sobre los aspectos positivos y negativos de cada tipo de energía. Este es un dato relavante sobre la energía renovable, ya sea por mantener informada a la población, como para que la población sea capaz de velar por la producción de energías renovables en su país. 
+```{r}
+ggplot(df, aes(x=Country, y=Public.Awareness, fill=Country)) + 
+  geom_violin() +
+  facet_wrap(~Year) +
+  scale_fill_brewer(type = "div", palette = 1) +
+  labs(
+    title = "Public Awareness",
+    subtitle = "By year",
+    x = "Country",
+    y = "Public Awareness"
+  ) +
+  theme_cowplot()
+```
