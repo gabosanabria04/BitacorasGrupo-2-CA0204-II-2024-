@@ -126,3 +126,44 @@ ggplot(df, aes(x=Country, y=Public.Awareness, fill=Country)) +
   ) +
   theme_cowplot()
 ```
+
+En el contexto general, resulta importante notar la evolución que tiene la producción de energía renovable durante los años analizados. A partir del gráfico presentado a continuación, es posible detectar que la producción energética no es monótona; sin embargo, en los últimos 4 años, presenta monotonía creciente, con cambios poco marcados, lo que sugiere una estabilización mayor a los años anteriores.
+
+```{r}
+ggplot(df, aes(x = Year, y = Production..GWh.)) +
+  geom_col(fill = "#9e9ac8") +
+  labs(
+    title = "Annual Renewable Energy Production",
+    x = "Year",
+    y = "Total Production",
+  ) +
+  theme_cowplot()
+```
+
+Sin embargo, no se ve el mismo patrón en la fuerza laboral del sector energético:
+
+```{r}
+ggplot(df, aes(x = Year, y = Energy.Sector.Workforce)) +
+  geom_col(fill = "lightblue") +
+  labs(
+    title = "Annual Energy Sector Workforce",
+    x = "Year",
+    y = "Workforce"
+  ) +
+  theme_cowplot()
+```
+
+A partir de una regresión lineal, podemos observar que las emisiones de dióxido de carbono disminuyen conforme aumenta la producción de energías renovables; este hallazgo es esperable, pues las energías renovables son energías más limpias que las fuentes tradicionales.
+
+```{r}
+ggplot(df, aes(x = Production..GWh., y = CO2.Emissions)) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Energy Production and CO2 Emissions",
+    x = "Renewable energy production",
+    y = "CO2 Emissions"
+  )+
+  theme_cowplot()
+```
+
+Sin embargo, la disminución de las emisiones de CO2 dado por el aumento en la producción de energías renovables, es poco visible; esto puede ser causado por la variedad de datos con los que se realiza el gráfico.
