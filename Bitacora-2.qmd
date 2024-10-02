@@ -255,3 +255,8 @@ Así, se observan algunas tendencias en los datos, las cuales resultarán de uti
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
 
 : Tabla de variables relevantes
+
+A continuación, se puede visualizar el tipo de valor que corresponde a cada una de las variables seleccionadas:
+```{r}
+kable(head(most_important[, 1:23], 10), "simple")
+```
