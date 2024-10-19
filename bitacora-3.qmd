@@ -1,0 +1,28 @@
+---
+title: "Bitácora 3"
+author: "Paola Espinoza Hernández; Gabriel Sanabria Alvarado"
+format: html
+output_dir: "docs"
+editor: visual
+---
+
+## Planificación
+
+### Análisis de modelación
+
+```{r}
+1 + 1
+```
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+### Fichas de resultados
+
+### Ordenamiento de los elementos del reporte
+
+## Parte de escritura
+
+## Parte de reflexión
