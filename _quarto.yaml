@@ -10,7 +10,7 @@ book:
   date: today 
   search: true
   repo-url: "https://github.com/gabosanabria04/BitacorasGrupo-2-CA0204-II-2024-.git"
-  site-url: "https://maikol-solis.github.io/Bitacora-Grupo-00-CA-204-II-2024/"
+  site-url: "https://gabosanabria04.github.io/BitacorasGrupo-2-CA0204-II-2024-/"
   repo-actions: [edit, source] 
   downloads: [pdf]
   chapters:
