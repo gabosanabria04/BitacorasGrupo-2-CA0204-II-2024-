@@ -16,6 +16,7 @@ library(ggthemes)
 library(cowplot)
 library(tidyr)
 library(purrr)
+options(scipen = 999)
 ```
 
 ## Planificación
@@ -29,8 +30,8 @@ Además, con el fin de automatizar la carga de la base de datos, la ruta de acce
 Finalmente, se juntan las variables `Energy.Imports` y `Energy.Exports`, para lo cual, se pivotea de modo que el flujo de entradas y salidas quede en una sola variable denominada Energy.Flow, que se clasifique en importación o exportación por la variable Energy.Flow.Type.
 
 ```{r messages= FALSE, warnings= FALSE}
-original <- read.csv("complete_renewable_energy_dataset.csv")
-data <- original|> group_by(Country, Year, Energy.Type, Renewable.Energy.Education.Programs, Government.Policies) |> summarise(Total.Production = sum(Production..GWh.), Electricity.Prices = mean(Electricity.Prices), R.D.Expenditure = sum(R.D.Expenditure), CO2.Emissions = sum(CO2.Emissions), Investments..USD. = sum(Investments..USD.), Public.Awareness = mean(Public.Awareness), Educational.Level = mean(Educational.Level), Export = sum(Energy.Exports), Import = sum(Energy.Imports), Renewable.Energy.Jobs = sum(Renewable.Energy.Jobs), Renewable.Energy.Patents = sum(Renewable.Energy.Patents), Corruption.Perception.Index = mean(Corruption.Perception.Index)) %>% 
+original <- read.csv("data/complete_renewable_energy_dataset.csv")
+data <- original|> group_by(Country, Year, Energy.Type) |> summarise(Total.Production = sum(Production..GWh.), Electricity.Prices = mean(Electricity.Prices), R.D.Expenditure = sum(R.D.Expenditure), CO2.Emissions = sum(CO2.Emissions), Investments..USD. = sum(Investments..USD.), Public.Awareness = mean(Public.Awareness), Educational.Level = mean(Educational.Level), Export = sum(Energy.Exports), Import = sum(Energy.Imports), Renewable.Energy.Jobs = sum(Renewable.Energy.Jobs), Renewable.Energy.Patents = sum(Renewable.Energy.Patents), Corruption.Perception.Index = mean(Corruption.Perception.Index), Renewable.Energy.Education.Programs = max(Renewable.Energy.Education.Programs), Government.Policies= max(Government.Policies)) %>% 
   pivot_longer(cols = c("Import", "Export"),
              names_to = "Energy.Flow.Type",
              values_to = "Energy.Flow")
@@ -41,15 +42,46 @@ Nótese que se cambiaron las variables con respecto a la bitácora anterior, con
 
 ### Análisis Descriptivo
 
-Para realizar un gráfico comparativo de la energía importada y exportada por los países analizados, se pivotea de modo que el flujo de entradas y salidas quede en una sola variable denominada Energy.
+
 
 ```{r messages= FALSE, warnings= FALSE}
-ggplot(data, aes(x = ))
-geom_density(aes(color = sex)) +
-  geom_vline(data=mu, aes(xintercept=grp.mean, color=sex),
-             linetype="dashed") +
-  scale_color_manual(values=c("#999999", "#E69F00"))
+ggplot(data, aes(x = Country, y = Energy.Flow)) +
+  geom_bar(aes(fill = Energy.Flow.Type),
+           stat = "identity",
+           position = position_dodge()) +
+  labs(title = "Contry's Energy Flow Comparison",
+       y = "")+
+  scale_fill_manual(name="", 
+                    labels = c("Export", "Import"), 
+                    values = c("Import"="#00ba88", "Export"="#f8966d"))+
+  theme_cowplot()+
+  theme(legend.position = "top")
 ```
+```{r messages= FALSE, warnings= FALSE, fig.height=40, fig.width=8}
+data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type) %>% 
+  summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion < 10) %>% 
+  ggplot(aes(x = Year))+
+  geom_bar(aes(y = Flow.Proportion, fill = Energy.Flow.Type),
+           stat = "identity",
+           position = position_dodge())+
+  facet_wrap(Energy.Type~Country, ncol = 2) +
+  labs(title = "Contry's Energy Flow Comparison",
+       subtitle = "as Total Production's proportion",
+       y = "")+
+  scale_fill_manual(name="", 
+                    labels = c("Export", "Import"), 
+                    values = c("Import"="#00ba88", "Export"="#f8966d"))+
+  theme_cowplot()+
+  theme(legend.position = "top", axis.text.x = element_text(angle = 45))
+```
+
+```{r messages= FALSE, warnings= FALSE}
+data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type, Total.Production) %>% 
+  summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion > 10)
+```
+
+
+
 
 ### Justificación modelo seleccionado
 
