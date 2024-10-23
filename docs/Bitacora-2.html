@@ -288,8 +288,8 @@ Attaching package: 'cowplot'</code></pre>
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
-<col style="width: 18%">
-<col style="width: 17%">
+<col style="width: 16%">
+<col style="width: 16%">
 <col style="width: 16%">
 <col style="width: 16%">
 </colgroup>
@@ -563,8 +563,8 @@ Attaching package: 'cowplot'</code></pre>
 </div>
 <p>Sin embargo, la disminución de las emisiones de CO2 dado por el aumento en la producción de energías renovables, es poco visible; esto puede ser causado por la variedad de datos con los que se realiza el gráfico.</p>
 <p>Con el fin de facilitar la realización de gráficos a partir de los datos brindados, se agruparon los datos para algunas de las variables de forma anual.</p>
-<div class="cell" data-hash="Bitacora-2_cache/html/setup_0e84cee89df3758eb9fc8a21f59d6079">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>annual <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Year, Country) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg_electricity_price =</span> <span class="fu">mean</span>(Electricity.Prices), <span class="at">avg_production =</span> <span class="fu">sum</span>(Production..GWh.), <span class="at">avg_investment =</span> <span class="fu">sum</span>(Investments..USD.), <span class="at">avg_CO2_emissions =</span> <span class="fu">sum</span>(CO2.Emissions))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Bitacora-2_cache/html/setup_7865182304e92073a35bba6a15363e95">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>annual <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Year, Country) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg_electricity_price =</span> <span class="fu">mean</span>(Electricity.Prices), <span class="at">avg_production =</span> <span class="fu">sum</span>(Production..GWh.), <span class="at">avg_investment =</span> <span class="fu">sum</span>(Investments..USD.), <span class="at">avg_CO2_emissions =</span> <span class="fu">mean</span>(CO2.Emissions))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'Year'. You can override using the
 `.groups` argument.</code></pre>
@@ -590,14 +590,14 @@ Attaching package: 'cowplot'</code></pre>
 </div>
 </div>
 <p>Con esta base de datos anualizada, la relación entre la producción de energías renovables y las emisiones de CO2 resultan mucho más claras.</p>
-<div class="cell" data-hash="Bitacora-2_cache/html/unnamed-chunk-9_04b3cd684aa3909576ce43f28fba9dda">
+<div class="cell" data-hash="Bitacora-2_cache/html/unnamed-chunk-9_fd1cf30735dbfd8216bcd739a5d35fce">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x =</span> avg_production, <span class="at">y =</span> avg_CO2_emissions)) <span class="sc">+</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Energy Production and CO2 Emissions"</span>,</span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Renewable energy production"</span>,</span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"CO2 Emissions"</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>

@@ -175,8 +175,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#planificación" id="toc-planificación" class="nav-link" data-scroll-target="#planificación"><span class="header-section-number">3.1</span> Planificación</a>
   <ul class="collapse">
   <li><a href="#análisis-de-modelación" id="toc-análisis-de-modelación" class="nav-link" data-scroll-target="#análisis-de-modelación"><span class="header-section-number">3.1.1</span> Análisis de modelación</a></li>
-  <li><a href="#fichas-de-resultados" id="toc-fichas-de-resultados" class="nav-link" data-scroll-target="#fichas-de-resultados"><span class="header-section-number">3.1.2</span> Fichas de resultados</a></li>
-  <li><a href="#ordenamiento-de-los-elementos-del-reporte" id="toc-ordenamiento-de-los-elementos-del-reporte" class="nav-link" data-scroll-target="#ordenamiento-de-los-elementos-del-reporte"><span class="header-section-number">3.1.3</span> Ordenamiento de los elementos del reporte</a></li>
+  <li><a href="#análisis-descriptivo" id="toc-análisis-descriptivo" class="nav-link" data-scroll-target="#análisis-descriptivo"><span class="header-section-number">3.1.2</span> Análisis Descriptivo</a></li>
+  <li><a href="#justificación-modelo-seleccionado" id="toc-justificación-modelo-seleccionado" class="nav-link" data-scroll-target="#justificación-modelo-seleccionado"><span class="header-section-number">3.1.3</span> Justificación modelo seleccionado</a></li>
+  <li><a href="#fichas-de-resultados" id="toc-fichas-de-resultados" class="nav-link" data-scroll-target="#fichas-de-resultados"><span class="header-section-number">3.1.4</span> Fichas de resultados</a></li>
+  <li><a href="#ordenamiento-de-los-elementos-del-reporte" id="toc-ordenamiento-de-los-elementos-del-reporte" class="nav-link" data-scroll-target="#ordenamiento-de-los-elementos-del-reporte"><span class="header-section-number">3.1.5</span> Ordenamiento de los elementos del reporte</a></li>
   </ul></li>
   <li><a href="#parte-de-escritura" id="toc-parte-de-escritura" class="nav-link" data-scroll-target="#parte-de-escritura"><span class="header-section-number">3.2</span> Parte de escritura</a></li>
   <li><a href="#parte-de-reflexión" id="toc-parte-de-reflexión" class="nav-link" data-scroll-target="#parte-de-reflexión"><span class="header-section-number">3.3</span> Parte de reflexión</a></li>
@@ -211,52 +213,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="setup" class="level3 hidden" data-number="3.0.1">
 <h3 class="hidden anchored" data-number="3.0.1" data-anchor-id="setup"><span class="header-section-number">3.0.1</span> Setup</h3>
-<div class="cell" data-warnings="false" data-hash="bitacora-3_cache/html/unnamed-chunk-1_957fbfa0892c9d37de72bc560db0de78">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'palmerpenguins' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggthemes' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'cowplot' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'cowplot'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:ggthemes':
-
-    theme_map</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidyr' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'purrr' was built under R version 4.3.3</code></pre>
-</div>
-</div>
 </section>
 <section id="planificación" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="planificación"><span class="header-section-number">3.1</span> Planificación</h2>
@@ -264,52 +220,162 @@ Attaching package: 'cowplot'</code></pre>
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="análisis-de-modelación"><span class="header-section-number">3.1.1</span> Análisis de modelación</h3>
 <p>Tomando en consideración las recomendaciones sobre la base de datos, se decidió reordenarla, de acuerdo a las categorías más relevantes a la pregunta de investigación, y anualizar los datos, uniendo las columnas con el mismo país, año y tipo de energía.</p>
 <p>Además, con el fin de automatizar la carga de la base de datos, la ruta de acceso parte desde la carpeta con el repositorio, de modo que al clonar el repositorio, este documento por sí mismo, sea capaz de acceder a la base de datos, facilitando el proceso.</p>
-<div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/unnamed-chunk-2_ddc06201e833f9d9e5e008ffe8151653">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>original <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/complete_renewable_energy_dataset.csv"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> original<span class="sc">|&gt;</span> <span class="fu">group_by</span>(Country, Year, Energy.Type, Renewable.Energy.Education.Programs, Government.Policies) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">Total.Production =</span> <span class="fu">sum</span>(Production..GWh.), <span class="at">Electricity.Prices =</span> <span class="fu">mean</span>(Electricity.Prices), <span class="at">R.D.Expenditure =</span> <span class="fu">sum</span>(R.D.Expenditure), <span class="at">CO2.Emissions =</span> <span class="fu">sum</span>(CO2.Emissions), <span class="at">Investments..USD. =</span> <span class="fu">sum</span>(Investments..USD.), <span class="at">Public.Awareness =</span> <span class="fu">mean</span>(Public.Awareness), <span class="at">Educational.Level =</span> <span class="fu">mean</span>(Educational.Level), <span class="at">Energy.Exports =</span> <span class="fu">sum</span>(Energy.Exports), <span class="at">Energy.Imports =</span> <span class="fu">sum</span>(Energy.Imports), <span class="at">Renewable.Energy.Jobs =</span> <span class="fu">sum</span>(Renewable.Energy.Jobs), <span class="at">Renewable.Energy.Patents =</span> <span class="fu">sum</span>(Renewable.Energy.Patents), <span class="at">Corruption.Perception.Index =</span> <span class="fu">mean</span>(Corruption.Perception.Index))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Finalmente, se juntan las variables <code>Energy.Imports</code> y <code>Energy.Exports</code>, para lo cual, se pivotea de modo que el flujo de entradas y salidas quede en una sola variable denominada Energy.Flow, que se clasifique en importación o exportación por la variable Energy.Flow.Type.</p>
+<div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/unnamed-chunk-2_3cdd056b1904337f3fde67a3b1d231fe">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>original <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/complete_renewable_energy_dataset.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> original<span class="sc">|&gt;</span> <span class="fu">group_by</span>(Country, Year, Energy.Type) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">Total.Production =</span> <span class="fu">sum</span>(Production..GWh.), <span class="at">Electricity.Prices =</span> <span class="fu">mean</span>(Electricity.Prices), <span class="at">R.D.Expenditure =</span> <span class="fu">sum</span>(R.D.Expenditure), <span class="at">CO2.Emissions =</span> <span class="fu">sum</span>(CO2.Emissions), <span class="at">Investments..USD. =</span> <span class="fu">sum</span>(Investments..USD.), <span class="at">Public.Awareness =</span> <span class="fu">mean</span>(Public.Awareness), <span class="at">Educational.Level =</span> <span class="fu">mean</span>(Educational.Level), <span class="at">Export =</span> <span class="fu">sum</span>(Energy.Exports), <span class="at">Import =</span> <span class="fu">sum</span>(Energy.Imports), <span class="at">Renewable.Energy.Jobs =</span> <span class="fu">sum</span>(Renewable.Energy.Jobs), <span class="at">Renewable.Energy.Patents =</span> <span class="fu">sum</span>(Renewable.Energy.Patents), <span class="at">Corruption.Perception.Index =</span> <span class="fu">mean</span>(Corruption.Perception.Index), <span class="at">Renewable.Energy.Education.Programs =</span> <span class="fu">max</span>(Renewable.Energy.Education.Programs), <span class="at">Government.Policies=</span> <span class="fu">max</span>(Government.Policies)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"Import"</span>, <span class="st">"Export"</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">names_to =</span> <span class="st">"Energy.Flow.Type"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">values_to =</span> <span class="st">"Energy.Flow"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'Country', 'Year'. You can override using
+the `.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,100 × 17
+# Groups:   Country, Year [240]
+   Country  Year Energy.Type Total.Production Electricity.Prices R.D.Expenditure
+   &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;                  &lt;dbl&gt;              &lt;dbl&gt;           &lt;dbl&gt;
+ 1 Austra…  2000 Biomass               43637.              0.204     6451974689.
+ 2 Austra…  2000 Biomass               43637.              0.204     6451974689.
+ 3 Austra…  2000 Geothermal           146551.              0.198    11552134303.
+ 4 Austra…  2000 Geothermal           146551.              0.198    11552134303.
+ 5 Austra…  2000 Hydro                158083.              0.217    20096098212.
+ 6 Austra…  2000 Hydro                158083.              0.217    20096098212.
+ 7 Austra…  2000 Solar                 64258.              0.252     4464797633.
+ 8 Austra…  2000 Solar                 64258.              0.252     4464797633.
+ 9 Austra…  2000 Wind                  94075.              0.260    11999369763.
+10 Austra…  2000 Wind                  94075.              0.260    11999369763.
+# ℹ 2,090 more rows
+# ℹ 11 more variables: CO2.Emissions &lt;dbl&gt;, Investments..USD. &lt;dbl&gt;,
+#   Public.Awareness &lt;dbl&gt;, Educational.Level &lt;dbl&gt;,
+#   Renewable.Energy.Jobs &lt;int&gt;, Renewable.Energy.Patents &lt;int&gt;,
+#   Corruption.Perception.Index &lt;dbl&gt;,
+#   Renewable.Energy.Education.Programs &lt;int&gt;, Government.Policies &lt;int&gt;,
+#   Energy.Flow.Type &lt;chr&gt;, Energy.Flow &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Nótese que se cambiaron las variables con respecto a la bitácora anterior, con el fin de simplificar el análisis, pero aún así, abarcar diversas áreas, de acuerdo a la pregunta de investigación: social, económica y ambiental.</p>
+</section>
+<section id="análisis-descriptivo" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="análisis-descriptivo"><span class="header-section-number">3.1.2</span> Análisis Descriptivo</h3>
+<p>Dados ya los hallazgos anteriores, resulta interesante analizar el flujo energético de los países. Para ello, la figura 3.1 representa el total de importaciones, comparado al total de exportaciones, por cada país durante el periodo estudiado, 2000 a 2020.</p>
+<div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/unnamed-chunk-3_f2f91be9a9e923cce6e58f09ef8d2c5c">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Country, <span class="at">y =</span> Energy.Flow)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Energy.Flow.Type),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Contry's Energy Flow Comparison"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Procedings of https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">tag =</span> <span class="st">"Fig.3.1"</span>)<span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Export"</span>, <span class="st">"Import"</span>), </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Import"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Export"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.tag.position =</span> <span class="st">"topright"</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.tag =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="bitacora-3_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+<p>Mientras que la figura 3.2 separa esta información por años, con el fin de detectar tendencias.</p>
+<div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/unnamed-chunk-4_cfe6f786882b55a94ebfc9ed2b319a2b">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Country, <span class="at">y =</span> Energy.Flow)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Energy.Flow.Type),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Year, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Contry's Energy Flow Comparison"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Procedings of https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">tag =</span> <span class="st">"Fig.3.2"</span>)<span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Export"</span>, <span class="st">"Import"</span>), </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Import"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Export"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.tag.position =</span> <span class="st">"topright"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.tag =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>),</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">vjust=</span>.<span class="dv">5</span>, <span class="at">hjust=</span><span class="fl">0.3</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="bitacora-3_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+<p>Si bien los gráficos anteriores brindan una idea de cuánta energía se importa o exporta, resulta también interesante ver esta cantidad como proporción de la energía producida en cada país. La figura 3.3. se realiz´po con el fin de comparar la proporción de energía intercambiada con respecto a la energía producida; para facilitar la visualización de los datos en el gráfico, se retiraron algunos valores extremos, que se analizarán en los siguientes gráficos.</p>
+<div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/unnamed-chunk-5_e5de9b2a38c390623e4312831d5fe2e3">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Country, Year, Energy.Type, Energy.Flow.Type) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Flow.Proportion =</span> <span class="fu">sum</span>(Energy.Flow)<span class="sc">/</span><span class="fu">sum</span>(Total.Production)) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Flow.Proportion <span class="sc">&lt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year))<span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">y =</span> Flow.Proportion, <span class="at">fill =</span> Energy.Flow.Type),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_dodge</span>())<span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(Energy.Type<span class="sc">~</span>Country, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Contry's Energy Flow Comparison"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"as Total Production's proportion"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">tag =</span> <span class="st">"Fig.3.3."</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Procedings of https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Export"</span>, <span class="st">"Import"</span>), </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Import"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Export"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.tag.position =</span> <span class="st">"topright"</span>,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.tag =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>),</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">vjust=</span>.<span class="dv">5</span>, <span class="at">hjust=</span><span class="fl">0.3</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'Country', 'Year', 'Energy.Type'. You can
+override using the `.groups` argument.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="bitacora-3_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+<div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/unnamed-chunk-6_6db42667768107eaa30a8224c83d5c59">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Country, Year, Energy.Type, Energy.Flow.Type, Total.Production) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Flow.Proportion =</span> <span class="fu">sum</span>(Energy.Flow)<span class="sc">/</span><span class="fu">sum</span>(Total.Production)) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Flow.Proportion <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'Country', 'Year', 'Energy.Type',
-'Renewable.Energy.Education.Programs'. You can override using the `.groups`
-argument.</code></pre>
+'Energy.Flow.Type'. You can override using the `.groups` argument.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,951 × 17
-# Groups:   Country, Year, Energy.Type, Renewable.Energy.Education.Programs
-#   [1,550]
-   Country    Year Energy.Type Renewable.Energy.Education.…¹ Government.Policies
-   &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;                               &lt;int&gt;               &lt;int&gt;
- 1 Australia  2000 Biomass                                 1                   1
- 2 Australia  2000 Geothermal                              0                   0
- 3 Australia  2000 Geothermal                              1                   0
- 4 Australia  2000 Hydro                                   0                   1
- 5 Australia  2000 Hydro                                   1                   1
- 6 Australia  2000 Solar                                   0                   0
- 7 Australia  2000 Wind                                    0                   0
- 8 Australia  2000 Wind                                    1                   0
- 9 Australia  2001 Biomass                                 0                   0
-10 Australia  2001 Biomass                                 1                   1
-# ℹ 1,941 more rows
-# ℹ abbreviated name: ¹​Renewable.Energy.Education.Programs
-# ℹ 12 more variables: Total.Production &lt;dbl&gt;, Electricity.Prices &lt;dbl&gt;,
-#   R.D.Expenditure &lt;dbl&gt;, CO2.Emissions &lt;dbl&gt;, Investments..USD. &lt;dbl&gt;,
-#   Public.Awareness &lt;dbl&gt;, Educational.Level &lt;dbl&gt;, Energy.Exports &lt;dbl&gt;,
-#   Energy.Imports &lt;dbl&gt;, Renewable.Energy.Jobs &lt;int&gt;,
-#   Renewable.Energy.Patents &lt;int&gt;, Corruption.Perception.Index &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 32 × 6
+# Groups:   Country, Year, Energy.Type, Energy.Flow.Type [32]
+   Country  Year Energy.Type Energy.Flow.Type Total.Production Flow.Proportion
+   &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;       &lt;chr&gt;                       &lt;dbl&gt;           &lt;dbl&gt;
+ 1 Brazil   2001 Geothermal  Export                      8223.            10.9
+ 2 Brazil   2008 Wind        Export                      4253.            23.2
+ 3 Brazil   2008 Wind        Import                      4253.            11.5
+ 4 Brazil   2009 Solar       Export                      1087.            91.7
+ 5 Brazil   2009 Solar       Import                      1087.            20.3
+ 6 Canada   2003 Geothermal  Export                      6653.            14.3
+ 7 Canada   2007 Wind        Export                      3389.            29.4
+ 8 Canada   2007 Wind        Import                      3389.            14.3
+ 9 France   2000 Geothermal  Export                      1705.            23.2
+10 France   2000 Geothermal  Import                      1705.            19.1
+# ℹ 22 more rows</code></pre>
 </div>
 </div>
-<p>Nótese que se cambiaron las variables con respecto a la bitácora anterior, con el fin de simplificar el análisis, pero aún así, abarcar diversas áreas, de acuerdo a la pregunta de investigación: socal, económica y ambiental.</p>
-<div class="cell" data-hash="bitacora-3_cache/html/unnamed-chunk-3_ca77366e8b076c5a922d6612861a957d">
+</section>
+<section id="justificación-modelo-seleccionado" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="justificación-modelo-seleccionado"><span class="header-section-number">3.1.3</span> Justificación modelo seleccionado</h3>
+<p><strong>Pregunta de investigación:</strong> * ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?</p>
+<p>¿Qué responde mi modelo?</p>
+<p>¿Y qué no?</p>
+<div class="cell" data-hash="bitacora-3_cache/html/unnamed-chunk-7_4c0f5ab5e7a09f0d405a9bc674a78494">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
 </div>
 </section>
-<section id="fichas-de-resultados" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="fichas-de-resultados"><span class="header-section-number">3.1.2</span> Fichas de resultados</h3>
+<section id="fichas-de-resultados" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="fichas-de-resultados"><span class="header-section-number">3.1.4</span> Fichas de resultados</h3>
 </section>
-<section id="ordenamiento-de-los-elementos-del-reporte" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="ordenamiento-de-los-elementos-del-reporte"><span class="header-section-number">3.1.3</span> Ordenamiento de los elementos del reporte</h3>
+<section id="ordenamiento-de-los-elementos-del-reporte" class="level3" data-number="3.1.5">
+<h3 data-number="3.1.5" class="anchored" data-anchor-id="ordenamiento-de-los-elementos-del-reporte"><span class="header-section-number">3.1.5</span> Ordenamiento de los elementos del reporte</h3>
 </section>
 </section>
 <section id="parte-de-escritura" class="level2" data-number="3.2">
@@ -318,7 +384,8 @@ argument.</code></pre>
 <section id="parte-de-reflexión" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="parte-de-reflexión"><span class="header-section-number">3.3</span> Parte de reflexión</h2>
 <p>Con el fin de delimitar la pregunta de investigación de modo que coincida con los datos analizados en este proyecto, se plantea como pregunta de investigación: <strong>¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?</strong></p>
-<p>Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como el nivel educativo, la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública…</p>
+<p>Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como el nivel educativo, la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública… Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las avraibles, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.</p>
+<p>Tomando en cuenta las observaciones realizadas a las bitácoras pasadas, se incorpora un caption con la fuente de la base de datos en cada gráfico. Se incorporan también tags, para facilitar la identificación de los gráficos.</p>
 
 
 </section>
