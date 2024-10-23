@@ -26,7 +26,7 @@ library(purrr)
 ### Ordenamiento de la literatura
 
 | Organización               |                                                                                        |                                                                                                                                                                     | Literatura                                                                                                                                             |      |                                                                                                                                |
-|------------|------------|------------|------------|------------|------------|
+|----------------------------|----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|------|--------------------------------------------------------------------------------------------------------------------------------|
 | Tipo                       | Tema general                                                                           | Tema específico                                                                                                                                                     | Título                                                                                                                                                 | Año  | Autor(es)                                                                                                                      |
 | descriptivo                | Energía renovable                                                                      | El uso de energía renovable en el camino la autosuficiencia energética.                                                                                             | Energía Renovable: un nuevo principio de autosuficiencia conectada                                                                                     | 2012 | Juan Requejo Liberal                                                                                                           |
 | Análitico                  | Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Energía renovable como alternativa para la reducción de las emisiones de CO2 Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Renewable Energy as a Solution to Climate Change: Insights from a Comprehensive Study Across Nations.                                                  | 2023 | Keshani Attanayake, Isuru Wickramage, Udul Samarasinghe, Yasangi Ranmini, Sandali Ehalapitiya, Ruwan Jayathilaka y Shanta Yapa |
@@ -463,8 +463,5 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 -   Se actualizó la UVE de Gowin.
 
 ## Comandos
-![pastebin](pastebin.png){fig-align="center" width="100%"}
-![git cliff](git_cliff_1.png){fig-align="center" width="100%"}
-![git cliff](git_cliff_2.png){fig-align="center" width="100%"}
-![git cliff](git_cliff_3.png){fig-align="center" width="100%"}
-![git summary](git_summary.png){fig-align="center" width="100%"}
+
+![pastebin](pastebin.png){fig-align="center" width="100%"} ![git cliff](git_cliff_1.png){fig-align="center" width="100%"} ![git cliff](git_cliff_2.png){fig-align="center" width="100%"} ![git cliff](git_cliff_3.png){fig-align="center" width="100%"} ![git summary](git_summary.png){fig-align="center" width="100%"}
