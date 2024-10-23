@@ -32,7 +32,25 @@ data <- original|> group_by(Country, Year, Energy.Type, Renewable.Energy.Educati
 data
 ```
 
-Nótese que se cambiaron las variables con respecto a la bitácora anterior, con el fin de simplificar el análisis, pero aún así, abarcar diversas áreas, de acuerdo a la pregunta de investigación: socal, económica y ambiental.
+Nótese que se cambiaron las variables con respecto a la bitácora anterior, con el fin de simplificar el análisis, pero aún así, abarcar diversas áreas, de acuerdo a la pregunta de investigación: social, económica y ambiental.
+
+### Análisis Descriptivo
+Para realizar un gráfico comparativo de la energía importada y exportada por los países analizados, se pivotea de modo que el flujo de entradas y salidas quede en una sola variable denominada Energy.
+```{r messages= FALSE, warnings= FALSE}
+ggplot(data, aes(x = ))
+geom_density(aes(color = sex)) +
+  geom_vline(data=mu, aes(xintercept=grp.mean, color=sex),
+             linetype="dashed") +
+  scale_color_manual(values=c("#999999", "#E69F00"))
+```
+
+
+### Justificación modelo seleccionado
+**Pregunta de investigación: *** ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
+
+¿Qué responde mi modelo?
+
+¿Y qué no?
 
 ```{r}
 #| echo: false
@@ -50,4 +68,4 @@ Nótese que se cambiaron las variables con respecto a la bitácora anterior, con
 Con el fin de delimitar la pregunta de investigación de modo que coincida con los datos analizados en este proyecto, se plantea como pregunta de investigación: **¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?**
 
 Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como el nivel educativo, la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública...
-Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. 
+Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las avraibles, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.
