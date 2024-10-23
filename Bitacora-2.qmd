@@ -26,7 +26,7 @@ library(purrr)
 ### Ordenamiento de la literatura
 
 | Organización               |                                                                                        |                                                                                                                                                                     | Literatura                                                                                                                                             |      |                                                                                                                                |
-|----------------------------|----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|------|--------------------------------------------------------------------------------------------------------------------------------|
+|------------|------------|--------------|-------------|------------|------------|
 | Tipo                       | Tema general                                                                           | Tema específico                                                                                                                                                     | Título                                                                                                                                                 | Año  | Autor(es)                                                                                                                      |
 | descriptivo                | Energía renovable                                                                      | El uso de energía renovable en el camino la autosuficiencia energética.                                                                                             | Energía Renovable: un nuevo principio de autosuficiencia conectada                                                                                     | 2012 | Juan Requejo Liberal                                                                                                           |
 | Análitico                  | Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Energía renovable como alternativa para la reducción de las emisiones de CO2 Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Renewable Energy as a Solution to Climate Change: Insights from a Comprehensive Study Across Nations.                                                  | 2023 | Keshani Attanayake, Isuru Wickramage, Udul Samarasinghe, Yasangi Ranmini, Sandali Ehalapitiya, Ruwan Jayathilaka y Shanta Yapa |
@@ -81,7 +81,7 @@ Con las explicación ofrecida por Las Naciones Unidad, apoyada con la descripci�
 La base de datos utilizada, disponible en https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset, cumple con el formato tidy, ya que cada variable posee su propia columna, cada observación tiene su propia fila, y todos los valores están en celdas separadas. La base de datos no contiene valores nulos. Además, los nombres de las variables son claros, las palabras se separan por puntos, y se utilizan dos puntos para indicar la unidad de medida. Sin embargo, para facilitar la comprensión e interpretación de las variables, se cambiaron los valores de las columnas con valores 0 y 1, a valores lógicos.
 
 ```{r}
-original <- read.csv("/home/estudiante/Descargas/Herramientas/Proyecto/BitacorasGrupo-2-CA0204-II-2024-/data/complete_renewable_energy_dataset.csv")
+original <- read.csv("data/complete_renewable_energy_dataset.csv")
 df <- original
 df$Government.Policies <- as.logical(original$Government.Policies)
 df$Renewable.Energy.Targets <- as.logical(original$Renewable.Energy.Targets)
@@ -97,7 +97,7 @@ df$Regional.Renewable.Energy.Cooperation <- as.logical(original$Regional.Renewab
 Las variables más relevantes para el análisis se dividen en variables de clasificación, de contexto energético y las variables entre las que se pretende encontrar relación, de acuerdo a la pregunta de investigación: *¿Qué impacto puede tener la energía renovable sobre la sociedad?* Las variables de clasificación se refieren a aquellas que diferencian los datos unos de otros, como el país y el año; las variables contextuales son las que no afectan directamente el bienestar social, pero son importantes para comprender algunas diferencias entre países debido a la capacidad que posean de generar, almacenar, importar o exportar energía, así como la existencia de políticas públicas o programas de eficiencia energética. Por último, se pretende encontrar relación entre algunas de las variables contextuales con los tipos de energía, las emisiones de CO2, la inversión, la conciencia pública, el nivel educativo, la estabilidad política, el índice de percepción de la corrupción, el control de la corrupción, la proporción de energía utilizada proveniente de fuentes renovables, los precios de la electricidad, la existencia de programas educativos sobre energía renovable, y la fuerza laboral en el sector energético. Estas variables se presentan en la base de datos, respectivamente, como:
 
 ```{r}
-most_important <- select(df, c("Country", "Year", "Production..GWh.", "GDP", "R.D.Expenditure",  "Energy.Storage.Capacity", "Energy.Consumption", "Energy.Imports", "Energy.Exports", "Government.Policies", "Energy.Efficiency.Programs", "Energy.Type", , "CO2.Emissions",  "Investments..USD.", "Public.Awareness", "Educational.Level", "Political.Stability", "Corruption.Perception.Index", "Control.of.Corruption", "Proportion.of.Energy.from.Renewables", "Electricity.Prices", "Renewable.Energy.Education.Programs",  "Energy.Sector.Workforce"))
+most_important <- select(df, c("Country", "Year", "Production..GWh.", "R.D.Expenditure",  "Energy.Storage.Capacity", "Energy.Consumption", "Energy.Imports", "Energy.Exports", "Government.Policies", "Energy.Efficiency.Programs", "Energy.Type", , "CO2.Emissions",  "Investments..USD.", "Public.Awareness", "Educational.Level", "Political.Stability", "Corruption.Perception.Index", "Control.of.Corruption", "Proportion.of.Energy.from.Renewables", "Electricity.Prices", "Renewable.Energy.Education.Programs",  "Energy.Sector.Workforce"))
 most_important <- most_important[order(most_important$Year),]
 colnames(most_important)
 ```
@@ -182,30 +182,8 @@ Sin embargo, la disminución de las emisiones de CO2 dado por el aumento en la p
 Con el fin de facilitar la realización de gráficos a partir de los datos brindados, se agruparon los datos para algunas de las variables de forma anual.
 
 ```{r setup, warning=FALSE}
-grouped_years <- df %>% 
-  group_by(Year) %>% 
-  nest() 
-grouped_years <- grouped_years[order(grouped_years$Year),]
-
-y <- c(grouped_years$Year)
-variables <- as.list(colnames(df))
-annual <- data.frame()
-for(i in 1:24){
-  a <- grouped_years$data[[i]] %>% 
-    group_by(Country) %>% 
-    nest() %>% 
-    mutate(avg_electricity_price = map(.x = data, .f = ~mean(.x$Electricity.Prices))) %>% 
-    mutate(avg_production = map(.x = data, .f = ~mean(.x$Production..GWh.))) %>% 
-    mutate(avg_investment = map(.x = data, .f = ~mean(.x$Investments..USD.))) %>% 
-    mutate(avg_gdp = map(.x = data, .f = ~mean(.x$GDP))) %>% 
-    mutate(avg_population = map(.x = data, .f = ~mean(.x$Population))) %>% 
-    mutate(avg_CO2_emissions = map(.x = data, .f = ~mean(.x$CO2.Emissions))) %>% 
-    select(Country, avg_electricity_price, avg_production, avg_investment, avg_CO2_emissions, avg_population, avg_gdp) %>% 
-    unnest(avg_electricity_price, avg_production, avg_investment, avg_CO2_emissions, avg_population, avg_gdp) %>% 
-    mutate(Year = y[i])
-  annual <- rbind(annual, a)
-}
-dim(annual)
+annual <- df %>% group_by(Year, Country) %>% summarise(avg_electricity_price = mean(Electricity.Prices), avg_production = sum(Production..GWh.), avg_investment = sum(Investments..USD.), avg_CO2_emissions = sum(CO2.Emissions))
+annual
 ```
 
 Con esta base de datos anualizada, la relación entre la producción de energías renovables y las emisiones de CO2 resultan mucho más claras.
@@ -272,7 +250,7 @@ kable(variables, caption = "Tabla de Variables Relevantes")
 A continuación, se puede visualizar el tipo de valor que corresponde a cada una de las variables seleccionadas:
 
 ```{r}
-kable(head(most_important[, 1:23], 10), "simple")
+kable(head(most_important, 10), "simple")
 ```
 
 Complementariamente, se muestran las funciones más comunes de cada variable seleccionada:
@@ -286,22 +264,8 @@ summary(most_important)
 Para realizar el análisis de datos, se utilizará la regresión lineal, el promedio, funciones para ordenar datos, la función `filter()` para filtrar los datos según los requerimientos, diferentes gráficos para mejor visualización de datos, algoritmos para anualizar los datos. En los gráficos, se procura utilizar gráficos que puedan relacionar las variables entre ellas, así como utilizar el mismo tipo de gráfico para varias variables, con el fin de hacerlos fácilmente comparables. De igual manera, se realizarán diversos tipos de gráfico para encontrar el tipo de gráfico que mejor se ajuste a los datos. En cuanto a la anualización de datos, se busca juntar los datos por el tipo de energía. Así, quedará solo una fila con cada tipo de energía en los países, por año; esto con el fin de poder diferenciar los datos entre ellos, minimizar la cantidad de datos analizados, y facilitar la realización de gráficos. Para facilitar la realización de los gráficos, se anualizaron algunos de los valores de la siguiente manera:
 
 ```{r warning=FALSE}
-annual <- data.frame()
-for(i in 1:24){
-  a <- grouped_years$data[[i]] %>% 
-    group_by(Country) %>% 
-    nest() %>% 
-    mutate(avg_electricity_price = map(.x = data, .f = ~mean(.x$Electricity.Prices))) %>% 
-    mutate(avg_production = map(.x = data, .f = ~mean(.x$Production..GWh.))) %>% 
-    mutate(avg_investment = map(.x = data, .f = ~mean(.x$Investments..USD.))) %>% 
-    mutate(avg_gdp = map(.x = data, .f = ~mean(.x$GDP))) %>% 
-    mutate(avg_population = map(.x = data, .f = ~mean(.x$Population))) %>% 
-    mutate(avg_CO2_emissions = map(.x = data, .f = ~mean(.x$CO2.Emissions))) %>% 
-    select(Country, avg_electricity_price, avg_production, avg_investment, avg_CO2_emissions, avg_population, avg_gdp) %>% 
-    unnest(avg_electricity_price, avg_production, avg_investment, avg_CO2_emissions, avg_population, avg_gdp) %>% 
-    mutate(Year = y[i])
-  annual <- rbind(annual, a)
-}
+annual <- df %>% group_by(Year, Country) %>% summarise(avg_electricity_price = mean(Electricity.Prices), avg_production = sum(Production..GWh.), avg_investment = sum(Investments..USD.), avg_CO2_emissions = sum(CO2.Emissions))
+annual
 ```
 
 Se presentan los resultados, obtenidos con la base de datos anualizada, a continuación.
