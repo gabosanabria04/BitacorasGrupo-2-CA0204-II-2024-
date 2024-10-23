@@ -5,6 +5,7 @@ format: html
 output_dir: "docs"
 editor: visual
 ---
+
 ### Setup {.hidden}
 
 ```{r echo=FALSE, warnings=FALSE}
@@ -20,6 +21,7 @@ library(purrr)
 ## Planificación
 
 ### Análisis de modelación
+
 Tomando en consideración las recomendaciones sobre la base de datos, se decidió reordenarla, de acuerdo a las categorías más relevantes a la pregunta de investigación, y anualizar los datos, uniendo las columnas con el mismo país, año y tipo de energía.
 
 Además, con el fin de automatizar la carga de la base de datos, la ruta de acceso parte desde la carpeta con el repositorio, de modo que al clonar el repositorio, este documento por sí mismo, sea capaz de acceder a la base de datos, facilitando el proceso.
@@ -31,6 +33,7 @@ data
 ```
 
 Nótese que se cambiaron las variables con respecto a la bitácora anterior, con el fin de simplificar el análisis, pero aún así, abarcar diversas áreas, de acuerdo a la pregunta de investigación: socal, económica y ambiental.
+
 ```{r}
 #| echo: false
 2 * 2
@@ -43,6 +46,8 @@ Nótese que se cambiaron las variables con respecto a la bitácora anterior, con
 ## Parte de escritura
 
 ## Parte de reflexión
+
 Con el fin de delimitar la pregunta de investigación de modo que coincida con los datos analizados en este proyecto, se plantea como pregunta de investigación: **¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?**
 
 Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como el nivel educativo, la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública...
+Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. 
