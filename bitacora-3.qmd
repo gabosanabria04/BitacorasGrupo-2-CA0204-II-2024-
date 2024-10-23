@@ -26,16 +26,23 @@ Tomando en consideración las recomendaciones sobre la base de datos, se decidi�
 
 Además, con el fin de automatizar la carga de la base de datos, la ruta de acceso parte desde la carpeta con el repositorio, de modo que al clonar el repositorio, este documento por sí mismo, sea capaz de acceder a la base de datos, facilitando el proceso.
 
+Finalmente, se juntan las variables `Energy.Imports` y `Energy.Exports`, para lo cual, se pivotea de modo que el flujo de entradas y salidas quede en una sola variable denominada Energy.Flow, que se clasifique en importación o exportación por la variable Energy.Flow.Type.
+
 ```{r messages= FALSE, warnings= FALSE}
-original <- read.csv("data/complete_renewable_energy_dataset.csv")
-data <- original|> group_by(Country, Year, Energy.Type, Renewable.Energy.Education.Programs, Government.Policies) |> summarise(Total.Production = sum(Production..GWh.), Electricity.Prices = mean(Electricity.Prices), R.D.Expenditure = sum(R.D.Expenditure), CO2.Emissions = sum(CO2.Emissions), Investments..USD. = sum(Investments..USD.), Public.Awareness = mean(Public.Awareness), Educational.Level = mean(Educational.Level), Energy.Exports = sum(Energy.Exports), Energy.Imports = sum(Energy.Imports), Renewable.Energy.Jobs = sum(Renewable.Energy.Jobs), Renewable.Energy.Patents = sum(Renewable.Energy.Patents), Corruption.Perception.Index = mean(Corruption.Perception.Index))
+original <- read.csv("complete_renewable_energy_dataset.csv")
+data <- original|> group_by(Country, Year, Energy.Type, Renewable.Energy.Education.Programs, Government.Policies) |> summarise(Total.Production = sum(Production..GWh.), Electricity.Prices = mean(Electricity.Prices), R.D.Expenditure = sum(R.D.Expenditure), CO2.Emissions = sum(CO2.Emissions), Investments..USD. = sum(Investments..USD.), Public.Awareness = mean(Public.Awareness), Educational.Level = mean(Educational.Level), Export = sum(Energy.Exports), Import = sum(Energy.Imports), Renewable.Energy.Jobs = sum(Renewable.Energy.Jobs), Renewable.Energy.Patents = sum(Renewable.Energy.Patents), Corruption.Perception.Index = mean(Corruption.Perception.Index)) %>% 
+  pivot_longer(cols = c("Import", "Export"),
+             names_to = "Energy.Flow.Type",
+             values_to = "Energy.Flow")
 data
 ```
 
 Nótese que se cambiaron las variables con respecto a la bitácora anterior, con el fin de simplificar el análisis, pero aún así, abarcar diversas áreas, de acuerdo a la pregunta de investigación: social, económica y ambiental.
 
 ### Análisis Descriptivo
+
 Para realizar un gráfico comparativo de la energía importada y exportada por los países analizados, se pivotea de modo que el flujo de entradas y salidas quede en una sola variable denominada Energy.
+
 ```{r messages= FALSE, warnings= FALSE}
 ggplot(data, aes(x = ))
 geom_density(aes(color = sex)) +
@@ -44,9 +51,9 @@ geom_density(aes(color = sex)) +
   scale_color_manual(values=c("#999999", "#E69F00"))
 ```
 
-
 ### Justificación modelo seleccionado
-**Pregunta de investigación: *** ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
+
+**Pregunta de investigación:** \* ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
 
 ¿Qué responde mi modelo?
 
@@ -67,5 +74,4 @@ geom_density(aes(color = sex)) +
 
 Con el fin de delimitar la pregunta de investigación de modo que coincida con los datos analizados en este proyecto, se plantea como pregunta de investigación: **¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?**
 
-Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como el nivel educativo, la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública...
-Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las avraibles, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.
+Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como el nivel educativo, la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública... Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las avraibles, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.
