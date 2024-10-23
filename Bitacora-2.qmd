@@ -26,7 +26,7 @@ library(purrr)
 ### Ordenamiento de la literatura
 
 | Organización               |                                                                                        |                                                                                                                                                                     | Literatura                                                                                                                                             |      |                                                                                                                                |
-|------------|------------|--------------|-------------|------------|------------|
+|------------|------------|------------|------------|------------|------------|
 | Tipo                       | Tema general                                                                           | Tema específico                                                                                                                                                     | Título                                                                                                                                                 | Año  | Autor(es)                                                                                                                      |
 | descriptivo                | Energía renovable                                                                      | El uso de energía renovable en el camino la autosuficiencia energética.                                                                                             | Energía Renovable: un nuevo principio de autosuficiencia conectada                                                                                     | 2012 | Juan Requejo Liberal                                                                                                           |
 | Análitico                  | Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Energía renovable como alternativa para la reducción de las emisiones de CO2 Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Renewable Energy as a Solution to Climate Change: Insights from a Comprehensive Study Across Nations.                                                  | 2023 | Keshani Attanayake, Isuru Wickramage, Udul Samarasinghe, Yasangi Ranmini, Sandali Ehalapitiya, Ruwan Jayathilaka y Shanta Yapa |
@@ -182,7 +182,7 @@ Sin embargo, la disminución de las emisiones de CO2 dado por el aumento en la p
 Con el fin de facilitar la realización de gráficos a partir de los datos brindados, se agruparon los datos para algunas de las variables de forma anual.
 
 ```{r setup, warning=FALSE}
-annual <- df %>% group_by(Year, Country) %>% summarise(avg_electricity_price = mean(Electricity.Prices), avg_production = sum(Production..GWh.), avg_investment = sum(Investments..USD.), avg_CO2_emissions = sum(CO2.Emissions))
+annual <- df %>% group_by(Year, Country) %>% summarise(avg_electricity_price = mean(Electricity.Prices), avg_production = sum(Production..GWh.), avg_investment = sum(Investments..USD.), avg_CO2_emissions = mean(CO2.Emissions))
 annual
 ```
 
@@ -195,7 +195,7 @@ ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
     title = "Energy Production and CO2 Emissions",
     x = "Renewable energy production",
     y = "CO2 Emissions"
-  ) +
+  )+
   theme_cowplot()
 ```
 
