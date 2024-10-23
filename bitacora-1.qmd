@@ -24,7 +24,7 @@ editor: visual
 
 ### Pregunta de Investigación
 
-¿Qué impacto puede tener la energía renovable sobre la sociedad?
+¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
 
 #### Definición de la idea
 
@@ -50,6 +50,8 @@ Las comparaciones entre países puede verse afectadas por el contexto del país,
 
 **¿Qué impacto puede tener la energía renovable sobre la sociedad?**
 
+**¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?**
+
 **¿Cómo puedo comparar los países en materia de enegías renovables?**
 
 **¿Puede la utilización de energías renovables garantizar un futuro sostenible?**
@@ -58,7 +60,7 @@ Las comparaciones entre países puede verse afectadas por el contexto del país,
 
 #### Argumentación de la pregunta
 
-**Pregunta: ¿Qué impacto puede tener la energía renovable sobre la sociedad?**
+**Pregunta: ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?**
 
 **Contraargumentos**
 
@@ -388,7 +390,7 @@ Las comparaciones entre países puede verse afectadas por el contexto del país,
 
 ## Parte de Escritura
 
-**Pregunta de investigación:** ¿Qué impacto puede tener la energía renovable sobre la sociedad?
+**Pregunta de investigación:** ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
 
 Para analizar los efectos que puede tener la energía renovable sobre la sociedad, es importante entender no solo qué es la energía renovable, sino también cómo ha sido estudiada y aplicada previamente. La energía renovable se define como la energía derivada de recursos naturales que se reponen continuamente, como la luz solar, el viento, el agua, la biomasa y la energía geotérmica (United Nations, s.f.). Estas fuentes de energía son abundantes y en todo el mundo se muestra la disponibilidad de alguna de ellas, lo que las hace sumamente relevantes para la transición hacia un futuro con energía más sostenible, y enfrentar los inconvenientes del cambio climático.
 
