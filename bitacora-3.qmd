@@ -42,7 +42,7 @@ Nótese que se cambiaron las variables con respecto a la bitácora anterior, con
 
 ### Análisis Descriptivo
 
-
+Dados ya los hallazgos anteriores, resulta interesante analizar el flujo energético de los países. Para ello, la figura 3.1 representa el total de importaciones, comparado al total de exportaciones, por cada país durante el periodo estudiado, 2000 a 2020.
 
 ```{r messages= FALSE, warnings= FALSE}
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
@@ -50,13 +50,38 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
            stat = "identity",
            position = position_dodge()) +
   labs(title = "Contry's Energy Flow Comparison",
-       y = "")+
+       y = "",
+       caption= "Procedings of https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.1")+
   scale_fill_manual(name="", 
                     labels = c("Export", "Import"), 
                     values = c("Import"="#00ba88", "Export"="#f8966d"))+
   theme_cowplot()+
-  theme(legend.position = "top")
+  theme(legend.position = "top",
+        plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
 ```
+Mientras que la figura 3.2 separa esta información por años.
+```{r messages= FALSE, warnings= FALSE, fig.height=30, fig.width=8}
+ggplot(data, aes(x = Country, y = Energy.Flow)) +
+  geom_bar(aes(fill = Energy.Flow.Type),
+           stat = "identity",
+           position = position_dodge()) +
+  facet_wrap(~Year, ncol = 2)+
+  labs(title = "Contry's Energy Flow Comparison",
+       y = "",
+       caption= "Procedings of https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.2")+
+  scale_fill_manual(name="", 
+                    labels = c("Export", "Import"), 
+                    values = c("Import"="#00ba88", "Export"="#f8966d"))+
+  theme_cowplot()+
+  theme(legend.position = "top",
+        plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"),
+        axis.text.x = element_text(angle = 45, vjust=.5, hjust=0.3))
+```
+
 ```{r messages= FALSE, warnings= FALSE, fig.height=40, fig.width=8}
 data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type) %>% 
   summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion < 10) %>% 
