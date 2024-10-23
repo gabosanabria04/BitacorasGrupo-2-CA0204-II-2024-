@@ -44,7 +44,7 @@ Nótese que se cambiaron las variables con respecto a la bitácora anterior, con
 
 Dados ya los hallazgos anteriores, resulta interesante analizar el flujo energético de los países. Para ello, la figura 3.1 representa el total de importaciones, comparado al total de exportaciones, por cada país durante el periodo estudiado, 2000 a 2020.
 
-```{r messages= FALSE, warnings= FALSE}
+```{r messages= FALSE, warnings= FALSE, fig.width=8}
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
            stat = "identity",
@@ -61,8 +61,8 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
-Mientras que la figura 3.2 separa esta información por años.
-```{r messages= FALSE, warnings= FALSE, fig.height=30, fig.width=8}
+Mientras que la figura 3.2 separa esta información por años, con el fin de detectar tendencias.
+```{r messages= FALSE, warnings= FALSE, fig.height=25, fig.width=8}
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
            stat = "identity",
@@ -132,3 +132,6 @@ data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type, Total.Production
 Con el fin de delimitar la pregunta de investigación de modo que coincida con los datos analizados en este proyecto, se plantea como pregunta de investigación: **¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?**
 
 Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como el nivel educativo, la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública... Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las avraibles, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.
+
+
+Tomando en cuenta las observaciones realizadas a las bitácoras pasadas, se incorpora un caption con la fuente de la base de datos en cada gráfico. Se incorporan también tags, para facilitar la identificación de los gráficos. 
