@@ -39,12 +39,11 @@ data
 ```
 
 Nótese que se cambiaron las variables con respecto a la bitácora anterior, con el fin de simplificar el análisis, pero aún así, abarcar diversas áreas, de acuerdo a la pregunta de investigación: social, económica y ambiental.
+
 #### Descripción del modelo
-Para determinar relaciones entre algunas de las variables, especialmente la cantidad de trabajos en el sector de energía renovable, se utiliza la función `cor()`, con el método "pearson". Esta función retorna un número entre -1 y 1, siendo -1 una relación perfactamente negativa, 1 una perfectamente positiva y 0 ninguna relación; de modo que nos permite saber si las variables analizadas tienen o no nivel de dependencia. Por su lado, el coeficiente de correlación de Pearson mide la fuerza de relación entre dos variables, para lo que suma el producto de sus diferencias con respecto a sus medias, y divide la suma por el producto de las diferencias al cuadrado con respecto a las medias de los objetos, como se muestra a continuación:
-![Coeficiente de correlación de Pearson](images/Pearson_coefficient.jpg){fig-align="center"}
-Una vezque se obtiene un número bastante más cercano a uno que a cero, se realiza la regresión lineal de ambas variables, que da como resultado el intercepto y el coeficiente beta de la segunda variable. Sea x la primera variable e y la segunda, tenemos: $x = intercepto + \beta*y$. 
-Por último, para verificar que los datos tienen significancia estadística, para lo que se analiza el p-value. Para comprobar que el modelo es estadísticamente significativo, debemos comprobar que ambos p-values son menores al nivel de significancia predefinido (0.05). Si el valor p es bajo, se puede rechazar la hipótesis nula, es decir, descartar que los coeficientes sean cero, y concluir que existe una relación entre las variables. En ese momento, se procede a realizar el gráfico.
-A continuación se presenta un ejemplo del procedimiento para las variables relacionadas mediante regresión lineal.
+
+Para determinar relaciones entre algunas de las variables, especialmente la cantidad de trabajos en el sector de energía renovable, se utiliza la función `cor()`, con el método "pearson". Esta función retorna un número entre -1 y 1, siendo -1 una relación perfactamente negativa, 1 una perfectamente positiva y 0 ninguna relación; de modo que nos permite saber si las variables analizadas tienen o no nivel de dependencia. Por su lado, el coeficiente de correlación de Pearson mide la fuerza de relación entre dos variables, para lo que suma el producto de sus diferencias con respecto a sus medias, y divide la suma por el producto de las diferencias al cuadrado con respecto a las medias de los objetos, como se muestra a continuación: ![Coeficiente de correlación de Pearson](images/Pearson_coefficient.jpg){fig-align="center"} Una vezque se obtiene un número bastante más cercano a uno que a cero, se realiza la regresión lineal de ambas variables, que da como resultado el intercepto y el coeficiente beta de la segunda variable. Sea x la primera variable e y la segunda, tenemos: $x = intercepto + \beta*y$. Por último, para verificar que los datos tienen significancia estadística, para lo que se analiza el p-value. Para comprobar que el modelo es estadísticamente significativo, debemos comprobar que ambos p-values son menores al nivel de significancia predefinido (0.05). Si el valor p es bajo, se puede rechazar la hipótesis nula, es decir, descartar que los coeficientes sean cero, y concluir que existe una relación entre las variables. En ese momento, se procede a realizar el gráfico. A continuación se presenta un ejemplo del procedimiento para las variables relacionadas mediante regresión lineal.
+
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$Investments..USD.)
 linearMod <- lm(Renewable.Energy.Jobs ~ Investments..USD., data=data)
@@ -74,7 +73,9 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
+
 Mientras que la figura 3.2 separa esta información por años, con el fin de detectar tendencias.
+
 ```{r messages= FALSE, warnings= FALSE, fig.height=25, fig.width=8}
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
@@ -99,6 +100,8 @@ Si bien los gráficos anteriores brindan una idea de cuánta energía se importa
 
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Energy.Flow, data$Total.Production)
+linearMod <- lm(Energy.Flow ~ Total.Production, data=data)
+summary(linearMod)
 ```
 
 ```{r messages= FALSE, warnings= FALSE, fig.height=50, fig.width=8}
@@ -124,14 +127,11 @@ data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type) %>%
         axis.text.x = element_text(angle = 45, vjust=.5, hjust=0.3))
 ```
 
-
-
 ```{r messages= FALSE, warnings= FALSE}
 data %>% 
   ggplot(aes(x = Electricity.Prices))+
   geom_density()
 ```
-
 
 ```{r messages= FALSE, warnings= FALSE}
 data %>% 
@@ -144,8 +144,6 @@ data %>%
 scatter.smooth(x=data$Energy.Flow, y=data$Electricity.Prices, main="Dist ~ Speed") 
 ```
 
-
-
 ```{r messages= FALSE, warnings= FALSE, fig.height=30, fig.width=8}
 data %>% ggplot(aes(Public.Awareness))+
   geom_density()+
@@ -154,36 +152,38 @@ data %>% ggplot(aes(Public.Awareness))+
 
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$Total.Production)
+linearMod <- lm(Renewable.Energy.Jobs ~ Total.Production, data=data)
+summary(linearMod)
 ```
+
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$Renewable.Energy.Patents)
+linearMod <- lm(Renewable.Energy.Jobs ~ Renewable.Energy.Patents, data=data)
+summary(linearMod)
 ```
+
 ```{r messages= FALSE, warnings= FALSE, fig.width = 12, fig.height=3}
 data %>% 
   ggplot(aes(x = Year, y = Renewable.Energy.Jobs, group = Year))+
   geom_boxplot(width = .25)+
   facet_wrap(~Renewable.Energy.Education.Programs, ncol=2)
 ```
+
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$R.D.Expenditure)
-```
-```{r messages= FALSE, warnings= FALSE}
-cor(data$Renewable.Energy.Jobs, data$Investments..USD.)
-linearMod <- lm(Renewable.Energy.Jobs ~ Investments..USD., data=data)
-print(linearMod)
+linearMod <- lm(Renewable.Energy.Jobs ~ R.D.Expenditure, data=data)
 summary(linearMod)
 ```
 
-
-
-
+```{r messages= FALSE, warnings= FALSE}
+cor(data$Renewable.Energy.Jobs, data$Investments..USD.)
+linearMod <- lm(Renewable.Energy.Jobs ~ Investments..USD., data=data)
+summary(linearMod)
+```
 
 ### Justificación modelo seleccionado
 
 **Pregunta de investigación:** \* ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
-
-
-
 
 ¿Qué responde mi modelo?
 
@@ -207,5 +207,4 @@ Con el fin de delimitar la pregunta de investigación de modo que coincida con l
 
 Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como el nivel educativo, la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública... Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las avraibles, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.
 
-
-Tomando en cuenta las observaciones realizadas a las bitácoras pasadas, se incorpora un caption con la fuente de la base de datos en cada gráfico. Se incorporan también tags, para facilitar la identificación de los gráficos. 
+Tomando en cuenta las observaciones realizadas a las bitácoras pasadas, se incorpora un caption con la fuente de la base de datos en cada gráfico. También se incorporan tags, para facilitar la identificación de los gráficos.
