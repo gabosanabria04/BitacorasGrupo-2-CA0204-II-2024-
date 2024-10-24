@@ -49,12 +49,13 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
            stat = "identity",
            position = position_dodge()) +
-  labs(title = "Contry's Energy Flow Comparison",
+  labs(title = "Total de Flujo Energético",
+       x = "País",
        y = "",
-       caption= "Procedings of https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
        tag = "Fig.3.1")+
   scale_fill_manual(name="", 
-                    labels = c("Export", "Import"), 
+                    labels = c("Exportaciones", "Importaciones"), 
                     values = c("Import"="#00ba88", "Export"="#f8966d"))+
   theme_cowplot()+
   theme(legend.position = "top",
@@ -68,12 +69,12 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
            stat = "identity",
            position = position_dodge()) +
   facet_wrap(~Year, ncol = 2)+
-  labs(title = "Contry's Energy Flow Comparison",
+  labs(title = "Flujo Energético Anual",
        y = "",
-       caption= "Procedings of https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
        tag = "Fig.3.2")+
   scale_fill_manual(name="", 
-                    labels = c("Export", "Import"), 
+                    labels = c("Exportaciones", "Importaciones"), 
                     values = c("Import"="#00ba88", "Export"="#f8966d"))+
   theme_cowplot()+
   theme(legend.position = "top",
@@ -91,13 +92,13 @@ data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type) %>%
            stat = "identity",
            position = position_dodge())+
   facet_wrap(Energy.Type~Country, ncol = 2) +
-  labs(title = "Contry's Energy Flow Comparison",
-       subtitle = "as Total Production's proportion",
+  labs(title = "Flujo Energético",
+       subtitle = "como proporción de la producción total",
        y = "",
        tag = "Fig.3.3.",
-       caption= "Procedings of https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de] https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   scale_fill_manual(name="", 
-                    labels = c("Export", "Import"), 
+                    labels = c("Exportaciones", "Importaciones"), 
                     values = c("Import"="#00ba88", "Export"="#f8966d"))+
   theme_cowplot()+
   theme(legend.position = "top",
@@ -111,6 +112,31 @@ data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type, Total.Production
   summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion > 10)
 ```
 
+
+
+```{r messages= FALSE, warnings= FALSE}
+data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type, Total.Production) %>% 
+  summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion > 10)
+```
+
+
+```{r messages= FALSE, warnings= FALSE}
+data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type, Total.Production) %>% 
+  summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion > 10)
+```
+
+
+```{r messages= FALSE, warnings= FALSE}
+data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type, Total.Production) %>% 
+  summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion > 10)
+```
+
+
+
+```{r messages= FALSE, warnings= FALSE}
+data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type, Total.Production) %>% 
+  summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion > 10)
+```
 
 
 
