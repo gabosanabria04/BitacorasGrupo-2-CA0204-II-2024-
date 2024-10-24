@@ -250,7 +250,7 @@ kable(variables, caption = "Tabla de Variables Relevantes")
 A continuación, se puede visualizar el tipo de valor que corresponde a cada una de las variables seleccionadas:
 
 ```{r}
-kable(head(most_important, 10), "simple")
+kable(head(most_important, 20), "simple")
 ```
 
 Complementariamente, se muestran las funciones más comunes de cada variable seleccionada:
@@ -264,13 +264,13 @@ summary(most_important)
 Para realizar el análisis de datos, se utilizará la regresión lineal, el promedio, funciones para ordenar datos, la función `filter()` para filtrar los datos según los requerimientos, diferentes gráficos para mejor visualización de datos, algoritmos para anualizar los datos. En los gráficos, se procura utilizar gráficos que puedan relacionar las variables entre ellas, así como utilizar el mismo tipo de gráfico para varias variables, con el fin de hacerlos fácilmente comparables. De igual manera, se realizarán diversos tipos de gráfico para encontrar el tipo de gráfico que mejor se ajuste a los datos. En cuanto a la anualización de datos, se busca juntar los datos por el tipo de energía. Así, quedará solo una fila con cada tipo de energía en los países, por año; esto con el fin de poder diferenciar los datos entre ellos, minimizar la cantidad de datos analizados, y facilitar la realización de gráficos. Para facilitar la realización de los gráficos, se anualizaron algunos de los valores de la siguiente manera:
 
 ```{r warning=FALSE}
-annual <- df %>% group_by(Year, Country) %>% summarise(avg_electricity_price = mean(Electricity.Prices), avg_production = sum(Production..GWh.), avg_investment = sum(Investments..USD.), avg_CO2_emissions = sum(CO2.Emissions))
+annual <- df %>% group_by(Year, Country) %>% summarise(avg_electricity_price = mean(Electricity.Prices), avg_production = sum(Production..GWh.), avg_investment = sum(Investments..USD.), avg_CO2_emissions = mean(CO2.Emissions))
 annual
 ```
 
 Se presentan los resultados, obtenidos con la base de datos anualizada, a continuación.
 
-```{r}
+```{r, fig.width = 8}
 ggplot(annual, aes(x = Year, y = avg_electricity_price)) +
   geom_line() +
   facet_wrap(~Country) +
@@ -281,8 +281,7 @@ ggplot(annual, aes(x = Year, y = avg_electricity_price)) +
     y = "Electricity Price"
   )+
   theme_cowplot() +
-  scale_x_continuous(breaks=c(2000, 2010, 2020)) +
-  scale_y_continuous(breaks = c(0.2, 0.30, 0.4))
+  scale_x_continuous(breaks=c(2000, 2010, 2020))
 
 ggplot(annual, aes(x = Year, y = avg_production)) +
   geom_line() +
@@ -294,8 +293,7 @@ ggplot(annual, aes(x = Year, y = avg_production)) +
     y = "Production"
   )+
   theme_cowplot()+
-  scale_x_continuous(breaks=c(2000, 2010, 2020)) +
-  scale_y_continuous(breaks = c(30000, 50000, 70000))
+  scale_x_continuous(breaks=c(2000, 2010, 2020))
 
 ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
   geom_line()+
@@ -307,8 +305,7 @@ ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
     y = "Electricity Price"
   ) +
   theme_cowplot() +
-  scale_y_continuous(breaks=c(0.20, 0.30, 0.4)) +
-  scale_x_continuous(breaks = c(30000, 50000, 70000))
+  scale_y_continuous(breaks=c(0.20, 0.30, 0.4))
 
 
 
@@ -343,10 +340,8 @@ ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
     x = "Renewable Energy Production",
     y = "CO2 Emissions"
   ) +
-  facet_wrap(~Country)+
-  theme_cowplot() +
-  scale_y_continuous(breaks=c(3e+05, 5e+05, 7e+05)) +
-  scale_x_continuous(breaks = c(30000, 50000, 70000))
+  facet_wrap(~Country, ncol=2)+
+  theme_cowplot()
 
 
 
