@@ -692,8 +692,8 @@ Attaching package: 'cowplot'</code></pre>
 </div>
 </div>
 <p>A continuación, se puede visualizar el tipo de valor que corresponde a cada una de las variables seleccionadas:</p>
-<div class="cell" data-hash="Bitacora-2_cache/html/unnamed-chunk-13_5b0576290457168c9e714449665020f6">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(most_important, <span class="dv">10</span>), <span class="st">"simple"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Bitacora-2_cache/html/unnamed-chunk-13_eef8ef25cae56413514adcbcc231b4b5">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(most_important, <span class="dv">20</span>), <span class="st">"simple"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -701,8 +701,7 @@ Attaching package: 'cowplot'</code></pre>
 <th>Countr</th>
 <th>y Year</th>
 <th style="text-align: right;">Produ</th>
-<th style="text-align: left;">ction..GWh.</th>
-<th style="text-align: right;">GDP R.D.E</th>
+<th>ction..GWh. R.D.E</th>
 <th>xpenditure Energ</th>
 <th>y.Storage.Capacity Energ</th>
 <th>y.Consumption Energ</th>
@@ -729,11 +728,10 @@ Attaching package: 'cowplot'</code></pre>
 <td>104</td>
 <td>France</td>
 <td style="text-align: right;">2000</td>
-<td style="text-align: left;">41553.64</td>
-<td style="text-align: right;">1.312984e+14</td>
+<td>41553.636</td>
 <td>5156596035</td>
 <td>730.78270</td>
-<td>416156.4</td>
+<td>416156.41</td>
 <td>84341.38</td>
 <td>95883.935</td>
 <td>TRUE</td>
@@ -742,7 +740,7 @@ Attaching package: 'cowplot'</code></pre>
 <td>549105.36</td>
 <td>4944095097</td>
 <td>4.031186</td>
-<td>8.396600</td>
+<td>8.3965997</td>
 <td>6.033646</td>
 <td>8.6996818</td>
 <td>3.0394458</td>
@@ -755,11 +753,10 @@ Attaching package: 'cowplot'</code></pre>
 <td>113</td>
 <td>France</td>
 <td style="text-align: right;">2000</td>
-<td style="text-align: left;">37182.66</td>
-<td style="text-align: right;">9.150603e+13</td>
+<td>37182.663</td>
 <td>6632285903</td>
 <td>436.10603</td>
-<td>118719.5</td>
+<td>118719.53</td>
 <td>27784.56</td>
 <td>98030.879</td>
 <td>TRUE</td>
@@ -768,7 +765,7 @@ Attaching package: 'cowplot'</code></pre>
 <td>935098.99</td>
 <td>5796309684</td>
 <td>5.460002</td>
-<td>1.878254</td>
+<td>1.8782537</td>
 <td>8.759270</td>
 <td>7.4672917</td>
 <td>1.3198382</td>
@@ -781,11 +778,10 @@ Attaching package: 'cowplot'</code></pre>
 <td>129</td>
 <td>China</td>
 <td style="text-align: right;">2000</td>
-<td style="text-align: left;">91171.30</td>
-<td style="text-align: right;">7.743643e+13</td>
+<td>91171.297</td>
 <td>281534516</td>
 <td>391.79441</td>
-<td>840126.8</td>
+<td>840126.81</td>
 <td>29873.45</td>
 <td>93546.676</td>
 <td>FALSE</td>
@@ -794,7 +790,7 @@ Attaching package: 'cowplot'</code></pre>
 <td>614841.74</td>
 <td>6876746726</td>
 <td>2.073374</td>
-<td>3.126844</td>
+<td>3.1268444</td>
 <td>1.314669</td>
 <td>1.5852214</td>
 <td>1.9285751</td>
@@ -807,11 +803,10 @@ Attaching package: 'cowplot'</code></pre>
 <td>183</td>
 <td>India</td>
 <td style="text-align: right;">2000</td>
-<td style="text-align: left;">49328.19</td>
-<td style="text-align: right;">1.537309e+14</td>
+<td>49328.195</td>
 <td>4364720367</td>
 <td>980.83179</td>
-<td>348211.8</td>
+<td>348211.84</td>
 <td>89324.06</td>
 <td>9574.106</td>
 <td>TRUE</td>
@@ -820,7 +815,7 @@ Attaching package: 'cowplot'</code></pre>
 <td>704675.73</td>
 <td>7245473466</td>
 <td>9.817972</td>
-<td>8.085698</td>
+<td>8.0856976</td>
 <td>1.544415</td>
 <td>5.1500179</td>
 <td>0.7975830</td>
@@ -833,11 +828,10 @@ Attaching package: 'cowplot'</code></pre>
 <td>184</td>
 <td>Russia</td>
 <td style="text-align: right;">2000</td>
-<td style="text-align: left;">82302.76</td>
-<td style="text-align: right;">8.267748e+13</td>
+<td>82302.758</td>
 <td>9212834719</td>
 <td>103.46780</td>
-<td>314844.4</td>
+<td>314844.36</td>
 <td>31849.27</td>
 <td>17249.998</td>
 <td>FALSE</td>
@@ -846,7 +840,7 @@ Attaching package: 'cowplot'</code></pre>
 <td>387030.46</td>
 <td>4276274674</td>
 <td>2.689981</td>
-<td>3.649021</td>
+<td>3.6490214</td>
 <td>2.148283</td>
 <td>4.8687111</td>
 <td>2.2040595</td>
@@ -859,11 +853,10 @@ Attaching package: 'cowplot'</code></pre>
 <td>245</td>
 <td>USA</td>
 <td style="text-align: right;">2000</td>
-<td style="text-align: left;">10573.01</td>
-<td style="text-align: right;">1.055789e+14</td>
+<td>10573.010</td>
 <td>7472162976</td>
 <td>421.25022</td>
-<td>988226.8</td>
+<td>988226.79</td>
 <td>32893.59</td>
 <td>53095.291</td>
 <td>FALSE</td>
@@ -872,7 +865,7 @@ Attaching package: 'cowplot'</code></pre>
 <td>10503.88</td>
 <td>7958885822</td>
 <td>6.408223</td>
-<td>8.909304</td>
+<td>8.9093040</td>
 <td>3.093345</td>
 <td>3.1322674</td>
 <td>8.0540120</td>
@@ -885,11 +878,10 @@ Attaching package: 'cowplot'</code></pre>
 <td>270</td>
 <td>Australia</td>
 <td style="text-align: right;">2000</td>
-<td style="text-align: left;">55704.73</td>
-<td style="text-align: right;">1.095218e+14</td>
+<td>55704.728</td>
 <td>6964316497</td>
 <td>805.41723</td>
-<td>947418.4</td>
+<td>947418.44</td>
 <td>76774.98</td>
 <td>90480.649</td>
 <td>FALSE</td>
@@ -898,7 +890,7 @@ Attaching package: 'cowplot'</code></pre>
 <td>437142.43</td>
 <td>2517783500</td>
 <td>5.408002</td>
-<td>1.730312</td>
+<td>1.7303124</td>
 <td>7.344888</td>
 <td>7.9608342</td>
 <td>0.9046237</td>
@@ -911,11 +903,10 @@ Attaching package: 'cowplot'</code></pre>
 <td>299</td>
 <td>Germany</td>
 <td style="text-align: right;">2000</td>
-<td style="text-align: left;">92070.54</td>
-<td style="text-align: right;">1.931555e+14</td>
+<td>92070.540</td>
 <td>2334191299</td>
 <td>208.76841</td>
-<td>241523.8</td>
+<td>241523.75</td>
 <td>18999.36</td>
 <td>52528.718</td>
 <td>FALSE</td>
@@ -924,7 +915,7 @@ Attaching package: 'cowplot'</code></pre>
 <td>325889.36</td>
 <td>5523800472</td>
 <td>6.324561</td>
-<td>9.991239</td>
+<td>9.9912390</td>
 <td>3.166196</td>
 <td>1.8989239</td>
 <td>6.3234033</td>
@@ -937,11 +928,10 @@ Attaching package: 'cowplot'</code></pre>
 <td>302</td>
 <td>Germany</td>
 <td style="text-align: right;">2000</td>
-<td style="text-align: left;">10551.33</td>
-<td style="text-align: right;">1.508926e+14</td>
+<td>10551.326</td>
 <td>1072466361</td>
 <td>22.69172</td>
-<td>398149.9</td>
+<td>398149.91</td>
 <td>27990.37</td>
 <td>84538.852</td>
 <td>TRUE</td>
@@ -950,7 +940,7 @@ Attaching package: 'cowplot'</code></pre>
 <td>936568.01</td>
 <td>287891010</td>
 <td>9.486670</td>
-<td>4.182704</td>
+<td>4.1827037</td>
 <td>7.177622</td>
 <td>6.6522663</td>
 <td>7.8563876</td>
@@ -963,11 +953,10 @@ Attaching package: 'cowplot'</code></pre>
 <td>341</td>
 <td>USA</td>
 <td style="text-align: right;">2000</td>
-<td style="text-align: left;">77773.94</td>
-<td style="text-align: right;">5.895363e+13</td>
+<td>77773.937</td>
 <td>5065627217</td>
 <td>114.93701</td>
-<td>50910.2</td>
+<td>50910.20</td>
 <td>39382.18</td>
 <td>1147.304</td>
 <td>FALSE</td>
@@ -976,7 +965,7 @@ Attaching package: 'cowplot'</code></pre>
 <td>38896.04</td>
 <td>3337977857</td>
 <td>2.337882</td>
-<td>4.423790</td>
+<td>4.4237904</td>
 <td>3.416456</td>
 <td>0.1768658</td>
 <td>8.1263518</td>
@@ -984,6 +973,256 @@ Attaching package: 'cowplot'</code></pre>
 <td>0.3814160</td>
 <td>FALSE</td>
 <td style="text-align: left;">270115</td>
+</tr>
+<tr class="odd">
+<td>356</td>
+<td>Japan</td>
+<td style="text-align: right;">2000</td>
+<td>60460.533</td>
+<td>5763292541</td>
+<td>385.36531</td>
+<td>878350.38</td>
+<td>11308.51</td>
+<td>10138.379</td>
+<td>TRUE</td>
+<td>FALSE</td>
+<td>Solar</td>
+<td>11334.60</td>
+<td>6489883193</td>
+<td>4.228136</td>
+<td>9.6939186</td>
+<td>7.115361</td>
+<td>1.2712938</td>
+<td>6.1980700</td>
+<td>72.276768</td>
+<td>0.4443721</td>
+<td>TRUE</td>
+<td style="text-align: left;">846722</td>
+</tr>
+<tr class="even">
+<td>408</td>
+<td>Russia</td>
+<td style="text-align: right;">2000</td>
+<td>47030.792</td>
+<td>7480461640</td>
+<td>239.56841</td>
+<td>505119.05</td>
+<td>13614.25</td>
+<td>2293.415</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>Solar</td>
+<td>448503.06</td>
+<td>7283409894</td>
+<td>2.949327</td>
+<td>2.1741626</td>
+<td>5.361912</td>
+<td>9.1540526</td>
+<td>8.1430944</td>
+<td>60.136093</td>
+<td>0.0688994</td>
+<td>FALSE</td>
+<td style="text-align: left;">522944</td>
+</tr>
+<tr class="odd">
+<td>416</td>
+<td>Germany</td>
+<td style="text-align: right;">2000</td>
+<td>4558.993</td>
+<td>5011276872</td>
+<td>255.88815</td>
+<td>989142.06</td>
+<td>65030.79</td>
+<td>8276.311</td>
+<td>TRUE</td>
+<td>FALSE</td>
+<td>Hydro</td>
+<td>693137.51</td>
+<td>5487095155</td>
+<td>8.496069</td>
+<td>6.9709478</td>
+<td>8.811791</td>
+<td>4.5740109</td>
+<td>3.5221469</td>
+<td>1.616042</td>
+<td>0.0790746</td>
+<td>FALSE</td>
+<td style="text-align: left;">700065</td>
+</tr>
+<tr class="even">
+<td>446</td>
+<td>Japan</td>
+<td style="text-align: right;">2000</td>
+<td>55181.158</td>
+<td>9906080079</td>
+<td>844.59430</td>
+<td>800572.30</td>
+<td>77850.38</td>
+<td>96789.195</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>Biomass</td>
+<td>512343.68</td>
+<td>9146475538</td>
+<td>6.206065</td>
+<td>7.4814690</td>
+<td>6.841339</td>
+<td>3.4125842</td>
+<td>8.4560311</td>
+<td>18.347701</td>
+<td>0.4977844</td>
+<td>FALSE</td>
+<td style="text-align: left;">717788</td>
+</tr>
+<tr class="odd">
+<td>450</td>
+<td>India</td>
+<td style="text-align: right;">2000</td>
+<td>3313.067</td>
+<td>3464875530</td>
+<td>660.81261</td>
+<td>854444.31</td>
+<td>46990.05</td>
+<td>76146.395</td>
+<td>FALSE</td>
+<td>TRUE</td>
+<td>Solar</td>
+<td>212159.05</td>
+<td>6121759597</td>
+<td>8.990225</td>
+<td>0.7712585</td>
+<td>4.374082</td>
+<td>5.6455228</td>
+<td>7.4607035</td>
+<td>60.503825</td>
+<td>0.4921577</td>
+<td>TRUE</td>
+<td style="text-align: left;">161437</td>
+</tr>
+<tr class="even">
+<td>471</td>
+<td>Canada</td>
+<td style="text-align: right;">2000</td>
+<td>48338.853</td>
+<td>5304171035</td>
+<td>398.41665</td>
+<td>302867.89</td>
+<td>86092.61</td>
+<td>40167.181</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>Wind</td>
+<td>709200.05</td>
+<td>9998292119</td>
+<td>8.443910</td>
+<td>1.9830484</td>
+<td>8.701966</td>
+<td>6.1769891</td>
+<td>3.8625996</td>
+<td>95.271315</td>
+<td>0.2625288</td>
+<td>FALSE</td>
+<td style="text-align: left;">188499</td>
+</tr>
+<tr class="odd">
+<td>493</td>
+<td>France</td>
+<td style="text-align: right;">2000</td>
+<td>96020.059</td>
+<td>1587265063</td>
+<td>878.08371</td>
+<td>371029.19</td>
+<td>83124.13</td>
+<td>4597.607</td>
+<td>FALSE</td>
+<td>TRUE</td>
+<td>Hydro</td>
+<td>518920.33</td>
+<td>8220034098</td>
+<td>8.575426</td>
+<td>4.7026440</td>
+<td>3.807785</td>
+<td>6.4866251</td>
+<td>9.4009324</td>
+<td>1.437724</td>
+<td>0.3034974</td>
+<td>FALSE</td>
+<td style="text-align: left;">830612</td>
+</tr>
+<tr class="even">
+<td>540</td>
+<td>Brazil</td>
+<td style="text-align: right;">2000</td>
+<td>52656.457</td>
+<td>2788165039</td>
+<td>540.76064</td>
+<td>644569.48</td>
+<td>98726.67</td>
+<td>56478.338</td>
+<td>FALSE</td>
+<td>TRUE</td>
+<td>Hydro</td>
+<td>526527.36</td>
+<td>2901947353</td>
+<td>1.396122</td>
+<td>6.1234633</td>
+<td>5.158723</td>
+<td>4.1191858</td>
+<td>8.5454784</td>
+<td>86.956842</td>
+<td>0.1368924</td>
+<td>FALSE</td>
+<td style="text-align: left;">666608</td>
+</tr>
+<tr class="odd">
+<td>557</td>
+<td>Brazil</td>
+<td style="text-align: right;">2000</td>
+<td>26661.326</td>
+<td>9905057984</td>
+<td>423.16143</td>
+<td>10968.35</td>
+<td>51539.62</td>
+<td>3482.417</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>Solar</td>
+<td>145101.37</td>
+<td>9686216381</td>
+<td>4.977002</td>
+<td>6.1978754</td>
+<td>5.582939</td>
+<td>4.1346125</td>
+<td>0.2072152</td>
+<td>22.297153</td>
+<td>0.0740918</td>
+<td>TRUE</td>
+<td style="text-align: left;">286203</td>
+</tr>
+<tr class="even">
+<td>561</td>
+<td>USA</td>
+<td style="text-align: right;">2000</td>
+<td>47525.792</td>
+<td>3754010420</td>
+<td>279.80837</td>
+<td>474403.29</td>
+<td>27572.66</td>
+<td>60963.535</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>Wind</td>
+<td>483448.46</td>
+<td>4864429703</td>
+<td>8.698319</td>
+<td>3.0225035</td>
+<td>4.833008</td>
+<td>5.1702733</td>
+<td>6.4860889</td>
+<td>62.957759</td>
+<td>0.2773376</td>
+<td>TRUE</td>
+<td style="text-align: left;">417311</td>
 </tr>
 </tbody>
 </table>
@@ -1048,8 +1287,8 @@ Attaching package: 'cowplot'</code></pre>
 <section id="propuesta-metodológica" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="propuesta-metodológica"><span class="header-section-number">4.2</span> Propuesta Metodológica</h2>
 <p>Para realizar el análisis de datos, se utilizará la regresión lineal, el promedio, funciones para ordenar datos, la función <code>filter()</code> para filtrar los datos según los requerimientos, diferentes gráficos para mejor visualización de datos, algoritmos para anualizar los datos. En los gráficos, se procura utilizar gráficos que puedan relacionar las variables entre ellas, así como utilizar el mismo tipo de gráfico para varias variables, con el fin de hacerlos fácilmente comparables. De igual manera, se realizarán diversos tipos de gráfico para encontrar el tipo de gráfico que mejor se ajuste a los datos. En cuanto a la anualización de datos, se busca juntar los datos por el tipo de energía. Así, quedará solo una fila con cada tipo de energía en los países, por año; esto con el fin de poder diferenciar los datos entre ellos, minimizar la cantidad de datos analizados, y facilitar la realización de gráficos. Para facilitar la realización de los gráficos, se anualizaron algunos de los valores de la siguiente manera:</p>
-<div class="cell" data-hash="Bitacora-2_cache/html/unnamed-chunk-15_04444ad0529af503eb1d14377e114950">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>annual <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Year, Country) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg_electricity_price =</span> <span class="fu">mean</span>(Electricity.Prices), <span class="at">avg_production =</span> <span class="fu">sum</span>(Production..GWh.), <span class="at">avg_investment =</span> <span class="fu">sum</span>(Investments..USD.), <span class="at">avg_CO2_emissions =</span> <span class="fu">sum</span>(CO2.Emissions))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Bitacora-2_cache/html/unnamed-chunk-15_11610162a1f7f05cf3b12f707f8c3ca0">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>annual <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Year, Country) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg_electricity_price =</span> <span class="fu">mean</span>(Electricity.Prices), <span class="at">avg_production =</span> <span class="fu">sum</span>(Production..GWh.), <span class="at">avg_investment =</span> <span class="fu">sum</span>(Investments..USD.), <span class="at">avg_CO2_emissions =</span> <span class="fu">mean</span>(CO2.Emissions))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'Year'. You can override using the
 `.groups` argument.</code></pre>
@@ -1075,7 +1314,7 @@ Attaching package: 'cowplot'</code></pre>
 </div>
 </div>
 <p>Se presentan los resultados, obtenidos con la base de datos anualizada, a continuación.</p>
-<div class="cell" data-hash="Bitacora-2_cache/html/unnamed-chunk-16_0a1d22b8cdebe09b159d36ce9eea741b">
+<div class="cell" data-hash="Bitacora-2_cache/html/unnamed-chunk-16_ed71129b7a63b0052cfd47460c14a505">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> avg_electricity_price)) <span class="sc">+</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country) <span class="sc">+</span></span>
@@ -1086,10 +1325,9 @@ Attaching package: 'cowplot'</code></pre>
 <span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Electricity Price"</span></span>
 <span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
 <span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>() <span class="sc">+</span></span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">2000</span>, <span class="dv">2010</span>, <span class="dv">2020</span>)) <span class="sc">+</span></span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.30</span>, <span class="fl">0.4</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">2000</span>, <span class="dv">2010</span>, <span class="dv">2020</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="768"></p>
 </div>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> avg_production)) <span class="sc">+</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
@@ -1101,10 +1339,9 @@ Attaching package: 'cowplot'</code></pre>
 <span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Production"</span></span>
 <span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">2000</span>, <span class="dv">2010</span>, <span class="dv">2020</span>)) <span class="sc">+</span></span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">30000</span>, <span class="dv">50000</span>, <span class="dv">70000</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">2000</span>, <span class="dv">2010</span>, <span class="dv">2020</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-2.png" class="img-fluid" width="672"></p>
+<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-2.png" class="img-fluid" width="768"></p>
 </div>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x =</span> avg_production, <span class="at">y =</span> avg_electricity_price))<span class="sc">+</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
@@ -1116,10 +1353,9 @@ Attaching package: 'cowplot'</code></pre>
 <span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Electricity Price"</span></span>
 <span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>() <span class="sc">+</span></span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="fl">0.20</span>, <span class="fl">0.30</span>, <span class="fl">0.4</span>)) <span class="sc">+</span></span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">30000</span>, <span class="dv">50000</span>, <span class="dv">70000</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="fl">0.20</span>, <span class="fl">0.30</span>, <span class="fl">0.4</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-3.png" class="img-fluid" width="672"></p>
+<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-3.png" class="img-fluid" width="768"></p>
 </div>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> avg_CO2_emissions)) <span class="sc">+</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
@@ -1137,7 +1373,7 @@ Attaching package: 'cowplot'</code></pre>
 <pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-4.png" class="img-fluid" width="672"></p>
+<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-4.png" class="img-fluid" width="768"></p>
 </div>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x =</span> avg_production, <span class="at">y =</span> avg_CO2_emissions)) <span class="sc">+</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
@@ -1151,7 +1387,7 @@ Attaching package: 'cowplot'</code></pre>
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-5.png" class="img-fluid" width="672"></p>
+<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-5.png" class="img-fluid" width="768"></p>
 </div>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x =</span> avg_production, <span class="at">y =</span> avg_CO2_emissions)) <span class="sc">+</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
@@ -1161,15 +1397,13 @@ Attaching package: 'cowplot'</code></pre>
 <span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Renewable Energy Production"</span>,</span>
 <span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"CO2 Emissions"</span></span>
 <span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country)<span class="sc">+</span></span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>() <span class="sc">+</span></span>
-<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="fl">3e+05</span>, <span class="fl">5e+05</span>, <span class="fl">7e+05</span>)) <span class="sc">+</span></span>
-<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">30000</span>, <span class="dv">50000</span>, <span class="dv">70000</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country, <span class="at">ncol=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-6.png" class="img-fluid" width="672"></p>
+<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-6.png" class="img-fluid" width="768"></p>
 </div>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span>avg_electricity_price)) <span class="sc">+</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">xend=</span>Year, <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>avg_electricity_price) , <span class="at">size=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">"purple"</span>, <span class="at">linetype=</span><span class="st">"dotdash"</span> , <span class="at">lwd =</span> <span class="fl">1.25</span>) <span class="sc">+</span></span>
@@ -1179,21 +1413,25 @@ Attaching package: 'cowplot'</code></pre>
 <span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Electricity Price"</span></span>
 <span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_clean</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-7.png" class="img-fluid" width="672"></p>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span>avg_electricity_price)) <span class="sc">+</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">xend=</span>Year, <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>avg_electricity_price) , <span class="at">linewidth=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">"violet"</span>, <span class="at">linetype=</span><span class="st">"dotdash"</span> ) <span class="sc">+</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country) <span class="sc">+</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Electricity Prices per Country"</span>,</span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Electricity Price"</span></span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_clean</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-8.png" class="img-fluid" width="672"></p>
+<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-7.png" class="img-fluid" width="768"></p>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span>avg_electricity_price)) <span class="sc">+</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">xend=</span>Year, <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend=</span>avg_electricity_price) , <span class="at">linewidth=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">"violet"</span>, <span class="at">linetype=</span><span class="st">"dotdash"</span> ) <span class="sc">+</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country) <span class="sc">+</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Electricity Prices per Country"</span>,</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Electricity Price"</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_clean</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Bitacora-2_files/figure-html/unnamed-chunk-16-8.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 </section>
