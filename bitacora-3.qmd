@@ -106,7 +106,7 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
         axis.text.x = element_text(angle = 45, vjust=.5, hjust=0.3))
 ```
 
-Si bien los gráficos anteriores brindan una idea de cuánta energía se importa o exporta, resulta también interesante ver esta cantidad como proporción de la energía producida en cada país. La figura 3.3. se realiz´po con el fin de comparar la proporción de energía intercambiada con respecto a la energía producida; para facilitar la visualización de los datos en el gráfico, se retiraron algunos valores extremos, que se analizarán en los siguientes gráficos.
+Si bien los gráficos anteriores brindan una idea de cuánta energía se importa o exporta, resulta también interesante ver la relación entre producción y el flujo energético. De acuerdo al modelo utilizado, la producción y el flujo energético puede visualizarse con una regresión lineal:
 
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Energy.Flow, data$Total.Production)
@@ -114,6 +114,7 @@ linearMod <- lm(Energy.Flow ~ Total.Production, data=data)
 summary(linearMod)
 ```
 
+Dado que el flujo energético se divide en importaciones y exportaciones, esta división debe estar reflejada en los gráficos.
 ```{r messages= FALSE, warnings= FALSE}
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
@@ -154,7 +155,7 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
-
+Los gráficos reflejan que tanto las importaciones como las exportaciones aumentan conforme aumenta la producción.
 
 DUDABLE
 ```{r messages= FALSE, warnings= FALSE, fig.height=50, fig.width=8}
@@ -262,8 +263,17 @@ summary(linearMod)
 
 **Resumen en un párrafo:** Al analizar el flujo energético de los países durante todo el periodo, el la figura 3.1, se observa que la diferencia entre las entradas y salidas de energía no es mucha. Las mayores diferencias se presentan en Canadá y Japón. Sin embargo, al visualizar los datos por año, en la figura 3.2, no se observa esta estabilidad, salvo en algunos años. En particular, al enfocarse en los años recientes, se observa una disminución en ambas variables, lo que podría explicarse por el aumento en la producción, así como la tedencia a la independencia energética.
 
+#### Producción y Flujo Energético 
 
+**Nombre de su hallazgo/resultado:** Relación positiva entre producción, importaciones y exportaciones
 
+**Resumen en una oración:** Conforme aumenta la producción, aumenta tanto la cantidad de energía exportada como importada.
+
+**Principal característica:** El aumento de la producción energética está relacionado con el aumento en las importaciones.
+
+**Problemas o posibles desafíos:** El aumento en las importaciones y exportaciones de todos los países responde a factores externos a la investigación. La muestra de países no explica el total de energía producida mundialmente, por lo que parece haber generación espontánea de energía.
+
+**Resumen en un párrafo:** En la figura 3.3 es posible visualizar el aumento de las importaciones y exportaciones totales conforme aumenta la producción. Esta relación podría ser interpretada como un exceso de energía en algunos países, que lleva a exportaciones, y llega a otros como importaciones. Sin embargo, en la figura 3.4, se observa esta misma relación en cada país analizado. Por ello, se descarta la idea inicial. Además, los gráficos muestran una relación contraria a la relación intuitiva, pues es común pensar que conforme aumenta la producción, disminuyen las importaciones.
 
 
 
