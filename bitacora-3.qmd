@@ -233,9 +233,12 @@ ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
 
 
 ```{r messages= FALSE, warnings= FALSE, fig.height=35, fig.width=8}
-data %>% ggplot(aes(Public.Awareness))+
+data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_density()+
   facet_wrap(Year~Renewable.Energy.Education.Programs, ncol = 2)+
+   scale_fill_manual(name="", 
+                    labels = c("Con", "Sin"), 
+                    values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
   labs(title = "Programas educativos y Conciencia pública",
        subtitle = "por año",
        x = "Conciencia pública",
@@ -251,9 +254,12 @@ data %>% ggplot(aes(Public.Awareness))+
 ```
 
 ```{r messages= FALSE, warnings= FALSE, fig.height=5, fig.width=8}
-data %>% ggplot(aes(Public.Awareness))+
+data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_density()+
   facet_wrap(~Renewable.Energy.Education.Programs, ncol = 2)+
+   scale_fill_manual(name="", 
+                    labels = c("Con", "Sin"), 
+                    values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
   labs(title = "Programas educativos y Conciencia pública",
        x = "Conciencia pública",
        y = "Densidad",
