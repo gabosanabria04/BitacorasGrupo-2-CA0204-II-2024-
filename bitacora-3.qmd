@@ -272,6 +272,41 @@ cor(data$Renewable.Energy.Jobs, data$Total.Production)
 linearMod <- lm(Renewable.Energy.Jobs ~ Total.Production, data=data)
 summary(linearMod)
 ```
+```{r messages= FALSE, warnings= FALSE}
+ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
+  geom_smooth(method = "lm")+
+  labs(title = "Producción y Trabajos",
+       x = "Producción",
+       y = "Trabajos",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.11")+
+  theme_cowplot()+
+  theme(legend.position = "top",
+        plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
+```
+
+```{r messages= FALSE, warnings= FALSE, fig.width=8}
+ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
+  geom_smooth(method = "lm")+
+  geom_point(aes(color = as.logical(Renewable.Energy.Education.Programs)))+
+  scale_color_manual(name="", 
+                    labels = c("Con", "Sin"), 
+                    values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
+  labs(title = "Producción y Trabajos",
+       subtitle= "por programas educativos",
+       x = "Producción",
+       y = "Trabajos",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.12")+
+  facet_wrap(~Renewable.Energy.Education.Programs)+
+  theme_cowplot()+
+  theme(legend.position = "none",
+        plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
+```
+
+
 
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$Renewable.Energy.Patents)
