@@ -114,6 +114,49 @@ linearMod <- lm(Energy.Flow ~ Total.Production, data=data)
 summary(linearMod)
 ```
 
+```{r messages= FALSE, warnings= FALSE}
+ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
+  geom_point()+
+  geom_smooth(method = "lm", color = "black")+
+  facet_wrap(~Energy.Flow.Type)+
+  labs(title = "Relación Produccuión y Flujo Energético",
+       x = "Producción",
+       y = "",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.4")+
+  scale_color_manual(name = "", 
+                    labels = c("Exportaciones", "Importaciones"), 
+                    values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
+  theme_cowplot()+
+  theme(legend.position = "top",
+        plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
+```
+
+
+```{r messages= FALSE, warnings= FALSE, fig.width=8, fig.height=15}
+
+ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
+  geom_point()+
+  geom_smooth(method = "lm", color = "black")+
+  facet_wrap(Country~Energy.Flow.Type, ncol = 2)+
+  labs(title = "Relación Producción y Flujo Energético",
+       subtitle = "Importaciones y Exportaciones",
+       x = "Producción",
+       y = "",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.5")+
+  scale_color_manual(name="", 
+                    labels = c("Exportaciones", "Importaciones"), 
+                    values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
+  theme_cowplot()+
+  theme(legend.position = "top",
+        plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
+```
+
+
+
 ```{r messages= FALSE, warnings= FALSE, fig.height=50, fig.width=8}
 data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type) %>% 
   summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion < 10) %>% 
