@@ -250,6 +250,31 @@ summary(linearMod)
 
 ### Fichas de resultados
 
+#### Estabilidad del flujo energético
+
+**Nombre de su hallazgo/resultado:** Estabilidad de Importaciones y Exportaciones 
+
+**Resumen en una oración:** La cantidad de energía importada y exportada es similar, para cada país durante el periodo.
+
+**Principal característica:** Cantidad importada y exportada similar. 
+
+**Problemas o posibles desafíos:** Dependiendo de la distribución a lo largo de los años, podría representar mejora o empeoramiento de la independencia energética. La necesidad de energía importada puede deberse a factores ajenos a esta investigación.
+
+**Resumen en un párrafo:** Al analizar el flujo energético de los países durante todo el periodo, el la figura 3.1, se observa que la diferencia entre las entradas y salidas de energía no es mucha. Ls mayores diferencias se presentan en Canadá y Japón. Sin embargo, al visualizar los datos por año, en la figura 3.2, no se observa esta estabilidad, salvo en algunos años. En particular, al enfocarse en los años recientes, se observa una disminución en ambas variables, lo que podría explicarse por el aumento en la producción, así como la tedencia a la independencia energética.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Ordenamiento de los elementos del reporte
 
 \begin{array}{|c|}
