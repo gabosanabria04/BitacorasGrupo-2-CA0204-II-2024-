@@ -314,7 +314,17 @@ summary(linearMod)
 **Resumen en un párrafo:** En la figura 3.3 es posible visualizar el aumento de las importaciones y exportaciones totales conforme aumenta la producción. Esta relación podría ser interpretada como un exceso de energía en algunos países, que lleva a exportaciones, y llega a otros como importaciones. Sin embargo, en la figura 3.4, se observa esta misma relación en cada país analizado. Por ello, se descarta la idea inicial. Además, los gráficos muestran una relación contraria a la relación intuitiva, pues es común pensar que conforme aumenta la producción, disminuyen las importaciones.
 
 
+#### Concentración de Precios
 
+**Nombre de su hallazgo/resultado:** Concentración de los precios de la energía 
+
+**Resumen en una oración:** Los precios de energía se concentran en valores cercanos a 0.3.
+
+**Principal característica:** A nivel general, existe una concentración de precios, que no coincide con la tendencia de los países.
+
+**Problemas o posibles desafíos:** Pueden existir otras variables que expliquen esta concentración de los precios.
+
+**Resumen en un párrafo:** La figura 3.5 muestra que existe una concentración de precios en los valores cercanos a 0.3. Sin embargo, al separar los precios por países, en la figura 3.6, esta tendencia no se mantiene en general. Esta diferencia entre la tendencia general y cada país, indica que existen diferencias entre estos, que no están siendo contempladas en los gráficos. Para explicar esta concentración en precios, se utilizan otras variables, como la existencia de políticas de gobierno. La figura 3.7 muestra que la existencia de políticas de gobierno que impulsen la producción de energías renovables, explica muy bien la concentración en precios.
 
 
 
