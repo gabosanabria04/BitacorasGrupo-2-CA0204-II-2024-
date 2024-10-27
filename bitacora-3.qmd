@@ -157,45 +157,83 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
 ```
 Los gráficos reflejan que tanto las importaciones como las exportaciones aumentan conforme aumenta la producción.
 
-DUDABLE
-```{r messages= FALSE, warnings= FALSE, fig.height=50, fig.width=8}
-data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type) %>% 
-  summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion < 10) %>% 
-  ggplot(aes(x = Year))+
-  geom_bar(aes(y = Flow.Proportion, fill = Energy.Flow.Type),
-           stat = "identity",
-           position = position_dodge())+
-  facet_wrap(Energy.Type~Country, ncol = 2) +
-  labs(title = "Flujo Energético",
-       subtitle = "como proporción de la producción total",
-       y = "",
-       tag = "Fig.3.5.",
-       caption= "Información de] https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
-  scale_fill_manual(name="", 
-                    labels = c("Exportaciones", "Importaciones"), 
-                    values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
-  theme_cowplot()+
-  theme(legend.position = "top",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"),
-        axis.text.x = element_text(angle = 45, vjust=.5, hjust=0.3))
-```
 
 ```{r messages= FALSE, warnings= FALSE}
 data %>% 
   ggplot(aes(x = Electricity.Prices))+
-  geom_density()
+  geom_density()+
+  labs(title = "Concentración Precios Energía",
+       x = "Precios",
+       y = "Densidad",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.5")+
+  cowplot::theme_minimal_grid()+
+  theme(plot.tag.position = "topright",
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        plot.tag = element_text(face = "italic"))
 ```
 
-```{r messages= FALSE, warnings= FALSE}
+```{r messages= FALSE, warnings= FALSE, fig.height=7, fig.width=8}
+data %>% 
+  ggplot(aes(x = Electricity.Prices, fill = Country))+
+  geom_density() +
+  facet_wrap(~Country, ncol = 3)+
+  scale_fill_brewer(type = "div", palette = 1)+
+  labs(title = "Concentración Precios Energía",
+       subtitle = "por país",
+       x = "Precios",
+       y = "Densidad",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.6")+
+  theme_cowplot()+
+  theme(plot.tag.position = "topright",
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        plot.tag = element_text(face = "italic"),
+        legend.position = "none")
+```
+
+```{r messages= F```{r messages= FALSE, warnings= FALSE, fig.width=8}
 data %>% 
   ggplot(aes(x = Electricity.Prices))+
   geom_density() +
-  facet_wrap(~Country)
+  facet_wrap(~Government.Policies)+
+  labs(title = "Concentración Precios Energía",
+       subtitle = "en relación a políticas de gobierno",
+       x = "Precios",
+       y = "Densidad",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.7")+
+  theme_cowplot()+
+  theme(plot.tag.position = "topright",
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        plot.tag = element_text(face = "italic"),
+        legend.position = "none")
 ```
 
+Además, podemos encontrar otras relaciones, que no estén dadas por la regresión lineal, como el siguiente:
 ```{r messages= FALSE, warnings= FALSE}
-scatter.smooth(x=data$Energy.Flow, y=data$Electricity.Prices, main="Dist ~ Speed") 
+cor(data$Total.Production, data$Electricity.Prices)
+ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
+  geom_point()+
+  geom_hline(yintercept=0.29, linetype="dashed", color = "red")+
+  labs(title = "Producción y Precios de Energia",
+       x = "Producción",
+       y = "Precios",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.8")+
+  theme_cowplot()+
+  theme(plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"),
+        legend.position = "none")
+```
+
+
+
+```{r messages= FALSE, warnings= FALSE}
+scatter.smooth(x=data$Total.Production, y=data$Electricity.Prices, main="Dist ~ Speed") 
 ```
 
 ```{r messages= FALSE, warnings= FALSE, fig.height=30, fig.width=8}
