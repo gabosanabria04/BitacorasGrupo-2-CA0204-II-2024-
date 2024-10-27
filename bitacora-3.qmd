@@ -326,7 +326,17 @@ summary(linearMod)
 
 **Resumen en un párrafo:** La figura 3.5 muestra que existe una concentración de precios en los valores cercanos a 0.3. Sin embargo, al separar los precios por países, en la figura 3.6, esta tendencia no se mantiene en general. Esta diferencia entre la tendencia general y cada país, indica que existen diferencias entre estos, que no están siendo contempladas en los gráficos. Para explicar esta concentración en precios, se utilizan otras variables, como la existencia de políticas de gobierno. La figura 3.7 muestra que la existencia de políticas de gobierno que impulsen la producción de energías renovables, explica muy bien la concentración en precios.
 
+#### Producción y Precios de Energía
 
+**Nombre de su hallazgo/resultado:** La influencia de la producción en los precios de la energía.
+
+**Resumen en una oración:** El aumento en la producción parece llevar a la estabilización de precios
+
+**Principal característica:** A mayor producción, los precios de la electricidad parecen estabilizarse, en valores cercanos a 0.3, valor en el que se concentran los precios de la energía en general.
+
+**Problemas o posibles desafíos:** La muestra utilizada, podría no ser una muestra tan significativa para concluir la estabilidad de precios mundial.
+
+**Resumen en un párrafo:** La figura 3.8 muestra que conforme aumenta la producción, los precios tienden a estabilizarse. El valor en el que se estabilizan, resulta un valor interesante, pues es el mismo en el que se concentran los precios, en la figura 3.5. En particular, como muestra la figura 3.7, esta concentración aumenta en los países con políticas de gobierno que impulsen la utilización de energías renovables. Así, la comparación conjunta de los gráficos parece indicar que es posible alcanzar la estabilidad en los precios de la energía por medio de las energías renovables.
 
 
 
