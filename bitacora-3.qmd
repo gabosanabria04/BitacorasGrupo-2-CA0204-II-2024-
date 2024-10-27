@@ -232,14 +232,39 @@ ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
 
 
 
-```{r messages= FALSE, warnings= FALSE}
-scatter.smooth(x=data$Total.Production, y=data$Electricity.Prices, main="Dist ~ Speed") 
-```
-
-```{r messages= FALSE, warnings= FALSE, fig.height=30, fig.width=8}
+```{r messages= FALSE, warnings= FALSE, fig.height=35, fig.width=8}
 data %>% ggplot(aes(Public.Awareness))+
   geom_density()+
-  facet_wrap(Year~Renewable.Energy.Education.Programs, ncol = 2)
+  facet_wrap(Year~Renewable.Energy.Education.Programs, ncol = 2)+
+  labs(title = "Programas educativos y Conciencia pública",
+       subtitle = "por año",
+       x = "Conciencia pública",
+       y = "Densidad",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.9")+
+  theme_cowplot()+
+  theme(plot.tag.position = "topright",
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        plot.tag = element_text(face = "italic"),
+        legend.position = "none")
+```
+
+```{r messages= FALSE, warnings= FALSE, fig.height=5, fig.width=8}
+data %>% ggplot(aes(Public.Awareness))+
+  geom_density()+
+  facet_wrap(~Renewable.Energy.Education.Programs, ncol = 2)+
+  labs(title = "Programas educativos y Conciencia pública",
+       x = "Conciencia pública",
+       y = "Densidad",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.10")+
+  theme_cowplot()+
+  theme(plot.tag.position = "topright",
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        plot.tag = element_text(face = "italic"),
+        legend.position = "none")
 ```
 
 ```{r messages= FALSE, warnings= FALSE}
@@ -338,6 +363,17 @@ summary(linearMod)
 
 **Resumen en un párrafo:** La figura 3.8 muestra que conforme aumenta la producción, los precios tienden a estabilizarse. El valor en el que se estabilizan, resulta un valor interesante, pues es el mismo en el que se concentran los precios, en la figura 3.5. En particular, como muestra la figura 3.7, esta concentración aumenta en los países con políticas de gobierno que impulsen la utilización de energías renovables. Así, la comparación conjunta de los gráficos parece indicar que es posible alcanzar la estabilidad en los precios de la energía por medio de las energías renovables.
 
+#### Conciencia pública y Programas de Educación Energía Renovable 
+
+**Nombre de su hallazgo/resultado:** Los programas de educación sobre energía renovable aumentan la consciencia pública. 
+
+**Resumen en una oración:** Las figuras 3.9 y 3.10 muestran relación positiva entre los programas educativos y la conciencia pública. 
+
+**Principal característica:** Los programas educativos son una buena herramienta para aumentar la conciencia pública. 
+
+**Problemas o posibles desafíos:** Esta relación podría deberse a otros factores no analizados, como la localización geográfica, o la población analizada. 
+
+**Resumen en un párrafo:** Al comparar anualmente la conciencia pública en países con y sin programas educativos sobre la energía renovable, se encuentra una relación positiva entre estas variables. En la figura 3.9, con los gráficos separados por año, se observa mayor concentración en mayores valores de conciencia pública para la clasificación que posee programas educativos sobre el tema. La no existencia de programas educativos muestra la diferencia de información entre la población, pues la mayoría de los gráficos no presentan concentración en valores, sino que la población está informada de manera muy diferenre. Por el contrario, la existencia de programas educativos, brinda información a la población general, de modo que la mayoría de la población se posiciona en valores cercanos. En particular, es posible observar que en el 2022, los programas educativos posicionan a la mayoría de la población en valores mayores a 5; mientras que en los países sin programas educativos, la mayoría se encuentra entre 2.5 y 7.5. Además, esta relación se ve acentuada en el gráfico 3.10, con los valores generales.
 
 
 
