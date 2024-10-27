@@ -194,7 +194,7 @@ data %>%
         legend.position = "none")
 ```
 
-```{r messages= F```{r messages= FALSE, warnings= FALSE, fig.width=8}
+```{r messages= FALSE, warnings= FALSE, fig.width=8}
 data %>% 
   ggplot(aes(x = Electricity.Prices))+
   geom_density() +
