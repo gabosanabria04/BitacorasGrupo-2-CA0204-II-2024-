@@ -77,7 +77,7 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
        tag = "Fig.3.1")+
   scale_fill_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
-                    values = c("Import"="#00ba88", "Export"="#f8966d"))+
+                    values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
   theme_cowplot()+
   theme(legend.position = "top",
         plot.tag.position = "topright",
@@ -98,7 +98,7 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
        tag = "Fig.3.2")+
   scale_fill_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
-                    values = c("Import"="#00ba88", "Export"="#f8966d"))+
+                    values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
   theme_cowplot()+
   theme(legend.position = "top",
         plot.tag.position = "topright",
@@ -123,7 +123,7 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
        x = "Producción",
        y = "",
        caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.4")+
+       tag = "Fig.3.3")+
   scale_color_manual(name = "", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
@@ -145,7 +145,7 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
        x = "Producción",
        y = "",
        caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.5")+
+       tag = "Fig.3.4")+
   scale_color_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
@@ -156,7 +156,7 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
 ```
 
 
-
+DUDABLE
 ```{r messages= FALSE, warnings= FALSE, fig.height=50, fig.width=8}
 data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type) %>% 
   summarise(Flow.Proportion = sum(Energy.Flow)/sum(Total.Production)) %>% filter(Flow.Proportion < 10) %>% 
@@ -168,11 +168,11 @@ data %>% group_by(Country, Year, Energy.Type, Energy.Flow.Type) %>%
   labs(title = "Flujo Energético",
        subtitle = "como proporción de la producción total",
        y = "",
-       tag = "Fig.3.3.",
+       tag = "Fig.3.5.",
        caption= "Información de] https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   scale_fill_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
-                    values = c("Import"="#00ba88", "Export"="#f8966d"))+
+                    values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
   theme_cowplot()+
   theme(legend.position = "top",
         plot.tag.position = "topright",
@@ -260,7 +260,7 @@ summary(linearMod)
 
 **Problemas o posibles desafíos:** Dependiendo de la distribución a lo largo de los años, podría representar mejora o empeoramiento de la independencia energética. La necesidad de energía importada puede deberse a factores ajenos a esta investigación.
 
-**Resumen en un párrafo:** Al analizar el flujo energético de los países durante todo el periodo, el la figura 3.1, se observa que la diferencia entre las entradas y salidas de energía no es mucha. Ls mayores diferencias se presentan en Canadá y Japón. Sin embargo, al visualizar los datos por año, en la figura 3.2, no se observa esta estabilidad, salvo en algunos años. En particular, al enfocarse en los años recientes, se observa una disminución en ambas variables, lo que podría explicarse por el aumento en la producción, así como la tedencia a la independencia energética.
+**Resumen en un párrafo:** Al analizar el flujo energético de los países durante todo el periodo, el la figura 3.1, se observa que la diferencia entre las entradas y salidas de energía no es mucha. Las mayores diferencias se presentan en Canadá y Japón. Sin embargo, al visualizar los datos por año, en la figura 3.2, no se observa esta estabilidad, salvo en algunos años. En particular, al enfocarse en los años recientes, se observa una disminución en ambas variables, lo que podría explicarse por el aumento en la producción, así como la tedencia a la independencia energética.
 
 
 
