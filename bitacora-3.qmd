@@ -200,15 +200,21 @@ summary(linearMod)
 ### Fichas de resultados
 
 ### Ordenamiento de los elementos del reporte
+
 \[
+
+```{=tex}
 \begin{array}{|c|}
 \hline
 \textbf{Elementos de Reporte}  \\
 \hline
 \end{array}
+```
 \]
 
 \[
+
+```{=tex}
 \begin{array}{|c|c|}
 \hline
 \textbf{Primarios} & \textbf{Secundarios} \\
@@ -229,17 +235,17 @@ de emisiones de CO₂ a nivel global.} & \text{Teoría B: Descripción de avance
 \text{Resultado C} & \text{Resultado D} \\
 \hline
 \end{array}
+```
 \]
 
-
-| Sección      | Temas a tratar                                                                                  |
-|--------------|-------------------------------------------------------------------------------------------------|
-| **Introducción** | 1. Teoría A: La energía renovable como nuevo principio de autosuficiencia conectada.  <br> 2. Idea B: (Primario) <br> 3. Resultado de otro autor A (Secundario) <br> 4. Resultado de otro autor B (Secundario) <br> 5. Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. |
-| **Metodología**  | 1. Detalle de los datos. (Primario)  <br> 2. Método A (Primario) <br> 3. Método B (Secundario) <br> 4. Diagnóstico del modelo (Primario) |
-| **Resultados**   | 1. Resultado A (Primario)  <br> 2. Resultado B (Secundario) <br> 3. etc.                    |
-
+| Sección          | Temas a tratar                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-----------------|-------------------------------------------------------|
+| **Introducción** | 1\. La energía renovable como nuevo principio de autosuficiencia conectada.(secundario) <br> 2. Las energías renovables podrían reducir las emisiones de CO_2. (Primario) <br> 3. La instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. (Attanayake) (Primario) <br> 4. Estrategias para la implementación de las energías renovables (Freier & Casola). (Secundario) <br> 5. Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. (Primario) <br> 6. Transición energética y la electrificación sostenible. (Serrano)(Secundario) <br> 7. Energías renovables y la economía en Europa. (Caraballo y García) (Secundario) <br> 8. Variaciones en la cantidad de las distintas energías renovables según el país (secundario) <br> 9. Relación entre los indicadores de bienestar social y los precios de la electricidad según el país (secundario) <br> 10.  |
+| **Metodología**  | 1\. Detalle de los datos: (Primario) <br> 2. Método A (Primario) <br> 3. Método B (Secundario) <br> 4. Diagnóstico del modelo (Primario)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Resultados**   | 1\. Aumento en la producción de energías renovables. (Primario) <br> 2. Mayor producción, menos CO2 (Primario) <br> 3. Cambios mínimos en los precios de electricidad. (secundario) <br> 4. Mayor producción, menor fuerza de trabajo. (primario) <br> 5. Disminución de conciencia pública en el 2023. (secundario)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ## Parte de escritura
+
 
 ## Parte de reflexión
 
