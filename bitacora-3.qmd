@@ -201,7 +201,6 @@ summary(linearMod)
 
 ### Ordenamiento de los elementos del reporte
 
-\[
 
 ```{=tex}
 \begin{array}{|c|}
@@ -210,33 +209,27 @@ summary(linearMod)
 \hline
 \end{array}
 ```
-\]
 
-\[
 
-```{=tex}
-\begin{array}{|c|c|}
-\hline
-\textbf{Primarios} & \textbf{Secundarios} \\
-\hline
-\text{Teoría A: Impacto de las energías renovables en la reducción 
-de emisiones de CO₂ a nivel global.} & \text{Teoría B: Descripción de avances tecnológicos en la última década del siglo 20 }  \\
-\hline
-\text{Idea A: Las energías renovables podrían reducir las emisiones de CO_2} & \text{Idea B: Relación entre los indicadores de bienestar social y los precios de la electricidad según el país } \\
-\hline
-\text{Resultado A: Disminución de las emisiones de CO_2 por la instauración de las energías renovables a nivel global.} & \text{Resultado B: } \\
-\hline
-\text{Resultado C: Aumentos de precios en electricidad en distintos países} & \text{Precios de electricidad por países} \\
-\hline
-\text{Idea A} & \text{Idea B: Variaciones en la cantidad de las distintas energías renovables según el país} \\
-\hline
-\text{Resultado D: Aumentos de precios en electricidad en distintos países} & \text{Resultado E: Tipos de energía por porcentaje} \\
-\hline
-\text{Resultado C} & \text{Resultado D} \\
-\hline
-\end{array}
-```
-\]
+
+
+| Primarios       | Secundarios     |
+|-----------------|-----------------|
+| Teoría A: Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global.        | Teoría B: Descripción de avances tecnológicos en la última década del siglo 20.        |
+| Idea A: Las energías renovables podrían reducir las emisiones de CO₂.         | Idea B: Relación entre los indicadores de bienestar social y los precios de la electricidad según el país.         |
+| Resultado A: Disminución de las emisiones de CO_2 por la instauración de las energías renovables a nivel global.         | Resultado B: Aumento de precios de la electricidad en los últimos años.         |
+| Teoría C: Análisis del flujo energético como proporción de la producción total.         | Resultado D: Energías renovables más utilizadas por cada país.         |
+| Idea C: El flujo energético varía dependiendo de la producción total de cada país.         | Teoría D: Análisis de la relación entre la densidad de la energía y sus precios.         |
+| Valor 6         | Valor F         |
+| Valor 7         | Valor G         |
+| Valor 8         | Valor H         |
+| Valor 9         | Valor I         |
+| Valor 10        | Valor J         |
+
+
+
+
+
 
 | Sección          | Temas a tratar                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |-----------------|-------------------------------------------------------|
