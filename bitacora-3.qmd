@@ -273,6 +273,9 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
         legend.position = "none")
 ```
 
+
+En cuanto a los trabajos, estos resaltan como un factor social importante, pues el aumento en empleos, puede ayudar a disminuir el desempleo, lo que mejoraría la calidad de vida de los habitantes del país. Para analizar esta variable, se utilizó la regresión lineal, de acuerdo a la metodología explicada anteriormente.
+
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$Total.Production)
 linearMod <- lm(Renewable.Energy.Jobs ~ Total.Production, data=data)
@@ -311,7 +314,6 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
-
 ```{r messages= FALSE, warnings= FALSE, fig.width = 12, fig.height=5}
 data %>% 
   ggplot(aes(x = Year, y = Renewable.Energy.Jobs, group = Year, fill = as.logical(Renewable.Energy.Education.Programs)))+
@@ -327,10 +329,11 @@ data %>%
        caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
        tag = "Fig.3.13")+
   theme_cowplot()+
-  theme(legend.position = "top",
+  theme(legend.position = "none",
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
+
 
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$Renewable.Energy.Patents)
@@ -472,7 +475,7 @@ ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
 **Resumen en un párrafo:** Al comparar anualmente la conciencia pública en países con y sin programas educativos sobre la energía renovable, se encuentra una relación positiva entre estas variables. En la figura 3.9, con los gráficos separados por año, se observa mayor concentración en mayores valores de conciencia pública para la clasificación que posee programas educativos sobre el tema. La no existencia de programas educativos muestra la diferencia de información entre la población, pues la mayoría de los gráficos no presentan concentración en valores, sino que la población está informada de manera muy diferenre. Por el contrario, la existencia de programas educativos, brinda información a la población general, de modo que la mayoría de la población se posiciona en valores cercanos. En particular, es posible observar que en el 2022, los programas educativos posicionan a la mayoría de la población en valores mayores a 5; mientras que en los países sin programas educativos, la mayoría se encuentra entre 2.5 y 7.5. Además, esta relación se ve acentuada en el gráfico 3.10, con los valores generales.
 
 
-#### Trabajos en el Sector de Energía Renovable
+#### Producción y Trabajo
 
 **Nombre de su hallazgo/resultado:** Relación positiva entre producción y trabajos en sector de energía renovable
 
@@ -482,7 +485,7 @@ ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
 
 **Problemas o posibles desafíos:** La utilización solamente de la regresión lineal puede causar un análisis incompleto. Es posible que algunas variables relavantes para explicar fenómenos estén fuera de las analizadas.
 
-**Resumen en un párrafo:** A pesar de que existe una correlación lineal entre la producción y la cantidad de trabajos del sector de energías renovables, al incluir la existencia de programas educativos, se observan más características. El gráfico 3.11 muestra una relación positiva entre la producción de energía renovable y la cantidad de trabajos del sector. Sin embargo, con el fin de visualizar otras características, se incluyó la existencia de programas educativos sobre la energía renovable. La figura 3.12 muestra que la correlación lineal es mayor con programas educativos. Adicionalmente, muestra que las mayores producciones energéticas se dan en países con programas educativos, y que son además los de mayor cantidad de empleos en el sector.
+**Resumen en un párrafo:** A pesar de que existe una correlación lineal entre la producción y la cantidad de trabajos del sector de energías renovables, al incluir la existencia de programas educativos, se observan más características. El gráfico 3.11 muestra una relación positiva entre la producción de energía renovable y la cantidad de trabajos del sector. Sin embargo, con el fin de visualizar otras características, se incluyó la existencia de programas educativos sobre la energía renovable. La figura 3.12 muestra que la correlación lineal es mayor con programas educativos. Adicionalmente, muestra que las mayores producciones energéticas se dan en países con programas educativos, y que son además los de mayor cantidad de empleos en el sector. Esto último se apoya en la figura 3.13, que muestra la relación positiva entre los programas educativos y la cantidad de empleos, tanto para los datos promedio, como para los datos extremos.
 
 
 
