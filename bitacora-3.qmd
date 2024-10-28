@@ -38,9 +38,12 @@ data <- original|> mutate(Country = case_when(
   Country == "Japan"~"Japón", Country == "Russia"~"Rusia", 
   Country == "USA"~"E.E.U.U.", Country == "Australia"~"Australia",
   Country == "China"~"China", Country == "India"~"India",
-  TRUE~"Other")) %>% 
+  TRUE~"Other")) %>% mutate(Energy.Type = case_when(
+  Energy.Type == "Solar"~"Solar", Energy.Type == "Biomass" ~ "Biomasa", 
+  Energy.Type == "Wind"~"Eólica", Energy.Type == "Hydro"~"Hidráulica", 
+  Energy.Type == "Geothermal"~"Geotérmica", TRUE~"Other")) %>% 
   group_by(Country, Year, Energy.Type) |> 
-  summarise(Total.Production = sum(Production..GWh.), Electricity.Prices = mean(Electricity.Prices), R.D.Expenditure = sum(R.D.Expenditure), CO2.Emissions = sum(CO2.Emissions), Investments..USD. = sum(Investments..USD.), Public.Awareness = mean(Public.Awareness), Educational.Level = mean(Educational.Level), Exportaciones = sum(Energy.Exports), Importaciones = sum(Energy.Imports), Renewable.Energy.Jobs = sum(Renewable.Energy.Jobs), Renewable.Energy.Patents = sum(Renewable.Energy.Patents), Corruption.Perception.Index = mean(Corruption.Perception.Index), Renewable.Energy.Education.Programs = max(Renewable.Energy.Education.Programs), Government.Policies= max(Government.Policies)) %>% 
+  summarise(Total.Production = sum(Production..GWh.), Electricity.Prices = mean(Electricity.Prices), R.D.Expenditure = sum(R.D.Expenditure), CO2.Emissions = sum(CO2.Emissions), Investments..USD. = sum(Investments..USD.), Public.Awareness = mean(Public.Awareness), Exportaciones = sum(Energy.Exports), Importaciones = sum(Energy.Imports), Renewable.Energy.Jobs = sum(Renewable.Energy.Jobs), Renewable.Energy.Patents = sum(Renewable.Energy.Patents), Renewable.Energy.Education.Programs = max(Renewable.Energy.Education.Programs), Government.Policies= max(Government.Policies)) %>% 
   pivot_longer(cols = c("Importaciones", "Exportaciones"),
                names_to = "Energy.Flow.Type",
                values_to = "Energy.Flow")
