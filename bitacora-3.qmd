@@ -16,6 +16,7 @@ library(ggthemes)
 library(cowplot)
 library(tidyr)
 library(purrr)
+library(ggExtra)
 options(scipen = 999)
 ```
 
@@ -343,10 +344,14 @@ summary(linearMod)
 
 ```{r messages= FALSE, warnings= FALSE}
 ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
+  geom_point(aes(color = Energy.Type)) +
   geom_smooth(method = "lm")+
+  scale_color_brewer(type = "seq", palette = 4)+
   labs(title = "Trabajos y Patentes",
+       subtitle = "por tipo de energía",
        x = "Patentes",
        y = "Trabajos",
+       color = "",
        caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
        tag = "Fig.3.14")+
   theme_cowplot()+
@@ -363,16 +368,20 @@ linearMod <- lm(Renewable.Energy.Jobs ~ R.D.Expenditure, data=data)
 summary(linearMod)
 ```
 
-```{r messages= FALSE, warnings= FALSE}
+```{r messages= FALSE, warnings= FALSE, fig.width=8}
 ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
-  geom_smooth(method = "lm")+
+  geom_point(aes(color = as.factor(Government.Policies)))+
+  geom_smooth(method = "lm", color = "black", se = FALSE)+
+  facet_wrap(~Government.Policies)+
   labs(title = "Trabajos y Gasto en Investigación",
+       subtitle = "Efecto de políticas de gobierno",
+       color = "",
        x = "Gasto en Investigación",
        y = "Trabajos",
        caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
        tag = "Fig.3.15")+
   theme_cowplot()+
-  theme(legend.position = "top",
+  theme(legend.position = "none",
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
@@ -383,19 +392,46 @@ linearMod <- lm(Renewable.Energy.Jobs ~ Investments..USD., data=data)
 summary(linearMod)
 ```
 
-```{r messages= FALSE, warnings= FALSE}
+```{r messages= FALSE, warnings= FALSE, fig.width=8}
 ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
-  geom_smooth(method = "lm")+
+  geom_point(aes(color = as.factor(Government.Policies)))+
+  geom_smooth(method = "lm", color = "black", se = FALSE)+
+  facet_wrap(~Government.Policies)+  
   labs(title = "Trabajos e Inversión",
+       subtitle = "por políticas de gobierno",
        x = "Inversión",
        y = "Trabajos",
        caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
        tag = "Fig.3.16")+
   theme_cowplot()+
-  theme(legend.position = "top",
+  theme(legend.position = "none",
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
+
+
+```{r messages= FALSE, warnings= FALSE, fig.width=8}
+cor(data$R.D.Expenditure, data$Investments..USD.)
+linearMod <- lm(R.D.Expenditure ~ Investments..USD., data=data)
+summary(linearMod)
+p <- ggplot(data, aes(x = R.D.Expenditure, y = Investments..USD.))+
+  geom_point(aes(color = as.factor(Government.Policies)))+
+  geom_smooth(method = "lm")+
+  theme(legend.position = "bottom")+
+  labs(title = "Gasto en Investigación e Inversión",
+       subtitle = "Efecto de políticas de gobierno",
+       color = "",
+       x = "Gasto en Investigación",
+       y = "Inversión",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.17")+
+  theme_cowplot()+
+  theme(legend.position = "bottom",
+        plot.tag.position = "top",
+        plot.tag = element_text(face = "italic"))
+ggMarginal(p, type = "densigram", fill = "purple")
+```
+
 
 ### Justificación modelo seleccionado
 
@@ -405,11 +441,7 @@ ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
 
 ¿Y qué no?
 
-```{r}
-#| echo: false
-2 * 2
-?cor()
-```
+
 
 ### Fichas de resultados
 
