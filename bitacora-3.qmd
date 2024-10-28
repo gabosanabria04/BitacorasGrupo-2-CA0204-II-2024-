@@ -119,6 +119,7 @@ summary(linearMod)
 ```
 
 Dado que el flujo energético se divide en importaciones y exportaciones, esta división debe estar reflejada en los gráficos.
+
 ```{r messages= FALSE, warnings= FALSE}
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
@@ -137,7 +138,6 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
-
 
 ```{r messages= FALSE, warnings= FALSE, fig.width=8, fig.height=15}
 
@@ -159,8 +159,8 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
-Los gráficos reflejan que tanto las importaciones como las exportaciones aumentan conforme aumenta la producción.
 
+Los gráficos reflejan que tanto las importaciones como las exportaciones aumentan conforme aumenta la producción.
 
 ```{r messages= FALSE, warnings= FALSE}
 data %>% 
@@ -218,6 +218,7 @@ data %>%
 ```
 
 Además, podemos encontrar otras relaciones, que no estén dadas por la regresión lineal, como el siguiente:
+
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Total.Production, data$Electricity.Prices)
 ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
@@ -233,8 +234,6 @@ ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
         plot.tag = element_text(face = "italic"),
         legend.position = "none")
 ```
-
-
 
 ```{r messages= FALSE, warnings= FALSE, fig.height=35, fig.width=8}
 data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
@@ -277,7 +276,6 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
         legend.position = "none")
 ```
 
-
 En cuanto a los trabajos, estos resaltan como un factor social importante, pues el aumento en empleos, puede ayudar a disminuir el desempleo, lo que mejoraría la calidad de vida de los habitantes del país. Para analizar esta variable, se utilizó la regresión lineal, de acuerdo a la metodología explicada anteriormente.
 
 ```{r messages= FALSE, warnings= FALSE}
@@ -285,6 +283,7 @@ cor(data$Renewable.Energy.Jobs, data$Total.Production)
 linearMod <- lm(Renewable.Energy.Jobs ~ Total.Production, data=data)
 summary(linearMod)
 ```
+
 ```{r messages= FALSE, warnings= FALSE}
 ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
   geom_smooth(method = "lm")+
@@ -318,6 +317,7 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
+
 ```{r messages= FALSE, warnings= FALSE, fig.width = 12, fig.height=5}
 data %>% 
   ggplot(aes(x = Year, y = Renewable.Energy.Jobs, group = Year, fill = as.logical(Renewable.Energy.Education.Programs)))+
@@ -337,7 +337,6 @@ data %>%
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
-
 
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$Renewable.Energy.Patents)
@@ -362,8 +361,6 @@ ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
         plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
 ```
-
-
 
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$R.D.Expenditure)
@@ -412,7 +409,6 @@ ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
         plot.tag = element_text(face = "italic"))
 ```
 
-
 ```{r messages= FALSE, warnings= FALSE, fig.width=8}
 cor(data$R.D.Expenditure, data$Investments..USD.)
 linearMod <- lm(R.D.Expenditure ~ Investments..USD., data=data)
@@ -435,7 +431,6 @@ p <- ggplot(data, aes(x = R.D.Expenditure, y = Investments..USD.))+
 ggMarginal(p, type = "densigram", fill = "purple")
 ```
 
-
 ### Justificación modelo seleccionado
 
 **Pregunta de investigación:** \* ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
@@ -444,7 +439,7 @@ Al utilizar la función `cor()`, se obtienen las variables que pueden ser analiz
 
 De esta manera, sabemos que la utilización de la regresión lineal presenta una buena aproximación a los datos, de modo que son una buena representación de estos. En particular, la regresión lineal es utilizada para indicar relaciones positivas o negativas entre las variables.
 
-Entre las ventajas de usar el método de regresión lineal, se encuentra que es fácil de entender e interpretar, puesto que solamente es una línea, mostrando relación positiva o negativa entre las variables analizadas, e indicando la magnitud de la relación por medio de la pendiente. Además, es fácilmente adaptable a diversos datos. 
+Entre las ventajas de usar el método de regresión lineal, se encuentra que es fácil de entender e interpretar, puesto que solamente es una línea, mostrando relación positiva o negativa entre las variables analizadas, e indicando la magnitud de la relación por medio de la pendiente. Además, es fácilmente adaptable a diversos datos.
 
 No obstante, la regresión lineal no representa el total de los datos, especialmente los valores extremos. Por ello, para obtener un mejor análisis de los datos, tanto los altamente correlacionados como los que no, es necesario utilizar otros métodos.
 
@@ -454,23 +449,21 @@ Además, se utiliza otro tipo de gráfico para comparar otras variables, especia
 
 Por ejemplo, el gráfico 3.10 utiliza densidades, junto con facetas para separar las observaciones que poseen programas educativos sobre la energía renovable; esta combinación muestra una clara relación entre la conciencia pública y la existencia de programas educativos. Así, se encuentran otras relaciones entre variables, no relacionadas con el coeficiente de pearson.
 
-
-
 ### Fichas de resultados
 
 #### Estabilidad del flujo energético
 
-**Nombre de su hallazgo/resultado:** Estabilidad de Importaciones y Exportaciones 
+**Nombre de su hallazgo/resultado:** Estabilidad de Importaciones y Exportaciones
 
 **Resumen en una oración:** La cantidad de energía importada y exportada es similar, para cada país durante el periodo.
 
-**Principal característica:** Cantidad importada y exportada similar. 
+**Principal característica:** Cantidad importada y exportada similar.
 
 **Problemas o posibles desafíos:** Dependiendo de la distribución a lo largo de los años, podría representar mejora o empeoramiento de la independencia energética. La necesidad de energía importada puede deberse a factores ajenos a esta investigación.
 
 **Resumen en un párrafo:** Al analizar el flujo energético de los países durante todo el periodo, el la figura 3.1, se observa que la diferencia entre las entradas y salidas de energía no es mucha. Las mayores diferencias se presentan en Canadá y Japón. Sin embargo, al visualizar los datos por año, en la figura 3.2, no se observa esta estabilidad, salvo en algunos años. En particular, al enfocarse en los años recientes, se observa una disminución en ambas variables, lo que podría explicarse por el aumento en la producción, así como la tedencia a la independencia energética.
 
-#### Producción y Flujo Energético 
+#### Producción y Flujo Energético
 
 **Nombre de su hallazgo/resultado:** Relación positiva entre producción, importaciones y exportaciones
 
@@ -482,10 +475,9 @@ Por ejemplo, el gráfico 3.10 utiliza densidades, junto con facetas para separar
 
 **Resumen en un párrafo:** En la figura 3.3 es posible visualizar el aumento de las importaciones y exportaciones totales conforme aumenta la producción. Esta relación podría ser interpretada como un exceso de energía en algunos países, que lleva a exportaciones, y llega a otros como importaciones. Sin embargo, en la figura 3.4, se observa esta misma relación en cada país analizado. Por ello, se descarta la idea inicial. Además, los gráficos muestran una relación contraria a la relación intuitiva, pues es común pensar que conforme aumenta la producción, disminuyen las importaciones.
 
-
 #### Concentración de Precios
 
-**Nombre de su hallazgo/resultado:** Concentración de los precios de la energía 
+**Nombre de su hallazgo/resultado:** Concentración de los precios de la energía
 
 **Resumen en una oración:** Los precios de energía se concentran en valores cercanos a 0.3.
 
@@ -507,18 +499,17 @@ Por ejemplo, el gráfico 3.10 utiliza densidades, junto con facetas para separar
 
 **Resumen en un párrafo:** La figura 3.8 muestra que conforme aumenta la producción, los precios tienden a estabilizarse. El valor en el que se estabilizan, resulta un valor interesante, pues es el mismo en el que se concentran los precios, en la figura 3.5. En particular, como muestra la figura 3.7, esta concentración aumenta en los países con políticas de gobierno que impulsen la utilización de energías renovables. Así, la comparación conjunta de los gráficos parece indicar que es posible alcanzar la estabilidad en los precios de la energía por medio de las energías renovables.
 
-#### Conciencia pública y Programas de Educación Energía Renovable 
+#### Conciencia pública y Programas de Educación Energía Renovable
 
-**Nombre de su hallazgo/resultado:** Los programas de educación sobre energía renovable aumentan la consciencia pública. 
+**Nombre de su hallazgo/resultado:** Los programas de educación sobre energía renovable aumentan la consciencia pública.
 
-**Resumen en una oración:** Las figuras 3.9 y 3.10 muestran relación positiva entre los programas educativos y la conciencia pública. 
+**Resumen en una oración:** Las figuras 3.9 y 3.10 muestran relación positiva entre los programas educativos y la conciencia pública.
 
-**Principal característica:** Los programas educativos son una buena herramienta para aumentar la conciencia pública. 
+**Principal característica:** Los programas educativos son una buena herramienta para aumentar la conciencia pública.
 
-**Problemas o posibles desafíos:** Esta relación podría deberse a otros factores no analizados, como la localización geográfica, o la población analizada. 
+**Problemas o posibles desafíos:** Esta relación podría deberse a otros factores no analizados, como la localización geográfica, o la población analizada.
 
 **Resumen en un párrafo:** Al comparar anualmente la conciencia pública en países con y sin programas educativos sobre la energía renovable, se encuentra una relación positiva entre estas variables. En la figura 3.9, con los gráficos separados por año, se observa mayor concentración en mayores valores de conciencia pública para la clasificación que posee programas educativos sobre el tema. La no existencia de programas educativos muestra la diferencia de información entre la población, pues la mayoría de los gráficos no presentan concentración en valores, sino que la población está informada de manera muy diferenre. Por el contrario, la existencia de programas educativos, brinda información a la población general, de modo que la mayoría de la población se posiciona en valores cercanos. En particular, es posible observar que en el 2022, los programas educativos posicionan a la mayoría de la población en valores mayores a 5; mientras que en los países sin programas educativos, la mayoría se encuentra entre 2.5 y 7.5. Además, esta relación se ve acentuada en el gráfico 3.10, con los valores generales.
-
 
 #### Producción y Trabajo
 
@@ -556,34 +547,33 @@ Por ejemplo, el gráfico 3.10 utiliza densidades, junto con facetas para separar
 
 **Resumen en un párrafo:** La figura 3.15 muestra que existe una relación positiva entre el gasto en investigación, y la cantidad de empleos. Además, se muestra que las políticas de gobierno afectan esta relación, pues aumentan ambas variables. La figura 3.16 muestra que existe también una relación positiva entre la inversión y la cantidad de empleos, también potenciada por las políticas de gobierno. La figura 3.17 muestra que el gasto en investigación y la inversión presentan una relación positiva entre ellas; y que, sin embargo, su distribución, mostrada en el margen del gráfico, es distinta.
 
-
-
 ### Ordenamiento de los elementos del reporte
 
+```{=tex}
 \begin{array}{|c|}
 \hline
 \textbf{Elementos de Reporte}  \\
 \hline
 \end{array}
-
-| Primarios | Secundarios |
+```
+| Primarios                                                                                                        | Secundarios                                                                                                |
 |------------------------------------|------------------------------------|
-| Teoría A: Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Teoría B: Descripción de avances tecnológicos en la última década del siglo 20. |
-| Idea A: Las energías renovables podrían reducir las emisiones de CO₂. | Idea B: Relación entre los indicadores de bienestar social y los precios de la electricidad según el país. |
-| Resultado A: Disminución de las emisiones de CO_2 por la instauración de las energías renovables a nivel global. | Resultado B: Aumento de precios de la electricidad en los últimos años. |
-| Teoría C: Análisis del flujo energético como proporción de la producción total. | Resultado D: Energías renovables más utilizadas por cada país. |
-| Idea C: El flujo energético varía dependiendo de la producción total de cada país. | Teoría D: Análisis de la relación entre la densidad de la energía y sus precios. |
-| Valor 6 | Valor F |
-| Valor 7 | Valor G |
-| Valor 8 | Valor H |
-| Valor 9 | Valor I |
-| Valor 10 | Valor J |
+| Teoría A: Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global.                 | Teoría B: Descripción de avances tecnológicos en la última década del siglo 20.                            |
+| Idea A: Las energías renovables podrían reducir las emisiones de CO₂.                                            | Idea B: Relación entre los indicadores de bienestar social y los precios de la electricidad según el país. |
+| Resultado A: Disminución de las emisiones de CO_2 por la instauración de las energías renovables a nivel global. | Resultado B: Aumento de precios de la electricidad en los últimos años.                                    |
+| Teoría C: Análisis del flujo energético como proporción de la producción total.                                  | Resultado D: Energías renovables más utilizadas por cada país.                                             |
+| Idea C: El flujo energético varía dependiendo de la producción total de cada país.                               | Teoría D: Análisis de la relación entre la densidad de la energía y sus precios.                           |
+| Valor 6                                                                                                          | Valor F                                                                                                    |
+| Valor 7                                                                                                          | Valor G                                                                                                    |
+| Valor 8                                                                                                          | Valor H                                                                                                    |
+| Valor 9                                                                                                          | Valor I                                                                                                    |
+| Valor 10                                                                                                         | Valor J                                                                                                    |
 
-| Sección | Temas a tratar |
-|------------------|------------------------------------------------------|
+| Sección          | Temas a tratar                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|--------------------|----------------------------------------------------|
 | **Introducción** | 1\. La energía renovable como nuevo principio de autosuficiencia conectada.(secundario) <br> 2. Las energías renovables podrían reducir las emisiones de CO_2. (Primario) <br> 3. La instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. (Attanayake) (Primario) <br> 4. Estrategias para la implementación de las energías renovables (Freier & Casola). (Secundario) <br> 5. Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. (Primario) <br> 6. Transición energética y la electrificación sostenible. (Serrano)(Secundario) <br> 7. Energías renovables y la economía en Europa. (Caraballo y García) (Secundario) <br> 8. Variaciones en la cantidad de las distintas energías renovables según el país (secundario) <br> 9. Relación entre los indicadores de bienestar social y los precios de la electricidad según el país (secundario) <br> 10. |
-| **Metodología** | 1\. Detalle de los datos: (Primario) <br> 2. Método A (Primario) <br> 3. Método B (Secundario) <br> 4. Diagnóstico del modelo (Primario) |
-| **Resultados** | 1\. Aumento en la producción de energías renovables. (Primario) <br> 2. Mayor producción, menos CO2 (Primario) <br> 3. Cambios mínimos en los precios de electricidad. (secundario) <br> 4. Mayor producción, menor fuerza de trabajo. (primario) <br> 5. Disminución de conciencia pública en el 2023. (secundario) |
+| **Metodología**  | 1\. Detalle de los datos: (Primario) <br> 2. Método A (Primario) <br> 3. Método B (Secundario) <br> 4. Diagnóstico del modelo (Primario)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Resultados**   | 1\. Aumento en la producción de energías renovables. (Primario) <br> 2. Mayor producción, menos CO2 (Primario) <br> 3. Cambios mínimos en los precios de electricidad. (secundario) <br> 4. Mayor producción, menor fuerza de trabajo. (primario) <br> 5. Disminución de conciencia pública en el 2023. (secundario)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 ## Parte de escritura
 
@@ -623,11 +613,27 @@ La fuerza de trabajo en el sector energético es mucho más volátil que la prod
 
 La distribución de la conciencia pública ha sido bastante variable entre los años analizados. Comparando el 2023 con los dos años anteriores, el 2023 tiene mayor distribución en algunas áreas, específicamente las bajas. Al comparar el 2020 con el 2023, la conciencia pública es menor, pues las concentraciones de distribución se encuentran en valores más bajos. En otros años, como el 2009, la conciencia pública estaba mejor repartida entre los países, pero eso no significa que sea mejor, pues en realidad el escenario ideal es la concentración en los valores altos. Se pretende comparar los datos de la conciencia pública con respecto a la existencia o no de programas educativos sobre la energía renovable, así como la proporción de energía consumida que procede de fuentes renovables.
 
+Al analizar el flujo energético de los países durante todo el periodo, el la figura 3.1, se observa que la diferencia entre las entradas y salidas de energía no es mucha. Las mayores diferencias se presentan en Canadá y Japón. Sin embargo, al visualizar los datos por año, en la figura 3.2, no se observa esta estabilidad, salvo en algunos años. En particular, al enfocarse en los años recientes, se observa una disminución en ambas variables, lo que podría explicarse por el aumento en la producción, así como la tedencia a la independencia energética.
+
+En la figura 3.3 es posible visualizar el aumento de las importaciones y exportaciones totales conforme aumenta la producción. Esta relación podría ser interpretada como un exceso de energía en algunos países, que lleva a exportaciones, y llega a otros como importaciones. Sin embargo, en la figura 3.4, se observa esta misma relación en cada país analizado. Por ello, se descarta la idea inicial. Además, los gráficos muestran una relación contraria a la relación intuitiva, pues es común pensar que conforme aumenta la producción, disminuyen las importaciones.
+
+La figura 3.5 muestra que existe una concentración de precios en los valores cercanos a 0.3. Sin embargo, al separar los precios por países, en la figura 3.6, esta tendencia no se mantiene en general. Esta diferencia entre la tendencia general y cada país, indica que existen diferencias entre estos, que no están siendo contempladas en los gráficos. Para explicar esta concentración en precios, se utilizan otras variables, como la existencia de políticas de gobierno. La figura 3.7 muestra que la existencia de políticas de gobierno que impulsen la producción de energías renovables, explica muy bien la concentración en precios.
+
+La figura 3.8 muestra que conforme aumenta la producción, los precios tienden a estabilizarse. El valor en el que se estabilizan, resulta un valor interesante, pues es el mismo en el que se concentran los precios, en la figura 3.5. En particular, como muestra la figura 3.7, esta concentración aumenta en los países con políticas de gobierno que impulsen la utilización de energías renovables. Así, la comparación conjunta de los gráficos parece indicar que es posible alcanzar la estabilidad en los precios de la energía por medio de las energías renovables.
+
+Al comparar anualmente la conciencia pública en países con y sin programas educativos sobre la energía renovable, se encuentra una relación positiva entre estas variables. En la figura 3.9, con los gráficos separados por año, se observa mayor concentración en mayores valores de conciencia pública para la clasificación que posee programas educativos sobre el tema. La no existencia de programas educativos muestra la diferencia de información entre la población, pues la mayoría de los gráficos no presentan concentración en valores, sino que la población está informada de manera muy diferenre. Por el contrario, la existencia de programas educativos, brinda información a la población general, de modo que la mayoría de la población se posiciona en valores cercanos. En particular, es posible observar que en el 2022, los programas educativos posicionan a la mayoría de la población en valores mayores a 5; mientras que en los países sin programas educativos, la mayoría se encuentra entre 2.5 y 7.5. Además, esta relación se ve acentuada en el gráfico 3.10, con los valores generales.
+
+A pesar de que existe una correlación lineal entre la producción y la cantidad de trabajos del sector de energías renovables, al incluir la existencia de programas educativos, se observan más características. El gráfico 3.11 muestra una relación positiva entre la producción de energía renovable y la cantidad de trabajos del sector. Sin embargo, con el fin de visualizar otras características, se incluyó la existencia de programas educativos sobre la energía renovable. La figura 3.12 muestra que la correlación lineal es mayor con programas educativos. Adicionalmente, muestra que las mayores producciones energéticas se dan en países con programas educativos, y que son además los de mayor cantidad de empleos en el sector. Esto último se apoya en la figura 3.13, que muestra la relación positiva entre los programas educativos y la cantidad de empleos, tanto para los datos promedio, como para los datos extremos.
+
+La figura 3.14 muestra que a mayor cantidad de patentes, mayor cantidad de empleos en el sector. El aumento en la cantidad de patentes implica un aumento en la cantidad de energía que se puede producir, que a su vez implica un mayor número de empresas productoras, o la expansión de las empresas productoras ya existentes. Por ello, resulta intuitivo pensar en esta relación positiva entre las patentes y los empleos. La figura 3.14 muestra que esta idea es correcta, al menos con los datos analizados. Además, resulta interesante ver que esta relación no muestra gran diferencia dependiendo de la energía renovable producida.
+
+La figura 3.15 muestra que existe una relación positiva entre el gasto en investigación, y la cantidad de empleos. Además, se muestra que las políticas de gobierno afectan esta relación, pues aumentan ambas variables. La figura 3.16 muestra que existe también una relación positiva entre la inversión y la cantidad de empleos, también potenciada por las políticas de gobierno. La figura 3.17 muestra que el gasto en investigación y la inversión presentan una relación positiva entre ellas; y que, sin embargo, su distribución, mostrada en el margen del gráfico, es distinta.
+
 ## Parte de reflexión
 
 Con el fin de delimitar la pregunta de investigación de modo que coincida con los datos analizados en este proyecto, se plantea como pregunta de investigación: **¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?**
 
-Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública. 
+Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública.
 
 Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las variables, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.
 
