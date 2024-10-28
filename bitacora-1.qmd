@@ -384,7 +384,7 @@ Las comparaciones entre países puede verse afectadas por el contexto del país,
 
 <div>
 
-![V de Gowin: Energía del Futuro](V_Gowin.png){fig-align="center" width="100%"}
+![V de Gowin: Energía del Futuro](images\V_de_Gowin.jpg){fig-align="center" width="100%"}
 
 </div>
 
