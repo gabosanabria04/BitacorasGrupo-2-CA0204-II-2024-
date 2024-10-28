@@ -531,6 +531,18 @@ ggMarginal(p, type = "densigram", fill = "purple")
 
 **Resumen en un párrafo:** La figura 3.14 muestra que a mayor cantidad de patentes, mayor cantidad de empleos en el sector. El aumento en la cantidad de patentes implica un aumento en la cantidad de energía que se puede producir, que a su vez implica un mayor número de empresas productoras, o la expansión de las empresas productoras ya existentes. Por ello, resulta intuitivo pensar en esta relación positiva entre las patentes y los empleos. La figura 3.14 muestra que esta idea es correcta, al menos con los datos analizados. Además, resulta interesante ver que esta relación no muestra gran diferencia dependiendo de la energía renovable producida.
 
+#### Gasto en Investigación e Inversión
+
+**Nombre de su hallazgo/resultado:** Comportamiento similar del gasto en investigación y la inversión
+
+**Resumen en una oración:** Las políticas de gobierno afectan la cantidad de empleos del sector de energía renovable.
+
+**Principal característica:** Tanto el gasto en inversión como la inversión reaccionan positivamente a las políticas de gobierno, y se relacionan positivamente con la cantidad de empleos.
+
+**Problemas o posibles desafíos:** Pueden haber varias variables involucradas en esta relación, que no son analizadas. No está clara la manera en la que se calcula el gasto en investigación y la investigación, por lo que no se sabe si pertenecen a inversión pública, privada o ambas.
+
+**Resumen en un párrafo:** La figura 3.15 muestra que existe una relación positiva entre el gasto en investigación, y la cantidad de empleos. Además, se muestra que las políticas de gobierno afectan esta relación, pues aumentan ambas variables. La figura 3.16 muestra que existe también una relación positiva entre la inversión y la cantidad de empleos, también potenciada por las políticas de gobierno. La figura 3.17 muestra que el gasto en investigación y la inversión presentan una relación positiva entre ellas; y que, sin embargo, su distribución, mostrada en el margen del gráfico, es distinta.
+
 
 
 ### Ordenamiento de los elementos del reporte
