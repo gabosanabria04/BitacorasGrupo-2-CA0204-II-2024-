@@ -312,7 +312,25 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
         plot.tag = element_text(face = "italic"))
 ```
 
-
+```{r messages= FALSE, warnings= FALSE, fig.width = 12, fig.height=5}
+data %>% 
+  ggplot(aes(x = Year, y = Renewable.Energy.Jobs, group = Year, fill = as.logical(Renewable.Energy.Education.Programs)))+
+  geom_boxplot(width = .25)+
+  facet_wrap(~Renewable.Energy.Education.Programs, ncol=2)+
+  scale_fill_manual(name="", 
+                    labels = c("Con", "Sin"), 
+                    values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
+  labs(title = "Trabajos en Sector de Energía Renovable",
+       subtitle = "por Programas Educativos",
+       x = "Año",
+       y = "Trabajos",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.13")+
+  theme_cowplot()+
+  theme(legend.position = "top",
+        plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
+```
 
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$Renewable.Energy.Patents)
@@ -320,12 +338,21 @@ linearMod <- lm(Renewable.Energy.Jobs ~ Renewable.Energy.Patents, data=data)
 summary(linearMod)
 ```
 
-```{r messages= FALSE, warnings= FALSE, fig.width = 12, fig.height=3}
-data %>% 
-  ggplot(aes(x = Year, y = Renewable.Energy.Jobs, group = Year))+
-  geom_boxplot(width = .25)+
-  facet_wrap(~Renewable.Energy.Education.Programs, ncol=2)
+```{r messages= FALSE, warnings= FALSE}
+ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
+  geom_smooth(method = "lm")+
+  labs(title = "Trabajos y Patentes",
+       x = "Patentes",
+       y = "Trabajos",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.14")+
+  theme_cowplot()+
+  theme(legend.position = "top",
+        plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
 ```
+
+
 
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$R.D.Expenditure)
@@ -334,9 +361,37 @@ summary(linearMod)
 ```
 
 ```{r messages= FALSE, warnings= FALSE}
+ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
+  geom_smooth(method = "lm")+
+  labs(title = "Trabajos y Gasto en Investigación",
+       x = "Gasto en Investigación",
+       y = "Trabajos",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.15")+
+  theme_cowplot()+
+  theme(legend.position = "top",
+        plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
+```
+
+```{r messages= FALSE, warnings= FALSE}
 cor(data$Renewable.Energy.Jobs, data$Investments..USD.)
 linearMod <- lm(Renewable.Energy.Jobs ~ Investments..USD., data=data)
 summary(linearMod)
+```
+
+```{r messages= FALSE, warnings= FALSE}
+ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
+  geom_smooth(method = "lm")+
+  labs(title = "Trabajos e Inversión",
+       x = "Inversión",
+       y = "Trabajos",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       tag = "Fig.3.16")+
+  theme_cowplot()+
+  theme(legend.position = "top",
+        plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
 ```
 
 ### Justificación modelo seleccionado
