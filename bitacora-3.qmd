@@ -519,6 +519,17 @@ ggMarginal(p, type = "densigram", fill = "purple")
 
 **Resumen en un párrafo:** A pesar de que existe una correlación lineal entre la producción y la cantidad de trabajos del sector de energías renovables, al incluir la existencia de programas educativos, se observan más características. El gráfico 3.11 muestra una relación positiva entre la producción de energía renovable y la cantidad de trabajos del sector. Sin embargo, con el fin de visualizar otras características, se incluyó la existencia de programas educativos sobre la energía renovable. La figura 3.12 muestra que la correlación lineal es mayor con programas educativos. Adicionalmente, muestra que las mayores producciones energéticas se dan en países con programas educativos, y que son además los de mayor cantidad de empleos en el sector. Esto último se apoya en la figura 3.13, que muestra la relación positiva entre los programas educativos y la cantidad de empleos, tanto para los datos promedio, como para los datos extremos.
 
+#### Trabajos y Patentes
+
+**Nombre de su hallazgo/resultado:** Relación entre número de patentes y empleos del sector energético
+
+**Resumen en una oración:** Una mayor cantidad de patentes se relaciona con una mayor cantidad de empleos.
+
+**Principal característica:** Existe una relación positiva entre la cantidad de patentes y empleos en el sector de energía renovable.
+
+**Problemas o posibles desafíos:** La relación podría explicarse por variables ajenas al análisis.
+
+**Resumen en un párrafo:** La figura 3.14 muestra que a mayor cantidad de patentes, mayor cantidad de empleos en el sector. El aumento en la cantidad de patentes implica un aumento en la cantidad de energía que se puede producir, que a su vez implica un mayor número de empresas productoras, o la expansión de las empresas productoras ya existentes. Por ello, resulta intuitivo pensar en esta relación positiva entre las patentes y los empleos. La figura 3.14 muestra que esta idea es correcta, al menos con los datos analizados. Además, resulta interesante ver que esta relación no muestra gran diferencia dependiendo de la energía renovable producida.
 
 
 
