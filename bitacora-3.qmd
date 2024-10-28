@@ -1,7 +1,7 @@
 ---
 title: "Bitácora 3"
 author: "Paola Espinoza Hernández; Gabriel Sanabria Alvarado"
-format: html
+format: pdf
 output_dir: "docs"
 editor: visual
 ---
@@ -440,9 +440,19 @@ ggMarginal(p, type = "densigram", fill = "purple")
 
 **Pregunta de investigación:** \* ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
 
-¿Qué responde mi modelo?
+Al utilizar la función `cor()`, se obtienen las variables que pueden ser analizadas por medio de la regresión lineal. Posteriormente, se realiza la comprobación del p-value, para asegurar que el análisis tenga significancia estadística.
 
-¿Y qué no?
+De esta manera, sabemos que la utilización de la regresión lineal presenta una buena aproximación a los datos, de modo que son una buena representación de estos. En particular, la regresión lineal es utilizada para indicar relaciones positivas o negativas entre las variables.
+
+Entre las ventajas de usar el método de regresión lineal, se encuentra que es fácil de entender e interpretar, puesto que solamente es una línea, mostrando relación positiva o negativa entre las variables analizadas, e indicando la magnitud de la relación por medio de la pendiente. Además, es fácilmente adaptable a diversos datos. 
+
+No obstante, la regresión lineal no representa el total de los datos, especialmente los valores extremos. Por ello, para obtener un mejor análisis de los datos, tanto los altamente correlacionados como los que no, es necesario utilizar otros métodos.
+
+Por ejemplo, los gráficos de regresión lineal se complementan de los gráficos de puntos, que permiten ubicar cada dato, y visualizar qué tanto calza la regresión lineal con los datos. En particular, permite dividir los datos en otras categorías, lo que permite realizar la regresión lineal entre estos grupos, de modo que se diferencie la relación entre las variables dependiendo del grupo al que pertenecen estos datos.
+
+Además, se utiliza otro tipo de gráfico para comparar otras variables, especialmente las que no muestran correlación por medio de la función `cor()`, lo que demuestra las limitaciones del coeficiente de pearson.
+
+Por ejemplo, el gráfico 3.10 utiliza densidades, junto con facetas para separar las observaciones que poseen programas educativos sobre la energía renovable; esta combinación muestra una clara relación entre la conciencia pública y la existencia de programas educativos. Así, se encuentran otras relaciones entre variables, no relacionadas con el coeficiente de pearson.
 
 
 
@@ -617,6 +627,8 @@ La distribución de la conciencia pública ha sido bastante variable entre los a
 
 Con el fin de delimitar la pregunta de investigación de modo que coincida con los datos analizados en este proyecto, se plantea como pregunta de investigación: **¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?**
 
-Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como el nivel educativo, la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública... Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las avraibles, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.
+Para responder a esta pregunta, se analizan variables relacionadas a la educación de los habitantes de los países analizados: Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos; como la existencia o no de programas educativos sobre energía renovable, y el nivel de conciencia pública. 
+
+Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las variables, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.
 
 Tomando en cuenta las observaciones realizadas a las bitácoras pasadas, se incorpora un caption con la fuente de la base de datos en cada gráfico. También se incorporan tags, para facilitar la identificación de los gráficos.
