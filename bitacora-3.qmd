@@ -627,7 +627,9 @@ Por ejemplo, el gráfico 3.10 utiliza densidades, junto con facetas para separar
   A pesar de que existe una correlación lineal entre la producción y la cantidad de trabajos del sector de energías renovables, al incluir la existencia de programas educativos, se observan más características. El gráfico 3.11 muestra una relación positiva entre la producción de energía renovable y la cantidad de trabajos del sector. Sin embargo, con el fin de visualizar otras características, se incluyó la existencia de programas educativos sobre la energía renovable. La figura 3.12 muestra que la correlación lineal es mayor con programas educativos. Adicionalmente, muestra que las mayores producciones energéticas se dan en países con programas educativos, y que son además los de mayor cantidad de empleos en el sector. Esto último se apoya en la figura 3.13, que muestra la relación positiva entre los programas educativos y la cantidad de empleos, tanto para los datos promedio, como para los datos extremos.
 
 
+
 ## Parte de reflexión
+
 
 Con el fin de delimitar la pregunta de investigación de modo que coincida con los datos analizados en este proyecto, se plantea como pregunta de investigación: **¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?**
 
