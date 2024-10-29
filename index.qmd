@@ -1,5 +1,6 @@
 # Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables {.unnumbered}
 
 ## Introducción
-El presente trabajo busca realizar un análisis de una base de datos con el fin de detectar el impacto que tiene la energía renovable en la sociedad. Particularmente, el impacto que la producción e implementación de la energía renovable tiene en varios indicadores de bienestar seleccionados. 
+La energía renovable representa un tema común en el contexto actual, debido al aumento en la conciencia general en temas del medio ambiente. La producción de energía renovable ha aumentado en los últimos años; sin mebargo, poco se habla del impacto que estas energías tienen, tanto sobre el medioambiente, como sobre la sociedad.
+Por ello, esta investigación desea analizar los cambios en indicadores sociales de acuerdo a variables relacionadas con el medio ambiente, con el fin de concluir una relación entre las energías renovables y el bienestar de la sociedad. Así, se toman en cuenta las emisiones de CO2, los precios de la energía, el gasto en investigación, la inversión, las importaciones y exportaciones de energía, las patentes para energía renovable, la cantidad de trabajos, la conciencia pública sobre el tema de energías renovables, y la existencia o no de políticas gubernamentales y programas educativos al respecto.
 ### 
