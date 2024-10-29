@@ -635,4 +635,6 @@ Para responder a esta pregunta, se analizan variables relacionadas a la educaci�
 
 Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las variables, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.
 
-Tomando en cuenta las observaciones realizadas a las bitácoras pasadas, se incorpora un caption con la fuente de la base de datos en cada gráfico. También se incorporan tags, para facilitar la identificación de los gráficos.
+Tomando en cuenta las observaciones realizadas a las bitácoras pasadas, se incorpora un caption con la fuente de la base de datos en cada gráfico. También se incorporan tags, para facilitar la identificación de los gráficos. Además, se uniforma el formato de los gráficos, de mood que todos se encuentren en español.
+
+Para complementar las bitácoras anteriores, se añadieron los objetivos claramente en la V de Gowin, se realizaron más gráficos con sus respectivas fichas de resultados. 
