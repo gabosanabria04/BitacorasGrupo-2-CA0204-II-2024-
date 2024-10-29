@@ -382,11 +382,12 @@ Las comparaciones entre países puede verse afectadas por el contexto del país,
 
 ### UVE de Gowin
 
-<div>
 
-![V de Gowin: Energía del Futuro](images/UVE_Gowin_B3.jpg){fig-align="center" width="100%"}
+::: {#fig-uve-gowin .figure}
+![V de Gowin: Energía del Futuro](UVE_Gowin_B3.png){width=100%}
+:::
 
-</div>
+
 
 ## Parte de Escritura
 
