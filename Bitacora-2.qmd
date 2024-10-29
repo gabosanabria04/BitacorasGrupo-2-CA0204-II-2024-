@@ -23,20 +23,20 @@ library(purrr)
 
 ### Ordenamiento de la literatura
 
-| Organización |   |   | Literatura |   |   |
+| Organización               |                                                                                        |                                                                                                                                                                     | Literatura                                                                                                                                             |      |                                                                                                                                |
 |------------|------------|------------|------------|------------|------------|
-| Tipo | Tema general | Tema específico | Título | Año | Autor(es) |
-| descriptivo | Energía renovable | El uso de energía renovable en el camino la autosuficiencia energética. | Energía Renovable: un nuevo principio de autosuficiencia conectada | 2012 | Juan Requejo Liberal |
-| Análitico | Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Energía renovable como alternativa para la reducción de las emisiones de CO2 Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Renewable Energy as a Solution to Climate Change: Insights from a Comprehensive Study Across Nations. | 2023 | Keshani Attanayake, Isuru Wickramage, Udul Samarasinghe, Yasangi Ranmini, Sandali Ehalapitiya, Ruwan Jayathilaka y Shanta Yapa |
-| Análisis descriptivo | Estrategias para la implementación de las energías renovables | El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil | La energía renovable como estrategia para combatir el cambio climático en Brasil y Argentina | 2018 | Laura Casola y Alexander Freier |
-| Descriptivo | Estado actual de la energía eólica | Descripción de avances tecnológicos en la última década del siglo 20 | Wind energy technology and current status: a review | 2000 | Thomas Ackermann y Lennart Söder |
-| Exploratorio | Viabilidad de las energías renovables en Costa Rica | Análisis de ventajas y desventajas de los tres tipos de energía renovable producida en Costa Rica. | Análisis de Viabilidad Ambiental del Uso de Energías Renovables en Costa Rica: Estudio de Caso de la Energía Eólica, la Hidroeléctrica y la Geotérmica | 2015 | Allan Cordero Gutiérrez |
-| Análisis de datos | Cambios en la producción de diversos tipos de energía renovable. | Análisis de datos obtenidos de diversas fuentes, para detectar patrones relacionados al uso de energía renovable. | Impacto social de las energías renovables | 2021 | IRENA |
-| Descriptivo y comparativo | Transición energética de un desarrollo sostenible. | Impacto al medio ambiente mediante una Transición energética. | ¿Qué es la energía renovable? | 2020 | Las Naciones Unidas. |
-| Descriptivo | Aplicaciones de la Energía renovable | Energías renovables y no renovables, eficiencia energética, contexto latinoamericano en el uso y desarrollo de fuentes energéticas. | Fuentes de energía, renovables y no renovables. Aplicaciones. | 2014 | Vega de Kuyper, J.C. & Ramírez Morales, S. |
-| Descriptivo | Actualidad Económica; Madrid. | Transición energética y la electrificación sostenible. | Hacia un futuro con energía limpia y renovable | 2022 | Javier Serrano |
-| Descriptivo y exploratorio | El impacto social de las energías renovables | Sostenibilidad ambiental implica sostenibilidad social y económica | Impacto social de las energías renovables | 2014 | Abay Analistas Económicos y Sociales |
-| Técnicas de cointegración | Energías renovables y la economía en Europa. | Relación entre energías renovables y desarrollo económico en Europa. | Energías renovables y desarrollo económico: Un análisis para España y las grandes economías europeas | 2017 | María Ángeles Caraballo Pou, Juana María García Simón. |
+| Tipo                       | Tema general                                                                           | Tema específico                                                                                                                                                     | Título                                                                                                                                                 | Año  | Autor(es)                                                                                                                      |
+| descriptivo                | Energía renovable                                                                      | El uso de energía renovable en el camino la autosuficiencia energética.                                                                                             | Energía Renovable: un nuevo principio de autosuficiencia conectada                                                                                     | 2012 | Juan Requejo Liberal                                                                                                           |
+| Análitico                  | Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Energía renovable como alternativa para la reducción de las emisiones de CO2 Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Renewable Energy as a Solution to Climate Change: Insights from a Comprehensive Study Across Nations.                                                  | 2023 | Keshani Attanayake, Isuru Wickramage, Udul Samarasinghe, Yasangi Ranmini, Sandali Ehalapitiya, Ruwan Jayathilaka y Shanta Yapa |
+| Análisis descriptivo       | Estrategias para la implementación de las energías renovables                          | El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil                               | La energía renovable como estrategia para combatir el cambio climático en Brasil y Argentina                                                           | 2018 | Laura Casola y Alexander Freier                                                                                                |
+| Descriptivo                | Estado actual de la energía eólica                                                     | Descripción de avances tecnológicos en la última década del siglo 20                                                                                                | Wind energy technology and current status: a review                                                                                                    | 2000 | Thomas Ackermann y Lennart Söder                                                                                               |
+| Exploratorio               | Viabilidad de las energías renovables en Costa Rica                                    | Análisis de ventajas y desventajas de los tres tipos de energía renovable producida en Costa Rica.                                                                  | Análisis de Viabilidad Ambiental del Uso de Energías Renovables en Costa Rica: Estudio de Caso de la Energía Eólica, la Hidroeléctrica y la Geotérmica | 2015 | Allan Cordero Gutiérrez                                                                                                        |
+| Análisis de datos          | Cambios en la producción de diversos tipos de energía renovable.                       | Análisis de datos obtenidos de diversas fuentes, para detectar patrones relacionados al uso de energía renovable.                                                   | Impacto social de las energías renovables                                                                                                              | 2021 | IRENA                                                                                                                          |
+| Descriptivo y comparativo  | Transición energética de un desarrollo sostenible.                                     | Impacto al medio ambiente mediante una Transición energética.                                                                                                       | ¿Qué es la energía renovable?                                                                                                                          | 2020 | Las Naciones Unidas.                                                                                                           |
+| Descriptivo                | Aplicaciones de la Energía renovable                                                   | Energías renovables y no renovables, eficiencia energética, contexto latinoamericano en el uso y desarrollo de fuentes energéticas.                                 | Fuentes de energía, renovables y no renovables. Aplicaciones.                                                                                          | 2014 | Vega de Kuyper, J.C. & Ramírez Morales, S.                                                                                     |
+| Descriptivo                | Actualidad Económica; Madrid.                                                          | Transición energética y la electrificación sostenible.                                                                                                              | Hacia un futuro con energía limpia y renovable                                                                                                         | 2022 | Javier Serrano                                                                                                                 |
+| Descriptivo y exploratorio | El impacto social de las energías renovables                                           | Sostenibilidad ambiental implica sostenibilidad social y económica                                                                                                  | Impacto social de las energías renovables                                                                                                              | 2014 | Abay Analistas Económicos y Sociales                                                                                           |
+| Técnicas de cointegración  | Energías renovables y la economía en Europa.                                           | Relación entre energías renovables y desarrollo económico en Europa.                                                                                                | Energías renovables y desarrollo económico: Un análisis para España y las grandes economías europeas                                                   | 2017 | María Ángeles Caraballo Pou, Juana María García Simón.                                                                         |
 
 # Enlaces de Literatura
 
@@ -322,14 +322,16 @@ ggplot(annual, aes(x = Year, y = avg_electricity_price)) +
     caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
       tag = "Fig.2.9"
   )+
-  theme_cowplot() +
-  scale_x_continuous(breaks=c(2000, 2010, 2020))
+  scale_x_continuous(breaks=c(2000, 2010, 2020))+
+  theme_clean()+
+  theme(plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
 ```
 
-```{r warning=FALSE}
+```{r warning=FALSE, fig.height=8, fig.width=8}
 ggplot(annual, aes(x = Year, y = avg_production)) +
   geom_line() +
-  facet_wrap(~Country) +
+  facet_wrap(~Country, ncol = 3) +
   labs(
     title = "Producción Energética",
     subtitle = "por país",
@@ -338,14 +340,16 @@ ggplot(annual, aes(x = Year, y = avg_production)) +
     caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
       tag = "Fig.2.10"
   )+
-  theme_cowplot()+
-  scale_x_continuous(breaks=c(2000, 2010, 2020))
+  scale_x_continuous(breaks=c(2000, 2010, 2020))+
+  theme_clean()+
+  theme(plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
 ```
 
-```{r warning=FALSE}
+```{r warning=FALSE, fig.height=8, fig.width=8}
 ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
   geom_line()+
-  facet_wrap(~Country) +
+  facet_wrap(~Country, ncol = 2) +
   labs(
     title = "Producción y Precios de Electricidad",
     subtitle = "por país",
@@ -354,8 +358,11 @@ ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
     caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
       tag = "Fig.2.11"
   ) +
-  theme_cowplot() +
-  scale_y_continuous(breaks=c(0.20, 0.30, 0.4))
+  scale_y_continuous(breaks=c(0.20, 0.30, 0.4))+
+  scale_x_continuous(breaks=c(0, 625000, 1250000))+
+  theme_clean()+
+  theme(plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
 ```
 
 ```{r warning=FALSE}
@@ -372,21 +379,24 @@ ggplot(annual, aes(x = Year, y = avg_CO2_emissions)) +
   ) +
   theme_cowplot() +
   scale_y_continuous(breaks=c(3e+05, 5e+05, 7e+05)) +
-  scale_x_continuous(breaks = c(2000, 2010, 2020))
+  scale_x_continuous(breaks = c(2000, 2010, 2020))+
+  theme(plot.tag.position = "topright",
+        plot.tag = element_text(face = "italic"))
 ```
 
 ```{r warning=FALSE, fig.width = 8, fig.height = 10}
 ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
   geom_smooth(method = "lm") +
   labs(
-    title = "Energy Production and CO2 emissions",
-    subtitle = "By country",
-    x = "Renewable Energy Production",
-    y = "CO2 Emissions",
+    title = "Producción y Emisiones de CO2",
+    subtitle = "por país",
+    x = "Producción",
+    y = "Emisiones de CO2",
     caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
       tag = "Fig.2.13"
   ) +
   facet_wrap(~Country, ncol=2)+
+  scale_x_continuous(breaks=c(0, 500000, 1000000))+
   theme_cowplot()+
   theme(plot.tag.position = "topright",
         plot.tag = element_text(face = "italic"))
@@ -424,7 +434,7 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
         plot.tag = element_text(face = "italic"))
 ```
 
-```{r, fig.width = 8}
+```{r, fig.width = 8, fig.height=10}
 ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
   geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , size=1, color="violet", linetype="dotdash" ) +
   geom_point(color = "purple") +
@@ -500,10 +510,17 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 
 ## Comandos
 
-![pastebin](images\pastebin2.1.png){fig-align="center" width="100%"} ![pastebin](images\pastebin2.2.png){fig-align="center" width="100%"}
+![pastebin](images\pastebin2.1.png){fig-align="center" width="100%"}
+
+![pastebin](images\pastebin2.2.png){fig-align="center" width="100%"}
 
 ![pastebin](images\pastebin2.3.png){fig-align="center" width="100%"}
 
-![git cliff](images\gitcliff2.1.png){fig-align="center" width="100%"} ![git cliff](images\gitcliff2.2.png){fig-align="center" width="100%"} ![git cliff](images\gitcliff2.3.png){fig-align="center" width="100%"}
+![git cliff](images\gitcliff2.1.png){fig-align="center" width="100%"} 
+
+![git cliff](images\gitcliff2.2.png){fig-align="center" width="100%"} 
+
+![git cliff](images\gitcliff2.3.png){fig-align="center" width="100%"}
 
 ![git summary](images\gitsummary2.png){fig-align="center" width="100%"}
+
