@@ -75,6 +75,7 @@ Dados ya los hallazgos anteriores, resulta interesante analizar el flujo energé
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| label: fig-3.1
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
            stat = "identity",
@@ -82,15 +83,12 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
   labs(title = "Total de Flujo Energético",
        x = "País",
        y = "",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.1")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   scale_fill_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
   theme_cowplot()+
-  theme(legend.position = "top",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(legend.position = "top")
 ```
 
 Mientras que la figura 3.2 separa esta información por años, con el fin de detectar tendencias.
@@ -100,6 +98,7 @@ Mientras que la figura 3.2 separa esta información por años, con el fin de det
 #| warnings: FALSE
 #| fig-width: 8
 #| fig-height: 25
+#| label: fig-3.2
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
            stat = "identity",
@@ -107,15 +106,12 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
   facet_wrap(~Year, ncol = 2)+
   labs(title = "Flujo Energético Anual",
        y = "",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.2")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   scale_fill_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
   theme_cowplot()+
   theme(legend.position = "top",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"),
         axis.text.x = element_text(angle = 45, vjust=.5, hjust=0.3))
 ```
 
@@ -124,21 +120,19 @@ Si bien los gráficos anteriores brindan una idea de cuánta energía se importa
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
+#| label: fig-3.3
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
   facet_wrap(~Energy.Flow.Type)+
   labs(title = "Relación Produccuión y Flujo Energético",
        x = "Producción",
        y = "",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.3")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   scale_color_manual(name = "", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
   theme_cowplot()+
-  theme(legend.position = "top",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(legend.position = "top")
 ```
 
 ```{r}
@@ -146,6 +140,7 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
 #| warnings: FALSE
 #| fig-width: 8
 #| fig-height: 15
+#| label: fig-3.4
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
   facet_wrap(Country~Energy.Flow.Type, ncol = 2)+
@@ -153,15 +148,12 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
        subtitle = "Importaciones y Exportaciones",
        x = "Producción",
        y = "",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.4")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   scale_color_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
   theme_cowplot()+
-  theme(legend.position = "top",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(legend.position = "top")
 ```
 
 Los gráficos reflejan que tanto las importaciones como las exportaciones aumentan conforme aumenta la producción.
@@ -169,19 +161,19 @@ Los gráficos reflejan que tanto las importaciones como las exportaciones aument
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
+#| label: fig-3.5
 data %>% 
   ggplot(aes(x = Electricity.Prices))+
   geom_density()+
   labs(title = "Concentración Precios Energía",
        x = "Precios",
        y = "Densidad",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.5")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   cowplot::theme_minimal_grid()+
-  theme(plot.tag.position = "topright",
+  theme( 
         axis.text.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        plot.tag = element_text(face = "italic"))
+        axis.ticks.y = element_blank()
+        )
 ```
 
 ```{r}
@@ -189,6 +181,7 @@ data %>%
 #| warnings: FALSE
 #| #| fig-width: 8
 #| fig-height: 7
+#| label: fig-3.6
 data %>% 
   ggplot(aes(x = Electricity.Prices, fill = Country))+
   geom_density() +
@@ -198,13 +191,11 @@ data %>%
        subtitle = "por país",
        x = "Precios",
        y = "Densidad",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.6")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(plot.tag.position = "topright",
+  theme( 
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank(),
-        plot.tag = element_text(face = "italic"),
         legend.position = "none")
 ```
 
@@ -212,6 +203,7 @@ data %>%
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| label: fig-3.7
 data %>% 
   ggplot(aes(x = Electricity.Prices))+
   geom_density() +
@@ -220,13 +212,11 @@ data %>%
        subtitle = "en relación a políticas de gobierno",
        x = "Precios",
        y = "Densidad",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.7")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(plot.tag.position = "topright",
+  theme( 
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank(),
-        plot.tag = element_text(face = "italic"),
         legend.position = "none")
 ```
 
@@ -234,6 +224,7 @@ data %>%
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
+#| label: fig-3.8
 cor(data$Total.Production, data$Electricity.Prices)
 ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
   geom_point()+
@@ -241,12 +232,9 @@ ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
   labs(title = "Producción y Precios de Energia",
        x = "Producción",
        y = "Precios",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.8")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"),
-        legend.position = "none")
+  theme(legend.position = "none")
 ```
 
 ```{r}
@@ -254,6 +242,7 @@ ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
 #| warnings: FALSE
 #| fig-width: 8
 #| fig-height: 35
+#| label: fig-3.9
 data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_density()+
   facet_wrap(Year~Renewable.Energy.Education.Programs, ncol = 2)+
@@ -264,13 +253,11 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
        subtitle = "por año",
        x = "Conciencia pública",
        y = "Densidad",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.9")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(plot.tag.position = "topright",
+  theme( 
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank(),
-        plot.tag = element_text(face = "italic"),
         legend.position = "none")
 ```
 
@@ -279,6 +266,7 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
 #| warnings: FALSE
 #| fig-width: 8
 #| fig-height: 25
+#| label: fig-3.10
 data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_density()+
   facet_wrap(~Renewable.Energy.Education.Programs, ncol = 2)+
@@ -288,13 +276,12 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
   labs(title = "Programas educativos y Conciencia pública",
        x = "Conciencia pública",
        y = "Densidad",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.10")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(plot.tag.position = "topright",
+  theme( 
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank(),
-        plot.tag = element_text(face = "italic"),
+         
         legend.position = "none")
 ```
 
@@ -304,23 +291,22 @@ En cuanto a los trabajos, estos resaltan como un factor social importante, pues 
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
+#| label: fig-3.11
 ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
   geom_point() +
   labs(title = "Producción y Trabajos",
        x = "Producción",
        y = "Trabajos",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.11")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(legend.position = "top",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(legend.position = "top")
 ```
 
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| label: fig-3.12
 ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.logical(Renewable.Energy.Education.Programs)))+
   scale_color_manual(name="", 
@@ -330,13 +316,10 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
        subtitle= "por programas educativos",
        x = "Producción",
        y = "Trabajos",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.12")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   facet_wrap(~Renewable.Energy.Education.Programs)+
   theme_cowplot()+
-  theme(legend.position = "none",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(legend.position = "none")
 ```
 
 ```{r}
@@ -344,6 +327,7 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
 #| warnings: FALSE
 #| #| fig-width: 12
 #| fig-height: 5
+#| label: fig-3.13
 data %>% 
   ggplot(aes(x = Year, y = Renewable.Energy.Jobs, group = Year, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_boxplot(width = .25)+
@@ -355,18 +339,16 @@ data %>%
        subtitle = "por Programas Educativos",
        x = "Año",
        y = "Trabajos",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.13")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(legend.position = "none",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(legend.position = "none")
 ```
 
 
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
+#| label: fig-3.14
 ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = Energy.Type)) +
   scale_color_brewer(type = "seq", palette = 4)+
@@ -375,12 +357,9 @@ ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
        x = "Patentes",
        y = "Trabajos",
        color = "",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.14")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(legend.position = "top",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(legend.position = "top")
 ```
 
 
@@ -388,6 +367,7 @@ ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| label: fig-3.15
 ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.factor(Government.Policies)))+
   facet_wrap(~Government.Policies)+
@@ -396,12 +376,9 @@ ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
        color = "",
        x = "Gasto en Investigación",
        y = "Trabajos",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.15")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(legend.position = "none",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(legend.position = "none")
 ```
 
 
@@ -410,6 +387,7 @@ ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| label: fig-3.16
 ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.factor(Government.Policies)))+
   facet_wrap(~Government.Policies)+  
@@ -417,12 +395,9 @@ ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
        subtitle = "por políticas de gobierno",
        x = "Inversión",
        y = "Trabajos",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-       tag = "Fig.3.16")+
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(legend.position = "none",
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(legend.position = "none")
 ```
 
 ```{r}
@@ -431,7 +406,7 @@ ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
 #| fig-width: 8
 p <- ggplot(data, aes(x = R.D.Expenditure, y = Investments..USD.))+
   geom_point(aes(color = as.factor(Government.Policies)))+
-  theme(legend.position = "bottom")+
+  theme(legend.position = "bottom") +
   labs(title = "Gasto en Investigación e Inversión",
        subtitle = "Efecto de políticas de gobierno",
        color = "",
@@ -440,9 +415,7 @@ p <- ggplot(data, aes(x = R.D.Expenditure, y = Investments..USD.))+
        caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
        tag = "Fig.3.17")+
   theme_cowplot()+
-  theme(legend.position = "bottom",
-        plot.tag.position = "top",
-        plot.tag = element_text(face = "italic"))
+  theme(legend.position = "bottom")
 ggMarginal(p, type = "densigram", fill = "purple")
 ```
 
@@ -643,7 +616,7 @@ Para responder a esta pregunta, se analizan variables relacionadas a la educaci�
 
 Se retiraron de variables analizadas, tanto en la bitácora 2 como en la bitácora 3, el gdp (PIB nominal) y la población, dado que no aportan datos suficientemente relevantes a la investigación. Además, considerando la naturaleza de las variables, se optó por aplicar métodos distintos que se ajusten a los valores que estas deben tomar, por ejemplo, para anualizar la producción, se suman los datos contenidos en cada observación en vez de promediarlos; pero para los precios de la electricidad, los valores sí se promedian.
 
-Tomando en cuenta las observaciones realizadas a las bitácoras pasadas, se incorpora un caption con la fuente de la base de datos en cada gráfico. También se incorporan tags, para facilitar la identificación de los gráficos. Además, se uniforma el formato de los gráficos, de modo que todos se encuentren en español. Además, se mejoró el formato de los gráficos, para que sean más comprensibles.
+Tomando en cuenta las observaciones realizadas a las bitácoras pasadas, se incorpora un caption con la fuente de la base de datos en cada gráfico. También se incorporan labels, para facilitar la identificación de los gráficos. Además, se uniforma el formato de los gráficos, de modo que todos se encuentren en español. Además, se mejoró el formato de los gráficos, para que sean más comprensibles.
 
 Para complementar las bitácoras anteriores, se añadieron los objetivos claramente en la V de Gowin, se realizaron más gráficos con sus respectivas fichas de resultados.
 
