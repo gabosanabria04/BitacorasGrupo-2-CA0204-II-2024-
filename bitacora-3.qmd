@@ -8,7 +8,9 @@ editor: visual
 
 ### Setup {.hidden}
 
-```{r echo=FALSE, warnings=FALSE}
+```{r}
+#| echo: FALSE
+#| warnings: FALSE
 library(ggplot2)
 library(dplyr)
 library(palmerpenguins)
@@ -30,7 +32,9 @@ Además, con el fin de automatizar la carga de la base de datos, la ruta de acce
 
 Finalmente, se juntan las variables `Energy.Imports` y `Energy.Exports`, para lo cual, se pivotea de modo que el flujo de entradas y salidas quede en una sola variable denominada Energy.Flow, que se clasifique en importación o exportación por la variable Energy.Flow.Type.
 
-```{r messages= FALSE, warnings= FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
 original <- read.csv("data/complete_renewable_energy_dataset.csv")
 data <- original|> mutate(Country = case_when(
   Country == "Brazil"~"Brasil", Country == "Canada" ~ "Canadá", 
@@ -67,7 +71,10 @@ En particular, los gráficos de densidad se realizan únicamente con los datos d
 
 Dados ya los hallazgos anteriores, resulta interesante analizar el flujo energético de los países. Para ello, la siguiente figura representa el total de importaciones, comparado al total de exportaciones, por cada país durante el periodo estudiado, 2000 a 2023.
 
-```{r messages= FALSE, warnings= FALSE, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
            stat = "identity",
@@ -88,7 +95,11 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
 
 Mientras que la figura 3.2 separa esta información por años, con el fin de detectar tendencias.
 
-```{r messages= FALSE, warnings= FALSE, fig.height=25, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 25
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
            stat = "identity",
@@ -110,7 +121,9 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
 
 Si bien los gráficos anteriores brindan una idea de cuánta energía se importa o exporta, resulta también interesante ver la relación entre producción y el flujo energético. Dado que el flujo energético se divide en importaciones y exportaciones, esta división debe estar reflejada en los gráficos.
 
-```{r messages= FALSE, warnings= FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
   facet_wrap(~Energy.Flow.Type)+
@@ -128,8 +141,11 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
         plot.tag = element_text(face = "italic"))
 ```
 
-```{r messages= FALSE, warnings= FALSE, fig.width=8, fig.height=15}
-
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 15
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
   facet_wrap(Country~Energy.Flow.Type, ncol = 2)+
@@ -150,7 +166,9 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
 
 Los gráficos reflejan que tanto las importaciones como las exportaciones aumentan conforme aumenta la producción.
 
-```{r messages= FALSE, warnings= FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
 data %>% 
   ggplot(aes(x = Electricity.Prices))+
   geom_density()+
@@ -166,7 +184,11 @@ data %>%
         plot.tag = element_text(face = "italic"))
 ```
 
-```{r messages= FALSE, warnings= FALSE, fig.height=7, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| #| fig-width: 8
+#| fig-height: 7
 data %>% 
   ggplot(aes(x = Electricity.Prices, fill = Country))+
   geom_density() +
@@ -186,7 +208,10 @@ data %>%
         legend.position = "none")
 ```
 
-```{r messages= FALSE, warnings= FALSE, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
 data %>% 
   ggplot(aes(x = Electricity.Prices))+
   geom_density() +
@@ -206,7 +231,9 @@ data %>%
 ```
 
 
-```{r messages= FALSE, warnings= FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
 cor(data$Total.Production, data$Electricity.Prices)
 ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
   geom_point()+
@@ -222,7 +249,11 @@ ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
         legend.position = "none")
 ```
 
-```{r messages= FALSE, warnings= FALSE, fig.height=35, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 35
 data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_density()+
   facet_wrap(Year~Renewable.Energy.Education.Programs, ncol = 2)+
@@ -243,7 +274,11 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
         legend.position = "none")
 ```
 
-```{r messages= FALSE, warnings= FALSE, fig.height=5, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 25
 data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_density()+
   facet_wrap(~Renewable.Energy.Education.Programs, ncol = 2)+
@@ -266,7 +301,9 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
 En cuanto a los trabajos, estos resaltan como un factor social importante, pues el aumento en empleos, puede ayudar a disminuir el desempleo, lo que mejoraría la calidad de vida de los habitantes del país.
 
 
-```{r messages= FALSE, warnings= FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
 ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
   geom_point() +
   labs(title = "Producción y Trabajos",
@@ -280,7 +317,10 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
         plot.tag = element_text(face = "italic"))
 ```
 
-```{r messages= FALSE, warnings= FALSE, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
 ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.logical(Renewable.Energy.Education.Programs)))+
   scale_color_manual(name="", 
@@ -299,7 +339,11 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
         plot.tag = element_text(face = "italic"))
 ```
 
-```{r messages= FALSE, warnings= FALSE, fig.width = 12, fig.height=5}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| #| fig-width: 12
+#| fig-height: 5
 data %>% 
   ggplot(aes(x = Year, y = Renewable.Energy.Jobs, group = Year, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_boxplot(width = .25)+
@@ -320,7 +364,9 @@ data %>%
 ```
 
 
-```{r messages= FALSE, warnings= FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
 ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = Energy.Type)) +
   scale_color_brewer(type = "seq", palette = 4)+
@@ -338,7 +384,10 @@ ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
 ```
 
 
-```{r messages= FALSE, warnings= FALSE, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
 ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.factor(Government.Policies)))+
   facet_wrap(~Government.Policies)+
@@ -357,7 +406,10 @@ ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
 
 
 
-```{r messages= FALSE, warnings= FALSE, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
 ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.factor(Government.Policies)))+
   facet_wrap(~Government.Policies)+  
@@ -373,7 +425,10 @@ ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
         plot.tag = element_text(face = "italic"))
 ```
 
-```{r messages= FALSE, warnings= FALSE, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
 p <- ggplot(data, aes(x = R.D.Expenditure, y = Investments..USD.))+
   geom_point(aes(color = as.factor(Government.Policies)))+
   theme(legend.position = "bottom")+
