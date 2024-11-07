@@ -54,20 +54,18 @@ Nótese que se cambiaron las variables con respecto a la bitácora anterior, con
 
 #### Descripción del modelo
 
-Para determinar relaciones entre algunas de las variables, especialmente la cantidad de trabajos en el sector de energía renovable, se utiliza la función `cor()`, con el método "pearson". Esta función retorna un número entre -1 y 1, siendo -1 una relación perfactamente negativa, 1 una perfectamente positiva y 0 ninguna relación; de modo que nos permite saber si las variables analizadas tienen o no nivel de dependencia. Por su lado, el coeficiente de correlación de Pearson mide la fuerza de relación entre dos variables, para lo que suma el producto de sus diferencias con respecto a sus medias, y divide la suma por el producto de las diferencias al cuadrado con respecto a las medias de los objetos, como se muestra a continuación: ![Coeficiente de correlación de Pearson](images/Pearson_coefficient.jpg){fig-align="center"}
+Para determinar relaciones entre algunas de las variables, especialmente la cantidad de trabajos en el sector de energía renovable, se utilizan gráficos de dispersión. Estos gráficos pérmiten visualizar cada dato como puntos en el plano, lo que posibilita la detección de patrones.
 
-Una vez que se obtiene un número bastante más cercano a uno que a cero, se realiza la regresión lineal de ambas variables, que da como resultado el intercepto y el coeficiente beta de la segunda variable. Sea x la primera variable e y la segunda, tenemos: $x = intercepto + \beta*y$. Por último, para verificar que los datos tienen significancia estadística, para lo que se analiza el p-value. Para comprobar que el modelo es estadísticamente significativo, debemos comprobar que ambos p-values son menores al nivel de significancia predefinido (0.05). Si el valor p es bajo, se puede rechazar la hipótesis nula, es decir, descartar que los coeficientes sean cero, y concluir que existe una relación entre las variables. En ese momento, se procede a realizar el gráfico. A continuación se presenta un ejemplo del procedimiento para las variables relacionadas mediante regresión lineal.
+Dado que los gráficos de dispersión solo comparan dos variables a la vez, se dividen los datos en otras categorías, de modo que sean fácilmente comparables. De esta manera, es posible analizar tres variables a la vez, y detectar si cada categoría sigue el patrón general, o si alguna posee un patrón propio.
 
-```{r messages= FALSE, warnings= FALSE}
-cor(data$Renewable.Energy.Jobs, data$Investments..USD.)
-linearMod <- lm(Renewable.Energy.Jobs ~ Investments..USD., data=data)
-print(linearMod)
-summary(linearMod)
-```
+Para analizar los índices, se utilizan los gráficos de densidad, que permiten visualizar la distribución de datos dentro de los valores del índice. Estos gráficos se utilizan para determinar gráficamente los valores en los cuales se concentran los datos, indicando el nivel general en estos índices.
+
+En particular, los gráficos de densidad se realizan únicamente con los datos de una variable, por lo que se separan los datos en otras categorías; este proceso facilita la comparación de los datos, pues permite ver si la variable analizada cambia en función de la categoría a la que pertenece.
+
 
 ### Análisis Descriptivo
 
-Dados ya los hallazgos anteriores, resulta interesante analizar el flujo energético de los países. Para ello, la figura 3.1 representa el total de importaciones, comparado al total de exportaciones, por cada país durante el periodo estudiado, 2000 a 2020.
+Dados ya los hallazgos anteriores, resulta interesante analizar el flujo energético de los países. Para ello, la siguiente figura representa el total de importaciones, comparado al total de exportaciones, por cada país durante el periodo estudiado, 2000 a 2023.
 
 ```{r messages= FALSE, warnings= FALSE, fig.width=8}
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
@@ -110,20 +108,11 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
         axis.text.x = element_text(angle = 45, vjust=.5, hjust=0.3))
 ```
 
-Si bien los gráficos anteriores brindan una idea de cuánta energía se importa o exporta, resulta también interesante ver la relación entre producción y el flujo energético. De acuerdo al modelo utilizado, la producción y el flujo energético puede visualizarse con una regresión lineal:
-
-```{r messages= FALSE, warnings= FALSE}
-cor(data$Energy.Flow, data$Total.Production)
-linearMod <- lm(Energy.Flow ~ Total.Production, data=data)
-summary(linearMod)
-```
-
-Dado que el flujo energético se divide en importaciones y exportaciones, esta división debe estar reflejada en los gráficos.
+Si bien los gráficos anteriores brindan una idea de cuánta energía se importa o exporta, resulta también interesante ver la relación entre producción y el flujo energético. Dado que el flujo energético se divide en importaciones y exportaciones, esta división debe estar reflejada en los gráficos.
 
 ```{r messages= FALSE, warnings= FALSE}
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
-  geom_smooth(method = "lm", color = "black")+
   facet_wrap(~Energy.Flow.Type)+
   labs(title = "Relación Produccuión y Flujo Energético",
        x = "Producción",
@@ -143,7 +132,6 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
 
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
-  geom_smooth(method = "lm", color = "black")+
   facet_wrap(Country~Energy.Flow.Type, ncol = 2)+
   labs(title = "Relación Producción y Flujo Energético",
        subtitle = "Importaciones y Exportaciones",
@@ -217,7 +205,6 @@ data %>%
         legend.position = "none")
 ```
 
-Además, podemos encontrar otras relaciones, que no estén dadas por la regresión lineal, como el siguiente:
 
 ```{r messages= FALSE, warnings= FALSE}
 cor(data$Total.Production, data$Electricity.Prices)
@@ -276,17 +263,12 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
         legend.position = "none")
 ```
 
-En cuanto a los trabajos, estos resaltan como un factor social importante, pues el aumento en empleos, puede ayudar a disminuir el desempleo, lo que mejoraría la calidad de vida de los habitantes del país. Para analizar esta variable, se utilizó la regresión lineal, de acuerdo a la metodología explicada anteriormente.
+En cuanto a los trabajos, estos resaltan como un factor social importante, pues el aumento en empleos, puede ayudar a disminuir el desempleo, lo que mejoraría la calidad de vida de los habitantes del país.
 
-```{r messages= FALSE, warnings= FALSE}
-cor(data$Renewable.Energy.Jobs, data$Total.Production)
-linearMod <- lm(Renewable.Energy.Jobs ~ Total.Production, data=data)
-summary(linearMod)
-```
 
 ```{r messages= FALSE, warnings= FALSE}
 ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
-  geom_smooth(method = "lm")+
+  geom_point() +
   labs(title = "Producción y Trabajos",
        x = "Producción",
        y = "Trabajos",
@@ -301,7 +283,6 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
 ```{r messages= FALSE, warnings= FALSE, fig.width=8}
 ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.logical(Renewable.Energy.Education.Programs)))+
-  geom_smooth(method = "lm", color = "black", se = FALSE)+
   scale_color_manual(name="", 
                     labels = c("Con", "Sin"), 
                     values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
@@ -338,16 +319,10 @@ data %>%
         plot.tag = element_text(face = "italic"))
 ```
 
-```{r messages= FALSE, warnings= FALSE}
-cor(data$Renewable.Energy.Jobs, data$Renewable.Energy.Patents)
-linearMod <- lm(Renewable.Energy.Jobs ~ Renewable.Energy.Patents, data=data)
-summary(linearMod)
-```
 
 ```{r messages= FALSE, warnings= FALSE}
 ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = Energy.Type)) +
-  geom_smooth(method = "lm")+
   scale_color_brewer(type = "seq", palette = 4)+
   labs(title = "Trabajos y Patentes",
        subtitle = "por tipo de energía",
@@ -362,16 +337,10 @@ ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
         plot.tag = element_text(face = "italic"))
 ```
 
-```{r messages= FALSE, warnings= FALSE}
-cor(data$Renewable.Energy.Jobs, data$R.D.Expenditure)
-linearMod <- lm(Renewable.Energy.Jobs ~ R.D.Expenditure, data=data)
-summary(linearMod)
-```
 
 ```{r messages= FALSE, warnings= FALSE, fig.width=8}
 ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.factor(Government.Policies)))+
-  geom_smooth(method = "lm", color = "black", se = FALSE)+
   facet_wrap(~Government.Policies)+
   labs(title = "Trabajos y Gasto en Investigación",
        subtitle = "Efecto de políticas de gobierno",
@@ -386,16 +355,11 @@ ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
         plot.tag = element_text(face = "italic"))
 ```
 
-```{r messages= FALSE, warnings= FALSE}
-cor(data$Renewable.Energy.Jobs, data$Investments..USD.)
-linearMod <- lm(Renewable.Energy.Jobs ~ Investments..USD., data=data)
-summary(linearMod)
-```
+
 
 ```{r messages= FALSE, warnings= FALSE, fig.width=8}
 ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.factor(Government.Policies)))+
-  geom_smooth(method = "lm", color = "black", se = FALSE)+
   facet_wrap(~Government.Policies)+  
   labs(title = "Trabajos e Inversión",
        subtitle = "por políticas de gobierno",
@@ -410,12 +374,8 @@ ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
 ```
 
 ```{r messages= FALSE, warnings= FALSE, fig.width=8}
-cor(data$R.D.Expenditure, data$Investments..USD.)
-linearMod <- lm(R.D.Expenditure ~ Investments..USD., data=data)
-summary(linearMod)
 p <- ggplot(data, aes(x = R.D.Expenditure, y = Investments..USD.))+
   geom_point(aes(color = as.factor(Government.Policies)))+
-  geom_smooth(method = "lm")+
   theme(legend.position = "bottom")+
   labs(title = "Gasto en Investigación e Inversión",
        subtitle = "Efecto de políticas de gobierno",
@@ -435,19 +395,17 @@ ggMarginal(p, type = "densigram", fill = "purple")
 
 **Pregunta de investigación:** \* ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
 
-Al utilizar la función `cor()`, se obtienen las variables que pueden ser analizadas por medio de la regresión lineal. Posteriormente, se realiza la comprobación del p-value, para asegurar que el análisis tenga significancia estadística.
+Para responder la pregunta de investigación, el objetivo es relacionar de manera gráfica diversas variables analizadas. Así, se utiliza principalmente el gráfico de dispersión,puesto que estos permiten ubicar cada dato, y visualizar una cierta tendencia. En particular, permite dividir los datos en otras categorías, de modo que se diferencie la relación entre las variables dependiendo del grupo al que pertenecen estos datos.
 
-De esta manera, sabemos que la utilización de la regresión lineal presenta una buena aproximación a los datos, de modo que son una buena representación de estos. En particular, la regresión lineal es utilizada para indicar relaciones positivas o negativas entre las variables.
+Casi todos los gráficos son divididos por categorías, con el fin de detectar patrones anómalos en alguna de las categorías; pues al analizar todos los datos en conjunto, es fácil que un dato extremo o anómalo pase desapercibido.
 
-Entre las ventajas de usar el método de regresión lineal, se encuentra que es fácil de entender e interpretar, puesto que solamente es una línea, mostrando relación positiva o negativa entre las variables analizadas, e indicando la magnitud de la relación por medio de la pendiente. Además, es fácilmente adaptable a diversos datos.
+A pesar de que el análisis predominante sea con gráficos de dispersión, también se utilizan otras representaciones gráficas, con el fin de no limitar las observaciones a tendencias encontradas en puntos, dado que estos son fácilmente confundibles, y es fácil tener un gráfico sobrecargado debido a la superposición de estos.
 
-No obstante, la regresión lineal no representa el total de los datos, especialmente los valores extremos. Por ello, para obtener un mejor análisis de los datos, tanto los altamente correlacionados como los que no, es necesario utilizar otros métodos.
+Por ejemplo, el gráfico 3.10 utiliza densidades, junto con facetas para separar las observaciones que poseen programas educativos sobre la energía renovable; esta combinación muestra una clara relación entre la conciencia pública y la existencia de programas educativos.
 
-Por ejemplo, los gráficos de regresión lineal se complementan de los gráficos de puntos, que permiten ubicar cada dato, y visualizar qué tanto calza la regresión lineal con los datos. En particular, permite dividir los datos en otras categorías, lo que permite realizar la regresión lineal entre estos grupos, de modo que se diferencie la relación entre las variables dependiendo del grupo al que pertenecen estos datos.
+Así, el análisis a partir de los gráficos, permite visualizar tendencias en los datos, separadas por categoría, de modo que sea más sencillo comparar entre las diversas categorías. Permite además visualizar la concentración de los datos, de modo que sea más sencillo comparar si existe una gran concentración en alguno de los valores, o si los datos se reparten equitativamente entre los valores.
 
-Además, se utiliza otro tipo de gráfico para comparar otras variables, especialmente las que no muestran correlación por medio de la función `cor()`, lo que demuestra las limitaciones del coeficiente de pearson.
-
-Por ejemplo, el gráfico 3.10 utiliza densidades, junto con facetas para separar las observaciones que poseen programas educativos sobre la energía renovable; esta combinación muestra una clara relación entre la conciencia pública y la existencia de programas educativos. Así, se encuentran otras relaciones entre variables, no relacionadas con el coeficiente de pearson.
+A pesar de que sea posible visualizar algunas tendencias de cambios ambientales, sociales y económicos a medida que aumenta la producción de energía renovable; es difícil llegar a conclusiones debido a que los datos van disminuyendo conforme la producción aumenta, de modo que la representación gráfica podría no ser tan adecuada.
 
 ### Fichas de resultados
 
@@ -519,7 +477,7 @@ Por ejemplo, el gráfico 3.10 utiliza densidades, junto con facetas para separar
 
 **Principal característica:** La existencia de programas educativos mejora la relación lineal entre producción y cantidad de trabajos.
 
-**Problemas o posibles desafíos:** La utilización solamente de la regresión lineal puede causar un análisis incompleto. Es posible que algunas variables relavantes para explicar fenómenos estén fuera de las analizadas.
+**Problemas o posibles desafíos:** Es posible que algunas variables relavantes para explicar fenómenos estén fuera de las analizadas.
 
 **Resumen en un párrafo:** A pesar de que existe una correlación lineal entre la producción y la cantidad de trabajos del sector de energías renovables, al incluir la existencia de programas educativos, se observan más características. El gráfico 3.11 muestra una relación positiva entre la producción de energía renovable y la cantidad de trabajos del sector. Sin embargo, con el fin de visualizar otras características, se incluyó la existencia de programas educativos sobre la energía renovable. La figura 3.12 muestra que la correlación lineal es mayor con programas educativos. Adicionalmente, muestra que las mayores producciones energéticas se dan en países con programas educativos, y que son además los de mayor cantidad de empleos en el sector. Esto último se apoya en la figura 3.13, que muestra la relación positiva entre los programas educativos y la cantidad de empleos, tanto para los datos promedio, como para los datos extremos.
 
@@ -567,9 +525,9 @@ Por ejemplo, el gráfico 3.10 utiliza densidades, junto con facetas para separar
 |                                                                                                                  |                                                                                                            |
 
 | Sección          | Temas a tratar                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|----------------------|--------------------------------------------------|
+|-----------------------|-------------------------------------------------|
 | **Introducción** | 1\. La energía renovable como nuevo principio de autosuficiencia conectada.(secundario) <br> 2. Las energías renovables podrían reducir las emisiones de CO_2. (Primario) <br> 3. La instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. (Attanayake) (Primario) <br> 4. Estrategias para la implementación de las energías renovables (Freier & Casola). (Secundario) <br> 5. Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. (Primario) <br> 6. Transición energética y la electrificación sostenible. (Serrano)(Secundario) <br> 7. Energías renovables y la economía en Europa. (Caraballo y García) (Secundario) <br> 8. Variaciones en la cantidad de las distintas energías renovables según el país (secundario) <br> 9. Relación entre los indicadores de bienestar social y los precios de la electricidad según el país (secundario) <br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Metodología**  | 1\. Detalle de los datos: La tabla incluye datos de países y años para comparar la producción, emisión de CO₂ y capacidad instalada de fuentes de energía solar, geotérmica, biomasa, eólica e hidroeléctrica, considerando también alianzas público-privadas y cooperación regional para entender mejor el impacto de la inversión. en el sector. La población se utiliza para analizar el PIB y el consumo energético, y la autosuficiencia energética se examina mediante importaciones y exportaciones. Se incluyen variables de recursos naturales, como temperatura promedio, precipitación, irradiación solar, velocidad del viento, biomasa disponible, potencial hídrico y geotérmico, junto con desastres naturales, capacidad de almacenamiento y liberalización de mercado. Para el impacto social, se analizan precios de electricidad, subsidios, conciencia pública, urbanización, educación, programas de formación sobre energía renovable, percepción de corrupción y calidad regulatoria. El rol del gobierno se revisa en políticas públicas, programas de eficiencia energética, objetivos en renovables, acuerdos energéticos, tarifas, incentivos a la exportación, e inversión en I+D, además de la cantidad de instituciones, innovación, conferencias y publicaciones en el sector. Se incluye también la estabilidad política, libertad económica y facilidad para hacer negocios, y se investigan las tendencias en la fuerza laboral en energías renovables. (Primario) <br> 2. Método A: Regresión Lineal (Primario) <br> 3. Método B: Comparaciones varias (Secundario) <br> 4. Diagnóstico del modelo: Se reordenó la base de datos según categorías relevantes a la investigación y se anualizaron los datos, consolidando las columnas por país, año y tipo de energía. Para facilitar su carga, la ruta de acceso parte desde la carpeta del repositorio, permitiendo acceder a la base de datos al clonar el repositorio. Además, se unificaron las variables de importación y exportación de energía en una sola variable, Energy.Flow , clasificada en Energy.Flow.Type como importación o exportación. (Primario) |
+| **Metodología**  | 1\. Detalle de los datos: La tabla incluye datos de países y años para comparar la producción, emisión de CO₂ y capacidad instalada de fuentes de energía solar, geotérmica, biomasa, eólica e hidroeléctrica, considerando también alianzas público-privadas y cooperación regional para entender mejor el impacto de la inversión. en el sector. La población se utiliza para analizar el PIB y el consumo energético, y la autosuficiencia energética se examina mediante importaciones y exportaciones. Se incluyen variables de recursos naturales, como temperatura promedio, precipitación, irradiación solar, velocidad del viento, biomasa disponible, potencial hídrico y geotérmico, junto con desastres naturales, capacidad de almacenamiento y liberalización de mercado. Para el impacto social, se analizan precios de electricidad, subsidios, conciencia pública, urbanización, educación, programas de formación sobre energía renovable, percepción de corrupción y calidad regulatoria. El rol del gobierno se revisa en políticas públicas, programas de eficiencia energética, objetivos en renovables, acuerdos energéticos, tarifas, incentivos a la exportación, e inversión en I+D, además de la cantidad de instituciones, innovación, conferencias y publicaciones en el sector. Se incluye también la estabilidad política, libertad económica y facilidad para hacer negocios, y se investigan las tendencias en la fuerza laboral en energías renovables. (Primario) <br> 2. Método A: Gráficos de dispersión (Primario) <br> 3. Método B: Comparaciones varias (Secundario) <br> 4. Diagnóstico del modelo: Se reordenó la base de datos según categorías relevantes a la investigación y se anualizaron los datos, consolidando las columnas por país, año y tipo de energía. Para facilitar su carga, la ruta de acceso parte desde la carpeta del repositorio, permitiendo acceder a la base de datos al clonar el repositorio. Además, se unificaron las variables de importación y exportación de energía en una sola variable, Energy.Flow , clasificada en Energy.Flow.Type como importación o exportación. (Primario) |
 | **Resultados**   | 1\. Aumento en la producción de energías renovables. (Primario) <br> 2. Mayor producción, menos CO2 (Primario) <br> 3. Cambios mínimos en los precios de electricidad. (secundario) <br> 4. Mayor producción, menor fuerza de trabajo. (primario) <br> 5. Estabilidad de Importaciones y Exportaciones (primario) <br> 6. Relación positiva entre producción, importaciones y exportaciones (primario) <br> 7. Concentración de los precios de la energía (primario) <br> 8. La influencia de la producción en los precios de la energía. (primario) <br> 9. Los programas de educación sobre energía renovable aumentan la consciencia pública. (secundaria) <br> 10. Relación positiva entre producción y trabajos en sector de energía renovable (primario). <br> 11. Relación entre número de patentes y empleos del sector energético (secundario). <br> 12. Comportamiento similar del gasto en investigación y la inversión (primario)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 ## Parte de escritura
