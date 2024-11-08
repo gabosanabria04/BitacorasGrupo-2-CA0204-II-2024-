@@ -8,7 +8,10 @@ editor: visual
 
 ### Setup {.hidden}
 
-```{r echo=FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| echo: FALSE
 library(ggplot2)
 library(dplyr)
 library(palmerpenguins)
@@ -111,7 +114,11 @@ colnames(most_important)
 
 Para iniciar a relacionar las variables, es importante entender el contexto general de los países, incluyendo la proporción de la energía generada por cada país, corresponde a cada tipo de energía; esto se representa en el siguiente gráfico:
 
-```{r fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-2.1
 ggplot(df, aes(x = Country, fill = Energy.Type)) +
   geom_bar(position = "fill") +
   scale_fill_brewer(type = "seq", palette = 4)  +
@@ -121,18 +128,19 @@ ggplot(df, aes(x = Country, fill = Energy.Type)) +
     x = "",
     y = "",
     fill = "",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.1"
-  ) +
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
   cowplot::theme_cowplot() +
-  theme(axis.text.x = element_text(angle=45, vjust=.5, hjust=0.3),
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(axis.text.x = element_text(angle=45, vjust=.5, hjust=0.3))
 ```
 
 La conciencia pública consiste en tener información suficiente sobre los aspectos positivos y negativos de cada tipo de energía. Este es un dato relavante sobre la energía renovable, ya sea por mantener informada a la población, como para que la población sea capaz de velar por la producción de energías renovables en su país.
 
-```{r fig.width=8, fig.height=10}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 10
+#| label: fig-2.2
 ggplot(df, aes(x=Country, y=Public.Awareness, fill=Country)) + 
   geom_violin() +
   facet_wrap(~Year, ncol = 4) +
@@ -143,72 +151,71 @@ ggplot(df, aes(x=Country, y=Public.Awareness, fill=Country)) +
     x = "",
     y = "Conciencia pública",
     fill = "",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.2"
-  ) +
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
   scale_y_continuous(breaks=c(0.0,5.0, 10.0)) +
   theme_cowplot()+
-  theme(axis.ticks.x = element_blank(), axis.text.x = element_blank(),
-        plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme(axis.ticks.x = element_blank(), axis.text.x = element_blank())
 ```
 
 En el contexto general, resulta importante notar la evolución que tiene la producción de energía renovable durante los años analizados. A partir del gráfico presentado a continuación, es posible detectar que la producción energética no es monótona; sin embargo, en los últimos 4 años, presenta monotonía creciente, con cambios poco marcados, lo que sugiere una estabilización mayor a los años anteriores.
 
 ```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-2.3
 ggplot(df, aes(x = Year, y = Production..GWh.)) +
   geom_col(fill = "#9e9ac8") +
   labs(
     title = "Producción de Energía Renovable",
     x = "Año",
     y = "Producción total",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.3"
-  ) +
-  theme_cowplot()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
+  theme_cowplot()
 ```
 
 Sin embargo, no se ve el mismo patrón en la fuerza laboral del sector energético:
 
 ```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-2.4
 ggplot(df, aes(x = Year, y = Energy.Sector.Workforce)) +
   geom_col(fill = "lightblue") +
   labs(
     title = "Fuerza de Trabajo en el Sector Energético",
     x = "Año",
     y = "Fuerza de trabajo",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.4"
-  ) +
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
   theme_cowplot()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme()
 ```
 
 A partir de una regresión lineal, podemos observar que las emisiones de dióxido de carbono disminuyen conforme aumenta la producción de energías renovables; este hallazgo es esperable, pues las energías renovables son energías más limpias que las fuentes tradicionales.
 
 ```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-2.5
 ggplot(df, aes(x = Production..GWh., y = CO2.Emissions)) +
   geom_smooth(method = "lm") +
   labs(
     title = "Emisiones de CO2 y Producción energética",
     x = "Producción",
     y = "Emisiones de CO2",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.5"
-  )+
-  theme_cowplot()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+  theme_cowplot()
 ```
 
 Sin embargo, la disminución de las emisiones de CO2 dado por el aumento en la producción de energías renovables, es poco visible; esto puede ser causado por la variedad de datos con los que se realiza el gráfico.
 
 Con el fin de facilitar la realización de gráficos a partir de los datos brindados, se agruparon los datos para algunas de las variables de forma anual.
 
-```{r setup, warning=FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
 annual <- df %>% group_by(Year, Country) %>% summarise(avg_electricity_price = mean(Electricity.Prices), avg_production = sum(Production..GWh.), avg_investment = sum(Investments..USD.), avg_CO2_emissions = mean(CO2.Emissions))
 annual
 ```
@@ -216,40 +223,47 @@ annual
 Con esta base de datos anualizada, la relación entre la producción de energías renovables y las emisiones de CO2 resultan mucho más claras.
 
 ```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 10
+#| label: fig-2.6
 ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
   geom_smooth(method = "lm") +
    labs(
     title = "Producción y Emisiones de CO2",
     x = "Producción total",
     y = "Emisiones de CO2",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.6"
-  )+
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme()
 ```
 
 Con la base de datos anualizada, es posible determinar cierta volatilidad en los precios de la electricidad. En particular, en los últimos años se ve un aumento en los precios de la electricidad, exceptuando el 2022, que tuvo una disminución bastante significativa.
 
 ```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-2.7
 ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
   geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , color="purple", lwd = 1.25) +
   labs(
     title = "Precios de Electricidad",
     x = "Año",
     y = "Precio",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.7"
-  ) +
-  theme_clean()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
+  theme_clean()
 ```
 
 Separándolo por países, los gráficos muestran que en los últimos años, la tendencia es la subida de precios, sin ser demasiado volátil. Además, los países analizados, exceptuando Canadá y Japón, presentan el aumento en los precios de los últimos años.
 
-```{r fig.width = 8, fig.height=10}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 10
+#| label: fig-2.8
 ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
   geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , size=1, color="violet", linetype="dotdash" ) +
   geom_point(color = "purple") +
@@ -259,12 +273,8 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
     subtitle = "por país",
     x = "Año",
     y = "Precio",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.8"
-  ) +
-  theme_clean()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
+  theme_clean()
 ```
 
 Así, se observan algunas tendencias en los datos, las cuales resultarán de utilidad para responder la pregunta de investigación al relacionar las variables observadas con los indicadores de bienestar social, entre los que se incluyen los precios de la electricidad.
@@ -310,7 +320,12 @@ annual
 
 Se presentan los resultados, obtenidos con la base de datos anualizada, a continuación.
 
-```{r warning=FALSE, fig.height=10, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 10
+#| label: fig-2.9
 ggplot(annual, aes(x = Year, y = avg_electricity_price)) +
   geom_line() +
   facet_wrap(~Country, ncol = 3) +
@@ -319,16 +334,17 @@ ggplot(annual, aes(x = Year, y = avg_electricity_price)) +
     subtitle = "por país",
     x = "Año",
     y = "Precio",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.9"
-  )+
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   scale_x_continuous(breaks=c(2000, 2010, 2020))+
-  theme_clean()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme_clean()
 ```
 
-```{r warning=FALSE, fig.height=8, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 8
+#| label: fig-2.10
 ggplot(annual, aes(x = Year, y = avg_production)) +
   geom_line() +
   facet_wrap(~Country, ncol = 3) +
@@ -337,16 +353,17 @@ ggplot(annual, aes(x = Year, y = avg_production)) +
     subtitle = "por país",
     x = "Año",
     y = "Producción",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.10"
-  )+
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   scale_x_continuous(breaks=c(2000, 2010, 2020))+
-  theme_clean()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme_clean()
 ```
 
-```{r warning=FALSE, fig.height=8, fig.width=8}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 8
+#| label: fig-2.11
 ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
   geom_line()+
   facet_wrap(~Country, ncol = 2) +
@@ -355,17 +372,17 @@ ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
     subtitle = "por país",
     x = "Producción",
     y = "Precio",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.11"
-  ) +
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
   scale_y_continuous(breaks=c(0.20, 0.30, 0.4))+
   scale_x_continuous(breaks=c(0, 625000, 1250000))+
-  theme_clean()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme_clean()
 ```
 
-```{r warning=FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-2.12
 ggplot(annual, aes(x = Year, y = avg_CO2_emissions)) +
   geom_smooth() +
   facet_wrap(~Country) +
@@ -374,17 +391,18 @@ ggplot(annual, aes(x = Year, y = avg_CO2_emissions)) +
     subtitle = "por país",
     x = "Año",
     y = "Emisiones de CO2",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.12"
-  ) +
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
   theme_cowplot() +
   scale_y_continuous(breaks=c(3e+05, 5e+05, 7e+05)) +
-  scale_x_continuous(breaks = c(2000, 2010, 2020))+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  scale_x_continuous(breaks = c(2000, 2010, 2020))
 ```
 
-```{r warning=FALSE, fig.width = 8, fig.height = 10}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 10
+#| label: fig-2.13
 ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
   geom_smooth(method = "lm") +
   labs(
@@ -392,49 +410,49 @@ ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
     subtitle = "por país",
     x = "Producción",
     y = "Emisiones de CO2",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.13"
-  ) +
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
   facet_wrap(~Country, ncol=2)+
   scale_x_continuous(breaks=c(0, 500000, 1000000))+
-  theme_cowplot()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme_cowplot()
 ```
 
 Y los ya insertados, generados también con datos anualizados:
 
-```{r warning=FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 10
 ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
   geom_smooth(method = "lm") +
    labs(
     title = "Producción y Emisiones de CO2",
     x = "Producción total",
     y = "Emisiones de CO2",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.6"
-  )+
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+  theme()
 ```
 
-```{r warning=FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
 ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
   geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , color="purple", lwd = 1.25) +
   labs(
     title = "Precios de Electricidad",
     x = "Año",
     y = "Precio",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.7"
-  ) +
-  theme_clean()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
+  theme_clean()
 ```
 
-```{r, fig.width = 8, fig.height=10}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| fig-height: 10
 ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
   geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , size=1, color="violet", linetype="dotdash" ) +
   geom_point(color = "purple") +
@@ -444,12 +462,8 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
     subtitle = "por país",
     x = "Año",
     y = "Precio",
-    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
-      tag = "Fig.2.8"
-  ) +
-  theme_clean()+
-  theme(plot.tag.position = "topright",
-        plot.tag = element_text(face = "italic"))
+    caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
+  theme_clean()
 ```
 
 ## Fichas de Resultados
@@ -516,11 +530,10 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 
 ![pastebin](images\pastebin2.3.png){fig-align="center" width="100%"}
 
-![git cliff](images\gitcliff2.1.png){fig-align="center" width="100%"} 
+![git cliff](images\gitcliff2.1.png){fig-align="center" width="100%"}
 
-![git cliff](images\gitcliff2.2.png){fig-align="center" width="100%"} 
+![git cliff](images\gitcliff2.2.png){fig-align="center" width="100%"}
 
 ![git cliff](images\gitcliff2.3.png){fig-align="center" width="100%"}
 
 ![git summary](images\gitsummary2.png){fig-align="center" width="100%"}
-
