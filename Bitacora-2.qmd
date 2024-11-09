@@ -200,7 +200,8 @@ A partir de una regresión lineal, podemos observar que las emisiones de dióxid
 #| fig-width: 8
 #| label: fig-2.5
 ggplot(df, aes(x = Production..GWh., y = CO2.Emissions)) +
-  geom_smooth(method = "lm") +
+  geom_line() +
+  geom_point(color = "#7d8c8e")+
   labs(
     title = "Emisiones de CO2 y Producción energética",
     x = "Producción",
@@ -226,11 +227,10 @@ Con esta base de datos anualizada, la relación entre la producción de energía
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
-#| fig-height: 10
 #| label: fig-2.6
 ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
-  geom_smooth(method = "lm") +
-   labs(
+  geom_jitter(color = "#7d8c8e")+
+  labs(
     title = "Producción y Emisiones de CO2",
     x = "Producción total",
     y = "Emisiones de CO2",
@@ -256,7 +256,7 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
   theme_clean()
 ```
 
-Separándolo por países, los gráficos muestran que en los últimos años, la tendencia es la subida de precios, sin ser demasiado volátil. Además, los países analizados, exceptuando Canadá y Japón, presentan el aumento en los precios de los últimos años.
+Separándolo por países, los gráficos muestran que en los últimos años, la tendencia es la subida de precios, sin ser demasiado volátil. Además, los países analizados, exceptuando Canadá y Japón, presentan un aumento con relativa estabilidad en los últimos años.
 
 ```{r}
 #| messages: FALSE
@@ -328,6 +328,7 @@ Se presentan los resultados, obtenidos con la base de datos anualizada, a contin
 #| label: fig-2.9
 ggplot(annual, aes(x = Year, y = avg_electricity_price)) +
   geom_line() +
+  geom_point(color = "#602388")+
   facet_wrap(~Country, ncol = 3) +
   labs(
     title = "Precios de Electricidad",
@@ -347,6 +348,7 @@ ggplot(annual, aes(x = Year, y = avg_electricity_price)) +
 #| label: fig-2.10
 ggplot(annual, aes(x = Year, y = avg_production)) +
   geom_line() +
+  geom_point(color = "#51c0a5")+
   facet_wrap(~Country, ncol = 3) +
   labs(
     title = "Producción Energética",
@@ -361,10 +363,11 @@ ggplot(annual, aes(x = Year, y = avg_production)) +
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
-#| fig-width: 8
+#| fig-width: 10
 #| fig-height: 8
 #| label: fig-2.11
 ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
+  geom_point(color = "#602388")+
   geom_line()+
   facet_wrap(~Country, ncol = 2) +
   labs(
@@ -374,7 +377,7 @@ ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
     y = "Precio",
     caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset") +
   scale_y_continuous(breaks=c(0.20, 0.30, 0.4))+
-  scale_x_continuous(breaks=c(0, 625000, 1250000))+
+  scale_x_continuous(breaks=c(0, 625000, 1200000))+
   theme_clean()
 ```
 
@@ -382,10 +385,11 @@ ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig.heigth: 50
 #| label: fig-2.12
 ggplot(annual, aes(x = Year, y = avg_CO2_emissions)) +
-  geom_smooth() +
-  facet_wrap(~Country) +
+  geom_col(fill = "#7d8c8e") +
+  facet_wrap(~Country, ncol = 2) +
   labs(
     title = "Emisiones Totales de CO2",
     subtitle = "por país",
@@ -400,11 +404,12 @@ ggplot(annual, aes(x = Year, y = avg_CO2_emissions)) +
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
-#| fig-width: 8
+#| fig-width: 10
 #| fig-height: 10
 #| label: fig-2.13
 ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
-  geom_smooth(method = "lm") +
+  geom_line() +
+  geom_point(color = "#7d8c8e")+
   labs(
     title = "Producción y Emisiones de CO2",
     subtitle = "por país",
@@ -422,10 +427,9 @@ Y los ya insertados, generados también con datos anualizados:
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
-#| fig-height: 10
 ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
-  geom_smooth(method = "lm") +
-   labs(
+  geom_jitter(color = "#7d8c8e")+
+  labs(
     title = "Producción y Emisiones de CO2",
     x = "Producción total",
     y = "Emisiones de CO2",
@@ -476,13 +480,13 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 -   **Problemas o posibles desafíos:** La forma de anualizar los datos para esta bitácora es poco eficiente, además, no se incluyeron variables categóricas más allá del país y el año.
 -   **Resumen en un párrafo:** La base de datos original posee varios datos de un mismo país y tipo de energía para un mismo año, lo que dificulta la graficación. Anualizar los datos utilizando el promedio de estos datos, permite una mejor graficación. Estos gráficos permiten relacionar las diversas variables, puesto que los datos siguen un mismo patrón. Sin embargo, este proceso debe hacerse para todas las variables seleccionadas. POr lo tanto, se pretende realizar la anualización de los datos, juntando las observaciones según los tipos de energía de cada país para cada año.
 
-### Producción energética {.unnumbered}
+### Producción energética 
 
 -   **Nombre del hallazgo:** Aumento en la producción de energías renovables
 -   **Resumen en una oración:** Casi todos los países se comportan de acuerdo al patrón internacional en producción energética.
 -   **Principal característica:** En los últimos años, la producción global de energía renovable ha aumentado, apoyado por el aumento de esta en los países analizados.
 -   **Problemas o posibles desafíos:** Japón no sigue el patrón, por lo que debe haber un factor, posiblemente variable contextual, que explique el comportamiento de Japón
--   **Resumen en un párrafo:** De acuerdo a los datos totales, la producción de energía renovable ha aumentado en los últimos años. Dado que los datos originales incluyen muchos datos sobre un mismo año, se realizó este mismo análisis sobre los datos anualizados. En este segundo análisis, se encontró que el patrón global está formado por ese mismo patrón en casi todos los países, a excepción de Japón. Por ello, se pretende relacionar esta diferencia con alguno de los demás factores. Además, se buscará explicar, mediante alguna otra variable, la razón por la que tanto la producción global como la producción de los países por separado ha aumentado, conjeturando la estabilidad en producción energética.
+-   **Resumen en un párrafo:** De acuerdo a los datos totales, mostrados en la @fig-2.10, la producción de energía renovable ha aumentado en los últimos años. Dado que los datos originales incluyen muchos datos sobre un mismo año, se realizó este mismo análisis sobre los datos anualizados. En este segundo análisis, se encontró que el patrón global está formado por ese mismo patrón en casi todos los países, a excepción de Japón. Por ello, se pretende relacionar esta diferencia con alguno de los demás factores. Además, se buscará explicar, mediante alguna otra variable, la razón por la que tanto la producción global como la producción de los países por separado ha aumentado, conjeturando la estabilidad en producción energética.
 
 ### Producción Energética y Emisiones de CO2
 
@@ -490,7 +494,7 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 -   **Resumen en una oración:** Existe una relación inversa entre la producción y las emisiones de CO2 a nivel global.
 -   **Principal característica:** Japón y Francia se diferencian del patrón global, que es decreciente, por ser crecientes.
 -   **Problemas o posibles desafíos:** Al anualizar los datos, no todos los países presentan la misma monotonía. En particular, Japón y Francia parecen tener una monotnía creciente.
--   **Resumen en un párrafo:** A partir de los datos originales, es posible determinar que un aumento en producción de energías renovables implica una disminución en las emisiones de CO2. Aunque esto es esperable, pues las energías renovables son energías más limpias que las generadas por otras fuentes, como los combustibles fósiles; tanto Japón como Francia presentan una relación directa entre las variables, es decir, un aumento en la producción implica un aumento en la emisión de CO2. De estos dos países, destaca que Japón ha reducido la producción de energías renovables en los últimos años, incumpliendo también el patrón global. Se pretende determinar algún factor que explique la tendencia inversa de estos dos países con respecto a la producción y la emisión de CO2.
+-   **Resumen en un párrafo:** A partir de los datos originales, es posible determinar que un aumento en producción de energías renovables implica una disminución en las emisiones de CO2. Aunque esto es esperable, pues las energías renovables son energías más limpias que las generadas por otras fuentes, como los combustibles fósiles; tanto Japón como Francia presentan una relación directa entre las variables (@fig-2.12), es decir, un aumento en la producción implica un aumento en la emisión de CO2. De estos dos países, destaca que Japón ha reducido la producción de energías renovables en los últimos años, incumpliendo también el patrón global (@fig-2.10). Se pretende determinar algún factor que explique la tendencia inversa de estos dos países con respecto a la producción y la emisión de CO2.
 
 ### Precios de electricidad
 
@@ -498,7 +502,7 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 -   **Resumen en una oración:** Los precios de la electricidad se han mantenido relativamente constantes
 -   **Principal característica:** A pesar de darse pequeños aumentos, los precios se mantienen relativamente constantes.
 -   **Problemas o posibles desafíos:** Para encontrar un patrón a nivel globlal, se debe realizar un promedio de los precios por año. Debe existir una variable contextual que explique los valores relativamente constantes de la electricidad.
--   **Resumen en un párrafo:** Tanto en los datos originales como en los anualizados, es posible determinar que para los últimos años, los precios de la electricidad están aumentando. Sin embargo, el cambio en los precios no es realmete significativo. La pequeña magnitud de los cambios en precio, permiten conjeturar, que los precios se mantienen casi constantes. Se pretende encontrar una variable contextual a nivel global, que justifique la estabilización de los precios. Para esto último, es necesario promediar los precios de todos los países, pues como la variable representa un precio, no se deben sumar los valores.
+-   **Resumen en un párrafo:** Tanto en los datos originales (@fig-2.7) como en los anualizados (@fig-2.8), es posible determinar que para los últimos años, los precios de la electricidad están aumentando. Sin embargo, el cambio en los precios no es realmete significativo. La pequeña magnitud de los cambios en precio, permiten conjeturar, que los precios se mantienen casi constantes. Se pretende encontrar una variable contextual a nivel global, que justifique la estabilización de los precios. Para esto último, es necesario promediar los precios de todos los países, pues como la variable representa un precio, no se deben sumar los valores.
 
 ### Producción y Fuerza Laboral
 
@@ -506,7 +510,7 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 -   **Resumen en una oración:** Hay discrepancias entre los cambios de producción energética, y la fuerza de trabajo del sector.
 -   **Principal característica:** A pesar del crecimiento de la producción de energías renovables, la fuerza laboral en el área no aumenta al mismo ritmo.
 -   **Problemas o posibles desafíos:** La fuerza laboral del área puede verse afectada por la inversión, o el gasto en investigación y desarrollo de tecnología para la producción de energía renovable.
--   **Resumen en un párrafo:** La fuerza de trabajo en el sector energético es mucho más volátil que la producción. En los últimos años, la producción de energía con fuentes renovables ha aumentado; sin embargo, la fuerza laboral no sigue el mismo patrón. La fuerza laboral de los últimos años ha sufrido muchas variaciones, no leves. La diferencia de crecimiento en la producción y la fuerza laboral plantea una interrogante sobre la capacidad a futuro de producción energética. Se pretende determinar si la inversión o el gasto en investigación y desarrollo se relacionan con la volatilidad de la fuerza laboral del sector energético.
+-   **Resumen en un párrafo:** La fuerza de trabajo en el sector energético (@fig-2.4) es mucho más volátil que la producción (@fig-2.3). En los últimos años, la producción de energía con fuentes renovables ha aumentado; sin embargo, la fuerza laboral no sigue el mismo patrón. La fuerza laboral de los últimos años ha sufrido muchas variaciones, no leves. La diferencia de crecimiento en la producción y la fuerza laboral plantea una interrogante sobre la capacidad a futuro de producción energética. Se pretende determinar si la inversión o el gasto en investigación y desarrollo se relacionan con la volatilidad de la fuerza laboral del sector energético.
 
 ### Conciencia pública
 
@@ -514,7 +518,7 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 -   **Resumen en una oración:** En 2023, la consciencia pública a nivel global, se concentra en niveles bajos.
 -   **Principal característica:** La distribución de la conciencia pública es muy variable. Específicamente en 2021, no estuvo concentrada en ningún valor específico, y en el 2023 tuvo concentración principalmente en los niveles bajos.
 -   **Problemas o posibles desafíos:** La concentración en valores bajos refleja una disminución de la conciencia pública, lo que disminuye la capacidad de los habitantes de solicitar energías renovables. Esta disminución puede deberse a la carencia de programas educativos sobre este tema.
--   **Resumen en un párrafo:** La distribución de la conciencia pública ha sido bastante variable entre los años analizados. Comparando el 2023 con los dos años anteriores, el 2023 tiene mayor distribución en algunas áreas, específicamente las bajas. Al comparar el 2020 con el 2023, la conciencia pública es menor, pues las concentraciones de distribución se encuentran en valores más bajos. En otros años, como el 2009, la conciencia pública estaba mejor repartida entre los países, pero eso no significa que sea mejor, pues en realidad el escenario ideal es la concentración en los valores altos. Se pretende comparar los datos de la conciencia pública con respecto a la existencia o no de programas educativos sobre la energía renovable, así como la proporción de energía consumida que procede de fuentes renovables.
+-   **Resumen en un párrafo:** La distribución de la conciencia pública, representado en la @fig-2.2 ha sido bastante variable entre los años analizados. Comparando el 2023 con los dos años anteriores, el 2023 tiene mayor distribución en algunas áreas, específicamente las bajas. Al comparar el 2020 con el 2023, la conciencia pública es menor, pues las concentraciones de distribución se encuentran en valores más bajos. En otros años, como el 2009, la conciencia pública estaba mejor repartida entre los países, pero eso no significa que sea mejor, pues en realidad el escenario ideal es la concentración en los valores altos. Se pretende comparar los datos de la conciencia pública con respecto a la existencia o no de programas educativos sobre la energía renovable, así como la proporción de energía consumida que procede de fuentes renovables.
 
 ## Reflexión
 
