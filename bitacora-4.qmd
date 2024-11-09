@@ -24,9 +24,84 @@ library(ggExtra)
 options(scipen = 999)
 ```
 
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+original <- read.csv("data/complete_renewable_energy_dataset.csv")
+data <- original|> mutate(Country = case_when(
+  Country == "Brazil"~"Brasil", Country == "Canada" ~ "Canadá", 
+  Country == "France"~"Francia", Country == "Germany"~"Alemania", 
+  Country == "Japan"~"Japón", Country == "Russia"~"Rusia", 
+  Country == "USA"~"E.E.U.U.", Country == "Australia"~"Australia",
+  Country == "China"~"China", Country == "India"~"India",
+  TRUE~"Other")) %>% mutate(Energy.Type = case_when(
+  Energy.Type == "Solar"~"Solar", Energy.Type == "Biomass" ~ "Biomasa", 
+  Energy.Type == "Wind"~"Eólica", Energy.Type == "Hydro"~"Hidráulica", 
+  Energy.Type == "Geothermal"~"Geotérmica", TRUE~"Other")) %>% 
+  group_by(Country, Year, Energy.Type) |> 
+  summarise(Total.Production = sum(Production..GWh.), Electricity.Prices = mean(Electricity.Prices), R.D.Expenditure = sum(R.D.Expenditure), CO2.Emissions = sum(CO2.Emissions), Investments..USD. = sum(Investments..USD.), Public.Awareness = mean(Public.Awareness), Exportaciones = sum(Energy.Exports), Importaciones = sum(Energy.Imports), Renewable.Energy.Jobs = sum(Renewable.Energy.Jobs), Renewable.Energy.Patents = sum(Renewable.Energy.Patents), Renewable.Energy.Education.Programs = max(Renewable.Energy.Education.Programs), Government.Policies= max(Government.Policies)) %>% 
+  pivot_longer(cols = c("Importaciones", "Exportaciones"),
+               names_to = "Energy.Flow.Type",
+               values_to = "Energy.Flow")
+```
+
 ## Planificación
 
 ### Análisis Gráfico
+
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-4.1
+data %>% filter(Country == "Japón") %>% ggplot(aes(x = Year, y = Total.Production)) +
+geom_col(fill = "#9e9ac8") +
+  labs(title = "Total de Producción: Japón",
+       x = "Año",
+       y = "",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+  theme_cowplot()+
+  theme(legend.position = "top")
+```
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-4.2
+data %>% filter(Country == "Japón") %>% ggplot(aes(x = Year, y = Energy.Flow)) +
+  geom_bar(aes(fill = Energy.Flow.Type),
+           stat = "identity",
+           position = position_dodge()) +
+  labs(title = "Total de Flujo Energético: Japón",
+       x = "Año",
+       y = "",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+  scale_fill_manual(name="", 
+                    labels = c("Exportaciones", "Importaciones"), 
+                    values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
+  theme_cowplot()+
+  theme(legend.position = "top")
+```
+
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-4.2
+data %>% filter(Country == "Japón") %>% ggplot(aes(x = Year, y = Energy.Flow)) +
+  geom_bar(aes(fill = Energy.Flow.Type),
+           stat = "identity",
+           position = position_dodge()) +
+  labs(title = "Total de Flujo Energético: Japón",
+       x = "Año",
+       y = "",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+  scale_fill_manual(name="", 
+                    labels = c("Exportaciones", "Importaciones"), 
+                    values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
+  theme_cowplot()+
+  theme(legend.position = "top")
+```
 
 
 ### Fichas de Resultados
@@ -34,9 +109,9 @@ options(scipen = 999)
 
 ## Parte de Escritura
 
-Al analizar los datos de manera anual, se encontró que el patrón global se repite en casi todos los países, a excepción de Japón. Por ello, se pretende relacionar esta diferencia con alguno de los demás factores. Además, se buscará explicar, mediante alguna otra variable, la razón por la que tanto la producción global como la producción de los países por separado ha aumentado, conjeturando la estabilidad en producción energética.
+A pesar de que la @fig-2.10 muestra la tendencia creciente en producción energética a nivel mundial, al separar los datos por países (@fig-2.), se encontró que el patrón global se repite en casi todos los países, a excepción de Japón. Por ello, se analiza el caso específico de Japón, específicamente su producción (@fig-4.1), con tendencia a la baja, y sus importaciones y exportaciones (@fig-4.2), que muestra un reciente aumento en las importaciones. En particular, resulta interesante que las importaciones aumentaron en los últimos 4 años, y especialmente en el 2022. A pesar de que se espera un aumento en las importaciones ante una disminución en la producción energética,  este aumento es mucho más reciente que esta baja en la producción. Dicho fenómeno podría explicarse por un reciente interés en las energías renovables, pues tambié en los últimos dos años se ve un aumento en la producción, comparado a años anteriores.
 
-El estudio de Attanayake [-@Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024] analiza cómo la instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. Donde los países desarrollados, como Estados Unidos, China y la India, tienen la cantidad promedio de emisiones más altas. Lo cual destaca que los países mayormenre responsables de las emisiones de CO2 se han mantenido constantes durante los últimos 25 años, siendo estos principalmente los países mayor desarrollados. El estudio da uso a técnicas de regresión para valorar las relaciones lineales y no lineales entre las energías renovables y las emisiones de CO₂. El artículo recalca la importancia del cambio a energías limpias para minimizar las emisiones de carbono, pero reconoce que los países en desarrollo enfrentan desafíos significativos en términos de inversión y políticas. Finalmente, aporta recomendaciones para que los países implementen estrategias de transición energética de acuerdo con sus contextos únicos. En cuanto a nuestro análisis de datos, a partir de los datos originales, es posible determinar que un aumento en producción de energías renovables implica una disminución en las emisiones de CO2. Aunque esto es esperable, pues las energías renovables son energías más limpias que las generadas por otras fuentes, como los combustibles fósiles; tanto Japón como Francia presentan una relación directa entre las variables, es decir, un aumento en la producción implica un aumento en la emisión de CO2. De estos dos países, destaca que Japón ha reducido la producción de energías renovables en los últimos años, incumpliendo también el patrón global. Se pretende determinar algún factor que explique la tendencia inversa de estos dos países con respecto a la producción y la emisión de CO2.
+El estudio de Attanayake [-@Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024] analiza cómo la instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. Donde los países desarrollados, como Estados Unidos, China y la India, tienen la cantidad promedio de emisiones más altas. Lo cual destaca que los países mayormente responsables de las emisiones de CO2 se han mantenido constantes durante los últimos 25 años, siendo estos principalmente los países mayor desarrollados. El estudio da uso a técnicas de regresión para valorar las relaciones lineales y no lineales entre las energías renovables y las emisiones de CO₂. El artículo recalca la importancia del cambio a energías limpias para minimizar las emisiones de carbono, pero reconoce que los países en desarrollo enfrentan desafíos significativos en términos de inversión y políticas. Finalmente, aporta recomendaciones para que los países implementen estrategias de transición energética de acuerdo con sus contextos únicos. En cuanto a nuestro análisis de datos, a partir de los datos originales, es posible determinar que un aumento en producción de energías renovables implica una disminución en las emisiones de CO2. Aunque esto es esperable, pues las energías renovables son energías más limpias que las generadas por otras fuentes, como los combustibles fósiles; tanto Japón como Francia presentan una relación directa entre las variables, es decir, un aumento en la producción implica un aumento en la emisión de CO2. De estos dos países, destaca que Japón ha reducido la producción de energías renovables en los últimos años, incumpliendo también el patrón global. Se pretende determinar algún factor que explique la tendencia inversa de estos dos países con respecto a la producción y la emisión de CO2.
 
 Existen estudios que respaldan la información del texto anterior, como lo es "Energía renovable: un nuevo principio de autosuficiencia conectada. Ciudad Y Territorio Estudios Territoriales" de Requejo Liberal [-@RequejoLiberalJuan2012Er:u], "la generación de energía eléctrica procedente de fuentes fósiles y nucleares es una actividad contaminante, que pone en peligro el planeta, que tiene impacto sobre el medio ambiente local, que tiene riesgos no bien determinados y que generan dependencia y desequilibrios en la economía nacional" [@RequejoLiberalJuan2012Er:u, pp. 114], el cual confirma el hecho de que la implementación de energías renovables puede ser un gran apoyo para el bienestar social y económico de distintas naciones. El estudio de Attanayake [-@Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024] concluye que casi todos los países destacan el hecho de que si la energía renovable se incrementa, se lograría reducir la cantidad de emisiones de CO2. El cuál recalca que las economías de desarrollo debería de dar enfásis en la inversión en energías renovables y reducir el uso de combustibles fósiles, y además, destaca que los gobiernos deberían de implementar políticas de energía renovable, con el fin de garantizar un crecimiento económico.
 
@@ -82,3 +157,10 @@ A pesar de que existe una correlación lineal entre la producción y la cantidad
 
 ## Parte de reflexión
 
+### Japón
+
+-   **Nombre del hallazgo:** Reciente aumento en las importaciones
+-   **Resumen en una oración:** Japón presenta una tendencia a la disminución de producción energética renovable, y un reciente incremento de las importaciones.
+-   **Principal característica:** Las importaciones de Japón han aumentado en años recientes.
+-   **Problemas o posibles desafíos:** Este aumento en las importaciones puede responder a varios factores no analizados.
+-   **Resumen en un párrafo:** Debido a la observación de un patrón distinto en Japón que en el resto del mundo (@fig-2.10), se decide analizar su caso por separado. Específicamente, la @fig-4.1 presenta la producción de Japón, mientras que en la @fig-4.2 se visualizan los patrones en las importaciones y exportaciones. En particular, resulta interesante que las importaciones aumentaron en los últimos 4 años, y especialmente en el 2022. A pesar de que se espera un aumento en las importaciones ante una disminución en la producción energética,  este aumento es mucho más reciente que esta baja en la producción. Dicho fenómeno podría explicarse por un reciente interés en las energías renovables, pues tambié en los últimos dos años se ve un aumento en la producción, comparado a años anteriores.
