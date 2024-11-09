@@ -233,55 +233,6 @@ div.csl-indent {
 
 <section id="setup" class="level3 hidden" data-number="3.0.1">
 <h3 class="hidden anchored" data-number="3.0.1" data-anchor-id="setup"><span class="header-section-number">3.0.1</span> Setup</h3>
-<div class="cell" data-warnings="false" data-hash="bitacora-3_cache/html/unnamed-chunk-1_318d5a9a5427fff06b44ab13f07cdd59">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'palmerpenguins' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggthemes' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'cowplot' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'cowplot'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:ggthemes':
-
-    theme_map</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidyr' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'purrr' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggExtra' was built under R version 4.3.3</code></pre>
-</div>
-</div>
 </section>
 <section id="planificación" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="planificación"><span class="header-section-number">3.1</span> Planificación</h2>
@@ -291,27 +242,27 @@ Attaching package: 'cowplot'</code></pre>
 <p>Además, con el fin de automatizar la carga de la base de datos, la ruta de acceso parte desde la carpeta con el repositorio, de modo que al clonar el repositorio, este documento por sí mismo, sea capaz de acceder a la base de datos, facilitando el proceso.</p>
 <p>Finalmente, se juntan las variables <code>Energy.Imports</code> y <code>Energy.Exports</code>, para lo cual, se pivotea de modo que el flujo de entradas y salidas quede en una sola variable denominada Energy.Flow, que se clasifique en importación o exportación por la variable Energy.Flow.Type.</p>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/unnamed-chunk-2_025c80a35e76933f8bd4a9e6daa49830">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>original <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/complete_renewable_energy_dataset.csv"</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> original<span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Country =</span> <span class="fu">case_when</span>(</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  Country <span class="sc">==</span> <span class="st">"Brazil"</span><span class="sc">~</span><span class="st">"Brasil"</span>, Country <span class="sc">==</span> <span class="st">"Canada"</span> <span class="sc">~</span> <span class="st">"Canadá"</span>, </span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  Country <span class="sc">==</span> <span class="st">"France"</span><span class="sc">~</span><span class="st">"Francia"</span>, Country <span class="sc">==</span> <span class="st">"Germany"</span><span class="sc">~</span><span class="st">"Alemania"</span>, </span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  Country <span class="sc">==</span> <span class="st">"Japan"</span><span class="sc">~</span><span class="st">"Japón"</span>, Country <span class="sc">==</span> <span class="st">"Russia"</span><span class="sc">~</span><span class="st">"Rusia"</span>, </span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  Country <span class="sc">==</span> <span class="st">"USA"</span><span class="sc">~</span><span class="st">"E.E.U.U."</span>, Country <span class="sc">==</span> <span class="st">"Australia"</span><span class="sc">~</span><span class="st">"Australia"</span>,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  Country <span class="sc">==</span> <span class="st">"China"</span><span class="sc">~</span><span class="st">"China"</span>, Country <span class="sc">==</span> <span class="st">"India"</span><span class="sc">~</span><span class="st">"India"</span>,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span><span class="sc">~</span><span class="st">"Other"</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Energy.Type =</span> <span class="fu">case_when</span>(</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  Energy.Type <span class="sc">==</span> <span class="st">"Solar"</span><span class="sc">~</span><span class="st">"Solar"</span>, Energy.Type <span class="sc">==</span> <span class="st">"Biomass"</span> <span class="sc">~</span> <span class="st">"Biomasa"</span>, </span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  Energy.Type <span class="sc">==</span> <span class="st">"Wind"</span><span class="sc">~</span><span class="st">"Eólica"</span>, Energy.Type <span class="sc">==</span> <span class="st">"Hydro"</span><span class="sc">~</span><span class="st">"Hidráulica"</span>, </span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  Energy.Type <span class="sc">==</span> <span class="st">"Geothermal"</span><span class="sc">~</span><span class="st">"Geotérmica"</span>, <span class="cn">TRUE</span><span class="sc">~</span><span class="st">"Other"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Country, Year, Energy.Type) <span class="sc">|&gt;</span> </span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Total.Production =</span> <span class="fu">sum</span>(Production..GWh.), <span class="at">Electricity.Prices =</span> <span class="fu">mean</span>(Electricity.Prices), <span class="at">R.D.Expenditure =</span> <span class="fu">sum</span>(R.D.Expenditure), <span class="at">CO2.Emissions =</span> <span class="fu">sum</span>(CO2.Emissions), <span class="at">Investments..USD. =</span> <span class="fu">sum</span>(Investments..USD.), <span class="at">Public.Awareness =</span> <span class="fu">mean</span>(Public.Awareness), <span class="at">Exportaciones =</span> <span class="fu">sum</span>(Energy.Exports), <span class="at">Importaciones =</span> <span class="fu">sum</span>(Energy.Imports), <span class="at">Renewable.Energy.Jobs =</span> <span class="fu">sum</span>(Renewable.Energy.Jobs), <span class="at">Renewable.Energy.Patents =</span> <span class="fu">sum</span>(Renewable.Energy.Patents), <span class="at">Renewable.Energy.Education.Programs =</span> <span class="fu">max</span>(Renewable.Energy.Education.Programs), <span class="at">Government.Policies=</span> <span class="fu">max</span>(Government.Policies)) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"Importaciones"</span>, <span class="st">"Exportaciones"</span>),</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Energy.Flow.Type"</span>,</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Energy.Flow"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>original <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/complete_renewable_energy_dataset.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> original<span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Country =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  Country <span class="sc">==</span> <span class="st">"Brazil"</span><span class="sc">~</span><span class="st">"Brasil"</span>, Country <span class="sc">==</span> <span class="st">"Canada"</span> <span class="sc">~</span> <span class="st">"Canadá"</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  Country <span class="sc">==</span> <span class="st">"France"</span><span class="sc">~</span><span class="st">"Francia"</span>, Country <span class="sc">==</span> <span class="st">"Germany"</span><span class="sc">~</span><span class="st">"Alemania"</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  Country <span class="sc">==</span> <span class="st">"Japan"</span><span class="sc">~</span><span class="st">"Japón"</span>, Country <span class="sc">==</span> <span class="st">"Russia"</span><span class="sc">~</span><span class="st">"Rusia"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  Country <span class="sc">==</span> <span class="st">"USA"</span><span class="sc">~</span><span class="st">"E.E.U.U."</span>, Country <span class="sc">==</span> <span class="st">"Australia"</span><span class="sc">~</span><span class="st">"Australia"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  Country <span class="sc">==</span> <span class="st">"China"</span><span class="sc">~</span><span class="st">"China"</span>, Country <span class="sc">==</span> <span class="st">"India"</span><span class="sc">~</span><span class="st">"India"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span><span class="sc">~</span><span class="st">"Other"</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Energy.Type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  Energy.Type <span class="sc">==</span> <span class="st">"Solar"</span><span class="sc">~</span><span class="st">"Solar"</span>, Energy.Type <span class="sc">==</span> <span class="st">"Biomass"</span> <span class="sc">~</span> <span class="st">"Biomasa"</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  Energy.Type <span class="sc">==</span> <span class="st">"Wind"</span><span class="sc">~</span><span class="st">"Eólica"</span>, Energy.Type <span class="sc">==</span> <span class="st">"Hydro"</span><span class="sc">~</span><span class="st">"Hidráulica"</span>, </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  Energy.Type <span class="sc">==</span> <span class="st">"Geothermal"</span><span class="sc">~</span><span class="st">"Geotérmica"</span>, <span class="cn">TRUE</span><span class="sc">~</span><span class="st">"Other"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Country, Year, Energy.Type) <span class="sc">|&gt;</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Total.Production =</span> <span class="fu">sum</span>(Production..GWh.), <span class="at">Electricity.Prices =</span> <span class="fu">mean</span>(Electricity.Prices), <span class="at">R.D.Expenditure =</span> <span class="fu">sum</span>(R.D.Expenditure), <span class="at">CO2.Emissions =</span> <span class="fu">sum</span>(CO2.Emissions), <span class="at">Investments..USD. =</span> <span class="fu">sum</span>(Investments..USD.), <span class="at">Public.Awareness =</span> <span class="fu">mean</span>(Public.Awareness), <span class="at">Exportaciones =</span> <span class="fu">sum</span>(Energy.Exports), <span class="at">Importaciones =</span> <span class="fu">sum</span>(Energy.Imports), <span class="at">Renewable.Energy.Jobs =</span> <span class="fu">sum</span>(Renewable.Energy.Jobs), <span class="at">Renewable.Energy.Patents =</span> <span class="fu">sum</span>(Renewable.Energy.Patents), <span class="at">Renewable.Energy.Education.Programs =</span> <span class="fu">max</span>(Renewable.Energy.Education.Programs), <span class="at">Government.Policies=</span> <span class="fu">max</span>(Government.Policies)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"Importaciones"</span>, <span class="st">"Exportaciones"</span>),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Energy.Flow.Type"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Energy.Flow"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'Country', 'Year'. You can override using
 the `.groups` argument.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2,100 × 15
 # Groups:   Country, Year [240]
@@ -347,19 +298,19 @@ the `.groups` argument.</code></pre>
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="análisis-descriptivo"><span class="header-section-number">3.1.2</span> Análisis Descriptivo</h3>
 <p>Dados ya los hallazgos anteriores, resulta interesante analizar el flujo energético de los países. Para ello, la siguiente figura representa el total de importaciones, comparado al total de exportaciones, por cada país durante el periodo estudiado, 2000 a 2023.</p>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.1_35fefc663395227ea60ae5f7763cb0b6">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Country, <span class="at">y =</span> Energy.Flow)) <span class="sc">+</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Energy.Flow.Type),</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">"identity"</span>,</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total de Flujo Energético"</span>,</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"País"</span>,</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Exportaciones"</span>, <span class="st">"Importaciones"</span>), </span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Importaciones"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Exportaciones"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Country, <span class="at">y =</span> Energy.Flow)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Energy.Flow.Type),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total de Flujo Energético"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"País"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Exportaciones"</span>, <span class="st">"Importaciones"</span>), </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Importaciones"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Exportaciones"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -371,20 +322,20 @@ the `.groups` argument.</code></pre>
 </div>
 <p>Mientras que la siguiente figura separa esta información por años, con el fin de detectar tendencias.</p>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.2_fa05b179ad4104ab81c7bc963e16845d">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Country, <span class="at">y =</span> Energy.Flow)) <span class="sc">+</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Energy.Flow.Type),</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">"identity"</span>,</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Year, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Flujo Energético Anual"</span>,</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Exportaciones"</span>, <span class="st">"Importaciones"</span>), </span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Importaciones"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Exportaciones"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">vjust=</span>.<span class="dv">5</span>, <span class="at">hjust=</span><span class="fl">0.3</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Country, <span class="at">y =</span> Energy.Flow)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Energy.Flow.Type),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Year, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Flujo Energético Anual"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Exportaciones"</span>, <span class="st">"Importaciones"</span>), </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Importaciones"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Exportaciones"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">vjust=</span>.<span class="dv">5</span>, <span class="at">hjust=</span><span class="fl">0.3</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -396,18 +347,18 @@ the `.groups` argument.</code></pre>
 </div>
 <p>Si bien los gráficos anteriores brindan una idea de cuánta energía se importa o exporta, resulta también interesante ver la relación entre producción y el flujo energético. Dado que el flujo energético se divide en importaciones y exportaciones, esta división debe estar reflejada en los gráficos.</p>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.3_0274029d18519874827c7ded63cd2489">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Total.Production, <span class="at">y =</span> Energy.Flow, <span class="at">color =</span> Energy.Flow.Type))<span class="sc">+</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Energy.Flow.Type)<span class="sc">+</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relación Produccuión y Flujo Energético"</span>,</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">""</span>, </span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Exportaciones"</span>, <span class="st">"Importaciones"</span>), </span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Importaciones"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Exportaciones"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Total.Production, <span class="at">y =</span> Energy.Flow, <span class="at">color =</span> Energy.Flow.Type))<span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Energy.Flow.Type)<span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relación Produccuión y Flujo Energético"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">""</span>, </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Exportaciones"</span>, <span class="st">"Importaciones"</span>), </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Importaciones"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Exportaciones"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -418,19 +369,19 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.4_ec2ba179ec8c07ba3ccaa9e3e0e58937">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Total.Production, <span class="at">y =</span> Energy.Flow, <span class="at">color =</span> Energy.Flow.Type))<span class="sc">+</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(Country<span class="sc">~</span>Energy.Flow.Type, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relación Producción y Flujo Energético"</span>,</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Importaciones y Exportaciones"</span>,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Exportaciones"</span>, <span class="st">"Importaciones"</span>), </span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Importaciones"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Exportaciones"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Total.Production, <span class="at">y =</span> Energy.Flow, <span class="at">color =</span> Energy.Flow.Type))<span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(Country<span class="sc">~</span>Energy.Flow.Type, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relación Producción y Flujo Energético"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Importaciones y Exportaciones"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Exportaciones"</span>, <span class="st">"Importaciones"</span>), </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Importaciones"</span><span class="ot">=</span><span class="st">"#00ba88"</span>, <span class="st">"Exportaciones"</span><span class="ot">=</span><span class="st">"#f8966d"</span>))<span class="sc">+</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -442,18 +393,18 @@ the `.groups` argument.</code></pre>
 </div>
 <p>Los gráficos reflejan que tanto las importaciones como las exportaciones aumentan conforme aumenta la producción.</p>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.5_604461605a2cafc0d4f39ab8bfb08274">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Electricity.Prices))<span class="sc">+</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Concentración Precios Energía"</span>,</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Precios"</span>,</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidad"</span>,</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  cowplot<span class="sc">::</span><span class="fu">theme_minimal_grid</span>()<span class="sc">+</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Electricity.Prices))<span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Concentración Precios Energía"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Precios"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidad"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  cowplot<span class="sc">::</span><span class="fu">theme_minimal_grid</span>()<span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -464,21 +415,21 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.6_ba53eb4186549a7d4c489773b1d9994a">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Electricity.Prices, <span class="at">fill =</span> Country))<span class="sc">+</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country, <span class="at">ncol =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">"div"</span>, <span class="at">palette =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Concentración Precios Energía"</span>,</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"por país"</span>,</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Precios"</span>,</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidad"</span>,</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Electricity.Prices, <span class="at">fill =</span> Country))<span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country, <span class="at">ncol =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">"div"</span>, <span class="at">palette =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Concentración Precios Energía"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"por país"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Precios"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidad"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.6" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -489,20 +440,20 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.7_011897c9645d5e2ea88b207f53af7df8">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Electricity.Prices))<span class="sc">+</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Government.Policies)<span class="sc">+</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Concentración Precios Energía"</span>,</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"en relación a políticas de gobierno"</span>,</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Precios"</span>,</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidad"</span>,</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Electricity.Prices))<span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Government.Policies)<span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Concentración Precios Energía"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"en relación a políticas de gobierno"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Precios"</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidad"</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -513,19 +464,19 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.8_083a2469e95eb8fa39f0ed1b31228f98">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(data<span class="sc">$</span>Total.Production, data<span class="sc">$</span>Electricity.Prices)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(data<span class="sc">$</span>Total.Production, data<span class="sc">$</span>Electricity.Prices)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.001564541</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Total.Production, <span class="at">y =</span> Electricity.Prices))<span class="sc">+</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">0.29</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Producción y Precios de Energia"</span>,</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Precios"</span>,</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Total.Production, <span class="at">y =</span> Electricity.Prices))<span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">0.29</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Producción y Precios de Energia"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Precios"</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.8" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -536,22 +487,22 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.9_a2583fb79b8344e06e4decc9b12fd85e">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(Public.Awareness, <span class="at">fill =</span> <span class="fu">as.logical</span>(Renewable.Energy.Education.Programs)))<span class="sc">+</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(Year<span class="sc">~</span>Renewable.Energy.Education.Programs, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Con"</span>, <span class="st">"Sin"</span>), </span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span><span class="ot">=</span><span class="st">"#b8d8be"</span>, <span class="st">"FALSE"</span><span class="ot">=</span><span class="st">"#ae5a41"</span>))<span class="sc">+</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Programas educativos y Conciencia pública"</span>,</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"por año"</span>,</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Conciencia pública"</span>,</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidad"</span>,</span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(Public.Awareness, <span class="at">fill =</span> <span class="fu">as.logical</span>(Renewable.Energy.Education.Programs)))<span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(Year<span class="sc">~</span>Renewable.Energy.Education.Programs, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Con"</span>, <span class="st">"Sin"</span>), </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span><span class="ot">=</span><span class="st">"#b8d8be"</span>, <span class="st">"FALSE"</span><span class="ot">=</span><span class="st">"#ae5a41"</span>))<span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Programas educativos y Conciencia pública"</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"por año"</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Conciencia pública"</span>,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidad"</span>,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.9" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -562,22 +513,22 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.10_fefa3b598b2da3cf9dd8b464098df71f">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(Public.Awareness, <span class="at">fill =</span> <span class="fu">as.logical</span>(Renewable.Energy.Education.Programs)))<span class="sc">+</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Renewable.Energy.Education.Programs, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Con"</span>, <span class="st">"Sin"</span>), </span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span><span class="ot">=</span><span class="st">"#b8d8be"</span>, <span class="st">"FALSE"</span><span class="ot">=</span><span class="st">"#ae5a41"</span>))<span class="sc">+</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Programas educativos y Conciencia pública"</span>,</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Conciencia pública"</span>,</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidad"</span>,</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>         </span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(Public.Awareness, <span class="at">fill =</span> <span class="fu">as.logical</span>(Renewable.Energy.Education.Programs)))<span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Renewable.Energy.Education.Programs, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Con"</span>, <span class="st">"Sin"</span>), </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span><span class="ot">=</span><span class="st">"#b8d8be"</span>, <span class="st">"FALSE"</span><span class="ot">=</span><span class="st">"#ae5a41"</span>))<span class="sc">+</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Programas educativos y Conciencia pública"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Conciencia pública"</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidad"</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.10" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -589,14 +540,14 @@ the `.groups` argument.</code></pre>
 </div>
 <p>En cuanto a los trabajos, estos resaltan como un factor social importante, pues el aumento en empleos, puede ayudar a disminuir el desempleo, lo que mejoraría la calidad de vida de los habitantes del país.</p>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.11_443265185ed24b38ddd1470d41294d07">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Total.Production, <span class="at">y =</span> Renewable.Energy.Jobs))<span class="sc">+</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Producción y Trabajos"</span>,</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Total.Production, <span class="at">y =</span> Renewable.Energy.Jobs))<span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Producción y Trabajos"</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.11" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -607,19 +558,19 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.12_4ca5713b62f98fb839856c20158e3bb3">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Total.Production, <span class="at">y =</span> Renewable.Energy.Jobs))<span class="sc">+</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.logical</span>(Renewable.Energy.Education.Programs)))<span class="sc">+</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Con"</span>, <span class="st">"Sin"</span>), </span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span><span class="ot">=</span><span class="st">"#b8d8be"</span>, <span class="st">"FALSE"</span><span class="ot">=</span><span class="st">"#ae5a41"</span>))<span class="sc">+</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Producción y Trabajos"</span>,</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span> <span class="st">"por programas educativos"</span>,</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Renewable.Energy.Education.Programs)<span class="sc">+</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Total.Production, <span class="at">y =</span> Renewable.Energy.Jobs))<span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.logical</span>(Renewable.Energy.Education.Programs)))<span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Con"</span>, <span class="st">"Sin"</span>), </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span><span class="ot">=</span><span class="st">"#b8d8be"</span>, <span class="st">"FALSE"</span><span class="ot">=</span><span class="st">"#ae5a41"</span>))<span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Producción y Trabajos"</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span> <span class="st">"por programas educativos"</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Renewable.Energy.Education.Programs)<span class="sc">+</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.12" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -630,20 +581,20 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.13_dd9def68362dffb5cf36979a5016f918">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Renewable.Energy.Jobs, <span class="at">group =</span> Year, <span class="at">fill =</span> <span class="fu">as.logical</span>(Renewable.Energy.Education.Programs)))<span class="sc">+</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">25</span>)<span class="sc">+</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Renewable.Energy.Education.Programs, <span class="at">ncol=</span><span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Con"</span>, <span class="st">"Sin"</span>), </span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span><span class="ot">=</span><span class="st">"#b8d8be"</span>, <span class="st">"FALSE"</span><span class="ot">=</span><span class="st">"#ae5a41"</span>))<span class="sc">+</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trabajos en Sector de Energía Renovable"</span>,</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"por Programas Educativos"</span>,</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Año"</span>,</span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Renewable.Energy.Jobs, <span class="at">group =</span> Year, <span class="at">fill =</span> <span class="fu">as.logical</span>(Renewable.Energy.Education.Programs)))<span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">25</span>)<span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Renewable.Energy.Education.Programs, <span class="at">ncol=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>, </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Con"</span>, <span class="st">"Sin"</span>), </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span><span class="ot">=</span><span class="st">"#b8d8be"</span>, <span class="st">"FALSE"</span><span class="ot">=</span><span class="st">"#ae5a41"</span>))<span class="sc">+</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trabajos en Sector de Energía Renovable"</span>,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"por Programas Educativos"</span>,</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Año"</span>,</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.13" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -654,17 +605,17 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.14_7c99f5f688cc893e5ed0704500a233cf">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Renewable.Energy.Patents, <span class="at">y =</span> Renewable.Energy.Jobs))<span class="sc">+</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Energy.Type)) <span class="sc">+</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">type =</span> <span class="st">"seq"</span>, <span class="at">palette =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trabajos y Patentes"</span>,</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"por tipo de energía"</span>,</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Patentes"</span>,</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">""</span>,</span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Renewable.Energy.Patents, <span class="at">y =</span> Renewable.Energy.Jobs))<span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Energy.Type)) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">type =</span> <span class="st">"seq"</span>, <span class="at">palette =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trabajos y Patentes"</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"por tipo de energía"</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Patentes"</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">""</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.14" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -675,17 +626,17 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.15_22f99344d384949006456485fc407007">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> R.D.Expenditure, <span class="at">y =</span> Renewable.Energy.Jobs))<span class="sc">+</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Government.Policies)))<span class="sc">+</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Government.Policies)<span class="sc">+</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trabajos y Gasto en Investigación"</span>,</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Efecto de políticas de gobierno"</span>,</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">""</span>,</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Gasto en Investigación"</span>,</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> R.D.Expenditure, <span class="at">y =</span> Renewable.Energy.Jobs))<span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Government.Policies)))<span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Government.Policies)<span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trabajos y Gasto en Investigación"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Efecto de políticas de gobierno"</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">""</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Gasto en Investigación"</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.15" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -696,16 +647,16 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.16_bf8182be5fecd76b553823cc971377de">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Investments..USD., <span class="at">y =</span> Renewable.Energy.Jobs))<span class="sc">+</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Government.Policies)))<span class="sc">+</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Government.Policies)<span class="sc">+</span>  </span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trabajos e Inversión"</span>,</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"por políticas de gobierno"</span>,</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Inversión"</span>,</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Investments..USD., <span class="at">y =</span> Renewable.Energy.Jobs))<span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Government.Policies)))<span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Government.Policies)<span class="sc">+</span>  </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trabajos e Inversión"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"por políticas de gobierno"</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Inversión"</span>,</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trabajos"</span>,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-3.16" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -716,19 +667,19 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="bitacora-3_cache/html/fig-3.17_169ea31bdd74c594331f476213ffc22c">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> R.D.Expenditure, <span class="at">y =</span> Investments..USD.))<span class="sc">+</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Government.Policies)))<span class="sc">+</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Gasto en Investigación e Inversión"</span>,</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Efecto de políticas de gobierno"</span>,</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">""</span>,</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Gasto en Investigación"</span>,</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Inversión"</span>,</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>,</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">tag =</span> <span class="st">"Fig.3.17"</span>)<span class="sc">+</span></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggMarginal</span>(p, <span class="at">type =</span> <span class="st">"densigram"</span>, <span class="at">fill =</span> <span class="st">"purple"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> R.D.Expenditure, <span class="at">y =</span> Investments..USD.))<span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Government.Policies)))<span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Gasto en Investigación e Inversión"</span>,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Efecto de políticas de gobierno"</span>,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">""</span>,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Gasto en Investigación"</span>,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Inversión"</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">tag =</span> <span class="st">"Fig.3.17"</span>)<span class="sc">+</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggMarginal</span>(p, <span class="at">type =</span> <span class="st">"densigram"</span>, <span class="at">fill =</span> <span class="st">"purple"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
 ℹ Please use `after_stat(density)` instead.
@@ -908,7 +859,7 @@ the `.groups` argument.</code></pre>
 <tbody>
 <tr class="odd">
 <td><strong>Introducción</strong></td>
-<td>1. La energía renovable como nuevo principio de autosuficiencia conectada.(secundario) <br> 2. Las energías renovables podrían reducir las emisiones de CO_2. (Primario) <br> 3. La instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. <span class="citation" data-cites="Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024">(<a href="#ref-Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024" role="doc-biblioref">Attanayake et&nbsp;al. 2024</a>)</span> (Primario) <br> 4. Estrategias para la implementación de las energías renovables (Freier &amp; Casola). (Secundario) <br> 5. Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. (Primario) <br> 6. Transición energética y la electrificación sostenible. <span class="citation" data-cites="SerranoJavier2022Hufc">(<a href="#ref-SerranoJavier2022Hufc" role="doc-biblioref">Serrano 2022</a>)</span> (Secundario) <br> 7. Energías renovables y la economía en Europa. <span class="citation" data-cites="CaraballoPouMaríaÁngeles2017Eryd">(<a href="#ref-CaraballoPouMaríaÁngeles2017Eryd" role="doc-biblioref">Caraballo Pou y Simón 2017</a>)</span> (Secundario) <br> 8. Variaciones en la cantidad de las distintas energías renovables según el país (secundario) <br> 9. Relación entre los indicadores de bienestar social y los precios de la electricidad según el país (secundario) <br></td>
+<td>1. La energía renovable como nuevo principio de autosuficiencia conectada.(secundario) <br> 2. Las energías renovables podrían reducir las emisiones de CO_2. (Primario) <br> 3. La instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. <span class="citation" data-cites="Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024">(<a href="#ref-Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024" role="doc-biblioref">Attanayake et&nbsp;al. 2024</a>)</span> (Primario) <br> 4. Estrategias para la implementación de las energías renovables <span class="citation" data-cites="CasólaLaura2018Enec">(<a href="#ref-CasólaLaura2018Enec" role="doc-biblioref">Casóla y Freier 2018</a>)</span>. (Secundario) <br> 5. Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. (Primario) <br> 6. Transición energética y la electrificación sostenible. <span class="citation" data-cites="SerranoJavier2022Hufc">(<a href="#ref-SerranoJavier2022Hufc" role="doc-biblioref">Serrano 2022</a>)</span> (Secundario) <br> 7. Energías renovables y la economía en Europa. <span class="citation" data-cites="CaraballoPouMaríaÁngeles2017Eryd">(<a href="#ref-CaraballoPouMaríaÁngeles2017Eryd" role="doc-biblioref">Caraballo Pou y Simón 2017</a>)</span> (Secundario) <br> 8. Variaciones en la cantidad de las distintas energías renovables según el país (secundario) <br> 9. Relación entre los indicadores de bienestar social y los precios de la electricidad según el país (secundario) <br></td>
 </tr>
 <tr class="even">
 <td><strong>Metodología</strong></td>
@@ -929,8 +880,8 @@ the `.groups` argument.</code></pre>
 <p>El estudio de Attanayake <span class="citation" data-cites="Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024">(<a href="#ref-Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024" role="doc-biblioref">2024</a>)</span> analiza cómo la instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. Donde los países desarrollados, como Estados Unidos, China y la India, tienen la cantidad promedio de emisiones más altas. Lo cual destaca que los países mayormenre responsables de las emisiones de CO2 se han mantenido constantes durante los últimos 25 años, siendo estos principalmente los países mayor desarrollados. El estudio da uso a técnicas de regresión para valorar las relaciones lineales y no lineales entre las energías renovables y las emisiones de CO₂. El artículo recalca la importancia del cambio a energías limpias para minimizar las emisiones de carbono, pero reconoce que los países en desarrollo enfrentan desafíos significativos en términos de inversión y políticas. Finalmente, aporta recomendaciones para que los países implementen estrategias de transición energética de acuerdo con sus contextos únicos. En cuanto a nuestro análisis de datos, a partir de los datos originales, es posible determinar que un aumento en producción de energías renovables implica una disminución en las emisiones de CO2. Aunque esto es esperable, pues las energías renovables son energías más limpias que las generadas por otras fuentes, como los combustibles fósiles; tanto Japón como Francia presentan una relación directa entre las variables, es decir, un aumento en la producción implica un aumento en la emisión de CO2. De estos dos países, destaca que Japón ha reducido la producción de energías renovables en los últimos años, incumpliendo también el patrón global. Se pretende determinar algún factor que explique la tendencia inversa de estos dos países con respecto a la producción y la emisión de CO2.</p>
 <p>Existen estudios que respaldan la información del texto anterior, como lo es “Energía renovable: un nuevo principio de autosuficiencia conectada. Ciudad Y Territorio Estudios Territoriales” de Requejo Liberal <span class="citation" data-cites="RequejoLiberalJuan2012Er:u">(<a href="#ref-RequejoLiberalJuan2012Er:u" role="doc-biblioref">2012</a>)</span>, “la generación de energía eléctrica procedente de fuentes fósiles y nucleares es una actividad contaminante, que pone en peligro el planeta, que tiene impacto sobre el medio ambiente local, que tiene riesgos no bien determinados y que generan dependencia y desequilibrios en la economía nacional” <span class="citation" data-cites="RequejoLiberalJuan2012Er:u">(<a href="#ref-RequejoLiberalJuan2012Er:u" role="doc-biblioref">Requejo Liberal 2012, 114</a>)</span>, el cual confirma el hecho de que la implementación de energías renovables puede ser un gran apoyo para el bienestar social y económico de distintas naciones. El estudio de Attanayake <span class="citation" data-cites="Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024">(<a href="#ref-Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024" role="doc-biblioref">2024</a>)</span> concluye que casi todos los países destacan el hecho de que si la energía renovable se incrementa, se lograría reducir la cantidad de emisiones de CO2. El cuál recalca que las economías de desarrollo debería de dar enfásis en la inversión en energías renovables y reducir el uso de combustibles fósiles, y además, destaca que los gobiernos deberían de implementar políticas de energía renovable, con el fin de garantizar un crecimiento económico.</p>
 <p>El documento realiza un estudio esencial para el entendimiento de la importancia de la implementación de energías renovables para el bienestar social, económico y ambiental. Destacando como la mayoría de países, a excepción de Canadá, el cual un aumento del 1% en las fuentes de energía renovables da como resultado un incremento de 10,83 millones de toneladas en las emisiones de CO2, afirman que su inversión puede ser beneficiosa para su estabilidad general. Lo cual es muy importante con respecto a otros estudios que se centraban en algún país en específico. Además, la observación la colaboración de distintos gobiernos es vital, ya que reconoce la naturaleza global del cambio climático y la necesidad de soluciones coordinadas. Esta observación conjunta y propositiva fortalece la utilidad práctica del estudio para guiar políticas energéticas hacia un desarrollo más sostenible.</p>
-<p>Según Allan Cordero: “El mundo se encuentra en una encrucijada trascendental para el futuro de la energía”. Con el objetivo de reducir el uso de combustibles fósiles y alcanzar la soberanía energética, Costa Rica inició su proceso hacia un modelo de desarrollo autosostenible. La energía hidráulica causa deforestación y obstaculiza el camino de los peces, lo que la descarta como una solución viable a largo plazo. La energía eólica, a pesar de la posibilidad de afectar la calidad de vida de las aves y modificar, aunque muy levemente, la fuerza o dirección del viento, destaca como una opción viable en Costa Rica. Esta energía permite la eliminación de emisiones de gases de efecto invernadero y contribuye a la independencia energética. Por ello, determinar la ubicación de los parques eólicos se ha vuelto una prioridad para las autoridades a cargo.</p>
-<p>Esta investigación tiene gran relación con lo propuesto por Laura Casola y Alexander Freier en “La energía renovable como estrategia para combatir el cambio climático en Brasil y Argentina”, pues, mientras Costa Rica prioriza a la energía eólica como una solución viable, Argentina y Brasil examinan sus diversas estrategias en relación con el enfoque de Mercosur, el cual es un bloque económico y político regional en Suramérica, incorporado en 1991 con el Tratado de Asunción. en el cual están dentro países como Argentina, Brasil, Paraguay y Uruguay. Sin embargo, cada conjunto está en busca de un poder energético, cada uno con sus distintos planes. Ambas investigaciones reconocen los impactos ambientales asociados con diferentes fuentes de energía. En el caso del artículo de Cordero, recalca los efectos negativos de la energía hidráulica, como la deforestación y la afectación a los peces, mientras que el documento de Casola y Freier habla de problemas ambientales en Brasil, como la quema de bosques y la deforestación, relacionados con el cambio climático. Ambos hacen un llamado a encontrar alternativas más sostenibles. Ambas investigaciones concluyen que existe cierta urgencia de migrar hacia el uso de energías limpias, a pesar de que esta implementación podría tener impactos negativos en temas de económicos, debido al gran costo de las distintas instalaciones, además del posible daño a la fauna, su implementación logrará beneficiar al bienestar social, ambiental y económico a largo plazo. En la bitácora 2 se puede apreciar en base a la <a href="Bitacora-2.html#fig-2.1">Figura&nbsp;<span>4.1</span></a>, como los distintos países priorizan las distintas energías eólicas, esto debido a las condiciones climáticas de cada zona de las regiones.</p>
+<p>Según Allan Cordero [@-Gutiérrez_2015]: “El mundo se encuentra en una encrucijada trascendental para el futuro de la energía”. Con el objetivo de reducir el uso de combustibles fósiles y alcanzar la soberanía energética, Costa Rica inició su proceso hacia un modelo de desarrollo autosostenible. La energía hidráulica causa deforestación y obstaculiza el camino de los peces, lo que la descarta como una solución viable a largo plazo. La energía eólica, a pesar de la posibilidad de afectar la calidad de vida de las aves y modificar, aunque muy levemente, la fuerza o dirección del viento, destaca como una opción viable en Costa Rica. Esta energía permite la eliminación de emisiones de gases de efecto invernadero y contribuye a la independencia energética. Por ello, determinar la ubicación de los parques eólicos se ha vuelto una prioridad para las autoridades a cargo.</p>
+<p>Esta investigación tiene gran relación con lo propuesto por Laura Casola y Alexander Freier en “El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil” [@-CasólaLaura2018Enec], pues, mientras Costa Rica prioriza a la energía eólica como una solución viable, Argentina y Brasil examinan sus diversas estrategias en relación con el enfoque de Mercosur, el cual es un bloque económico y político regional en Suramérica, incorporado en 1991 con el Tratado de Asunción. en el cual están dentro países como Argentina, Brasil, Paraguay y Uruguay. Sin embargo, cada conjunto está en busca de un poder energético, cada uno con sus distintos planes. Ambas investigaciones reconocen los impactos ambientales asociados con diferentes fuentes de energía. En el caso del artículo de Cordero [@-Gutiérrez_2015], recalca los efectos negativos de la energía hidráulica, como la deforestación y la afectación a los peces, mientras que el documento de Casola y Freier <span class="citation" data-cites="CasólaLaura2018Enec">(<a href="#ref-CasólaLaura2018Enec" role="doc-biblioref">2018</a>)</span> habla de problemas ambientales en Brasil, como la quema de bosques y la deforestación, relacionados con el cambio climático. Ambos hacen un llamado a encontrar alternativas más sostenibles. Ambas investigaciones concluyen que existe cierta urgencia de migrar hacia el uso de energías limpias, a pesar de que esta implementación podría tener impactos negativos en temas de económicos, debido al gran costo de las distintas instalaciones, además del posible daño a la fauna, su implementación logrará beneficiar al bienestar social, ambiental y económico a largo plazo. En la bitácora 2 se puede apreciar en base a la <span class="quarto-unresolved-ref">?fig-2.1</span>, como los distintos países priorizan las distintas energías eólicas, esto debido a las condiciones climáticas de cada zona de las regiones.</p>
 <p>Otro estudio relacionado es el realizado por Vega de Kuyper, J.C. y Ramírez Morales, S <span class="citation" data-cites="JuanCarlosVegaDeKuyper2014Fder">(<a href="#ref-JuanCarlosVegaDeKuyper2014Fder" role="doc-biblioref">2014</a>)</span> llamado “Fuentes de energía, renovables y no renovables. Aplicaciones.” El documento se basa en mostrar una visión integral sobre las fuentes de energía renovables y no renovables, explorando su relevancia y aplicaciones en América Latina, especialmente en países como México, Argentina, Chile y Colombia. “Con seguridad el siglo XXI… profundizará en la investigación de la materia, desde lo microcósmico a la astronáutica y avanzando en temas energéticos tales como la fusión nuclear, las energías renovables o el despliegue del hidrógeno como una fuente energética” <span class="citation" data-cites="JuanCarlosVegaDeKuyper2014Fder">(<a href="#ref-JuanCarlosVegaDeKuyper2014Fder" role="doc-biblioref">Kuyper 2014</a>)</span>. Con un enfoque pedagógico, los autores proporcionan un equilibrio entre teoría y práctica, explicando los principios de generación y almacenamiento de energía, además de introducir el concepto de eficiencia energética como una herramienta clave para el futuro. Se presentan ejemplos actualizados de proyectos de energías renovables en la región, incluyendo energías como la solar o la geotérmica, así como un análisis de las barreras y oportunidades para su implementación.</p>
 <p>Otro apoyo de este análisis es el documento “Wind energy technology and current status: a review” hecho por Thomas Ackermann y Lennart Söder <span class="citation" data-cites="ACKERMANN2000315">(<a href="#ref-ACKERMANN2000315" role="doc-biblioref">2000</a>)</span>, los cuales destacan los aspectos positivos de la implementacion de la energía eólica en todas las zonas, en especial en zonas ventosas siendo más capaces de generar energía. Ambos estudios subrayan la capacidad de la energía eólica para reducir las emisiones de gases de efecto invernadero. Ellos sugieren que la expansión de las energías renovables, incluida la eólica, llevará a una disminución del uso de energías no renovables y reducirá emisiones indirectas. Además, ambos estudios indican que a pesar de que la instalación de ciertas energías renovables puede aumentar el bienestar, puede haber inconvenientes como la contaminación sónica provocada por las turbinas. No obstante, estos inconvenientes pueden ser mitigados con el paso de los años. En nuestra investigación se puede apreciar que la distribución de la conciencia pública ha sido bastante variable entre los años analizados. Comparando el 2023 con los dos años anteriores, el 2023 tiene mayor distribución en algunas áreas, específicamente las bajas. Al comparar el 2020 con el 2023, la conciencia pública es menor, pues las concentraciones de distribución se encuentran en valores más bajos. En otros años, como el 2009, la conciencia pública estaba mejor repartida entre los países, pero eso no significa que sea mejor, pues en realidad el escenario ideal es la concentración en los valores altos. Se pretende comparar los datos de la conciencia pública con respecto a la existencia o no de programas educativos sobre la energía renovable, así como la proporción de energía consumida que procede de fuentes renovables.</p>
 <p>Tanto en los datos originales como en los anualizados de nuestro proyecto, es posible determinar que para los últimos años, los precios de la electricidad están aumentando. Sin embargo, el cambio en los precios no es realmete significativo. La pequeña magnitud de los cambios en precio, permiten conjeturar, que los precios se mantienen casi constantes. Se pretende encontrar una variable contextual a nivel global, que justifique la estabilización de los precios. Para esto último, es necesario promediar los precios de todos los países, pues como la variable representa un precio, no se deben sumar los valores.</p>
@@ -1001,17 +952,35 @@ the `.groups` argument.</code></pre>
 <div id="ref-ACKERMANN2000315" class="csl-entry" role="listitem">
 Ackermann, Thomas, y Lennart Söder. 2000. <span>«Wind energy technology and current status: a review»</span>. <em>Renewable and Sustainable Energy Reviews</em> 4 (4): 315-74. https://doi.org/<a href="https://doi.org/10.1016/S1364-0321(00)00004-6">https://doi.org/10.1016/S1364-0321(00)00004-6</a>.
 </div>
+<div id="ref-doi:10.1080/14615517.2012.660356" class="csl-entry" role="listitem">
+Ana Maria Esteves, Daniel Franks, y Frank Vanclay. 2012. <span>«Social impact assessment: the state of the art»</span>. <em>Impact Assessment and Project Appraisal</em> 30 (1): 34-42. <a href="https://doi.org/10.1080/14615517.2012.660356">https://doi.org/10.1080/14615517.2012.660356</a>.
+</div>
 <div id="ref-Analistas_2014" class="csl-entry" role="listitem">
 Analistas, Abay. 2014. <em>El impacto de las energías renovables en los hogares</em>. Greenpeace. <a href="https://archivo-es.greenpeace.org/espana/Global/espana/2014/Report/cambio-climatico/Informe%20ER%20Hogares.pdf">https://archivo-es.greenpeace.org/espana/Global/espana/2014/Report/cambio-climatico/Informe%20ER%20Hogares.pdf</a>.
 </div>
 <div id="ref-Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024" class="csl-entry" role="listitem">
 Attanayake, Keshani, Isuru Wickramage, Udul Samarasinghe, Yasangi Ranmini, Sandali Ehalapitiya, Ruwan Jayathilaka, y Shanta Yapa. 2024. <span>«Renewable energy as a solution to climate change: Insights from a comprehensive study across nations»</span>. <em>Plos One</em> 19 (6). <a href="https://doi.org/10.1371/journal.pone.0299807">https://doi.org/10.1371/journal.pone.0299807</a>.
 </div>
+<div id="ref-BatainehMohammadJamal2023Tstr" class="csl-entry" role="listitem">
+Bataineh, Mohammad Jamal, Carmen Marcuello, y Pedro Sánchez-Sellero. 2023. <span>«Toward sustainability: the role of social entrepreneurship in creating social-economic value in renewable energy social enterprises»</span>. <em>Revesco : Revista de Estudios Cooperativos</em> 143: e85561.
+</div>
 <div id="ref-CaraballoPouMaríaÁngeles2017Eryd" class="csl-entry" role="listitem">
 Caraballo Pou, María Ángeles, y Juana María García Simón. 2017. <span>«Energías renovables y desarrollo económico. Un análisis para españa y las grandes economías Europeas»</span>. <em>Trimestre económico</em> 84 (335): 571-609.
 </div>
+<div id="ref-CasamitjanaCausaMaria2017Er" class="csl-entry" role="listitem">
+Casamitjana Causa, Maria. 2017. <span>«Energías renovables»</span>. <em>Revista CINTEX</em> 22 (1): 7-9.
+</div>
+<div id="ref-CasólaLaura2018Enec" class="csl-entry" role="listitem">
+Casóla, Laura, y Alexander Freier. 2018. <span>«El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil»</span>. <em>Revista Derecho del estado</em> 40 (40): 153-79.
+</div>
+<div id="ref-Gutiérrez_2015" class="csl-entry" role="listitem">
+Gutiérrez, Allan Ricardo Cordero. 2015. <em>Análisis de Viabilidad Ambiental del Uso de Energías Renovables en Costa Rica: Estudio de Caso de la Energía Eólica, la Hidroeléctrica y la Geotérmica</em>. Academia.edu. <a href="https://www.academia.edu/21058385/An%C3%A1lisis_de_Viabilidad_Ambiental_del_Uso_de_Energ%C3%ADas_Renovables_en_Costa_Rica_Estudio_de_Caso_de_la_Energ%C3%ADa_E%C3%B3lica_la_Hidroel%C3%A9ctrica_y_la_Geot%C3%A9rmica">https://www.academia.edu/21058385/An%C3%A1lisis_de_Viabilidad_Ambiental_del_Uso_de_Energ%C3%ADas_Renovables_en_Costa_Rica_Estudio_de_Caso_de_la_Energ%C3%ADa_E%C3%B3lica_la_Hidroel%C3%A9ctrica_y_la_Geot%C3%A9rmica</a>.
+</div>
 <div id="ref-JuanCarlosVegaDeKuyper2014Fder" class="csl-entry" role="listitem">
 Kuyper, Juan Carlos Vega De. 2014. <span>«Fuentes de energía renovables y no renovables. Aplicaciones»</span>. <em>Revista Escuela de Administración de Negocios</em>, n.º 77: 216-18.
+</div>
+<div id="ref-Lebedys_Akande_Elhassan_Escamilla_Whiteman_Arkhipova_2021" class="csl-entry" role="listitem">
+Lebedys, Arvydas, Dennis Akande, Nazik Elhassan, Gerardo Escamilla, Adrian Whiteman, y Iana Arkhipova. 2021. <em>Renewable Energy Statistics 2021</em>. Abu Dhabi: The International Renewable Energy Agency. <a href="https://www.irena.org/publications/2021/Aug/Renewable-energy-statistics-2021">https://www.irena.org/publications/2021/Aug/Renewable-energy-statistics-2021</a>.
 </div>
 <div id="ref-Nations" class="csl-entry" role="listitem">
 Nations, United. s.&nbsp;f. <span>«What is renewable energy?»</span> <a href="https://www.un.org/en/climatechange/what-is-renewable-energy">https://www.un.org/en/climatechange/what-is-renewable-energy</a>.
