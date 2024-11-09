@@ -525,17 +525,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>A partir de una regresión lineal, podemos observar que las emisiones de dióxido de carbono disminuyen conforme aumenta la producción de energías renovables; este hallazgo es esperable, pues las energías renovables son energías más limpias que las fuentes tradicionales.</p>
-<div class="cell" data-messages="false" data-warnings="false" data-hash="Bitacora-2_cache/html/fig-2.5_9ea561ac499b2b960fd3673bacab6ed9">
+<p>Esperamos que conforme aumenta la producción de energías renovbales, se de una disminución en las emisiones de CO2, pues las energías renovables son energías más limpias que las fuentes tradicionales.</p>
+<div class="cell" data-messages="false" data-warnings="false" data-hash="Bitacora-2_cache/html/fig-2.5_a56e3456377791654b6ee92224983b7a">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Production..GWh., <span class="at">y =</span> CO2.Emissions)) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#7d8c8e"</span>)<span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Emisiones de CO2 y Producción energética"</span>,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Emisiones de CO2"</span>,</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#7d8c8e"</span>)<span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Emisiones de CO2 y Producción energética"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Producción"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Emisiones de CO2"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span> <span class="st">"Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset"</span>)<span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-2.5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -545,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Sin embargo, la disminución de las emisiones de CO2 dado por el aumento en la producción de energías renovables, es poco visible; esto puede ser causado por la variedad de datos con los que se realiza el gráfico.</p>
+<p>Sin embargo, en la <a href="#fig-2.5">Figura&nbsp;<span>4.5</span></a>, no es posible observar dicha relación; lo cual puede deberse a la variedad de datos con los que se realiza el gráfico.</p>
 <p>Con el fin de facilitar la realización de gráficos a partir de los datos brindados, se agruparon los datos para algunas de las variables de forma anual.</p>
 <div class="cell" data-messages="false" data-warnings="false" data-hash="Bitacora-2_cache/html/unnamed-chunk-9_254a965dc222b41bcf77dda4aff0d79b">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>annual <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Year, Country) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg_electricity_price =</span> <span class="fu">mean</span>(Electricity.Prices), <span class="at">avg_production =</span> <span class="fu">sum</span>(Production..GWh.), <span class="at">avg_investment =</span> <span class="fu">sum</span>(Investments..USD.), <span class="at">avg_CO2_emissions =</span> <span class="fu">mean</span>(CO2.Emissions))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1379,7 +1378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="cell" data-messages="false" data-warnings="false" data-fig.heigth="50" data-hash="Bitacora-2_cache/html/fig-2.12_7f0c9949a8883e48d857daab210c8990">
+<div class="cell" data-messages="false" data-warnings="false" data-fig-heigth="50" data-hash="Bitacora-2_cache/html/fig-2.12_bb3703de9048fe0ea5b003bfffcac7a8">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(annual, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> avg_CO2_emissions)) <span class="sc">+</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#7d8c8e"</span>) <span class="sc">+</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>

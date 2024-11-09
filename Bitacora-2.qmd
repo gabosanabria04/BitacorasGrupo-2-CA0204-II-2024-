@@ -192,7 +192,7 @@ ggplot(df, aes(x = Year, y = Energy.Sector.Workforce)) +
   theme()
 ```
 
-A partir de una regresión lineal, podemos observar que las emisiones de dióxido de carbono disminuyen conforme aumenta la producción de energías renovables; este hallazgo es esperable, pues las energías renovables son energías más limpias que las fuentes tradicionales.
+Esperamos que conforme aumenta la producción de energías renovbales, se de una disminución en las emisiones de CO2, pues las energías renovables son energías más limpias que las fuentes tradicionales.
 
 ```{r}
 #| messages: FALSE
@@ -200,7 +200,6 @@ A partir de una regresión lineal, podemos observar que las emisiones de dióxid
 #| fig-width: 8
 #| label: fig-2.5
 ggplot(df, aes(x = Production..GWh., y = CO2.Emissions)) +
-  geom_line() +
   geom_point(color = "#7d8c8e")+
   labs(
     title = "Emisiones de CO2 y Producción energética",
@@ -210,7 +209,7 @@ ggplot(df, aes(x = Production..GWh., y = CO2.Emissions)) +
   theme_cowplot()
 ```
 
-Sin embargo, la disminución de las emisiones de CO2 dado por el aumento en la producción de energías renovables, es poco visible; esto puede ser causado por la variedad de datos con los que se realiza el gráfico.
+Sin embargo, en la @fig-2.5, no es posible observar dicha relación; lo cual puede deberse a la variedad de datos con los que se realiza el gráfico.
 
 Con el fin de facilitar la realización de gráficos a partir de los datos brindados, se agruparon los datos para algunas de las variables de forma anual.
 
@@ -385,7 +384,7 @@ ggplot(annual, aes(x = avg_production, y = avg_electricity_price))+
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
-#| fig.heigth: 50
+#| fig-heigth: 50
 #| label: fig-2.12
 ggplot(annual, aes(x = Year, y = avg_CO2_emissions)) +
   geom_col(fill = "#7d8c8e") +
@@ -408,7 +407,6 @@ ggplot(annual, aes(x = Year, y = avg_CO2_emissions)) +
 #| fig-height: 10
 #| label: fig-2.13
 ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
-  geom_line() +
   geom_point(color = "#7d8c8e")+
   labs(
     title = "Producción y Emisiones de CO2",
@@ -480,7 +478,7 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 -   **Problemas o posibles desafíos:** La forma de anualizar los datos para esta bitácora es poco eficiente, además, no se incluyeron variables categóricas más allá del país y el año.
 -   **Resumen en un párrafo:** La base de datos original posee varios datos de un mismo país y tipo de energía para un mismo año, lo que dificulta la graficación. Anualizar los datos utilizando el promedio de estos datos, permite una mejor graficación. Estos gráficos permiten relacionar las diversas variables, puesto que los datos siguen un mismo patrón. Sin embargo, este proceso debe hacerse para todas las variables seleccionadas. POr lo tanto, se pretende realizar la anualización de los datos, juntando las observaciones según los tipos de energía de cada país para cada año.
 
-### Producción energética 
+### Producción energética
 
 -   **Nombre del hallazgo:** Aumento en la producción de energías renovables
 -   **Resumen en una oración:** Casi todos los países se comportan de acuerdo al patrón internacional en producción energética.
