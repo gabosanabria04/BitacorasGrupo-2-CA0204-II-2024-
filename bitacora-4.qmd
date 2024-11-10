@@ -21,6 +21,7 @@ library(cowplot)
 library(tidyr)
 library(purrr)
 library(ggExtra)
+library(ggridges)
 options(scipen = 999)
 ```
 
@@ -86,7 +87,53 @@ data %>% filter(Country == "Japón") %>% ggplot(aes(x = Year, y = Energy.Flow)) 
   theme(legend.position = "top")
 ```
 
-Dado que no nos ha  sido posible relacionar la producción con las emisiones de CO2 mediante el gráfico de dispersión (@fig-), trataremos de encontrar una relación mediante 
+Dado que no nos ha  sido posible relacionar la producción con las emisiones de CO2 mediante el gráfico de dispersión (@fig-2.5), 
+
+
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-4.5
+
+df1 <- data.frame(Production.Range. = cut(data$Total.Production, breaks = c(0, 50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000, 450000,  max(data$Total.Production)),  labels = c("(0,50]", "(50, 100]", "(100,150]", "(150,200]", "(200, 250]", "(250,300]", "(300,350]", "(350,400]", "(400,450]", "(450,522939.3]")))
+df1 <- cbind(data, df1)
+ggplot(df1, aes(x = Production.Range., y = CO2.Emissions)) +
+  geom_bar(stat = "identity",
+           position = position_dodge(), fill = "#7d8c8e") +
+  labs(title = "Emisiones de CO2 por rango de producción energética",
+       x = "Rango",
+       y = "Emisiones de CO2",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+  theme_cowplot()+
+  theme(legend.position = "top")
+```
+
+Así, es posible ver que el aumento de producción energética parece indicar un aumento en las emisiones de CO2,  a nivel general.
+
+Por otro lado, podemos  ver estos rangos con sus respectivos cuantiles y distribuciones, utilizando densidades:
+
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
+#| fig-width: 8
+#| label: fig-4.6
+
+df1 <- data.frame(Production.Range. = cut(data$Total.Production, breaks = c(0, 50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000, 450000,  max(data$Total.Production)),  labels = c("(0,50]", "(50, 100]", "(100,150]", "(150,200]", "(200, 250]", "(250,300]", "(300,350]", "(350,400]", "(400,450]", "(450,522939.3]")))
+df1 <- cbind(data, df1)
+ggplot(df1, aes(x = CO2.Emissions, y = Production.Range., fill = Production.Range.)) +
+  geom_density_ridges2(quantile_lines = TRUE, quantiles = 2, color = "white", alpha = 0.75) +
+  scale_fill_brewer(type = "div", palette = 8)+
+  labs(title = "Emisiones de CO2 por rango de producción energética",
+       x = "Emisiones de CO2",
+       y = "Producción Total (GWh)",
+       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+  theme_ridges()+
+  theme(legend.position = "none")
+```
+En este caso, vemos que se mantiene la relación directa entre producción energética y emisiones de CO2,  hasta cierto punto. Las mayores rangos de producción se dividen entre aumentos y disminuciones  de CO2, dando a entender que existen diferencias entre los datos.
+
+Con el fin de explicar estas diferencias, trataremos de encontrar una relación mediante la separación  de estos datos en tipos de energía:
 
 ```{r}
 #| messages: FALSE
@@ -95,16 +142,17 @@ Dado que no nos ha  sido posible relacionar la producción con las emisiones de 
 #| label: fig-4.3
 ggplot(data, aes(x = Total.Production, y = CO2.Emissions, color = Energy.Type)) +
   geom_point()+
-  scale_color_brewer(type = "seq", palette = 4)  +
+  scale_color_brewer(type = "qual", palette = 2)  +
   facet_wrap(~Energy.Type, ncol = 2)+
   labs(
     title = "Producción y Emisiones de CO2",
-    x = "Producción total (GWh)",
+    x = "Producción total (miles de GWh)",
     y = "Emisiones de CO2",
     caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
-  theme_dark()+
+  theme_cowplot()+
   theme(legend.position = "none")
 ```
+La figura anterior brinda información interesante, y bastante innovadora sobre la relación entre emisiones de CO2 y la producción de energías renovables. En especial, sobre la energía eólica y la solar. La primera  porque presenta una reversión en el patrón a partir de valores cercanos a los 300 000 GWh;  y la segunda porque  presenta una relación directa entre producción y emisiones de CO2. Como además esta relación parece verse bastante lineal, se procede a verificarlo graficamente mediante una recta,  de pendiente 10.16238:
 
 ```{r}
 #| messages: FALSE
@@ -112,7 +160,8 @@ ggplot(data, aes(x = Total.Production, y = CO2.Emissions, color = Energy.Type)) 
 #| fig-width: 8
 #| label: fig-4.4
 data %>% filter(Energy.Type == "Solar") %>% ggplot(aes(x = Total.Production, y = CO2.Emissions)) +
-  geom_point(color = "#253494")+
+  geom_point(color = "#66a61e")+
+  ##La pendiente corresponde a las emisiones de CO2 entre la producción de energía del punto más alejado del origen.
   geom_abline(intercept = 0,
               slope = 5314308/522939.3)+
   labs(
@@ -124,16 +173,50 @@ data %>% filter(Energy.Type == "Solar") %>% ggplot(aes(x = Total.Production, y =
   theme_clean()+
   theme(legend.position = "none")
 ```
-### Fichas de Resultados
+
+## Fichas de Resultados
+
+### Japón
+
+-   **Nombre del hallazgo:** Reciente aumento en las importaciones
+-   **Resumen en una oración:** Japón presenta una tendencia a la disminución de producción energética renovable, y un reciente incremento de las importaciones.
+-   **Principal característica:** Las importaciones de Japón han aumentado en años recientes.
+-   **Problemas o posibles desafíos:** Este aumento en las importaciones puede responder a varios factores no analizados.
+-   **Resumen en un párrafo:** Debido a la observación de un patrón distinto en Japón que en el resto del mundo (@fig-2.10), se decide analizar su caso por separado. Específicamente, la @fig-4.1 presenta la producción de Japón, mientras que en la @fig-4.2 se visualizan los patrones en las importaciones y exportaciones. En particular, resulta interesante que las importaciones aumentaron en los últimos 4 años, y especialmente en el 2022. A pesar de que se espera un aumento en las importaciones ante una disminución en la producción energética, este aumento es mucho más reciente que esta baja en la producción. Dicho fenómeno podría explicarse por un reciente interés en las energías renovables, pues tambié en los últimos dos años se ve un aumento en la producción, comparado a años anteriores.
+
+### Emisiones de CO2
+
+-   **Nombre del hallazgo:** Relación entre  producción de energías renovables y emisiones de CO2
+-   **Resumen en una oración:** La @fig-4.5 no muestra patrones claros; la @fig-4.6 revela dispersión y equilibrio en CO2.
+-   **Principal característica:**  La dispersión de las emisiones a partir de ciertos niveles de producción, indica variaciones significativas en los datos a medida que aumenta la producción.
+-   **Problemas o posibles desafíos:** La relación de la @fig-4.6 es un poco extraña, pues sugiere diferencias significativas en los datos, por lo que requiere otro análisis que incorpore alguna otra variable.
+-   **Resumen en un párrafo:** La @fig-4.5 no presenta una relación mucho más clara que la @fig-2.5, ya que, aunque tiene menos saturación visual, no permite distinguir un patrón claro entre el incremento en la producción y las emisiones de CO2. Por esta razón, se decide analizar las distribuciones en cada rango, mostradas en la @fig-4.6. En esta figura, se observa que, a partir de los 350,000 GWh, la distribución de emisiones de CO2 comienza a dispersarse, lo cual sugiere diferencias en los datos. Además, la media de emisiones se desplaza notablemente al alcanzar los 400,000 GWh, rango en el cual se posiciona a la izquierda del rango anterior por primera vez. Por último, en el rango superior a los 450,000 GWh, la distribución de las emisiones es equitativa, mostrando una proporción balanceada entre valores altos y bajos de CO2, lo que sugiere una relación compleja entre la producción y las emisiones de CO2 en diferentes niveles de producción.
+
+### Energía Eólica
+
+-   **Nombre del hallazgo:** Aparente disminución en las emisiones de CO2
+-   **Resumen en una oración:** El aumento de la producción de energía eólica se relaciona con la disminución de emisiones de CO2.
+-   **Principal característica:** Existe un cambio de patrón a partir de aproximadamente 300 000 GWh.
+-   **Problemas o posibles desafíos:** Este patrón puede responder a varios factores no analizados. Los datos  de mayor producción podrían ser de un  solo país, lo que imposibilitaria generalizar el resultado. Hay otros tipos de energía renovable que no son analizados.
+-   **Resumen en un párrafo:** La @fig-4.3 revela que la mayoría de las fuentes de energía presentan una relación directa entre las emisiones de CO2 y su nivel de producción. Este patrón implica que, en general, a medida que aumenta la producción de energía, también se incrementan las emisiones de CO2 asociadas. Sin embargo, la energía eólica destaca como una excepción significativa, ya que rompe esta tendencia cuando su producción alcanza aproximadamente 300 000 GWh. En este punto, la energía eólica parece reducir sus emisiones, lo que sugiere que podría ser una opción más sostenible a gran escala. Este comportamiento posiciona a la energía eólica como el candidato más prometedor entre las energías renovables analizadas para mitigar las emisiones de CO2.
+
+### Energía Solar
+
+-   **Nombre del hallazgo:** Relación directa con las emisiones de CO2
+-   **Resumen en una oración:** Conforme aumentaa la producción de energía solar, aumentan también las emisiones de CO2.
+-   **Principal característica:** Las emisiones de CO2 parecen aumentar 10 veces lo que aumenta la producción de energía solar.
+-   **Problemas o posibles desafíos:** Esta relación podría deberse a factores no analizados. Podría darse un revertimiento de patrón  a niveles de producción más elevados, como el caso de la energía eólica.
+-   **Resumen en un párrafo:** La @fig-4.3 indica una marcada relación directa entre la producción de energía solar y las emisiones de CO2. Contrario a lo esperado, esta relación no es inversa, sino que a mayor producción de energía solar, mayor es también el nivel de emisiones de CO2. En la @fig-4.4 se muestra que las emisiones de CO₂ se ajustan a una línea recta con una pendiente de 10.16238 respecto a la producción de energía solar. Esto implica que las emisiones aumentan a una tasa de poco más de diez veces por cada incremento en la producción de energía solar. Tal resultado resalta que, a diferencia de la energía eólica, la energía solar puede no ser la opción más adecuada en la reducción de emisiones de CO2. En conclusión, la energía solar se perfila como una alternativa menos efectiva para combatir el cambio climático entre las energías renovables estudiadas.
+
+
 
 ## Parte de Escritura
 
 ### Producción
 
-#Referencia que diga que aumenta la producción
-A pesar de que la @fig-2.3 muestra la tendencia creciente en producción energética a nivel mundial, al separar los datos por países (@fig-2.10), se encontró que el patrón global se repite en casi todos los países, a excepción de Japón. Por ello, se analiza el caso específico de Japón, específicamente su producción (@fig-4.1), con tendencia a la baja, y sus importaciones y exportaciones (@fig-4.2), que muestra un reciente aumento en las importaciones. En particular, resulta interesante que las importaciones aumentaron en los últimos 4 años, y especialmente en el 2022. A pesar de que se espera un aumento en las importaciones ante una disminución en la producción energética, este aumento es mucho más reciente que esta baja en la producción. Dicho fenómeno podría explicarse por un reciente interés en las energías renovables, pues tambié en los últimos dos años se ve un aumento en la producción, comparado a años anteriores.
+La @fig-2.3 muestra la tendencia creciente en producción energética a nivel mundial, apoyando los datos presentados por IRENA [-@Lebedys_Akande_Elhassan_Escamilla_Whiteman_Arkhipova_2021] en su reporte de la década 2011-2020. Al separar los datos por países (@fig-2.10), se encontró que el patrón global se repite en casi todos los países, a excepción de Japón. Por ello, se analiza el caso específico de Japón, específicamente su producción (@fig-4.1), con tendencia a la baja, y sus importaciones y exportaciones (@fig-4.2), que muestra un reciente aumento en las importaciones. En particular, resulta interesante que las importaciones aumentaron en los últimos 4 años, y especialmente en el 2022. A pesar de que se espera un aumento en las importaciones ante una disminución en la producción energética, este aumento es mucho más reciente que esta baja en la producción. Dicho fenómeno podría explicarse por un reciente interés en las energías renovables, pues tambié en los últimos dos años se ve un aumento en la producción, comparado a años anteriores.
 
-### Emisiones  de CO2
+### Emisiones de CO2
 
 El estudio de Attanayake [-@Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024] analiza cómo la instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. Donde los países desarrollados, como Estados Unidos, China y la India, tienen la cantidad promedio de emisiones más altas. Lo cual destaca que los países mayormente responsables de las emisiones de CO2 se han mantenido constantes durante los últimos 25 años, siendo estos principalmente los países mayor desarrollados. El estudio da uso a técnicas de regresión para valorar las relaciones lineales y no lineales entre las energías renovables y las emisiones de CO₂. El artículo recalca la importancia del cambio a energías limpias para minimizar las emisiones de carbono, pero reconoce que los países en desarrollo enfrentan desafíos significativos en términos de inversión y políticas. Finalmente, aporta recomendaciones para que los países implementen estrategias de transición energética de acuerdo con sus contextos únicos.
 
@@ -141,7 +224,9 @@ Existen estudios que respaldan la información del texto anterior, como lo es "E
 
 El documento realiza un estudio esencial para el entendimiento de la importancia de la implementación de energías renovables para el bienestar social, económico y ambiental. Destacando que la mayoría de países, a excepción de Canadá, el cual un aumento del 1% en las fuentes de energía renovables da como resultado un incremento de 10,83 millones de toneladas en las emisiones de CO2, afirman que su inversión puede ser beneficiosa para su estabilidad general. Lo cual es muy importante con respecto a otros estudios que se centraban en algún país en específico. Además, la observación la colaboración de distintos gobiernos es vital, ya que reconoce la naturaleza global del cambio climático y la necesidad de soluciones coordinadas. Esta observación conjunta y propositiva fortalece la utilidad práctica del estudio para guiar políticas energéticas hacia un desarrollo más sostenible.
 
-Aunque se espera encontrar una relación inversa entre producción de energías renovables y emisiones de CO2, pues las energías renovables son energías más limpias que las generadas por otras fuentes, como los combustibles fósiles; en nuestro análisis de datos, la @fig-2.13 muestra que los datos con mayores emisiones de CO2 no se encuentran en los mayores niveles de producción, sin embargo, la relación es poco clara. 
+Aunque se espera encontrar una relación inversa entre producción de energías renovables y emisiones de CO2, pues las energías renovables son energías más limpias que las generadas por otras fuentes, como los combustibles fósiles; en nuestro análisis de datos, la @fig-2.13 muestra que los datos con mayores emisiones de CO2 no se encuentran en los mayores niveles de producción, sin embargo, la relación es poco clara. La @fig-4.5 presenta los datos de manera más limpia, pero no mucho más clara,  pues no es posible detectar un patrón claro entre las variables.
+
+Por otro lado, la @fig-4.6 presenta la distribución  de los datos dentrro de estos rangos. En particular, a partir de los 350 000 GWh, la distribución de emisiones de CO2 comienza a dispersarse, lo cual sugiere diferencias en los datos. Además, la media de emisiones se desplaza notablemente al alcanzar los 400,000 GWh, rango en el cual se posiciona a la izquierda del rango anterior por primera vez. Por último, en el rango superior a los 450,000 GWh, la distribución de las emisiones es equitativa, mostrando una proporción balanceada entre valores altos y bajos de CO2, lo que sugiere una relación compleja entre la producción y las emisiones de CO2 en diferentes niveles de producción. Esta reación parece ser explicada bastante bien con la @fig-4.3, por la diferencia entre los datos de energía solar y eólica, puesto que la solar presenta una fuerte relación directa con las  emisiones de CO2,  mientras que la eólica cambia su relación a partir de cierto valor de producción.
 
 #### Energía Eólica
 
@@ -198,31 +283,6 @@ La @fig-3.14 muestra que a mayor cantidad de patentes, mayor cantidad de empleos
 
 A pesar de que existe una relación entre la producción y la cantidad de trabajos del sector de energías renovables, al incluir la existencia de programas educativos, se observan más características. El @fig-3.11 muestra una relación positiva entre la producción de energía renovable y la cantidad de trabajos del sector. Sin embargo, con el fin de visualizar otras características, se incluyó la existencia de programas educativos sobre la energía renovable. La @fig-3.12 muestra que la relación es mayor con programas educativos. Adicionalmente, muestra que las mayores producciones energéticas se dan en países con programas educativos, y que son además los de mayor cantidad de empleos en el sector. Esto último se apoya en la @fig-3.13, que muestra la relación positiva entre los programas educativos y la cantidad de empleos, tanto para los datos promedio, como para los datos extremos.
 
-## Fichas de Resultados
-
-### Japón
-
--   **Nombre del hallazgo:** Reciente aumento en las importaciones
--   **Resumen en una oración:** Japón presenta una tendencia a la disminución de producción energética renovable, y un reciente incremento de las importaciones.
--   **Principal característica:** Las importaciones de Japón han aumentado en años recientes.
--   **Problemas o posibles desafíos:** Este aumento en las importaciones puede responder a varios factores no analizados.
--   **Resumen en un párrafo:** Debido a la observación de un patrón distinto en Japón que en el resto del mundo (@fig-2.10), se decide analizar su caso por separado. Específicamente, la @fig-4.1 presenta la producción de Japón, mientras que en la @fig-4.2 se visualizan los patrones en las importaciones y exportaciones. En particular, resulta interesante que las importaciones aumentaron en los últimos 4 años, y especialmente en el 2022. A pesar de que se espera un aumento en las importaciones ante una disminución en la producción energética, este aumento es mucho más reciente que esta baja en la producción. Dicho fenómeno podría explicarse por un reciente interés en las energías renovables, pues tambié en los últimos dos años se ve un aumento en la producción, comparado a años anteriores.
-
-### Energía Eólica
-
--   **Nombre del hallazgo:** Aparente disminución en las emisiones de CO2
--   **Resumen en una oración:** El aumento de la producción de energía eólica se relaciona con la disminución de emisiones de CO2.
--   **Principal característica:** Existe un cambio de patrón a partir de aproximadamente 300 000 GWh.
--   **Problemas o posibles desafíos:** Este patrón puede responder a varios factores no analizados. Los datos  de mayor producción podrían ser de un  solo país, lo que imposibilitaria generalizar el resultado. Hay otros tipos de energía renovable que no son analizados.
--   **Resumen en un párrafo:** La @fig-4.3 revela que la mayoría de las fuentes de energía presentan una relación directa entre las emisiones de CO2 y su nivel de producción. Este patrón implica que, en general, a medida que aumenta la producción de energía, también se incrementan las emisiones de CO2 asociadas. Sin embargo, la energía eólica destaca como una excepción significativa, ya que rompe esta tendencia cuando su producción alcanza aproximadamente 300 000 GWh. En este punto, la energía eólica parece reducir sus emisiones, lo que sugiere que podría ser una opción más sostenible a gran escala. Este comportamiento posiciona a la energía eólica como el candidato más prometedor entre las energías renovables analizadas para mitigar las emisiones de CO2.
-
-### Energía Solar
-
--   **Nombre del hallazgo:** Relación directa con las emisiones de CO2
--   **Resumen en una oración:** Conforme aumentaa la producción de energía solar, aumentan también las emisiones de CO2.
--   **Principal característica:** Las emisiones de CO2 parecen aumentar 10 veces lo que aumenta la producción de energía solar.
--   **Problemas o posibles desafíos:** Esta relación podría deberse a factores no analizados. Podría darse un revertimiento de patrón  a niveles de producción más elevados, como el caso de la energía eólica.
--   **Resumen en un párrafo:** La @fig-4.3 indica una marcada relación directa entre la producción de energía solar y las emisiones de CO2. Contrario a lo esperado, esta relación no es inversa, sino que a mayor producción de energía solar, mayor es también el nivel de emisiones de CO2. En la @fig-4.4 se muestra que las emisiones de CO₂ se ajustan a una línea recta con una pendiente de 10.16238 respecto a la producción de energía solar. Esto implica que las emisiones aumentan a una tasa de poco más de diez veces por cada incremento en la producción de energía solar. Tal resultado resalta que, a diferencia de la energía eólica, la energía solar puede no ser la opción más adecuada en la reducción de emisiones de CO2. En conclusión, la energía solar se perfila como una alternativa menos efectiva para combatir el cambio climático entre las energías renovables estudiadas.
 
 ## Parte de Reflexión
 
