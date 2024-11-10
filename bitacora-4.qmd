@@ -286,7 +286,7 @@ A pesar de que existe una relación entre la producción y la cantidad de trabaj
 
 ##Conclusión
 
-Esta investigación analiza el impacto de la producción e implementación de energías renovables en aspectos ambientales y socioeconómicos, con énfasis en la reducción de emisiones de CO₂, conciencia pública, precios energéticos y empleo en el sector. La pregunta de investigación aborda cómo la adopción de energías renovables transforma los entornos ambientales y sociales en diversos países. Se esperaba observar una mejora inversa entre producción de energías renovables y emisiones de CO₂, lo cual se cumplió en parte, ya que las emisiones de CO₂ disminuyen con la producción renovable en ciertos contextos, aunque sin un patrón uniforme debido a variables no contempladas.
+El proyecto de investigación tiene como fin analizar el impacto de la producción e implementación de energías renovables en aspectos ambientales y socioeconómicos, con énfasis en la reducción de emisiones de CO₂, conciencia pública, precios energéticos y empleo en el sector. En cuanto a la pregunta de investigación, esta aborda cómo la implementación de energías renovables transforma los entornos ambientales y sociales en diversos países. Se esperaba observar una mejora inversa entre producción de energías renovables y emisiones de CO₂, lo cual se cumplió en parte, ya que las emisiones de CO₂ disminuyen con la producción renovable en ciertos contextos, aunque sin un patrón uniforme debido a variables no contempladas.
 
 ## Parte de Reflexión
 
