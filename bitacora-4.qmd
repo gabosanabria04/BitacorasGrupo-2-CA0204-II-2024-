@@ -290,6 +290,7 @@ El proyecto de investigación tiene como fin analizar el impacto de la producci�
 
 La metodología incluyó un análisis de datos cuantitativos de 10 países clave, con variables como programas educativos sobre energía renovable, conciencia pública y políticas gubernamentales. Mediante correlaciones y regresiones lineales, se lograron identificar las distintas relaciones entre la producción de energía renovable y el empleo en el sector, así como entre los  programas educativos y la conciencia pública. Estos hallazgos destacan que la producción renovable además de tener un impacto ambiental, también es capaz de fortalecer la estructura laboral y la conciencia pública. Con respecto a los desafíos, se debe destacar la falta de homogeneidad en las muestras de datos, lo que dificultó en el desarrollo de conclusiones más concretas y definitivas a nivel mundial.
 
+Para futuras investigaciones, se recomienda analizar cómo influyen las diferencias en las políticas gubernamentales y programas educativos en la efectividad de la adopción de energías renovables en cada país. Además, sería importante lograr investigar el impacto económico de los precios energéticos en poblaciones de bajos ingresos. Este estudio contribuye a llenar un vacío en la literatura al analizar de forma integral el impacto de las energías renovables, mostrando no solo el enfoque ambiental, sino además aspectos sociales y económicos interrelacionados, lo que ofrece una visión holística sobre su adopción y beneficios a largo plazo. 
 
 ## Parte de Reflexión
 
