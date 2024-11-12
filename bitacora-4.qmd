@@ -299,7 +299,29 @@ Las energías renovables representan una solución clave para amortiguar el impa
 ## Ordenamiento final
 ### Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables
 
+### Resumen: 
+Las energías renovables representan una solución clave para amortiguar el impacto del cambio climático y promover un desarrollo socioeconómico sostenible. Este estudio estudia el impacto de estas energías en distintos países, buscando su relación con distintos indicadores de desarrollo y bienestar social. Para ello, se utilizaron datos de una base internacional que abarca el período 2000-2023, con información de países como Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos. Las variables incluyen la producción y consumo de energías renovables, el PIB, la autosuficiencia energética y la reducción de emisiones de CO2, además de contener factores ambientales y socioeconómicos. Mediante modelos estadísticos descriptivos y comparativos, se analizó cómo el uso de energías renovables afecta la economía y el bienestar de los países. Los resultados indican que aquellos con mayor adopción de energías renovables han logrado una disminución de emisiones contaminantes, una mejora en su seguridad energética y un incremento en el bienestar socioeconómico. Igualmente, se identificaron beneficios adicionales, como el desarrollo de empleo y la disminución de la pobreza energética. No obstante, se muestran diferencias entre las que destacan los altos costos iniciales de implementación y las limitaciones tecnológicas, que afectan especialmente a las regiones en desarrollo. Se concluyó que las energías renovables son fundamentales para construir un futuro más equitativo y sostenible, pero para maximizar su aprovechamiento requiere políticas inclusivas y una mayor inversión en investigación tecnológica que mejore su expansión y accesibilidad.
 
+### Palabras Clave: 
+- *Energía Renovable.*
+
+- *Ambiental.*
+
+- *Socioeconómico.*
+
+### Introducción:
+
+La energía renovable representa un tema común en el contexto actual, debido al aumento en la conciencia general en temas del medio ambiente. La producción de energía renovable ha aumentado en los últimos años; sin mebargo, poco se habla del impacto que estas energías tienen, tanto sobre el medioambiente, como sobre la sociedad.
+
+Por ello, esta investigación desea analizar los cambios en indicadores sociales de acuerdo a variables relacionadas con el medio ambiente, con el fin de concluir una relación entre las energías renovables y el bienestar de la sociedad. Así, se toman en cuenta las emisiones de CO2, los precios de la energía, el gasto en investigación, la inversión, las importaciones y exportaciones de energía, las patentes para energía renovable, la cantidad de trabajos, la conciencia pública sobre el tema de energías renovables, y la existencia o no de políticas gubernamentales y programas educativos al respecto.
+
+La presente investigación tiene por finalidad analizar los cambios ambientales y socioeconómicos que genera la implementación de la energía renovable en los países, estudiando variables como distintos años y países con el fin de realizar distintas comparaciones, así como también las distintas energías renovables, como lo son la energía olar, geotérmica, biomasa, eólica e hidroeléctrica, para combinarlos con la producción, la capacidad instalada y la emisión de CO2.
+
+La relevancia de esta investigación es tanto académica como social. Su desarrollo es de vital importancia para la comprensión de la vinculación de la instauración de la energía renovable y los cambios ecológicos y socioeconómicos, mostrando en que magnitud afecta su implementación dependiendo de los diferentes países incluyendo las regiones desarrolladas y las vías de desarrollo. Con la presente investigación se busca mostrar que el establecimiento suele afectar de forma positiva las áreas mencionadas anteriormente. 
+
+El objetivo principal de esta investigación es evaluar cómo la energía renovable impacta en el bienestar social y en el desarrollo económico de los países, además de explorar su capacidad para promover la equidad. A través de un análisis comparativo de datos y un enfoque interdisciplinario, se espera descubrir cómo diferentes factores, como la inversión en tecnología y políticas públicas, potencian o limitan este impacto.
+
+La estructura del trabajo consiste de las siguientes secciones: la primera se basa en la revisión de literatura sobre los beneficios y desafíos de las energías renovables; la segunda detalla la metodología empleada en el análisis de datos; la tercera muestra resultados obtenidos; y, finalmente, la última sección discute las conclusiones y recomendaciones para la política y la investigación futura. Con ello, el estudio busca captar la atención del lector e incentivar a una reflexión profunda sobre el potencial de las energías renovables en la construcción de un futuro sostenible y socialmente justo.
 
 
 ## Parte de Reflexión
