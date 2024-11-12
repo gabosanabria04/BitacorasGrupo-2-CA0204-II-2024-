@@ -65,6 +65,7 @@ ui <- fluidPage(
            plotOutput(outputId = "distprices")
     ),
     column(6,
+           textOutput(outputId = "precios2"),
            plotOutput(outputId = "prices")
     )
   ),

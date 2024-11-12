@@ -5,7 +5,7 @@ account: paolaespinoza
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 13314542
-bundleId: 9352375
+bundleId: 9352532
 url: https://paolaespinoza.shinyapps.io/Renewable_Energy/
 version: 1
 asMultiple: FALSE
