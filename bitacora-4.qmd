@@ -296,6 +296,12 @@ Para futuras investigaciones, se recomienda analizar cómo influyen las diferenc
 
 Las energías renovables representan una solución clave para amortiguar el impacto del cambio climático y promover un desarrollo socioeconómico sostenible. Este estudio estudia el impacto de estas energías en distintos países, buscando su relación con distintos indicadores de desarrollo y bienestar social. Para ello, se utilizaron datos de una base internacional que abarca el período 2000-2023, con información de países como Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos. Las variables incluyen la producción y consumo de energías renovables, el PIB, la autosuficiencia energética y la reducción de emisiones de CO2, además de contener factores ambientales y socioeconómicos. Mediante modelos estadísticos descriptivos y comparativos, se analizó cómo el uso de energías renovables afecta la economía y el bienestar de los países. Los resultados indican que aquellos con mayor adopción de energías renovables han logrado una disminución de emisiones contaminantes, una mejora en su seguridad energética y un incremento en el bienestar socioeconómico. Igualmente, se identificaron beneficios adicionales, como el desarrollo de empleo y la disminución de la pobreza energética. No obstante, se muestran diferencias entre las que destacan los altos costos iniciales de implementación y las limitaciones tecnológicas, que afectan especialmente a las regiones en desarrollo. Se concluyó que las energías renovables son fundamentales para construir un futuro más equitativo y sostenible, pero para maximizar su aprovechamiento requiere políticas inclusivas y una mayor inversión en investigación tecnológica que mejore su expansión y accesibilidad.
 
+## Ordenamiento final
+### Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables
+
+
+
+
 ## Parte de Reflexión
 
 Según indicaciones del profesor, se eliminaron todas las regresiones lineales, y fueron reemplazadas casi en su totalidad por gráficos de dispersión, junto a gráficos de línea cuando los datos así lo permitían. Algunos otros fueron reemplazados por gráficos de barras, cuando los datos así lo permitían.
