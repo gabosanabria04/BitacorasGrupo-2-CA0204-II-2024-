@@ -49,6 +49,7 @@ data <- original|> mutate(Country = case_when(
 ## Planificación
 
 ### Análisis Gráfico
+
 Para esta última bitáccora, se deciden hacer cuatro resultados más, para terminar dee enlazar cada idea de la parte de escritura con su respectivo resultado empírico. De esta manera, se realizaron análisis de las variables sobre las que no se habían podido concluir satisfactoriamente.
 
 Dado que la @fig-2.10 muestra que Japón no ha aumentado su producción como los demás países, se desea analizar esto más a profundidad. Para ello, a continuación se muestra la producción de Japón:
@@ -98,17 +99,17 @@ Dado que no nos ha sido posible relacionar la producción con las emisiones de C
 #| fig-width: 8
 #| label: fig-4.5
 
-df1 <- data.frame(Production.Range. = cut(data$Total.Production, breaks = c(0, 50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000, 450000,  max(data$Total.Production)),  labels = c("(0,50]", "(50, 100]", "(100,150]", "(150,200]", "(200, 250]", "(250,300]", "(300,350]", "(350,400]", "(400,450]", "(450,522939.3]")))
+df1 <- data.frame(Production.Range. = cut(data$Total.Production, breaks = c(0, 50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000, 450000,  max(data$Total.Production)),  labels = c("(0,50]", "(50, 100]", "(100,150]", "(150,200]", "(200, 250]", "(250,300]", "(300,350]", "(350,400]", "(400,450]", "más de 450")))
 df1 <- cbind(data, df1)
 ggplot(df1, aes(x = Production.Range., y = CO2.Emissions)) +
   geom_bar(stat = "identity",
            position = position_dodge(), fill = "#7d8c8e") +
-  labs(title = "Emisiones de CO2 por rango de producción energética",
+  labs(title = "Emisiones de CO2 por rango de miles de producción energética",
        x = "Rango",
        y = "Emisiones de CO2",
        caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
-  theme(legend.position = "top")
+  theme(legend.position = "top", axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
 Así, es posible ver que el aumento de producción energética parece indicar un aumento en las emisiones de CO2, a nivel general.
@@ -121,12 +122,12 @@ Por otro lado, podemos ver estos rangos con sus respectivos cuantiles y distribu
 #| fig-width: 8
 #| label: fig-4.6
 
-df1 <- data.frame(Production.Range. = cut(data$Total.Production, breaks = c(0, 50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000, 450000,  max(data$Total.Production)),  labels = c("(0,50]", "(50, 100]", "(100,150]", "(150,200]", "(200, 250]", "(250,300]", "(300,350]", "(350,400]", "(400,450]", "(450,522939.3]")))
+df1 <- data.frame(Production.Range. = cut(data$Total.Production, breaks = c(0, 50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000, 450000,  max(data$Total.Production)),  labels = c("(0,50]", "(50, 100]", "(100,150]", "(150,200]", "(200, 250]", "(250,300]", "(300,350]", "(350,400]", "(400,450]", "más de 450")))
 df1 <- cbind(data, df1)
 ggplot(df1, aes(x = CO2.Emissions, y = Production.Range., fill = Production.Range.)) +
   geom_density_ridges2(quantile_lines = TRUE, quantiles = 2, color = "white", alpha = 0.75) +
   scale_fill_brewer(type = "div", palette = 8)+
-  labs(title = "Emisiones de CO2 por rango de producción energética",
+  labs(title = "Emisiones de CO2 por rango de miles de producción energética",
        x = "Emisiones de CO2",
        y = "Producción Total (GWh)",
        caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
@@ -142,13 +143,16 @@ Con el fin de explicar estas diferencias, trataremos de encontrar una relación 
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 10
 #| label: fig-4.3
 ggplot(data, aes(x = Total.Production, y = CO2.Emissions, color = Energy.Type)) +
   geom_point()+
   scale_color_brewer(type = "qual", palette = 2)  +
+  scale_x_continuous(limits = c(0, max(data$Total.Production)), breaks = c(0, 150000, 300000, 450000))+
   facet_wrap(~Energy.Type, ncol = 2)+
   labs(
     title = "Producción y Emisiones de CO2",
+    subtitle = "por tipo de  energía",
     x = "Producción total (miles de GWh)",
     y = "Emisiones de CO2",
     caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
@@ -300,10 +304,9 @@ Las energías renovables representan una solución clave para amortiguar el impa
 
 Según indicaciones del profesor, se eliminaron todas las regresiones lineales, y fueron reemplazadas casi en su totalidad por gráficos de dispersión, junto a gráficos de línea cuando los datos así lo permitían. Algunos otros fueron reemplazados por gráficos de barras, cuando los datos así lo permitían. Por ello, se actualizó la V de Gowin.
 
-Para esta bitácora, se organizaron los elementos de la parte de escritura, dividiéndolos por secciones. Además, se agregaron los resultados encontrados en las figuras realizadas para esta última bitácora. Se realizaron  además todas las referencias cruzadas, de modo que la lectura sea más fluida, mostrando la figura a la que se hace referencia.
+Para esta bitácora, se organizaron los elementos de la parte de escritura, dividiéndolos por secciones. Además, se agregaron los resultados encontrados en las figuras realizadas para esta última bitácora. Se realizaron además todas las referencias cruzadas, de modo que la lectura sea más fluida, mostrando la figura a la que se hace referencia.
 
 A modo de conclusión, se extrajeron los resultados más importantes para responder a la pregunta de investigación, y estos se colocaron en la página web de [Shiny](https://paolaespinoza.shinyapps.io/Renewable_Energy/)
-
 
 ## Ordenamiento final
 
@@ -321,9 +324,9 @@ Las energías renovables representan una solución clave para amortiguar el impa
 
 -   **Socioeconómico.**
 
-- **Impacto medioambiental**
+-   **Impacto medioambiental**
 
-- **Energías limpias**
+-   **Energías limpias**
 
 ### Introducción:
 
@@ -387,31 +390,4 @@ La @fig-3.15 muestra que existe una relación positiva entre el gasto en investi
 Se debe realizar un agradecimiento especial a los compañeros del curso, los cuales realizaron una retroalimentación en cada bitácora del proyecto, comentando los aspectos positivos y los aspectos por mejorar de nuestra investigación. Además agradecer al profesor Maikol Solís por estar presente en cada sección del proyecto, además de brindar apoyo en las clases y horas de consulta, recomendando páginas web útiles para una correcta elaboración del proyecto.
 
 ### Referencias
-
-Agencia Internacional de Energías Renovables (IRENA). (2021). *Renewable Energy Statistics 2021*. https://www.irena.org/Statistics
-
-Bataineh, M. J., Marcuello, C., & Sánchez-Sellero, P. (2023). Toward sustainability: the role of social entrepreneurship in creating social-economic value in renewable energy social enterprises. *REVESCO : Revista De Estudios Cooperativos, 143*. https://doi.org/10.5209/reve.85561
-
-Casamitjana, M. (2017). Energías renovables. Revista Cintex, 22(1), 7-9. https://proquest.proxyucr.elogim.com/scholarly-journals/energías-renovables/docview/2676149315/se-2
-
-Cordero Gutiérrez, A. (2015). *Análisis de viabilidad ambiental del uso de energías renovables en Costa Rica: Estudio de caso de la energía eólica, la hidroeléctrica y la geotérmica*. https://d1wqtxts1xzle7.cloudfront.net/41694115/Investigacion_p.\_Ecologicos2-libre.pdf
-
-Esteves, A. M., Franks, D. M., & Vanclay, F. (2012). Social impact assessment: the state of the art. *Impact Assessment and Project Appraisal, 30*(1), 34-42. https://doi.org/10.1080/14615517.2012.660356
-
-Holme, J., Pockrandt, M., Köhler, D., Noll, M., Zaytsev, Y., Attia, S., & Biurrun, I. (2023). *Effects of plant invaders on native vegetation communities and ecosystem properties across Europe: A systematic review and meta-analysis. PLOS ONE, 18*(8), e0299807. https://doi.org/10.1371/journal.pone.0299807
-
-Peake, S., & Boyle, G. (2018). *Renewable energy: Power for a sustainable future (4th ed.)*. Oxford University Press.
-
-Pou, M. Á. C., & Simón, J. M. G. (2017). Energías renovables y desarrollo económico. Un análisis para España y las grandes economías europeas. \[Renewable Energy and Economic Development. An Analysis for Spain and the Biggest European Economies] *El Trimestre Económico, 84*(3), 571-609. https://doi.org/10.20430/ete.v84i335.508
-
-Requejo Liberal, J. (2012). Energía renovable: un nuevo principio de autosuficiencia conectada. Ciudad Y Territorio Estudios Territoriales, 44(171), 113–125. https://recyt.fecyt.es/index.php/CyTET/article/view/76112
-
-Serrano, J. (2022, Apr 24). Hacia un futuro con energía limpia y renovable. Actualidad Economica, , 12. https://proquest.proxyucr.elogim.com/magazines/hacia-un-futuro-con-energía-limpia-y-renovable/docview/2653653881/se-2
-
-United Nations. (s.f.). *What is renewable energy?* https://www.un.org/en/climatechange/what-is-renewable-energy#:\~:text=Renewable%20energy%20is%20energy%20derived,plentiful%20and%20all%20around%20us.
-
-Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renovables y no renovables*. Aplicaciones.
-
-
-
 
