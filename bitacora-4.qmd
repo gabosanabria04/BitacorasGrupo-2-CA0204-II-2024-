@@ -296,6 +296,15 @@ Para futuras investigaciones, se recomienda analizar cómo influyen las diferenc
 
 Las energías renovables representan una solución clave para amortiguar el impacto del cambio climático y promover un desarrollo socioeconómico sostenible. Este estudio estudia el impacto de estas energías en distintos países, buscando su relación con distintos indicadores de desarrollo y bienestar social. Para ello, se utilizaron datos de una base internacional que abarca el período 2000-2023, con información de países como Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos. Las variables incluyen la producción y consumo de energías renovables, el PIB, la autosuficiencia energética y la reducción de emisiones de CO2, además de contener factores ambientales y socioeconómicos. Mediante modelos estadísticos descriptivos y comparativos, se analizó cómo el uso de energías renovables afecta la economía y el bienestar de los países. Los resultados indican que aquellos con mayor adopción de energías renovables han logrado una disminución de emisiones contaminantes, una mejora en su seguridad energética y un incremento en el bienestar socioeconómico. Igualmente, se identificaron beneficios adicionales, como el desarrollo de empleo y la disminución de la pobreza energética. No obstante, se muestran diferencias entre las que destacan los altos costos iniciales de implementación y las limitaciones tecnológicas, que afectan especialmente a las regiones en desarrollo. Se concluyó que las energías renovables son fundamentales para construir un futuro más equitativo y sostenible, pero para maximizar su aprovechamiento requiere políticas inclusivas y una mayor inversión en investigación tecnológica que mejore su expansión y accesibilidad.
 
+## Parte de Reflexión
+
+Según indicaciones del profesor, se eliminaron todas las regresiones lineales, y fueron reemplazadas casi en su totalidad por gráficos de dispersión, junto a gráficos de línea cuando los datos así lo permitían. Algunos otros fueron reemplazados por gráficos de barras, cuando los datos así lo permitían. Por ello, se actualizó la V de Gowin.
+
+Para esta bitácora, se organizaron los elementos de la parte de escritura, dividiéndolos por secciones. Además, se agregaron los resultados encontrados en las figuras realizadas para esta última bitácora. Se realizaron  además todas las referencias cruzadas, de modo que la lectura sea más fluida, mostrando la figura a la que se hace referencia.
+
+A modo de conclusión, se extrajeron los resultados más importantes para responder a la pregunta de investigación, y estos se colocaron en la página web de [Shiny](https://paolaespinoza.shinyapps.io/Renewable_Energy/)
+
+
 ## Ordenamiento final
 
 ### Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables
@@ -379,8 +388,6 @@ Se debe realizar un agradecimiento especial a los compañeros del curso, los cua
 
 ### Referencias
 
-{#refs}
-
 Agencia Internacional de Energías Renovables (IRENA). (2021). *Renewable Energy Statistics 2021*. https://www.irena.org/Statistics
 
 Bataineh, M. J., Marcuello, C., & Sánchez-Sellero, P. (2023). Toward sustainability: the role of social entrepreneurship in creating social-economic value in renewable energy social enterprises. *REVESCO : Revista De Estudios Cooperativos, 143*. https://doi.org/10.5209/reve.85561
@@ -405,12 +412,6 @@ United Nations. (s.f.). *What is renewable energy?* https://www.un.org/en/climat
 
 Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renovables y no renovables*. Aplicaciones.
 
-## Parte de Reflexión
 
-Según indicaciones del profesor, se eliminaron todas las regresiones lineales, y fueron reemplazadas casi en su totalidad por gráficos de dispersión, junto a gráficos de línea cuando los datos así lo permitían. Algunos otros fueron reemplazados por gráficos de barras, cuando los datos así lo permitían. Por ello, se actualizó la V de Gowin.
-
-Para esta bitácora, se organizaron los elementos de la parte de escritura, dividiéndolos por secciones. Además, se agregaron los resultados encontrados en las figuras realizadas para esta última bitácora. Se realizaron  además todas las referencias cruzadas, de modo que la lectura sea más fluida, mostrando la figura a la que se hace referencia.
-
-A modo de conclusión, se extrajeron los resultados más importantes para responder a la pregunta de investigación, y estos se colocaron en la página web de [Shiny](https://paolaespinoza.shinyapps.io/Renewable_Energy/)
 
 
