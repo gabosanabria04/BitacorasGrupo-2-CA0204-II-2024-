@@ -6,7 +6,7 @@ output_dir: "docs"
 editor: visual
 ---
 
-### Setup {.hidden}
+## Setup {.hidden}
 
 ```{r}
 #| messages: FALSE
@@ -41,7 +41,7 @@ library(purrr)
 | Descriptivo y exploratorio | El impacto social de las energías renovables | Sostenibilidad ambiental implica sostenibilidad social y económica | Impacto social de las energías renovables | 2014 | Abay Analistas Económicos y Sociales |
 | Técnicas de cointegración | Energías renovables y la economía en Europa. | Relación entre energías renovables y desarrollo económico en Europa. | Energías renovables y desarrollo económico: Un análisis para España y las grandes economías europeas | 2017 | María Ángeles Caraballo Pou, Juana María García Simón. |
 
-# Enlaces de Literatura
+## Enlaces de Literatura
 
 -   Keshani Attanayake, Isuru Wickramage, Udul Samarasinghe, Yasangi Ranmini, Sandali Ehalapitiya, Ruwan Jayathilaka y Shanta Yapa (2023). *Renewable Energy as a Solution to Climate Change: Insights from a Comprehensive Study Across Nations.* https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0299807#sec012
 
@@ -75,9 +75,9 @@ Además de esto, María Ángeles Caraballo Pou y Juana María García Simón en 
 
 Con las explicación ofrecida por Las Naciones Unidad, apoyada con la descripción de la electrificación que ofrece Serrano y la comparación de distintas naciones que realizaron Caraballo y García, se puede probar que, mediante una considerable inversión en las distintas energías renovables, se podría reforzar y evaluar la posibilidad de mejoría en el bienestar social, económico y ambiental, siendo estas interdependientes una de la otra, debido a que cada una crea externalidades tanto negativas como positivas. Lo cual también muestra que a pesar de que las energías renovables son vitables para un buen desarrollo a largo plazo, la sociedad está encargada de tomar conciencia y estudiar la importancia sobre este tema, para así evaluar la posibilidad de un cambio radical, así como lo es la minimización de energías no renovables.
 
-# Análisis Estadísticos
+## Análisis Estadísticos
 
-## Análisis Descriptivo
+### Análisis Descriptivo
 
 La base de datos utilizada, disponible en https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset, cumple con el formato tidy, ya que cada variable posee su propia columna, cada observación tiene su propia fila, y todos los valores están en celdas separadas. La base de datos no contiene valores nulos. Además, los nombres de las variables son claros, las palabras se separan por puntos, y se utilizan dos puntos para indicar la unidad de medida. Sin embargo, para facilitar la comprensión e interpretación de las variables, se cambiaron los valores de las columnas con valores 0 y 1, a valores lógicos.
 
@@ -118,6 +118,7 @@ Para iniciar a relacionar las variables, es importante entender el contexto gene
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-2.1
 ggplot(df, aes(x = Country, fill = Energy.Type)) +
   geom_bar(position = "fill") +
@@ -163,6 +164,7 @@ En el contexto general, resulta importante notar la evolución que tiene la prod
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-2.3
 ggplot(df, aes(x = Year, y = Production..GWh.)) +
   geom_col(fill = "#9e9ac8") +
@@ -198,6 +200,7 @@ Esperamos que conforme aumenta la producción de energías renovbales, se de una
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-2.5
 ggplot(df, aes(x = Production..GWh., y = CO2.Emissions)) +
   geom_point(color = "#7d8c8e")+
@@ -226,6 +229,7 @@ Con esta base de datos anualizada, la relación entre la producción de energía
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-2.6
 ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
   geom_jitter(color = "#7d8c8e")+
@@ -244,6 +248,7 @@ Con la base de datos anualizada, es posible determinar cierta volatilidad en los
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-2.7
 ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
   geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , color="purple", lwd = 1.25) +
@@ -308,11 +313,13 @@ Complementariamente, se muestran las funciones más comunes de cada variable sel
 summary(most_important)
 ```
 
-## Propuesta Metodológica
+### Propuesta Metodológica
 
 Para realizar el análisis de datos, se utilizará la regresión lineal, el promedio, funciones para ordenar datos, la función `filter()` para filtrar los datos según los requerimientos, diferentes gráficos para mejor visualización de datos, algoritmos para anualizar los datos. En los gráficos, se procura utilizar gráficos que puedan relacionar las variables entre ellas, así como utilizar el mismo tipo de gráfico para varias variables, con el fin de hacerlos fácilmente comparables. De igual manera, se realizarán diversos tipos de gráfico para encontrar el tipo de gráfico que mejor se ajuste a los datos. En cuanto a la anualización de datos, se busca juntar los datos por el tipo de energía. Así, quedará solo una fila con cada tipo de energía en los países, por año; esto con el fin de poder diferenciar los datos entre ellos, minimizar la cantidad de datos analizados, y facilitar la realización de gráficos. Para facilitar la realización de los gráficos, se anualizaron algunos de los valores de la siguiente manera:
 
-```{r warning=FALSE}
+```{r}
+#| messages: FALSE
+#| warnings: FALSE
 annual <- df %>% group_by(Year, Country) %>% summarise(avg_electricity_price = mean(Electricity.Prices), avg_production = sum(Production..GWh.), avg_investment = sum(Investments..USD.), avg_CO2_emissions = mean(CO2.Emissions))
 annual
 ```
@@ -427,6 +434,7 @@ Y los ya insertados, generados también con datos anualizados:
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
   geom_jitter(color = "#7d8c8e")+
   labs(
@@ -441,6 +449,7 @@ ggplot(annual, aes(x = avg_production, y = avg_CO2_emissions)) +
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
+#| fig-height: 5
 #| fig-width: 8
 ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
   geom_segment( aes(x=Year, xend=Year, y=0, yend=avg_electricity_price) , color="purple", lwd = 1.25) +
@@ -472,7 +481,7 @@ ggplot(annual, aes(x=Year, y=avg_electricity_price)) +
 
 ## Fichas de Resultados
 
-### Datos anualizados {.unnumbered}
+### Datos anualizados
 
 -   **Nombre del hallazgo:** Gráficos con datos anualizados
 -   **Resumen en una oración:** Los datos anualizados permiten realizar gráficos más entendibles y fácilmente interpretables

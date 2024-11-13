@@ -1,11 +1,9 @@
 ---
 title: "Bitácora 3"
 author: "Paola Espinoza Hernández; Gabriel Sanabria Alvarado"
-format: pdf
+format: html
 output_dir: "docs"
 editor: visual
-nocite: |
-  @*
 ---
 
 ### Setup {.hidden}
@@ -76,6 +74,7 @@ Dados ya los hallazgos anteriores, resulta interesante analizar el Intercambio E
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-3.1
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
@@ -97,14 +96,14 @@ Mientras que la siguiente figura separa esta información por años, con el fin 
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
-#| fig-width: 8
-#| fig-height: 15
+#| fig-width: 15
+#| fig-height: 20
 #| label: fig-3.2
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
            stat = "identity",
            position = position_dodge()) +
-  facet_wrap(~Year, ncol = 3)+
+  facet_wrap(~Year, ncol = 4)+
   labs(title = "Intercambio Energético Anual",
        y = "",
        x = "País",
@@ -112,9 +111,10 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
   scale_fill_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
-  theme_cowplot()+
+  theme_cowplot(font_size = 18)+
   theme(legend.position = "top",
-        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        legend.text = element_text(size = 15))
 ```
 
 Si bien los gráficos anteriores brindan una idea de cuánta energía se importa o exporta, resulta también interesante ver la relación entre producción y el Intercambio Energético. Dado que el Intercambio Energético se divide en importaciones y exportaciones, esta división debe estar reflejada en los gráficos.
@@ -124,6 +124,7 @@ Si bien los gráficos anteriores brindan una idea de cuánta energía se importa
 #| warnings: FALSE
 #| label: fig-3.3
 #| fig-width: 8
+#| fig-height: 5
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
   facet_wrap(~Energy.Flow.Type)+
@@ -141,12 +142,12 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
-#| fig-width: 8
-#| fig-height: 15
+#| fig-width: 15
+#| fig-height: 20
 #| label: fig-3.4
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
-  facet_wrap(Country~Energy.Flow.Type, ncol = 2)+
+  facet_wrap(Country~Energy.Flow.Type, ncol = 4)+
   labs(title = "Relación Producción e Intercambio Energético",
        subtitle = "Importaciones y Exportaciones",
        x = "Producción",
@@ -155,8 +156,10 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
   scale_color_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
-  theme_cowplot()+
-  theme(legend.position = "top")
+  theme_cowplot(font_size = 18)+
+  theme(legend.position = "top",
+        legend.text = element_text(size = 15),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
 Los gráficos reflejan que tanto las importaciones como las exportaciones aumentan conforme aumenta la producción.
@@ -165,6 +168,7 @@ Los gráficos reflejan que tanto las importaciones como las exportaciones aument
 #| messages: FALSE
 #| warnings: FALSE
 #| label: fig-3.5
+#| fig-height: 5
 data %>% 
   ggplot(aes(x = Electricity.Prices))+
   geom_density()+
@@ -206,6 +210,7 @@ data %>%
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-3.7
 data %>% 
   ggplot(aes(x = Electricity.Prices))+
@@ -242,12 +247,12 @@ ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
-#| fig-width: 8
-#| fig-height: 35
+#| fig-width: 15
+#| fig-height: 20
 #| label: fig-3.9
 data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_density()+
-  facet_wrap(Year~Renewable.Energy.Education.Programs, ncol = 2)+
+  facet_wrap(Year~Renewable.Energy.Education.Programs, ncol = 4)+
    scale_fill_manual(name="", 
                     labels = c("Con", "Sin"), 
                     values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
@@ -256,17 +261,19 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
        x = "Conciencia pública",
        y = "Densidad",
        caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
-  theme_cowplot()+
+  theme_cowplot(font_size = 18)+
   theme( 
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank(),
-        legend.position = "none")
+        legend.position = "none",
+        legend.text = element_text(size = 15))
 ```
 
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-3.10
 data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_density()+
@@ -306,6 +313,7 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-3.12
 ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.logical(Renewable.Energy.Education.Programs)))+
@@ -326,7 +334,7 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
 ```{r}
 #| messages: FALSE
 #| warnings: FALSE
-#| #| fig-width: 12
+#| fig-width: 12
 #| fig-height: 5
 #| label: fig-3.13
 data %>% 
@@ -349,6 +357,8 @@ data %>%
 #| messages: FALSE
 #| warnings: FALSE
 #| label: fig-3.14
+#| fig-width: 8
+#| fig-height: 5
 ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = Energy.Type)) +
   scale_color_brewer(type = "seq", palette = 4)+
@@ -366,6 +376,7 @@ ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-3.15
 ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.factor(Government.Policies)))+
@@ -385,6 +396,7 @@ ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-3.16
 ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.factor(Government.Policies)))+
@@ -403,6 +415,7 @@ ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
+#| fig-height: 5
 #| label: fig-3.17
 p <- ggplot(data, aes(x = R.D.Expenditure, y = Investments..USD.))+
   geom_point(aes(color = as.factor(Government.Policies)))+
@@ -421,7 +434,7 @@ ggMarginal(p, type = "densigram", fill = "purple")
 
 ### Justificación modelo seleccionado
 
-**Pregunta de investigación:** \* ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
+**Pregunta de investigación:** ¿Qué cambios ambientales y socioeconómicos produce la instauración de la energía renovable en los países?
 
 Para responder la pregunta de investigación, el objetivo es relacionar de manera gráfica diversas variables analizadas. Así, se utiliza principalmente el gráfico de dispersión,puesto que estos permiten ubicar cada dato, y visualizar una cierta tendencia. En particular, permite dividir los datos en otras categorías, de modo que se diferencie la relación entre las variables dependiendo del grupo al que pertenecen estos datos.
 

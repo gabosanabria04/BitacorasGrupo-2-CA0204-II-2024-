@@ -6,7 +6,7 @@ output_dir: "docs"
 editor: visual
 ---
 
-# Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables {.unnumbered}
+## Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables {.unnumbered}
 
 ## Comandos de Git
 
@@ -382,9 +382,11 @@ Las comparaciones entre países puede verse afectadas por el contexto del país,
 
 ### UVE de Gowin
 
-::: {#fig-uve-gowin .figure}
-![V de Gowin: Energía del Futuro](images/v_Gowin_B4.png){width="100%"}
-:::
+<div>
+
+![V de Gowin: Energía del Futuro](images\v_Gowin_B4.png){fig-align="center" width="100%"}
+
+</div>
 
 ## Parte de Escritura
 
@@ -403,29 +405,3 @@ Si bien las energías renovables no garantizan por sí mismas un futuro sostenib
 Para detallar el problema de una forma clara, es importante señalar cómo estas ventajas de la energía renovable pueden ser utilizadas para descabezar las barreras presentes, como lo son los costos iniciales de inversión y las limitaciones tecnológicas en algunas regiones. Este enfásis ayuda que la pregunta escogida se contextualice dentro del marco de desarrollo sostenible y transición energética que se requiere para enfrentar los desafíos globales actuales.
 
 Este enfoque pretende crear una estructura más clara que facilite responder a la pregunta inicial, dando uso a información basada en las fuentes citadas, y al mismo tiempo constituye una base sólida para el desarrollo de una argumentación más especificada. Al emplear datos relevantes y evidencia provenientes de organizaciones reconocidas, como las Naciones Unidas y estudios especializados en energías renovables, se garantiza que la discusión esté fundamentada en un conocimiento actualizado y confiable. Además, integrar diferentes perspectivas, como los beneficios ambientales, económicos y sociales, así como los desafíos y las barreras para la implementación de energías renovables, ofrece una punto de vista integral del problema que se espera estudiar. Esta metodología no solo facilita la identificación de las áreas clave donde se requiere cierto tipo de arbitraje, sino que también permite considerar soluciones innovadoras y prácticas recomendadas que han sido valiosas en otros contextos, enriqueciendo el análisis con ejemplos concretos. El uso de una base de investigación sólida brinda un apoyo a la construcción de un argumento persuasivo y bien fundamentado, que puede guiar la toma de decisiones políticas y la implementación de estrategias efectivas para promover la transición hacia un modelo energético más sostenible.
-
-### Revisión Bibliográfica
-
-Agencia Internacional de Energías Renovables (IRENA). (2021). *Renewable Energy Statistics 2021*. https://www.irena.org/Statistics
-
-Bataineh, M. J., Marcuello, C., & Sánchez-Sellero, P. (2023). Toward sustainability: the role of social entrepreneurship in creating social-economic value in renewable energy social enterprises. *REVESCO : Revista De Estudios Cooperativos, 143*. https://doi.org/10.5209/reve.85561
-
-Casamitjana, M. (2017). Energías renovables. Revista Cintex, 22(1), 7-9. https://proquest.proxyucr.elogim.com/scholarly-journals/energías-renovables/docview/2676149315/se-2
-
-Cordero Gutiérrez, A. (2015). *Análisis de viabilidad ambiental del uso de energías renovables en Costa Rica: Estudio de caso de la energía eólica, la hidroeléctrica y la geotérmica*. https://d1wqtxts1xzle7.cloudfront.net/41694115/Investigacion_p.\_Ecologicos2-libre.pdf
-
-Esteves, A. M., Franks, D. M., & Vanclay, F. (2012). Social impact assessment: the state of the art. *Impact Assessment and Project Appraisal, 30*(1), 34-42. https://doi.org/10.1080/14615517.2012.660356
-
-Holme, J., Pockrandt, M., Köhler, D., Noll, M., Zaytsev, Y., Attia, S., & Biurrun, I. (2023). *Effects of plant invaders on native vegetation communities and ecosystem properties across Europe: A systematic review and meta-analysis. PLOS ONE, 18*(8), e0299807. https://doi.org/10.1371/journal.pone.0299807
-
-Peake, S., & Boyle, G. (2018). *Renewable energy: Power for a sustainable future (4th ed.)*. Oxford University Press.
-
-Pou, M. Á. C., & Simón, J. M. G. (2017). Energías renovables y desarrollo económico. Un análisis para España y las grandes economías europeas. \[Renewable Energy and Economic Development. An Analysis for Spain and the Biggest European Economies\] *El Trimestre Económico, 84*(3), 571-609. https://doi.org/10.20430/ete.v84i335.508
-
-Requejo Liberal, J. (2012). Energía renovable: un nuevo principio de autosuficiencia conectada. Ciudad Y Territorio Estudios Territoriales, 44(171), 113–125. https://recyt.fecyt.es/index.php/CyTET/article/view/76112
-
-Serrano, J. (2022, Apr 24). Hacia un futuro con energía limpia y renovable. Actualidad Economica, , 12. https://proquest.proxyucr.elogim.com/magazines/hacia-un-futuro-con-energía-limpia-y-renovable/docview/2653653881/se-2
-
-United Nations. (s.f.). *What is renewable energy?* https://www.un.org/en/climatechange/what-is-renewable-energy#:\~:text=Renewable%20energy%20is%20energy%20derived,plentiful%20and%20all%20around%20us.
-
-Vega de Kuyper, J.C. & Ramírez Morales, S. (2014). *Fuentes de energía, renovables y no renovables*. Aplicaciones.
