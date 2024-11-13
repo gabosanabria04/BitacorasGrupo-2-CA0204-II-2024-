@@ -1,7 +1,7 @@
 ---
 title: "Bitácora 3"
 author: "Paola Espinoza Hernández; Gabriel Sanabria Alvarado"
-format: html
+format: pdf
 output_dir: "docs"
 editor: visual
 nocite: |
@@ -98,13 +98,13 @@ Mientras que la siguiente figura separa esta información por años, con el fin 
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
-#| fig-height: 25
+#| fig-height: 15
 #| label: fig-3.2
 ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
            stat = "identity",
            position = position_dodge()) +
-  facet_wrap(~Year, ncol = 2)+
+  facet_wrap(~Year, ncol = 3)+
   labs(title = "Intercambio Energético Anual",
        y = "",
        x = "País",
@@ -123,6 +123,7 @@ Si bien los gráficos anteriores brindan una idea de cuánta energía se importa
 #| messages: FALSE
 #| warnings: FALSE
 #| label: fig-3.3
+#| fig-width: 8
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
   facet_wrap(~Energy.Flow.Type)+
