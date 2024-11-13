@@ -391,3 +391,10 @@ Se debe realizar un agradecimiento especial a los compañeros del curso, los cua
 
 ### Referencias
 
+## Changelog
+![Changelog](images/Changelog_b4.png)
+![](images/Changelog_b4_2.png)
+![](images/Changelog_b4_3.png)
+![](images/Changelog_b4_4.png)
+![](images/Changelog_b4_5.png)
+![](images/Changelog_b4_6.png)
