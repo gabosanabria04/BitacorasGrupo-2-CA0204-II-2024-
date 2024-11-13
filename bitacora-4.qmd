@@ -389,7 +389,7 @@ La @fig-3.15 muestra que existe una relación positiva entre el gasto en investi
 
 Se debe realizar un agradecimiento especial a los compañeros del curso, los cuales realizaron una retroalimentación en cada bitácora del proyecto, comentando los aspectos positivos y los aspectos por mejorar de nuestra investigación. Además agradecer al profesor Maikol Solís por estar presente en cada sección del proyecto, además de brindar apoyo en las clases y horas de consulta, recomendando páginas web útiles para una correcta elaboración del proyecto.
 
-### Referencias
+
 
 ## Changelog
 ![Changelog](images/Changelog_b4.png)
@@ -403,3 +403,6 @@ Se debe realizar un agradecimiento especial a los compañeros del curso, los cua
 ## Git summary
 
 ![Git summary](images/Git_summary_b4.png)
+
+## Referencias
+
