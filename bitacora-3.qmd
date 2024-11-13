@@ -70,7 +70,7 @@ En particular, los gráficos de densidad se realizan únicamente con los datos d
 
 ### Análisis Descriptivo
 
-Dados ya los hallazgos anteriores, resulta interesante analizar el flujo energético de los países. Para ello, la siguiente figura representa el total de importaciones, comparado al total de exportaciones, por cada país durante el periodo estudiado, 2000 a 2023.
+Dados ya los hallazgos anteriores, resulta interesante analizar el Intercambio Energético de los países. Para ello, la siguiente figura representa el total de importaciones, comparado al total de exportaciones, por cada país durante el periodo estudiado, 2000 a 2023.
 
 ```{r}
 #| messages: FALSE
@@ -81,15 +81,15 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
   geom_bar(aes(fill = Energy.Flow.Type),
            stat = "identity",
            position = position_dodge()) +
-  labs(title = "Total de Flujo Energético",
+  labs(title = "Total de Intercambio Energético",
        x = "País",
        y = "",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   scale_fill_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
   theme_cowplot()+
-  theme(legend.position = "top")
+  theme(legend.position = "top", axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
 Mientras que la siguiente figura separa esta información por años, con el fin de detectar tendencias.
@@ -105,18 +105,19 @@ ggplot(data, aes(x = Country, y = Energy.Flow)) +
            stat = "identity",
            position = position_dodge()) +
   facet_wrap(~Year, ncol = 2)+
-  labs(title = "Flujo Energético Anual",
+  labs(title = "Intercambio Energético Anual",
        y = "",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       x = "País",
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   scale_fill_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
   theme_cowplot()+
   theme(legend.position = "top",
-        axis.text.x = element_text(angle = 45, vjust=.5, hjust=0.3))
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
-Si bien los gráficos anteriores brindan una idea de cuánta energía se importa o exporta, resulta también interesante ver la relación entre producción y el flujo energético. Dado que el flujo energético se divide en importaciones y exportaciones, esta división debe estar reflejada en los gráficos.
+Si bien los gráficos anteriores brindan una idea de cuánta energía se importa o exporta, resulta también interesante ver la relación entre producción y el Intercambio Energético. Dado que el Intercambio Energético se divide en importaciones y exportaciones, esta división debe estar reflejada en los gráficos.
 
 ```{r}
 #| messages: FALSE
@@ -125,10 +126,10 @@ Si bien los gráficos anteriores brindan una idea de cuánta energía se importa
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
   facet_wrap(~Energy.Flow.Type)+
-  labs(title = "Relación Produccuión y Flujo Energético",
+  labs(title = "Relación Producción e Intercambio Energético",
        x = "Producción",
        y = "",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   scale_color_manual(name = "", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
@@ -145,11 +146,11 @@ ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type
 ggplot(data, aes(x = Total.Production, y = Energy.Flow, color = Energy.Flow.Type))+
   geom_point()+
   facet_wrap(Country~Energy.Flow.Type, ncol = 2)+
-  labs(title = "Relación Producción y Flujo Energético",
+  labs(title = "Relación Producción e Intercambio Energético",
        subtitle = "Importaciones y Exportaciones",
        x = "Producción",
        y = "",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   scale_color_manual(name="", 
                     labels = c("Exportaciones", "Importaciones"), 
                     values = c("Importaciones"="#00ba88", "Exportaciones"="#f8966d"))+
@@ -169,7 +170,7 @@ data %>%
   labs(title = "Concentración Precios Energía",
        x = "Precios",
        y = "Densidad",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   cowplot::theme_minimal_grid()+
   theme( 
         axis.text.y = element_blank(),
@@ -192,7 +193,7 @@ data %>%
        subtitle = "por país",
        x = "Precios",
        y = "Densidad",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme( 
         axis.text.y = element_blank(),
@@ -213,7 +214,7 @@ data %>%
        subtitle = "en relación a políticas de gobierno",
        x = "Precios",
        y = "Densidad",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme( 
         axis.text.y = element_blank(),
@@ -232,7 +233,7 @@ ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
   labs(title = "Producción y Precios de Energia",
        x = "Producción",
        y = "Precios",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme(legend.position = "none")
 ```
@@ -253,7 +254,7 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
        subtitle = "por año",
        x = "Conciencia pública",
        y = "Densidad",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme( 
         axis.text.y = element_blank(),
@@ -265,7 +266,6 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
 #| messages: FALSE
 #| warnings: FALSE
 #| fig-width: 8
-#| fig-height: 25
 #| label: fig-3.10
 data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
   geom_density()+
@@ -276,7 +276,7 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
   labs(title = "Programas educativos y Conciencia pública",
        x = "Conciencia pública",
        y = "Densidad",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme( 
         axis.text.y = element_blank(),
@@ -296,7 +296,7 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
   labs(title = "Producción y Trabajos",
        x = "Producción",
        y = "Trabajos",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme(legend.position = "top")
 ```
@@ -311,11 +311,12 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
   scale_color_manual(name="", 
                     labels = c("Con", "Sin"), 
                     values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
+  scale_x_continuous(breaks = c(0,  150000, 300000, 450000))+
   labs(title = "Producción y Trabajos",
        subtitle= "por programas educativos",
        x = "Producción",
        y = "Trabajos",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   facet_wrap(~Renewable.Energy.Education.Programs)+
   theme_cowplot()+
   theme(legend.position = "none")
@@ -338,7 +339,7 @@ data %>%
        subtitle = "por Programas Educativos",
        x = "Año",
        y = "Trabajos",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme(legend.position = "none")
 ```
@@ -355,7 +356,7 @@ ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
        x = "Patentes",
        y = "Trabajos",
        color = "",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme(legend.position = "top")
 ```
@@ -368,12 +369,13 @@ ggplot(data, aes(x = Renewable.Energy.Patents, y = Renewable.Energy.Jobs))+
 ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.factor(Government.Policies)))+
   facet_wrap(~Government.Policies)+
+  scale_x_continuous(labels = function(x) format(x, scientific = TRUE),  breaks = c(0, 2e+10, 4e+10))+
   labs(title = "Trabajos y Gasto en Investigación",
        subtitle = "Efecto de políticas de gobierno",
        color = "",
        x = "Gasto en Investigación",
        y = "Trabajos",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme(legend.position = "none")
 ```
@@ -386,11 +388,12 @@ ggplot(data, aes(x = R.D.Expenditure, y = Renewable.Energy.Jobs))+
 ggplot(data, aes(x = Investments..USD., y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.factor(Government.Policies)))+
   facet_wrap(~Government.Policies)+  
+    scale_x_continuous(labels = function(x) format(x, scientific = TRUE),  breaks = c(0, 2e+10, 4e+10))+
   labs(title = "Trabajos e Inversión",
        subtitle = "por políticas de gobierno",
        x = "Inversión",
        y = "Trabajos",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme(legend.position = "none")
 ```
@@ -408,7 +411,7 @@ p <- ggplot(data, aes(x = R.D.Expenditure, y = Investments..USD.))+
        color = "",
        x = "Gasto en Investigación",
        y = "Inversión",
-       caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset",
+       caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset",
        tag = "Fig.3.17")+
   theme_cowplot()+
   theme(legend.position = "bottom")
@@ -433,7 +436,7 @@ A pesar de que sea posible visualizar algunas tendencias de cambios ambientales,
 
 ### Fichas de resultados
 
-#### Estabilidad del flujo energético
+#### Estabilidad del Intercambio Energético
 
 **Nombre de su hallazgo/resultado:** Estabilidad de Importaciones y Exportaciones
 
@@ -443,9 +446,9 @@ A pesar de que sea posible visualizar algunas tendencias de cambios ambientales,
 
 **Problemas o posibles desafíos:** Dependiendo de la distribución a lo largo de los años, podría representar mejora o empeoramiento de la independencia energética. La necesidad de energía importada puede deberse a factores ajenos a esta investigación.
 
-**Resumen en un párrafo:** Al analizar el flujo energético de los países durante todo el periodo, el la @fig-3.1, se observa que la diferencia entre las entradas y salidas de energía no es mucha. Las mayores diferencias se presentan en Canadá y Japón. Sin embargo, al visualizar los datos por año, en la @fig-3.2, no se observa esta estabilidad, salvo en algunos años. En particular, al enfocarse en los años recientes, se observa una disminución en ambas variables, lo que podría explicarse por el aumento en la producción, así como la tedencia a la independencia energética.
+**Resumen en un párrafo:** Al analizar el Intercambio Energético de los países durante todo el periodo, el la @fig-3.1, se observa que la diferencia entre las entradas y salidas de energía no es mucha. Las mayores diferencias se presentan en Canadá y Japón. Sin embargo, al visualizar los datos por año, en la @fig-3.2, no se observa esta estabilidad, salvo en algunos años. En particular, al enfocarse en los años recientes, se observa una disminución en ambas variables, lo que podría explicarse por el aumento en la producción, así como la tedencia a la independencia energética.
 
-#### Producción y Flujo Energético
+#### Producción e Intercambio Energético
 
 **Nombre de su hallazgo/resultado:** Relación positiva entre producción, importaciones y exportaciones
 
@@ -531,28 +534,28 @@ A pesar de que sea posible visualizar algunas tendencias de cambios ambientales,
 
 ### Ordenamiento de los elementos del reporte
 
-| Primarios                                                                                                        | Secundarios                                                                                                |
+| Primarios | Secundarios |
 |------------------------------------|------------------------------------|
-| Teoría A: Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global.                 | Teoría B: Descripción de avances tecnológicos en la última década del siglo 20.                            |
-| Idea A: Las energías renovables podrían reducir las emisiones de CO₂.                                            | Idea B: Relación entre los indicadores de bienestar social y los precios de la electricidad según el país. |
-| Resultado A: Disminución de las emisiones de CO_2 por la instauración de las energías renovables a nivel global. | Resultado B: Aumento de precios de la electricidad en los últimos años.                                    |
-| Teoría C: Análisis del flujo energético como proporción de la producción total.                                  | Resultado D: Energías renovables más utilizadas por cada país.                                             |
-| Idea C: El flujo energético varía dependiendo de la producción total de cada país.                               | Teoría D: Análisis de la relación entre la densidad de la energía y sus precios.                           |
-| Resultado E: Mayor producción, menor fuerza de trabajo.                                                          | Resultado F: Los programas de educación sobre energía renovable aumentan la consciencia pública.           |
-| Resultado G: Estabilidad de Importaciones y Exportaciones                                                        | Resultado H: Relación entre número de patentes y empleos del sector energético                             |
-| Resultado I: Relación positiva entre producción, importaciones y exportaciones                                   | Resultado J: Comportamiento similar del gasto en investigación y la inversión                              |
-| Resultado K: Concentración de los precios de la energía                                                          |                                                                                                            |
-| Resultado L: La influencia de la producción en los precios de la energía.                                        |                                                                                                            |
-|                                                                                                                  |                                                                                                            |
-| Resultado M: Relación positiva entre producción y trabajos en sector de energía renovable                        |                                                                                                            |
-|                                                                                                                  |                                                                                                            |
-|                                                                                                                  |                                                                                                            |
+| Teoría A: Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. | Teoría B: Descripción de avances tecnológicos en la última década del siglo 20. |
+| Idea A: Las energías renovables podrían reducir las emisiones de CO₂. | Idea B: Relación entre los indicadores de bienestar social y los precios de la electricidad según el país. |
+| Resultado A: Disminución de las emisiones de CO_2 por la instauración de las energías renovables a nivel global. | Resultado B: Aumento de precios de la electricidad en los últimos años. |
+| Teoría C: Análisis del Intercambio Energético como proporción de la producción total. | Resultado D: Energías renovables más utilizadas por cada país. |
+| Idea C: El Intercambio Energético varía dependiendo de la producción total de cada país. | Teoría D: Análisis de la relación entre la densidad de la energía y sus precios. |
+| Resultado E: Mayor producción, menor fuerza de trabajo. | Resultado F: Los programas de educación sobre energía renovable aumentan la consciencia pública. |
+| Resultado G: Estabilidad de Importaciones y Exportaciones | Resultado H: Relación entre número de patentes y empleos del sector energético |
+| Resultado I: Relación positiva entre producción, importaciones y exportaciones | Resultado J: Comportamiento similar del gasto en investigación y la inversión |
+| Resultado K: Concentración de los precios de la energía |  |
+| Resultado L: La influencia de la producción en los precios de la energía. |  |
+|  |  |
+| Resultado M: Relación positiva entre producción y trabajos en sector de energía renovable |  |
+|  |  |
+|  |  |
 
-| Sección          | Temas a tratar                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|-------------------------|----------------------------------------------|
-| **Introducción** | 1\. La energía renovable como nuevo principio de autosuficiencia conectada.(secundario) <br> 2. Las energías renovables podrían reducir las emisiones de CO_2. (Primario) <br> 3. La instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. [@Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024] (Primario) <br> 4. Estrategias para la implementación de las energías renovables [@CasólaLaura2018Enec]. (Secundario) <br> 5. Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. (Primario) <br> 6. Transición energética y la electrificación sostenible. [@SerranoJavier2022Hufc] (Secundario) <br> 7. Energías renovables y la economía en Europa. [@CaraballoPouMaríaÁngeles2017Eryd] (Secundario) <br> 8. Variaciones en la cantidad de las distintas energías renovables según el país (secundario) <br> 9. Relación entre los indicadores de bienestar social y los precios de la electricidad según el país (secundario) <br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| **Metodología**  | 1\. Detalle de los datos: La tabla incluye datos de países y años para comparar la producción, emisión de CO₂ y capacidad instalada de fuentes de energía solar, geotérmica, biomasa, eólica e hidroeléctrica, considerando también alianzas público-privadas y cooperación regional para entender mejor el impacto de la inversión. en el sector. La población se utiliza para analizar el PIB y el consumo energético, y la autosuficiencia energética se examina mediante importaciones y exportaciones. Se incluyen variables de recursos naturales, como temperatura promedio, precipitación, irradiación solar, velocidad del viento, biomasa disponible, potencial hídrico y geotérmico, junto con desastres naturales, capacidad de almacenamiento y liberalización de mercado. Para el impacto social, se analizan precios de electricidad, subsidios, conciencia pública, urbanización, educación, programas de formación sobre energía renovable, percepción de corrupción y calidad regulatoria. El rol del gobierno se revisa en políticas públicas, programas de eficiencia energética, objetivos en renovables, acuerdos energéticos, tarifas, incentivos a la exportación, e inversión en I+D, además de la cantidad de instituciones, innovación, conferencias y publicaciones en el sector. Se incluye también la estabilidad política, libertad económica y facilidad para hacer negocios, y se investigan las tendencias en la fuerza laboral en energías renovables. (Primario) <br> 2. Método A: Gráficos de dispersión (Primario) <br> 3. Método B: Comparaciones varias (Secundario) <br> 4. Diagnóstico del modelo: Se reordenó la base de datos según categorías relevantes a la investigación y se anualizaron los datos, consolidando las columnas por país, año y tipo de energía. Para facilitar su carga, la ruta de acceso parte desde la carpeta del repositorio, permitiendo acceder a la base de datos al clonar el repositorio. Además, se unificaron las variables de importación y exportación de energía en una sola variable, Energy.Flow , clasificada en Energy.Flow.Type como importación o exportación. (Primario) |
-| **Resultados**   | 1\. Aumento en la producción de energías renovables. (Primario) <br> 2. Mayor producción, menos CO2 (Primario) <br> 3. Cambios mínimos en los precios de electricidad. (secundario) <br> 4. Mayor producción, menor fuerza de trabajo. (primario) <br> 5. Estabilidad de Importaciones y Exportaciones (primario) <br> 6. Relación positiva entre producción, importaciones y exportaciones (primario) <br> 7. Concentración de los precios de la energía (primario) <br> 8. La influencia de la producción en los precios de la energía. (primario) <br> 9. Los programas de educación sobre energía renovable aumentan la consciencia pública. (secundaria) <br> 10. Relación positiva entre producción y trabajos en sector de energía renovable (primario). <br> 11. Relación entre número de patentes y empleos del sector energético (secundario). <br> 12. Comportamiento similar del gasto en investigación y la inversión (primario)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Sección | Temas a tratar |
+|--------------------------|----------------------------------------------|
+| **Introducción** | 1\. La energía renovable como nuevo principio de autosuficiencia conectada.(secundario) <br> 2. Las energías renovables podrían reducir las emisiones de CO_2. (Primario) <br> 3. La instauración de energías renovables influye directamente en las emisiones de CO2 en 138 países durante el período de 1995 a 2021. [@Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024] (Primario) <br> 4. Estrategias para la implementación de las energías renovables [@CasólaLaura2018Enec]. (Secundario) <br> 5. Impacto de las energías renovables en la reducción de emisiones de CO₂ a nivel global. (Primario) <br> 6. Transición energética y la electrificación sostenible. [@SerranoJavier2022Hufc] (Secundario) <br> 7. Energías renovables y la economía en Europa. [@CaraballoPouMaríaÁngeles2017Eryd] (Secundario) <br> 8. Variaciones en la cantidad de las distintas energías renovables según el país (secundario) <br> 9. Relación entre los indicadores de bienestar social y los precios de la electricidad según el país (secundario) <br> |
+| **Metodología** | 1\. Detalle de los datos: La tabla incluye datos de países y años para comparar la producción, emisión de CO₂ y capacidad instalada de fuentes de energía solar, geotérmica, biomasa, eólica e hidroeléctrica, considerando también alianzas público-privadas y cooperación regional para entender mejor el impacto de la inversión. en el sector. La población se utiliza para analizar el PIB y el consumo energético, y la autosuficiencia energética se examina mediante importaciones y exportaciones. Se incluyen variables de recursos naturales, como temperatura promedio, precipitación, irradiación solar, velocidad del viento, biomasa disponible, potencial hídrico y geotérmico, junto con desastres naturales, capacidad de almacenamiento y liberalización de mercado. Para el impacto social, se analizan precios de electricidad, subsidios, conciencia pública, urbanización, educación, programas de formación sobre energía renovable, percepción de corrupción y calidad regulatoria. El rol del gobierno se revisa en políticas públicas, programas de eficiencia energética, objetivos en renovables, acuerdos energéticos, tarifas, incentivos a la exportación, e inversión en I+D, además de la cantidad de instituciones, innovación, conferencias y publicaciones en el sector. Se incluye también la estabilidad política, libertad económica y facilidad para hacer negocios, y se investigan las tendencias en la fuerza laboral en energías renovables. (Primario) <br> 2. Método A: Gráficos de dispersión (Primario) <br> 3. Método B: Comparaciones varias (Secundario) <br> 4. Diagnóstico del modelo: Se reordenó la base de datos según categorías relevantes a la investigación y se anualizaron los datos, consolidando las columnas por país, año y tipo de energía. Para facilitar su carga, la ruta de acceso parte desde la carpeta del repositorio, permitiendo acceder a la base de datos al clonar el repositorio. Además, se unificaron las variables de importación y exportación de energía en una sola variable, Energy.Flow , clasificada en Energy.Flow.Type como importación o exportación. (Primario) |
+| **Resultados** | 1\. Aumento en la producción de energías renovables. (Primario) <br> 2. Mayor producción, menos CO2 (Primario) <br> 3. Cambios mínimos en los precios de electricidad. (secundario) <br> 4. Mayor producción, menor fuerza de trabajo. (primario) <br> 5. Estabilidad de Importaciones y Exportaciones (primario) <br> 6. Relación positiva entre producción, importaciones y exportaciones (primario) <br> 7. Concentración de los precios de la energía (primario) <br> 8. La influencia de la producción en los precios de la energía. (primario) <br> 9. Los programas de educación sobre energía renovable aumentan la consciencia pública. (secundaria) <br> 10. Relación positiva entre producción y trabajos en sector de energía renovable (primario). <br> 11. Relación entre número de patentes y empleos del sector energético (secundario). <br> 12. Comportamiento similar del gasto en investigación y la inversión (primario) |
 
 ## Parte de escritura
 
@@ -564,11 +567,11 @@ El estudio de Attanayake [-@Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapiti
 
 Existen estudios que respaldan la información del texto anterior, como lo es "Energía renovable: un nuevo principio de autosuficiencia conectada. Ciudad Y Territorio Estudios Territoriales" de Requejo Liberal [-@RequejoLiberalJuan2012Er:u], "la generación de energía eléctrica procedente de fuentes fósiles y nucleares es una actividad contaminante, que pone en peligro el planeta, que tiene impacto sobre el medio ambiente local, que tiene riesgos no bien determinados y que generan dependencia y desequilibrios en la economía nacional" [@RequejoLiberalJuan2012Er:u, pp. 114], el cual confirma el hecho de que la implementación de energías renovables puede ser un gran apoyo para el bienestar social y económico de distintas naciones. El estudio de Attanayake [-@Attanayake_Wickramage_Samarasinghe_Ranmini_Ehalapitiya_Jayathilaka_Yapa_2024] concluye que casi todos los países destacan el hecho de que si la energía renovable se incrementa, se lograría reducir la cantidad de emisiones de CO2. El cuál recalca que las economías de desarrollo debería de dar enfásis en la inversión en energías renovables y reducir el uso de combustibles fósiles, y además, destaca que los gobiernos deberían de implementar políticas de energía renovable, con el fin de garantizar un crecimiento económico.
 
-El documento realiza un estudio esencial para el entendimiento de la importancia de la implementación de energías renovables para el bienestar social, económico y ambiental. Destacando como la mayoría de países, a excepción de Canadá, el cual un aumento del 1% en las fuentes de energía renovables da como resultado un incremento de 10,83 millones de toneladas en las emisiones de CO2, afirman que su inversión puede ser beneficiosa para su estabilidad general. Lo cual es muy importante con respecto a otros estudios que se centraban en algún país en específico. Además, la observación la colaboración de distintos gobiernos es vital, ya que reconoce la naturaleza global del cambio climático y la necesidad de soluciones coordinadas. Esta observación conjunta y propositiva fortalece la utilidad práctica del estudio para guiar políticas energéticas hacia un desarrollo más sostenible.
+El documento realiza un estudio esencial para el entendimiento de la importancia de la implementación de energías renovables para el bienestar social, económico y ambiental. Destacando como la mayoría de países, a excepción de Canadá, el cual un aumento del 1% en las fuentes de energía renovables da como resultado un incremento de 10,83 millones de toneladas en las emisiones de CO2, afirman que su inversión puede ser beneficiosa para su estabilidad general. Lo cual es mue Importante con respecto a otros estudios que se centraban en algún país en específico. Además, la observación la colaboración de distintos gobiernos es vital, ya que reconoce la naturaleza global del cambio climático y la necesidad de soluciones coordinadas. Esta observación conjunta y propositiva fortalece la utilidad práctica del estudio para guiar políticas energéticas hacia un desarrollo más sostenible.
 
-Según Allan Cordero \[\@-Gutiérrez_2015\]: "El mundo se encuentra en una encrucijada trascendental para el futuro de la energía". Con el objetivo de reducir el uso de combustibles fósiles y alcanzar la soberanía energética, Costa Rica inició su proceso hacia un modelo de desarrollo autosostenible. La energía hidráulica causa deforestación y obstaculiza el camino de los peces, lo que la descarta como una solución viable a largo plazo. La energía eólica, a pesar de la posibilidad de afectar la calidad de vida de las aves y modificar, aunque muy levemente, la fuerza o dirección del viento, destaca como una opción viable en Costa Rica. Esta energía permite la eliminación de emisiones de gases de efecto invernadero y contribuye a la independencia energética. Por ello, determinar la ubicación de los parques eólicos se ha vuelto una prioridad para las autoridades a cargo.
+Según Allan Cordero [-@Gutiérrez_2015]: "El mundo se encuentra en una encrucijada trascendental para el futuro de la energía". Con el objetivo de reducir el uso de combustibles fósiles y alcanzar la soberanía energética, Costa Rica inició su proceso hacia un modelo de desarrollo autosostenible. La energía hidráulica causa deforestación y obstaculiza el camino de los peces, lo que la descarta como una solución viable a largo plazo. La energía eólica, a pesar de la posibilidad de afectar la calidad de vida de las aves y modificar, aunque muy levemente, la fuerza o dirección del viento, destaca como una opción viable en Costa Rica. Esta energía permite la eliminación de emisiones de gases de efecto invernadero y contribuye a la independencia energética. Por ello, determinar la ubicación de los parques eólicos se ha vuelto una prioridad para las autoridades a cargo.
 
-Esta investigación tiene gran relación con lo propuesto por Laura Casola y Alexander Freier en "El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil" \[\@-CasólaLaura2018Enec\], pues, mientras Costa Rica prioriza a la energía eólica como una solución viable, Argentina y Brasil examinan sus diversas estrategias en relación con el enfoque de Mercosur, el cual es un bloque económico y político regional en Suramérica, incorporado en 1991 con el Tratado de Asunción. en el cual están dentro países como Argentina, Brasil, Paraguay y Uruguay. Sin embargo, cada conjunto está en busca de un poder energético, cada uno con sus distintos planes. Ambas investigaciones reconocen los impactos ambientales asociados con diferentes fuentes de energía. En el caso del artículo de Cordero \[\@-Gutiérrez_2015\], recalca los efectos negativos de la energía hidráulica, como la deforestación y la afectación a los peces, mientras que el documento de Casola y Freier [-@CasólaLaura2018Enec] habla de problemas ambientales en Brasil, como la quema de bosques y la deforestación, relacionados con el cambio climático. Ambos hacen un llamado a encontrar alternativas más sostenibles. Ambas investigaciones concluyen que existe cierta urgencia de migrar hacia el uso de energías limpias, a pesar de que esta implementación podría tener impactos negativos en temas de económicos, debido al gran costo de las distintas instalaciones, además del posible daño a la fauna, su implementación logrará beneficiar al bienestar social, ambiental y económico a largo plazo. En la bitácora 2 se puede apreciar en base a la @fig-2.1, como los distintos países priorizan las distintas energías eólicas, esto debido a las condiciones climáticas de cada zona de las regiones.
+Esta investigación tiene gran relación con lo propuesto por Laura Casola y Alexander Freier en "El nexo entre cambio climático y energía renovable en el Mercosur. Un análisis comparativo de las legislaciones de Argentina y Brasil" [-@CasólaLaura2018Enec], pues, mientras Costa Rica prioriza a la energía eólica como una solución viable, Argentina y Brasil examinan sus diversas estrategias en relación con el enfoque de Mercosur, el cual es un bloque económico y político regional en Suramérica, incorporado en 1991 con el Tratado de Asunción. en el cual están dentro países como Argentina, Brasil, Paraguay y Uruguay. Sin embargo, cada conjunto está en busca de un poder energético, cada uno con sus distintos planes. Ambas investigaciones reconocen los impactos ambientales asociados con diferentes fuentes de energía. En el caso del artículo de Cordero [-@Gutiérrez_2015], recalca los efectos negativos de la energía hidráulica, como la deforestación y la afectación a los peces, mientras que el documento de Casola y Freier [-@CasólaLaura2018Enec] habla de problemas ambientales en Brasil, como la quema de bosques y la deforestación, relacionados con el cambio climático. Ambos hacen un llamado a encontrar alternativas más sostenibles. Ambas investigaciones concluyen que existe cierta urgencia de migrar hacia el uso de energías limpias, a pesar de que esta implementación podría tener impactos negativos en temas de económicos, debido al gran costo de las distintas instalaciones, además del posible daño a la fauna, su implementación logrará beneficiar al bienestar social, ambiental y económico a largo plazo. En la bitácora 2 se puede apreciar en base a la @fig-2.1, como los distintos países priorizan las distintas energías eólicas, esto debido a las condiciones climáticas de cada zona de las regiones.
 
 Otro estudio relacionado es el realizado por Vega de Kuyper, J.C. y Ramírez Morales, S [-@JuanCarlosVegaDeKuyper2014Fder] llamado “Fuentes de energía, renovables y no renovables. Aplicaciones.” El documento se basa en mostrar una visión integral sobre las fuentes de energía renovables y no renovables, explorando su relevancia y aplicaciones en América Latina, especialmente en países como México, Argentina, Chile y Colombia. “Con seguridad el siglo XXI… profundizará en la investigación de la materia, desde lo microcósmico a la astronáutica y avanzando en temas energéticos tales como la fusión nuclear, las energías renovables o el despliegue del hidrógeno como una fuente energética” [@JuanCarlosVegaDeKuyper2014Fder]. Con un enfoque pedagógico, los autores proporcionan un equilibrio entre teoría y práctica, explicando los principios de generación y almacenamiento de energía, además de introducir el concepto de eficiencia energética como una herramienta clave para el futuro. Se presentan ejemplos actualizados de proyectos de energías renovables en la región, incluyendo energías como la solar o la geotérmica, así como un análisis de las barreras y oportunidades para su implementación.
 
@@ -578,7 +581,7 @@ Tanto en los datos originales como en los anualizados de nuestro proyecto, es po
 
 El artículo de Abay Analistas Económicos y Sociales [@Analistas_2014] estudia la pobreza energética, que se refiere a los hogares incapaces de pagar servicios eléctricos que satisfagan sus necesidades o que destinan una cantidad excesiva a este gasto, es causada por factores como bajos ingresos, pobre acceso a la energía, ineficiencia energética o precios altos. Las consecuencias de esta pobreza abarcan tanto riesgos para la salud física como para la salud mental, además de afectar el futuro de los niños. En España, la pobreza energética va en aumento, lo que resalta la necesidad de soluciones efectivas. Por ello, el desarrollo de energías renovables es crucial, ya que disminuirá el precio promedio de la electricidad al reducir los precios mayoristas, así como los costes de inversión y el desarrollo tecnológico. Por lo tanto, la energía renovable representa un factor importante en la sostenibilidad social y económica, pues el coste marginal nulo de los recursos utilizados se refleja en un menor coste energético y, en consecuencia, en una mayor accesibilidad para la población. Un estudio relacionado es el elaborado por Agencia Internacional de Energías Renovables (IRENA) llamado "Renewable Energy Statistics 2021", el cual muestra datos específicos importantes para el seguimiento de la inauguración de nuevas políticas e implementaciones de energías renovables. El artículo señala el crecimiento considerable en los años 2018 y 2019, especialmente la energía solar y eólica. Este documento se relaciona con el realizado por Abay pues da una visión realista de como y cuanto se han invertido en energía renovable en los últimos años, mostrando como continentes como Asia, dedicen implementar constantemente de este tipo de energías para un mejoramiento económico y ambiental. Este aumento en la producción también ha elevado la proporción de energía total correspondiente a fuentes renovables.
 
-Al analizar el flujo energético de los países durante todo el periodo, el la @fig-3.1, se observa que la diferencia entre las entradas y salidas de energía no es mucha. Las mayores diferencias se presentan en Canadá y Japón. Sin embargo, al visualizar los datos por año, en la @fig-3.2, no se observa esta estabilidad, salvo en algunos años. En particular, al enfocarse en los años recientes, se observa una disminución en ambas variables, lo que podría explicarse por el aumento en la producción, así como la tedencia a la independencia energética.
+Al analizar el Intercambio Energético de los países durante todo el periodo, el la @fig-3.1, se observa que la diferencia entre las entradas y salidas de energía no es mucha. Las mayores diferencias se presentan en Canadá y Japón. Sin embargo, al visualizar los datos por año, en la @fig-3.2, no se observa esta estabilidad, salvo en algunos años. En particular, al enfocarse en los años recientes, se observa una disminución en ambas variables, lo que podría explicarse por el aumento en la producción, así como la tedencia a la independencia energética.
 
 En la @fig-3.3 es posible visualizar el aumento de las importaciones y exportaciones totales conforme aumenta la producción. Esta relación podría ser interpretada como un exceso de energía en algunos países, que lleva a exportaciones, y llega a otros como importaciones. Sin embargo, en la @fig-3.4, se observa esta misma relación en cada país analizado. Por ello, se descarta la idea inicial. Además, los gráficos muestran una relación contraria a la relación intuitiva, pues es común pensar que conforme aumenta la producción, disminuyen las importaciones.
 
