@@ -398,3 +398,8 @@ Se debe realizar un agradecimiento especial a los compañeros del curso, los cua
 ![](images/Changelog_b4_4.png)
 ![](images/Changelog_b4_5.png)
 ![](images/Changelog_b4_6.png)
+
+
+## Git summary
+
+![Git summary](images/Git_summary_b4.png)
