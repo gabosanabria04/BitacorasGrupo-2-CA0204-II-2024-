@@ -1,0 +1,106 @@
+---
+title: "Trabajo final"
+author: "Paola Espinoza Hernández; Gabriel Sanabria Alvarado"
+lang: es
+format:
+  pdf:
+    documentclass: scrreprt
+editor: visual
+bibliography: references.bib
+nocite: |
+  @*
+---
+
+## Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables
+
+## Resumen:
+
+Las energías renovables representan una solución clave para amortiguar el impacto del cambio climático y promover un desarrollo socioeconómico sostenible. Este estudio estudia el impacto de estas energías en distintos países, buscando su relación con distintos indicadores de desarrollo y bienestar social. Para ello, se utilizaron datos de una base internacional que abarca el período 2000-2023, con información de países como Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos. Las variables incluyen la producción y consumo de energías renovables, el PIB, la autosuficiencia energética y la reducción de emisiones de CO2, además de contener factores ambientales y socioeconómicos. Mediante modelos estadísticos descriptivos y comparativos, se analizó cómo el uso de energías renovables afecta la economía y el bienestar de los países. Los resultados indican que aquellos con mayor adopción de energías renovables han logrado una disminución de emisiones contaminantes, una mejora en su seguridad energética y un incremento en el bienestar socioeconómico. Igualmente, se identificaron beneficios adicionales, como el desarrollo de empleo y la disminución de la pobreza energética. No obstante, se muestran diferencias entre las que destacan los altos costos iniciales de implementación y las limitaciones tecnológicas, que afectan especialmente a las regiones en desarrollo. Se concluyó que las energías renovables son fundamentales para construir un futuro más equitativo y sostenible, pero para maximizar su aprovechamiento requiere políticas inclusivas y una mayor inversión en investigación tecnológica que mejore su expansión y accesibilidad.
+
+## Palabras Clave:
+
+Energía renovable, energías limpias, impacto ambiental,  impacto socioeconómico, cambio climático
+
+## Introducción:
+
+La energía renovable representa un tema común en el contexto actual, debido al aumento en la conciencia general en temas del medio ambiente. La producción de energía renovable ha aumentado en los últimos años; sin embargo, poco se habla del impacto que estas energías tienen, tanto sobre el medioambiente, como sobre la sociedad.
+
+Por ello, esta investigación desea analizar los cambios en indicadores sociales de acuerdo a variables relacionadas con el medio ambiente, con el fin de concluir una relación entre las energías renovables y el bienestar de la sociedad. Así, se toman en cuenta las emisiones de CO2, los precios de la energía, el gasto en investigación, la inversión, las importaciones y exportaciones de energía, las patentes para energía renovable, la cantidad de trabajos, la conciencia pública sobre el tema de energías renovables, y la existencia o no de políticas gubernamentales y programas educativos al respecto.
+
+La presente investigación tiene por finalidad analizar los cambios ambientales y socioeconómicos que genera la implementación de la energía renovable en los países, estudiando variables como distintos años y países con el fin de realizar distintas comparaciones, así como también las distintas energías renovables, como lo son la energía solar, geotérmica, biomasa, eólica e hidroeléctrica, para combinarlos con la producción y la emisión de CO2.
+
+La relevancia de esta investigación es tanto académica como social. Su desarrollo es de vital importancia para la comprensión de la vinculación de la instauración de la energía renovable y los cambios ecológicos y socioeconómicos, mostrando la magnitud en la que afecta su implementación, dependiendo de los diferentes países. Por ello, se busca el  impacto de las energías  renovables sobre las áreas mencionadas anteriormente.
+
+Para realizar el trabajo, se realizó una revisión de literatura sobre los beneficios y desafíos de las energías renovables, se analizaron los dattos siguiendo métodos gráficos, posteriormente se muestran los resultados más relevaantes; y, finalmente, se discuten las conclusiones y recomendaciones para la política y la investigación futura. Con ello, el estudio busca captar la atención del lector e incentivar a una reflexión profunda sobre el potencial de las energías renovables en la construcción de un futuro sostenible y socialmente justo.
+
+## Metodología
+
+-   **Detalle de los datos:** La tabla incluye datos de países y años para comparar la producción, emisión de CO2 y capacidad instalada de fuentes de energía solar, geotérmica, biomasa, eólica e hidroeléctrica, considerando también alianzas público-privadas y cooperación regional para entender mejor el impacto de la inversión. en el sector. La población se utiliza para analizar el PIB y el consumo energético, y la autosuficiencia energética se examina mediante importaciones y exportaciones. Se incluyen variables de recursos naturales, como temperatura promedio, precipitación, irradiación solar, velocidad del viento, biomasa disponible, potencial hídrico y geotérmico, junto con desastres naturales, capacidad de almacenamiento y liberalización de mercado. Para el impacto social, se analizan precios de electricidad, subsidios, conciencia pública, urbanización, educación, programas de formación sobre energía renovable, percepción de corrupción y calidad regulatoria. El rol del gobierno se revisa en políticas públicas, programas de eficiencia energética, objetivos en renovables, acuerdos energéticos, tarifas, incentivos a la exportación, e inversión en I+D, además de la cantidad de instituciones, innovación, conferencias y publicaciones en el sector. Se incluye también la estabilidad política, libertad económica y facilidad para hacer negocios, y se investigan las tendencias en la fuerza laboral en energías renovables.
+-   **Método A:** Análisis gráfico mediante gráficos de dispersión, barras y densidad.
+-   **Método B:** Comparaciones varias
+-   **Diagnóstico del modelo:** Se reordenó la base de datos según categorías relevantes a la investigación y se anualizaron los datos, consolidando las columnas por país, año y tipo de energía. Para facilitar su carga, la ruta de acceso parte desde la carpeta del repositorio, permitiendo acceder a la base de datos al clonar el repositorio. Además, se unificaron las variables de importación y exportación de energía en una sola variable, Energy.Flow , clasificada en Energy.Flow.Type como importación o exportación.
+
+## Resultados:
+
+::: {#fig-emissions}
+
+![](producción_emisiones.jpg)
+
+Emisiones de CO2 por rango de producción energética
+:::
+
+Al analizar las emisiones de CO2 por rango de producción energética, se observa que, a partir de los 350000 GWh, la distribución de emisiones de CO2 comienza a dispersarse, lo cual sugiere diferencias en los datos. Además, la media de emisiones se desplaza notablemente al alcanzar los 400,000 GWh, rango en el cual se posiciona a la izquierda del rango anterior por primera vez. Por último, en el rango superior a los 450,000 GWh, la distribución de las emisiones es equitativa, mostrando una proporción balanceada entre valores altos y bajos de CO2, lo que sugiere una relación compleja entre la producción y las emisiones de CO2 en diferentes niveles de producción.
+
+Debido a que la @fig-emissions sugiere diferencias entre los datos analizados, se decide separarlos e acuerdo a otra variable: el tipo de energía.
+
+::: {#fig-tipos}
+
+![](producción_emisiones_tipo_energía.jpg)
+
+Producción y Emisiones de CO2 según tipo de energía
+:::
+
+De esta manera, la @fig-tipos revela que la mayoría de las fuentes de energía presentan una relación directa entre las emisiones de CO2 y su nivel de producción. Este patrón implica que, en general, a medida que aumenta la producción de energía, también se incrementan las emisiones de CO2 asociadas. Sin embargo, la energía eólica destaca como una excepción significativa, ya que rompe esta tendencia cuando su producción alcanza aproximadamente 300 000 GWh. En este punto, la energía eólica parece reducir sus emisiones, lo que sugiere que podría ser una opción más sostenible a gran escala. Este comportamiento posiciona a la energía eólica como el candidato más prometedor entre las energías renovables analizadas para mitigar las emisiones de CO2. 
+
+Por otro lado,  es también  posible ver que paraa altos niveles de producción, se mantiene que a mayor producción de energía solar, mayor es también el nivel de emisiones de CO2, por lo que la energía solar se perfila como una alternativa menos efectiva para combatir el cambio climático entre las energías renovables estudiadas.
+
+::: {#fig-políticas}
+
+![](precios_políticas.jpg)
+
+Concentración  de precios de la energía por existencia de políticas  de gobierno
+:::
+
+::: {#fig-producción}
+
+![](precios_producción.jpg)
+
+Producción y precios de energía
+:::
+
+La @fig-políticas muestra que la existencia de políticas de gobierno que impulsen la producción de energías renovables, explica muy bien la concentración en precios, específicamente en valores  cercanos a 0.3. Además, la @fig-produccion muestra que conforme aumenta la producción, los precios tienden a estabilizarse en este mismo valor. En particular, como muestra la @fig-políticas, esta concentración aumenta en los países con políticas de gobierno que impulsen la utilización de energías renovables. Así, la comparación conjunta de los gráficos parece indicar que es posible alcanzar la estabilidad en los precios de la energía por medio de las energías renovables.
+
+::: {#fig-conciencia}
+
+![](social_conciencia.jpg)
+
+Programas educativos y conciencia pública
+:::
+
+La @fig-conciencia muestra el  impacto positivo  que tienen los programas educativos en materia de energía renovable sobre la conciencia pública, posicionando a la mayoría de la población en niveles mayores a los de países sin programas educativos.
+
+## Conclusiones
+
+-   **Impacto de las energías renovables en las emisiones de CO2:** El análisis de Attanayake y otros estudios respaldan que el incremento en energías renovables tiende a disminuir las emisiones de carbono, especialmente en economías desarrolladas. Sin embargo, los patrones observados en Japón y Francia demuestran que la relación puede ser compleja, influenciada por factores nacionales específicos que requieren un análisis más detallado para entender por qué la producción energética en estos casos no reduce, sino aumenta, las emisiones.
+
+-   **Relación directa entre la producción de energías renovables y las emisiones de CO2:** En cuanto al impacto ambiental, se encontraron patrones similares entre los diversos tipos de energía renovable, excepto para la energía eólica. La relación directa entre la producción de energías renovables y las emisiones de CO2 pueden explicarse por la dificultad de la transición desde fuentes tradicionales a fuentes renovables, junto a las emisiones indirectas relacionadas a dicho proceso.
+
+-   **Impacto Económico:** Los precios de la electricidad, en general, tienden a concentrarse alrededor de 0,3. También se observa que una mayor producción de energías renovables contribuye a estabilizarlos en ese rango. Además, la existencia de políticas gubernamentales parece favorecer una mayor concentración de precios en niveles cercanos a 0,3.
+
+-   **Impacto social y conciencia pública:** Aunque la segmentación por años permite observar los cambios en la conciencia pública global a lo largo del tiempo y evidenciar su aumento, resulta interesante analizar si los programas educativos contribuyen realmente a este crecimiento. De esta manera, es posible determinar que la conciencia pública, tanto en términos generales como por segmentos de edad, se ve impulsada por la presencia de programas educativos.
+
+## Agradecimientos
+
+Se debe realizar un agradecimiento especial a los compañeros del curso, los cuales realizaron una retroalimentación en cada bitácora del proyecto, comentando los aspectos positivos y los aspectos por mejorar de nuestra investigación. Además agradecer al profesor Maikol Solís por estar presente en cada sección del proyecto, además de brindar apoyo en las clases y horas de consulta, recomendando páginas web útiles para una correcta elaboración del proyecto.
+
+## Referencias
