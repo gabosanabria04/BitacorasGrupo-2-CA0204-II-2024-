@@ -32,7 +32,7 @@ df1 <- cbind(data, df1)
 ggplot(df1, aes(x = CO2.Emissions, y = Production.Range., fill = Production.Range.)) +
   geom_density_ridges2(quantile_lines = TRUE, quantiles = 2, color = "white", alpha = 0.75) +
   scale_fill_brewer(type = "div", palette = 8)+
-  labs(title = "Emisiones de CO2 por rango de producción energética",
+  labs(
        x = "Emisiones de CO2",
        y = "Producción Total (miles de GWh)",
        caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
@@ -46,8 +46,7 @@ ggplot(data, aes(x = Total.Production, y = CO2.Emissions, color = Energy.Type)) 
   scale_x_continuous(limits = c(0, max(data$Total.Production)), breaks = c(0, 150000, 300000, 450000))+
   facet_wrap(~Energy.Type, ncol = 2)+
   labs(
-    title = "Producción y Emisiones de CO2",
-    subtitle = "por tipo de  energía",
+    
     x = "Producción total (miles de GWh)",
     y = "Emisiones de CO2",
     caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
@@ -62,7 +61,7 @@ ggsave("producción_emisiones_tipo_energía.jpg", width = 8,  height = 7)
 ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
   geom_point()+
   geom_hline(yintercept=0.29, linetype="dashed", color = "red")+
-  labs(title = "Producción y Precios de Energia",
+  labs(
        x = "Producción",
        y = "Precios",
        caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
@@ -75,8 +74,7 @@ data %>%
   ggplot(aes(x = Electricity.Prices))+
   geom_density() +
   facet_wrap(~Government.Policies)+
-  labs(title = "Concentración Precios Energía",
-       subtitle = "en relación a políticas de gobierno",
+  labs(
        x = "Precios",
        y = "Densidad",
        caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
@@ -85,7 +83,7 @@ data %>%
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
     legend.position = "none")
-ggsave("precios_políticas..jpg", width = 8)
+ggsave("precios_políticas.jpg", width = 8)
 
 #Social
 
@@ -96,7 +94,7 @@ data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Educati
   scale_fill_manual(name="", 
                     labels = c("Con", "Sin"), 
                     values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
-  labs(title = "Programas educativos y Conciencia pública",
+  labs(
        x = "Conciencia pública",
        y = "Densidad",
        caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
@@ -115,8 +113,7 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
                      labels = c("Con", "Sin"), 
                      values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
   scale_x_continuous(breaks = c(0,  150000, 300000, 450000))+
-  labs(title = "Producción y Trabajos",
-       subtitle= "por programas educativos",
+  labs(
        x = "Producción",
        y = "Trabajos",
        caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
