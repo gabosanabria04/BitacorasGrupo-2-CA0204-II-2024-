@@ -17,9 +17,7 @@ nocite: |
 
 Las energías renovables representan una solución clave para amortiguar el impacto del cambio climático y promover un desarrollo socioeconómico sostenible. Este estudio estudia el impacto de estas energías en distintos países, buscando su relación con distintos indicadores de desarrollo y bienestar social. Para ello, se utilizaron datos de una base internacional que abarca el período 2000-2023, con información de países como Australia, Brasil, Canadá, China, Francia, Alemania, India, Japón, Rusia y Estados Unidos. Las variables incluyen la producción y consumo de energías renovables, el PIB, la autosuficiencia energética y la reducción de emisiones de CO2, además de contener factores ambientales y socioeconómicos. Mediante modelos estadísticos descriptivos y comparativos, se analizó cómo el uso de energías renovables afecta la economía y el bienestar de los países. Los resultados indican que aquellos con mayor adopción de energías renovables han logrado una disminución de emisiones contaminantes, una mejora en su seguridad energética y un incremento en el bienestar socioeconómico. Igualmente, se identificaron beneficios adicionales, como el desarrollo de empleo y la disminución de la pobreza energética. No obstante, se muestran diferencias entre las que destacan los altos costos iniciales de implementación y las limitaciones tecnológicas, que afectan especialmente a las regiones en desarrollo. Se concluyó que las energías renovables son fundamentales para construir un futuro más equitativo y sostenible, pero para maximizar su aprovechamiento requiere políticas inclusivas y una mayor inversión en investigación tecnológica que mejore su expansión y accesibilidad.
 
-## Palabras Clave:
-
-Energía renovable, energías limpias, impacto ambiental,  impacto socioeconómico, cambio climático
+**Palabras Clave:** Energía renovable, energías limpias, impacto ambiental,  impacto socioeconómico, cambio climático
 
 ## Introducción:
 
@@ -35,32 +33,24 @@ Para realizar el trabajo, se realizó una revisión de literatura sobre los bene
 
 ## Metodología
 
--   **Detalle de los datos:** La tabla incluye datos de países y años para comparar la producción, emisión de CO2 y capacidad instalada de fuentes de energía solar, geotérmica, biomasa, eólica e hidroeléctrica, considerando también alianzas público-privadas y cooperación regional para entender mejor el impacto de la inversión. en el sector. La población se utiliza para analizar el PIB y el consumo energético, y la autosuficiencia energética se examina mediante importaciones y exportaciones. Se incluyen variables de recursos naturales, como temperatura promedio, precipitación, irradiación solar, velocidad del viento, biomasa disponible, potencial hídrico y geotérmico, junto con desastres naturales, capacidad de almacenamiento y liberalización de mercado. Para el impacto social, se analizan precios de electricidad, subsidios, conciencia pública, urbanización, educación, programas de formación sobre energía renovable, percepción de corrupción y calidad regulatoria. El rol del gobierno se revisa en políticas públicas, programas de eficiencia energética, objetivos en renovables, acuerdos energéticos, tarifas, incentivos a la exportación, e inversión en I+D, además de la cantidad de instituciones, innovación, conferencias y publicaciones en el sector. Se incluye también la estabilidad política, libertad económica y facilidad para hacer negocios, y se investigan las tendencias en la fuerza laboral en energías renovables.
--   **Método A:** Análisis gráfico mediante gráficos de dispersión, barras y densidad.
--   **Método B:** Comparaciones varias
--   **Diagnóstico del modelo:** Se reordenó la base de datos según categorías relevantes a la investigación y se anualizaron los datos, consolidando las columnas por país, año y tipo de energía. Para facilitar su carga, la ruta de acceso parte desde la carpeta del repositorio, permitiendo acceder a la base de datos al clonar el repositorio. Además, se unificaron las variables de importación y exportación de energía en una sola variable, Energy.Flow , clasificada en Energy.Flow.Type como importación o exportación.
+Para la realización del trabajo,  se aanalizaron variables  relacionadas a la energía renovable que fueran capaaces de indicar el impacto ambiental y socieconómico de la implementacióon de energías renovables. Por ello, se selecionaron la producción, las emisiones de CO2, los precios de la energía, y la conciencia pública.
+
+Así, se decidió analizar  la relación entre la producción y tanto las  emisiones de CO2 como los precios de la energía. Además, se toman en cuenta laa existencia de políticas de gobierno, y los diversos tipos de energías renovables, como la solar,  hidráulica, eólica, geotérmica y biomasa. En cuanto a resultados sociales, se analiza la relación entre la exisencia de pogramas educativos relacionados a las energías renovables, y la conciencia pública.
+
+En cuanto a la metodología utilizada, se utilizaron métodos meramente gráficos. Se  utilizaron gráficos de dispersión y gráficos de densidad, así como algunos otros adimentos estéticos para clarificar relaciones y ayudar al lector. Con este métod,  es posible encontrar relaciones y tendencias entre las variables analizadas, que nos permiten concluir sobre el impacto tanto ambiental como socioeconómico de las energías renovables.
 
 ## Resultados:
 
-::: {#fig-emissions}
+Los resultados obtenidos más relevantes son: 
 
-![](producción_emisiones.jpg)
-
-Emisiones de CO2 por rango de producción energética
-:::
-
-Al analizar las emisiones de CO2 por rango de producción energética, se observa que, a partir de los 350000 GWh, la distribución de emisiones de CO2 comienza a dispersarse, lo cual sugiere diferencias en los datos. Además, la media de emisiones se desplaza notablemente al alcanzar los 400,000 GWh, rango en el cual se posiciona a la izquierda del rango anterior por primera vez. Por último, en el rango superior a los 450,000 GWh, la distribución de las emisiones es equitativa, mostrando una proporción balanceada entre valores altos y bajos de CO2, lo que sugiere una relación compleja entre la producción y las emisiones de CO2 en diferentes niveles de producción.
-
-Debido a que la @fig-emissions sugiere diferencias entre los datos analizados, se decide separarlos e acuerdo a otra variable: el tipo de energía.
-
-::: {#fig-tipos}
+::: {#fig-tipos fig-pos='hp'}
 
 ![](producción_emisiones_tipo_energía.jpg)
 
 Producción y Emisiones de CO2 según tipo de energía
 :::
 
-De esta manera, la @fig-tipos revela que la mayoría de las fuentes de energía presentan una relación directa entre las emisiones de CO2 y su nivel de producción. Este patrón implica que, en general, a medida que aumenta la producción de energía, también se incrementan las emisiones de CO2 asociadas. Sin embargo, la energía eólica destaca como una excepción significativa, ya que rompe esta tendencia cuando su producción alcanza aproximadamente 300 000 GWh. En este punto, la energía eólica parece reducir sus emisiones, lo que sugiere que podría ser una opción más sostenible a gran escala. Este comportamiento posiciona a la energía eólica como el candidato más prometedor entre las energías renovables analizadas para mitigar las emisiones de CO2. 
+La @fig-tipos revela que la mayoría de las fuentes de energía presentan una relación directa entre las emisiones de CO2 y su nivel de producción. Este patrón implica que, en general, a medida que aumenta la producción de energía, también se incrementan las emisiones de CO2 asociadas. Sin embargo, la energía eólica destaca como una excepción significativa, ya que rompe esta tendencia cuando su producción alcanza aproximadamente 300 000 GWh. En este punto, la energía eólica parece reducir sus emisiones, lo que sugiere que podría ser una opción más sostenible a gran escala. Este comportamiento posiciona a la energía eólica como el candidato más prometedor entre las energías renovables analizadas para mitigar las emisiones de CO2. 
 
 Por otro lado,  es también  posible ver que paraa altos niveles de producción, se mantiene que a mayor producción de energía solar, mayor es también el nivel de emisiones de CO2, por lo que la energía solar se perfila como una alternativa menos efectiva para combatir el cambio climático entre las energías renovables estudiadas.
 
@@ -78,7 +68,7 @@ Concentración  de precios de la energía por existencia de políticas  de gobie
 Producción y precios de energía
 :::
 
-La @fig-políticas muestra que la existencia de políticas de gobierno que impulsen la producción de energías renovables, explica muy bien la concentración en precios, específicamente en valores  cercanos a 0.3. Además, la @fig-produccion muestra que conforme aumenta la producción, los precios tienden a estabilizarse en este mismo valor. En particular, como muestra la @fig-políticas, esta concentración aumenta en los países con políticas de gobierno que impulsen la utilización de energías renovables. Así, la comparación conjunta de los gráficos parece indicar que es posible alcanzar la estabilidad en los precios de la energía por medio de las energías renovables.
+La @fig-políticas muestra que la existencia de políticas de gobierno que impulsen la producción de energías renovables, explica muy bien la concentración en precios, específicamente en valores  cercanos a 0.3. Además, la @fig-producción muestra que conforme aumenta la producción, los precios tienden a estabilizarse en este mismo valor. En particular, como muestra la @fig-políticas, esta concentración aumenta en los países con políticas de gobierno que impulsen la utilización de energías renovables. Así, la comparación conjunta de los gráficos parece indicar que es posible alcanzar la estabilidad en los precios de la energía por medio de las energías renovables.
 
 ::: {#fig-conciencia}
 
@@ -91,13 +81,11 @@ La @fig-conciencia muestra el  impacto positivo  que tienen los programas educat
 
 ## Conclusiones
 
--   **Impacto de las energías renovables en las emisiones de CO2:** El análisis de Attanayake y otros estudios respaldan que el incremento en energías renovables tiende a disminuir las emisiones de carbono, especialmente en economías desarrolladas. Sin embargo, los patrones observados en Japón y Francia demuestran que la relación puede ser compleja, influenciada por factores nacionales específicos que requieren un análisis más detallado para entender por qué la producción energética en estos casos no reduce, sino aumenta, las emisiones.
+La producción de energías renovables tiene una relación directa con las emisiones de CO2, aunque este vínculo presenta matices importantes según el tipo de energía considerada. Exceptuando la energía eólica, las energías renovables muestran patrones que reflejan la dificultad de la transición desde fuentes tradicionales;  pues este proceso implica emisiones indirectas derivadas de la construcción, instalación y mantenimiento de tecnologías renovables. Por lo tanto, aunque las energías renovables son esenciales para reducir el impacto ambiental, su implementación también exige abordar las emisiones asociadas a su desarrollo.
 
--   **Relación directa entre la producción de energías renovables y las emisiones de CO2:** En cuanto al impacto ambiental, se encontraron patrones similares entre los diversos tipos de energía renovable, excepto para la energía eólica. La relación directa entre la producción de energías renovables y las emisiones de CO2 pueden explicarse por la dificultad de la transición desde fuentes tradicionales a fuentes renovables, junto a las emisiones indirectas relacionadas a dicho proceso.
+En términos económicos, el aumento en la producción de energías renovables tiene un efecto estabilizador en los precios de la energía, que tienden a concentrarse alrededor de niveles cercanos a 0.3. Este efecto se ve reforzado por la implementación de políticas gubernamentales, las cuales favorecen una mayor uniformidad en dichos niveles. Así, la presencia de incentivos gubernamentales ayudan a garantizar que los beneficios económicos de las energías renovables se reflejen en precios más accesibles y predecibles para los consumidores. Así, las energías renovables no solo contribuyen al cuidado del medio ambiente, sino que también fortalecen la seguridad económica y energética de los países.
 
--   **Impacto Económico:** Los precios de la electricidad, en general, tienden a concentrarse alrededor de 0,3. También se observa que una mayor producción de energías renovables contribuye a estabilizarlos en ese rango. Además, la existencia de políticas gubernamentales parece favorecer una mayor concentración de precios en niveles cercanos a 0,3.
-
--   **Impacto social y conciencia pública:** Aunque la segmentación por años permite observar los cambios en la conciencia pública global a lo largo del tiempo y evidenciar su aumento, resulta interesante analizar si los programas educativos contribuyen realmente a este crecimiento. De esta manera, es posible determinar que la conciencia pública, tanto en términos generales como por segmentos de edad, se ve impulsada por la presencia de programas educativos.
+En cuuanto al impacto social, los países que implementan programas educativos sobre energías limpias observan un mayor nivel de conciencia entre sus ciudadanos, lo que favorece un cambio cultural hacia la sostenibilidad. En contraste, las naciones sin este tipo de iniciativas muestran menor apoyo y comprensión sobre la importancia de adoptar energías renovables. Dado que este aumento en la conciencia pública no solo promueve una mayor aceptación de estas tecnologías, sino que también impulsa la participación ciudadana en decisiones relacionadas con el medio ambiente, la educación resulta un factor impotante para garantizar una transición energética realmente efectiva.
 
 ## Agradecimientos
 
