@@ -45,7 +45,7 @@ Los resultados obtenidos más relevantes son:
 
 ::: {#fig-tipos fig-pos='hp'}
 
-![](producción_emisiones_tipo_energía.jpg)
+![](final_images/producción_emisiones_tipo_energía.jpg)
 
 Producción y Emisiones de CO2 según tipo de energía
 :::
@@ -56,14 +56,14 @@ Por otro lado,  es también  posible ver que paraa altos niveles de producción,
 
 ::: {#fig-políticas}
 
-![](precios_políticas.jpg)
+![](final_images/precios_políticas.jpg)
 
 Concentración  de precios de la energía por existencia de políticas  de gobierno
 :::
 
 ::: {#fig-producción}
 
-![](precios_producción.jpg)
+![](final_images/precios_producción.jpg)
 
 Producción y precios de energía
 :::
@@ -72,7 +72,7 @@ La @fig-políticas muestra que la existencia de políticas de gobierno que impul
 
 ::: {#fig-conciencia}
 
-![](social_conciencia.jpg)
+![](final_images/social_conciencia.jpg)
 
 Programas educativos y conciencia pública
 :::
