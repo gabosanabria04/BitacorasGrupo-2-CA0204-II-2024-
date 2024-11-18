@@ -7,6 +7,7 @@ library(tidyr)
 library(purrr)
 library(ggExtra)
 library(ggridges)
+library(scales)
 original <- read.csv("data/complete_renewable_energy_dataset.csv")
 data <- original|> mutate(Country = case_when(
   Country == "Brazil"~"Brasil", Country == "Canada" ~ "Canadá", 
@@ -23,6 +24,10 @@ data <- original|> mutate(Country = case_when(
   pivot_longer(cols = c("Importaciones", "Exportaciones"),
                names_to = "Energy.Flow.Type",
                values_to = "Energy.Flow")
+data <- data %>% mutate(Government.Policies = case_when(Government.Policies == 1~"Con politicas de gobierno",
+                                                        TRUE~"Sin políticas de gobierno")) %>% 
+  mutate(Renewable.Energy.Education.Programs = case_when(Renewable.Energy.Education.Programs == 1~"Con programas educativos",
+                                         TRUE~"Sin programas educativos"))
 
 # Emisiones  de CO2
 
@@ -43,17 +48,17 @@ ggsave("producción_emisiones.jpg", width = 8)
 ggplot(data, aes(x = Total.Production, y = CO2.Emissions, color = Energy.Type)) +
   geom_point()+
   scale_color_brewer(type = "qual", palette = 2)  +
-  scale_x_continuous(limits = c(0, max(data$Total.Production)), breaks = c(0, 150000, 300000, 450000))+
+  scale_x_continuous(labels = label_number(scale = 1/1000))+
+  scale_y_continuous(labels = label_number(scale = 1/1000000))+
   facet_wrap(~Energy.Type, ncol = 2)+
   labs(
-    
     x = "Producción total (miles de GWh)",
-    y = "Emisiones de CO2",
+    y = "Emisiones de CO2 (millones)",
     caption= "Información de https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-and-indicators-dataset")+
   theme_cowplot()+
   theme(legend.position = "none")
 ggsave("producción_emisiones_tipo_energía.jpg", width = 8,  height = 7)
-
+?label_number
 
 # Precios
 
@@ -61,21 +66,24 @@ ggsave("producción_emisiones_tipo_energía.jpg", width = 8,  height = 7)
 ggplot(data, aes(x = Total.Production, y = Electricity.Prices))+
   geom_point()+
   geom_hline(yintercept=0.29, linetype="dashed", color = "red")+
+  scale_x_continuous(labels = label_number(scale = 1/1000))+
   labs(
-       x = "Producción",
-       y = "Precios",
+       x = "Producción (miles de GWh)",
+       y = "Precios (dólares)",
        caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
   theme(legend.position = "none")
 ggsave("precios_producción.jpg", width = 8, height = 5)
 
 #Políticas de gobierno
-data %>% 
-  ggplot(aes(x = Electricity.Prices))+
-  geom_density() +
-  facet_wrap(~Government.Policies)+
+data %>% ggplot(aes(Electricity.Prices, fill = Government.Policies))+
+  geom_density()+
+  facet_wrap(~Government.Policies, ncol = 2)+
+  scale_fill_manual(name="", 
+                    labels = c("Con", "Sin"), 
+                    values = c("Con politicas de gobierno"="#b8d8be", "Sin políticas de gobierno"="#ae5a41"))+
   labs(
-       x = "Precios",
+       x = "Precios (dólares)",
        y = "Densidad",
        caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   theme_cowplot()+
@@ -88,12 +96,12 @@ ggsave("precios_políticas.jpg", width = 8)
 #Social
 
 #Conciencia pública y programas educativos
-data %>% ggplot(aes(Public.Awareness, fill = as.logical(Renewable.Energy.Education.Programs)))+
+data %>% ggplot(aes(Public.Awareness, fill = Renewable.Energy.Education.Programs))+
   geom_density()+
   facet_wrap(~Renewable.Energy.Education.Programs, ncol = 2)+
   scale_fill_manual(name="", 
                     labels = c("Con", "Sin"), 
-                    values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
+                    values = c("Con programas educativos"="#b8d8be", "Sin programas educativos"="#ae5a41"))+
   labs(
        x = "Conciencia pública",
        y = "Densidad",
@@ -111,13 +119,15 @@ ggplot(data, aes(x = Total.Production, y = Renewable.Energy.Jobs))+
   geom_point(aes(color = as.logical(Renewable.Energy.Education.Programs)))+
   scale_color_manual(name="", 
                      labels = c("Con", "Sin"), 
-                     values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
-  scale_x_continuous(breaks = c(0,  150000, 300000, 450000))+
+                     values = c("Con programas educativos"="#b8d8be", "Sin programas educativos"="#ae5a41"))+
+  scale_x_continuous(labels = label_number(scale = 1/1000))+
+  scale_y_continuous(labels = label_number(scale = 1/1000000))+
   labs(
-       x = "Producción",
-       y = "Trabajos",
+       x = "Producción (miles de GWh)",
+       y = "Trabajos (millones)",
        caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy- \n and-indicators-dataset")+
   facet_wrap(~Renewable.Energy.Education.Programs)+
   theme_cowplot()+
   theme(legend.position = "none")
 ggsave("social_trabajos.jpg", width = 8)
+

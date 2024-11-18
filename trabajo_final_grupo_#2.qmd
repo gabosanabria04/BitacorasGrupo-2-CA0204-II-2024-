@@ -1,6 +1,4 @@
 ---
-title: "Trabajo final"
-author: "Paola Espinoza Hernández; Gabriel Sanabria Alvarado"
 lang: es
 format:
   pdf:
@@ -13,7 +11,9 @@ nocite: |
 
 ## Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables
 
-## Resumen:
+**Paola Espinoza Hernández, Gabriel Sanabria Alvarado**
+
+## Resumen
 
 Este estudio analiza el impacto ambiental, económico y social de las energías renovables, considerando variables como emisiones de CO2, precios de la energía y conciencia pública. A través de gráficos de dispersión y densidad, se evaluaron los diversos tipos de energías renovables, como solar, eólica, hidráulica, geotérmica y biomasa, junto con factores como políticas gubernamentales y programas educativos. Los resultados muestran que, aunque las energías renovables son esenciales para reducir el impacto ambiental, su implementación genera emisiones indirectas. Además, estas tecnologías estabilizan los precios de la energía alrededor de 0.3, un efecto reforzado por políticas públicas que promueven su adopción. 
 
@@ -25,25 +25,31 @@ En el ámbito social, los países con programas educativos sobre energías renov
 
 La energía renovable representa un tema común en el contexto actual, debido al aumento en la conciencia general en temas del medio ambiente. La producción de energía renovable ha aumentado en los últimos años; sin embargo, poco se habla del impacto que estas energías tienen, tanto sobre el medioambiente, como sobre la sociedad.
 
-Por ello, esta investigación desea analizar los cambios en indicadores sociales de acuerdo a variables relacionadas con el medio ambiente, con el fin de concluir una relación entre las energías renovables y el bienestar de la sociedad. Así, se toman en cuenta las emisiones de CO2, los precios de la energía, el gasto en investigación, la inversión, las importaciones y exportaciones de energía, las patentes para energía renovable, la cantidad de trabajos, la conciencia pública sobre el tema de energías renovables, y la existencia o no de políticas gubernamentales y programas educativos al respecto.
+Por ello, esta investigación tiene como objetivo analizar los cambios en los indicadores sociales en función de variables relacionadas con el medio ambiente, con el fin de determinar la relación entre las energías renovables y el bienestar de la sociedad. Para ello, se consideran las emisiones de CO₂, los precios de la energía, el gasto en investigación, la inversión, las importaciones y exportaciones de energía, las patentes de energías renovables, la generación de empleo, la conciencia pública sobre este tema y la existencia de políticas gubernamentales y programas educativos relacionados.
 
-La presente investigación tiene por finalidad analizar los cambios ambientales y socioeconómicos que genera la implementación de la energía renovable en los países, estudiando variables como distintos años y países con el fin de realizar distintas comparaciones, así como también las distintas energías renovables, como lo son la energía solar, geotérmica, biomasa, eólica e hidroeléctrica, para combinarlos con la producción y la emisión de CO2.
+La presente investigación tiene como finalidad analizar los cambios ambientales y socioeconómicos generados por la implementación de energías renovables en distintos países. Para ello, se estudiarán variables relacionadas con diversos años y países, permitiendo realizar comparaciones. Asimismo, se analizarán diferentes tipos de energías renovables, como la solar, geotérmica, de biomasa, eólica e hidroeléctrica, en combinación con datos sobre producción y emisiones de CO2.
 
-La relevancia de esta investigación es tanto académica como social. Su desarrollo es de vital importancia para la comprensión de la vinculación de la instauración de la energía renovable y los cambios ecológicos y socioeconómicos, mostrando la magnitud en la que afecta su implementación, dependiendo de los diferentes países. Por ello, se busca el  impacto de las energías  renovables sobre las áreas mencionadas anteriormente.
+La relevancia de esta investigación es tanto académica como social. Su desarrollo resulta de vital importancia para comprender la relación entre la implementación de energías renovables y los cambios ecológicos y socioeconómicos. Además, busca evidenciar la magnitud de su impacto, que varía según el contexto de cada país. Por ello, se analiza el efecto de las energías renovables en las áreas mencionadas previamente.
 
-Para realizar el trabajo, se realizó una revisión de literatura sobre los beneficios y desafíos de las energías renovables, se analizaron los dattos siguiendo métodos gráficos, posteriormente se muestran los resultados más relevaantes; y, finalmente, se discuten las conclusiones y recomendaciones para la política y la investigación futura. Con ello, el estudio busca captar la atención del lector e incentivar a una reflexión profunda sobre el potencial de las energías renovables en la construcción de un futuro sostenible y socialmente justo.
+Para realizar el trabajo, se realizó una revisión de literatura sobre los beneficios y desafíos de las energías renovables, se analizaron los datos siguiendo métodos gráficos, posteriormente se muestran los resultados más relevantes; y, finalmente, se discuten las conclusiones y recomendaciones para la política y la investigación futura. Con ello, el estudio busca captar la atención del lector e incentivar a una reflexión profunda sobre el potencial de las energías renovables en la construcción de un futuro sostenible y socialmente justo.
 
 ## Metodología
 
-Para la realización del trabajo,  se aanalizaron variables  relacionadas a la energía renovable que fueran capaaces de indicar el impacto ambiental y socieconómico de la implementacióon de energías renovables. Por ello, se selecionaron la producción, las emisiones de CO2, los precios de la energía, y la conciencia pública.
+Para la realización de este trabajo, se analizaron variables relacionadas con la energía renovable que pudieran indicar el impacto ambiental y socioeconómico de su implementación. Por ello, se seleccionaron factores como la producción, las emisiones de CO₂, los precios de la energía y la conciencia pública. También se incluyeron otras variables, como los rangos de producción, las diferencias entre países y años, además de tendencias segmentadas por tipo de energía utilizada o cualquier otra variable relevante.
 
-Así, se decidió analizar  la relación entre la producción y tanto las  emisiones de CO2 como los precios de la energía. Además, se toman en cuenta laa existencia de políticas de gobierno, y los diversos tipos de energías renovables, como la solar,  hidráulica, eólica, geotérmica y biomasa. En cuanto a resultados sociales, se analiza la relación entre la exisencia de pogramas educativos relacionados a las energías renovables, y la conciencia pública.
+Para hacer posible el análisis, fue necesario anualizar los datos, tomando en cuenta no solo el año y el país, sino también el tipo de energía renovable empleada. Dado que la investigación se realizó en español, algunos términos técnicos fueron traducidos. Además, en las variables relacionadas con políticas de gobierno y programas educativos, se optó por sustituir los valores binarios con nombres más descriptivos, como "Con políticas de gobierno" o "Sin políticas de gobierno", para facilitar la interpretación de los gráficos.
 
-En cuanto a la metodología utilizada, se utilizaron métodos meramente gráficos. Se  utilizaron gráficos de dispersión y gráficos de densidad, así como algunos otros adimentos estéticos para clarificar relaciones y ayudar al lector. Con este métod,  es posible encontrar relaciones y tendencias entre las variables analizadas, que nos permiten concluir sobre el impacto tanto ambiental como socioeconómico de las energías renovables.
+De todos los resultados obtenidos, se seleccionaron aquellos que resultaron más significativos. Entre ellos, se analizó el impacto ambiental en general, incluyendo todos los tipos de energía renovable, con especial atención a la energía eólica y solar. También se evaluó el impacto económico, considerando los precios de la energía en relación con la existencia de políticas gubernamentales, así como la producción de energías renovables. Por último, se revisó el impacto social, analizando la relación entre los programas educativos sobre energías renovables y la conciencia pública.
 
-## Resultados:
+En este contexto, se exploraron las relaciones entre la producción y variables como las emisiones de CO₂ y los precios de la energía, teniendo en cuenta la existencia de políticas gubernamentales y los diferentes tipos de energía renovable, entre las que destacan la solar, hidráulica, eólica, geotérmica y de biomasa. En cuanto a los resultados sociales, se examinó cómo los programas educativos relacionados con energías renovables influyen en la conciencia pública.
 
-Los resultados obtenidos más relevantes son: 
+La metodología empleada se basó en representaciones gráficas, utilizando principalmente gráficos de dispersión y de densidad, complementados con elementos visuales adicionales que facilitaron la interpretación de las relaciones y tendencias entre las variables. Este enfoque permitió simplificar el análisis de datos complejos al presentar información de manera clara y visualmente comprensible, ayudando a identificar patrones y posibles discrepancias. Además, los gráficos fueron diseñados con especial atención a los detalles estéticos y funcionales, asegurando que fueran útiles tanto para el análisis técnico como para la comunicación efectiva de los resultados.
+
+Los gráficos de dispersión permitieron posicionar cada dato en un plano, lo que facilitó la identificación de tendencias, la detección de datos extremos y los cambios en las mismas a partir de ciertos valores. Por ejemplo, este enfoque fue particularmente útil para evaluar el impacto ambiental de la energía eólica, donde se observó un cambio significativo en la tendencia después de los 300,000 GWh.
+
+Por su parte, los gráficos de densidad resultaron especialmente útiles para comparar la existencia de políticas gubernamentales y programas educativos relacionados con las energías renovables. Estos gráficos permitieron identificar concentraciones de datos en ciertos niveles, analizar si estas concentraciones aumentan o disminuyen, e incluso observar movimientos entre diferentes valores. Este enfoque permitió concluir de manera clara y efectiva sobre el impacto ambiental, económico y social de las energías renovables.
+
+## Resultados
 
 ::: {#fig-tipos fig-pos='hp'}
 
@@ -94,3 +100,9 @@ En cuuanto al impacto social, los países que implementan programas educativos s
 Se debe realizar un agradecimiento especial a los compañeros del curso, los cuales realizaron una retroalimentación en cada bitácora del proyecto, comentando los aspectos positivos y los aspectos por mejorar de nuestra investigación. Además agradecer al profesor Maikol Solís por estar presente en cada sección del proyecto, además de brindar apoyo en las clases y horas de consulta, recomendando páginas web útiles para una correcta elaboración del proyecto.
 
 ## Referencias
+::: {#refs}
+:::
+
+## Anexos
+
+[Dashboard de Shiny](https://paolaespinoza.shinyapps.io/Renewable_Energy/)
