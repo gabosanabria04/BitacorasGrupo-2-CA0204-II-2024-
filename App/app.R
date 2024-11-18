@@ -1,8 +1,9 @@
 
-
+library(shinydashboard)
 library(shiny)
 library(ggplot2)
 library(dplyr)
+library(scales)
 library(palmerpenguins)
 library(ggthemes)
 library(cowplot)
@@ -10,6 +11,7 @@ library(tidyr)
 library(purrr)
 library(ggExtra)
 library(ggridges)
+library(bslib)
 
 #Datos a formato tidy, y a español
 original <- read.csv("data/complete_renewable_energy_dataset.csv")
@@ -28,6 +30,10 @@ data <- original|> mutate(Country = case_when(
   pivot_longer(cols = c("Importaciones", "Exportaciones"),
                names_to = "Energy.Flow.Type",
                values_to = "Energy.Flow")
+data <- data %>% mutate(Government.Policies = case_when(Government.Policies == 1~"Con politicas de gobierno",
+                                                        TRUE~"Sin políticas de gobierno")) %>% 
+  mutate(Renewable.Energy.Education.Programs = case_when(Renewable.Energy.Education.Programs == 1~"Con programas educativos",
+                                                         TRUE~"Sin programas educativos"))
 
 #Precios anualizados
 
@@ -38,47 +44,52 @@ energy.type <- c("Biomasa", "Geotérmica", "Hidráulica", "Solar")
 
 
 #Interfaz
-
+?navset_card_pill
 ui <- fluidPage(
   titlePanel("Energía del Futuro: Análisis Global de Tendencias e Indicadores en Energías Renovables"),
-  textOutput(outputId = "variables"),
-  tableOutput(outputId = "table"),
-  tags$b("\n Impacto Ambiental \n"),
-  #Parte ambiental
-  fluidRow(
-    column(6,
-           checkboxGroupInput("group", "Tipos de Energía:", energy.type, selected = c("Solar")),
-           plotOutput(outputId = "emissions")
-    ),
-    column(6,
-           textOutput(outputId = "CO2"),
-           plotOutput(outputId = "wind")
-    )
-  ),
-  tags$b(" \n Impacto Económico \n"),
-  #Parte Económica
-  fluidRow(
-    column(6,
-           textOutput(outputId = "precios"),
-           radioButtons("facetp", "Separar por:",  c("Políticas de Gobierno", "País", "Ninguno"), selected = "Ninguno"),
-           sliderInput("heightprice", "Seleccione la altura de la figura", 250, 600, value = 300),
-           plotOutput(outputId = "distprices")
-    ),
-    column(6,
-           textOutput(outputId = "precios2"),
-           plotOutput(outputId = "prices")
-    )
-  ),
-  #Parte Social
-  tags$b("\n Impacto Social \n"),
-  sidebarLayout(
-    sidebarPanel(
-      textOutput(outputId = "conciencia"),
-      selectInput("facets", "Separar por:", c("Año", "Programas Educativos", "Ambos"), selected = "Programas Educativos"),
-      sliderInput("height", "Seleccione la altura de la figura", 250, 2500, value = 300)
-    ),
-    mainPanel(
-      plotOutput(outputId = "social")
+  navset_bar(
+    nav_panel("Contexto", 
+              textOutput(outputId = "variables"),
+              tableOutput(outputId = "table")),
+    
+    nav_panel("Impacto Ambiental", 
+              fluidRow(
+                column(6,
+                       checkboxGroupInput("group", "Tipos de Energía:", energy.type, selected = c("Solar")),
+                       plotOutput(outputId = "emissions")
+                ),
+                column(6,
+                       textOutput(outputId = "CO2"),
+                       plotOutput(outputId = "wind")
+                )
+              )),
+    
+    nav_panel("Impacto Económico", 
+              fluidRow(
+                column(6,
+                       textOutput(outputId = "precios"),
+                       radioButtons("facetp", "Separar por:",  c("Políticas de Gobierno", "País", "Ninguno"), selected = "Ninguno"),
+                       sliderInput("heightprice", "Seleccione la altura de la figura", 250, 600, value = 300),
+                       plotOutput(outputId = "distprices")
+                ),
+                column(6,
+                       textOutput(outputId = "precios2"),
+                       plotOutput(outputId = "prices")
+                )
+              )),
+    
+    nav_panel(
+      "Impacto Social",
+      sidebarLayout(
+        sidebarPanel(
+          textOutput(outputId = "conciencia"),
+          selectInput("facets", "Separar por:", c("Año", "Programas Educativos", "Ambos"), selected = "Programas Educativos"),
+          sliderInput("height", "Seleccione la altura de la figura", 250, 2500, value = 300)
+        ),
+        mainPanel(
+          plotOutput(outputId = "social")
+        )
+      )
     )
   )
 )
@@ -112,11 +123,13 @@ server <- function(input, output) {
       ggplot(aes(x = Total.Production, y = CO2.Emissions, color = Energy.Type)) +
       geom_point()+
       scale_color_brewer(type = "qual", palette = 2)  +
+      scale_x_continuous(labels = label_number(scale = 1/1000))+
+      scale_y_continuous(labels = label_number(scale = 1/1000000))+
       facet_wrap(~Energy.Type, ncol = 2)+
       labs(
         title = "Producción y Emisiones de CO2",
         x = "Producción total (miles de GWh)",
-        y = "Emisiones de CO2",
+        y = "Emisiones de CO2 (millones)",
         caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-\nand-indicators-dataset")+
       theme_cowplot()+
       theme(legend.position = "none",
@@ -127,12 +140,14 @@ server <- function(input, output) {
     data %>% filter(Energy.Type == "Eólica") %>% 
       ggplot(aes(x = Total.Production, y = CO2.Emissions, color = Energy.Type)) +
       geom_point(color = "#66a61e")+
+      scale_x_continuous(labels = label_number(scale = 1/1000))+
+      scale_y_continuous(labels = label_number(scale = 1/1000000))+
       facet_wrap(~Energy.Type, ncol = 2)+
       labs(
         title = "Producción y Emisiones de CO2",
         subtitle = "energía eólica",
         x = "Producción total (miles de GWh)",
-        y = "Emisiones de CO2",
+        y = "Emisiones de CO2 (millones)",
         caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-\nand-indicators-dataset")+
       theme_cowplot()+
       theme(legend.position = "none")
@@ -148,7 +163,7 @@ server <- function(input, output) {
       geom_hline(yintercept=0.29, linetype="dashed", color = "red")+
       labs(title = "Producción y Precios de Energia",
            x = "Producción",
-           y = "Precios",
+           y = "Precios (dólares)",
            caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-\nand-indicators-dataset")+
       theme_cowplot()+
       theme(legend.position = "none")
@@ -158,7 +173,7 @@ server <- function(input, output) {
     ggplot(aes(x = Electricity.Prices))+
     geom_density() +
     labs(title = "Concentración Precios Energía",
-         x = "Precios",
+         x = "Precios (dólares)",
          y = "Densidad",
          caption= "Información de \n https://www.kaggle.com/datasets/anishvijay/global-renewable-energy-\nand-indicators-dataset")+
     theme_cowplot()+
@@ -170,8 +185,13 @@ server <- function(input, output) {
   
   output$prices <- renderPlot(
     if(input$facetp == "Políticas de Gobierno"){
-      pricesplot + facet_wrap(~Government.Policies)+
-        labs(subtitle = "en relación a políticas de gobierno")
+      pricesplot + 
+        geom_density(aes(fill = Government.Policies))+
+        facet_wrap(~Government.Policies)+
+        labs(subtitle = "en relación a políticas de gobierno")+
+        scale_fill_manual(name="", 
+                          labels = c("Con", "Sin"), 
+                          values = c("Con politicas de gobierno"="#b8d8be", "Sin políticas de gobierno"="#ae5a41"))
     }
     else if(input$facetp == "País"){
       pricesplot + 
@@ -200,11 +220,11 @@ server <- function(input, output) {
   
   output$social <- renderPlot({
     if(input$facets == "Programas Educativos"){
-      public + geom_density(aes(fill = as.logical(Renewable.Energy.Education.Programs)))+
+      public + geom_density(aes(fill = Renewable.Energy.Education.Programs))+
         facet_wrap(~Renewable.Energy.Education.Programs, ncol = 2)+
         scale_fill_manual(name="", 
                           labels = c("Con", "Sin"), 
-                          values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
+                          values = c("Con programas educativos"="#b8d8be", "Sin programas educativos"="#ae5a41"))+
         labs(subtitle = "Por existencia de programas educativos")
     }
     else if(input$facets == "Año"){
@@ -212,11 +232,11 @@ server <- function(input, output) {
         labs(subtitle = "Por año")
     }
     else if(input$facets == "Ambos"){
-      public + geom_density(aes(fill = as.logical(Renewable.Energy.Education.Programs)))+
+      public + geom_density(aes(fill = Renewable.Energy.Education.Programs))+
         facet_wrap(Year~Renewable.Energy.Education.Programs, ncol = 2)+
         scale_fill_manual(name="", 
                           labels = c("Con", "Sin"), 
-                          values = c("TRUE"="#b8d8be", "FALSE"="#ae5a41"))+
+                          values = c("Con programas educativos"="#b8d8be", "Sin programas educativos"="#ae5a41"))+
         labs(subtitle = "Por existencia de programas educativos y año")
     }
     else{
